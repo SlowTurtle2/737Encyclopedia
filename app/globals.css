@@ -14,3 +14,35 @@ body{color:#191a1c;-webkit-font-smoothing:antialiased}.site-header{min-height:10
 /* Study pages: concise facts and a consistent semantic color system. */
 .hero-audience{max-width:620px;margin:24px auto 0;font-size:14px;color:#747b86}.system-course .page-head{border-left:4px solid #2191a3;background:linear-gradient(100deg,#f0f9fb 0%,white 75%);margin-top:30px;padding-top:28px;border-radius:0 14px 14px 0}.system-course .course-meta{padding-bottom:5px}.system-course .section-num{color:#148094}.system-course .course-section h2{color:#214b65}.system-course .course-nav{margin-top:25px}.study-points{list-style:none!important;padding:0!important;margin:20px 0!important;display:grid;gap:0}.study-points>li{padding:11px 14px 11px 30px;margin:0!important;position:relative;border-bottom:1px solid #edf1f5;line-height:1.6}.study-points>li:before{content:'';position:absolute;left:9px;top:22px;width:6px;height:6px;border-radius:50%;background:#3b96aa}.study-points strong{color:#29475f}.need-to-know{border:1px solid #bed8f0;border-left:4px solid #4289c6;background:#eff6fd;padding:20px 24px;margin:24px 0;border-radius:0 12px 12px 0}.need-label{font-size:11px;font-weight:800;letter-spacing:1.8px;color:#397aae}.need-to-know h3{font-size:23px;letter-spacing:-.6px;color:#28577e!important;margin:10px 0 12px}.need-to-know p{margin:7px 0!important;font-size:15px;color:#426783!important}.need-to-know.teal{background:#eef9f7;border-color:#b9e2db;border-left-color:#259681}.need-to-know.teal .need-label{color:#238071}.need-to-know.teal h3{color:#226b60!important}.need-to-know.teal p{color:#3f7068!important}.need-to-know.amber{background:#fff8e9;border-color:#eedcaf;border-left-color:#d79e30}.need-to-know.amber .need-label{color:#956a20}.need-to-know.amber h3{color:#805b21!important}.need-to-know.amber p{color:#7f6b42!important}.tank-location{background:#fff;border-color:#d6e3ec}.tank-location .diagram{max-height:640px}.system-course .course-table th{background:#ecf5f8;color:#28556b}.system-course .max-note{border-left-color:#8472bd;background:#f4f1fb}.system-course .deep{background:#f8fafc}.system-course .aside-box{border-top-color:#2995a3}.system-course .source{font-size:12px}.system-course .course-section{padding-bottom:32px}@media(max-width:700px){.system-course .page-head{margin:18px 12px 0;padding-left:18px;padding-right:18px}.need-to-know{padding:17px 18px}.need-to-know h3{font-size:21px}.hero-audience{font-size:13px}.tank-location{padding:12px 5px}.tank-location .figure-header,.tank-location figcaption{padding-left:8px;padding-right:8px}}
 .tank-diagram-scroll{overflow-x:auto}.tank-diagram-scroll svg{min-width:640px;display:block}.tank-diagram-scroll:focus-visible{outline:2px solid #418dab;outline-offset:3px}
+
+/* Compact laptop layouts: designed for common 11–13 inch viewports. */
+@media (min-width:701px) and (max-width:1366px){
+  .wrap{max-width:1120px;padding-left:28px;padding-right:28px}
+  .site-header{min-height:76px;padding:14px 26px;grid-template-columns:minmax(210px,1fr) auto minmax(150px,1fr);gap:20px}
+  .site-header .brand{font-size:21px;gap:9px}.site-header .brand svg{width:25px;height:25px}
+  .site-header nav{grid-column:auto;grid-row:auto;gap:20px;font-size:14px;white-space:nowrap}
+  .header-cta{grid-column:auto;grid-row:auto;padding:11px 15px;border-radius:11px;font-size:13px;gap:9px}
+  .landing-hero{padding-top:50px;padding-bottom:39px}
+  .landing-label{margin-bottom:16px}.landing-hero h1{font-size:clamp(44px,4.8vw,58px);margin-bottom:18px}
+  .landing-hero .lead{font-size:17px;margin-bottom:21px}.hero-audience{margin-top:17px}
+  .intro-strip{padding-bottom:20px;gap:38px;font-size:13px}
+  .landing .section{padding-top:39px;padding-bottom:44px}.landing .section-heading{margin-bottom:22px}
+  .landing .section-heading h2{font-size:30px;margin-bottom:8px}.library-description{font-size:14px}
+  .system-shortcuts{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+  .system-shortcut{padding:16px 16px 14px;border-radius:10px;min-height:130px}
+  .system-shortcut h3{font-size:15px;margin:17px 0 9px}.shortcut-top svg:first-child{width:21px;height:21px}
+  .study-banner{margin:0 28px 45px;padding:26px 30px}.study-banner h2{font-size:25px}.study-banner p:not(.eyebrow){margin-bottom:0}
+  .page-head{padding-top:34px;padding-bottom:25px}.page-head h1{font-size:48px}.page-head .lead{font-size:16px;line-height:1.65}
+  .course-layout{grid-template-columns:minmax(0,760px) 190px;gap:38px;padding-top:30px}
+  .course-section h2{font-size:27px}.course-section{margin-bottom:24px;padding-bottom:28px}
+  .figure{margin:22px 0;padding:18px}.aside-box a{margin:10px 0;font-size:13px}
+  footer{padding:25px 28px}
+}
+
+@media (min-width:701px) and (max-width:1050px){
+  .site-header{grid-template-columns:1fr auto}.site-header nav{grid-column:1/-1;grid-row:2;justify-content:center}
+  .system-shortcuts{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .course-layout{grid-template-columns:minmax(0,1fr)}.course-aside{display:none}
+}
+
+.system-shortcut .available-status{color:#238071;font-weight:600}
