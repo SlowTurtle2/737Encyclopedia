@@ -1054,30 +1054,30 @@ body {
 }
 .landing-hero {
   text-align: center;
-  padding-top: 80px;
-  padding-bottom: 64px;
+  padding-top: 48px;
+  padding-bottom: 34px;
 }
 .landing-label {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 2px;
   color: #777d86;
-  margin: 0 0 25px;
+  margin: 0 0 14px;
 }
 .landing-hero h1 {
-  font-size: clamp(44px, 5.2vw, 72px);
-  line-height: 1.09;
-  letter-spacing: -3.4px;
+  font-size: clamp(40px, 4.6vw, 62px);
+  line-height: 1.04;
+  letter-spacing: -2.8px;
   font-weight: 650;
-  margin-bottom: 25px;
+  margin-bottom: 17px;
 }
 .landing-hero h1 span {
   color: #92959d;
 }
 .landing-hero .lead {
-  font-size: 19px;
-  line-height: 1.65;
-  margin: 0 0 27px;
+  font-size: 17px;
+  line-height: 1.5;
+  margin: 0 0 19px;
 }
 .hero-actions {
   display: flex;
@@ -1099,7 +1099,7 @@ body {
 .hero-audience {
   font-size: 13px;
   color: #91949b;
-  margin: 24px 0 0;
+  margin: 16px 0 0;
 }
 .intro-strip {
   border-top: 0;
@@ -1407,11 +1407,11 @@ summary:focus-visible {
     padding-bottom: 3px;
   }
   .landing-hero {
-    padding-top: 53px;
-    padding-bottom: 39px;
+    padding-top: 34px;
+    padding-bottom: 28px;
   }
   .landing-hero h1 {
-    font-size: 43px;
+    font-size: 39px;
     letter-spacing: -2px;
   }
   .landing-hero .lead {
@@ -1524,7 +1524,7 @@ summary:focus-visible {
 /* Study pages: concise facts and a consistent semantic color system. */
 .hero-audience {
   max-width: 620px;
-  margin: 24px auto 0;
+  margin: 16px auto 0;
   font-size: 14px;
   color: #747b86;
 }
@@ -1819,22 +1819,22 @@ summary:focus-visible {
     gap: 9px;
   }
   .landing-hero {
-    padding-top: 50px;
-    padding-bottom: 39px;
+    padding-top: 28px;
+    padding-bottom: 24px;
   }
   .landing-label {
     margin-bottom: 16px;
   }
   .landing-hero h1 {
-    font-size: clamp(44px, 4.8vw, 58px);
-    margin-bottom: 18px;
+    font-size: clamp(40px, 4.2vw, 50px);
+    margin-bottom: 14px;
   }
   .landing-hero .lead {
-    font-size: 17px;
-    margin-bottom: 21px;
+    font-size: 16px;
+    margin-bottom: 16px;
   }
   .hero-audience {
-    margin-top: 17px;
+    margin-top: 13px;
   }
   .intro-strip {
     padding-bottom: 20px;
