@@ -1672,19 +1672,19 @@ summary:focus-visible {
 .suction-warning {
   margin: 20px 0;
   padding: 18px 20px;
-  border: 1px solid #efcf8b;
-  border-left: 4px solid #d58d16;
+  border: 1px solid #efb7b7;
+  border-left: 4px solid #c94a4a;
   border-radius: 0 10px 10px 0;
-  background: #fff8e7;
+  background: #fff0f0;
 }
 .suction-warning strong {
-  color: #8c5b0c;
+  color: #a13232;
   font-size: 11px;
   letter-spacing: 1.3px;
 }
 .suction-warning p {
   margin: 8px 0 0 !important;
-  color: #705a32 !important;
+  color: #753f3f !important;
 }
 .pump-panel figcaption {
   margin-top: 10px;
@@ -1730,26 +1730,49 @@ summary:focus-visible {
 }
 .valve-indication {
   display: block;
-  width: min(100%, 245px);
+  width: min(100%, 155px);
   height: auto;
   margin: 16px 0 12px;
+}
+.valve-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 155px;
+  align-items: center;
+  gap: 24px;
 }
 .transfer-warning {
   margin: 24px 0;
   padding: 18px 20px;
-  border: 1px solid #efcf8b;
-  border-left: 4px solid #d58d16;
+  border: 1px solid #efb7b7;
+  border-left: 4px solid #c94a4a;
   border-radius: 0 10px 10px 0;
-  background: #fff8e7;
+  background: #fff0f0;
 }
 .transfer-warning strong {
-  color: #8c5b0c;
+  color: #a13232;
   font-size: 11px;
   letter-spacing: 1.3px;
 }
 .transfer-warning p {
   margin: 8px 0 0 !important;
-  color: #705a32 !important;
+  color: #753f3f !important;
+}
+.fuel-alert-card {
+  display: grid;
+  grid-template-columns: minmax(180px, 250px) 1fr;
+  align-items: center;
+  gap: 22px;
+  margin: 18px 0;
+  padding: 16px;
+  border: 1px solid #d7e2e8;
+  border-radius: 12px;
+  background: #f8fafb;
+}
+.fuel-alert-card img { display: block; width: 100%; height: auto; }
+.fuel-alert-card strong { color: #9a6500; font-size: 12px; letter-spacing: 1.2px; }
+.fuel-alert-card p { margin: 7px 0 0 !important; }
+@media (max-width: 620px) {
+  .valve-detail, .fuel-alert-card { grid-template-columns: 1fr; }
 }
 .pump-warning > div > strong {
   color: #9a6500;

@@ -138,19 +138,17 @@ export default function Fuel() {
                 ))}
               </TableBody>
             </Table>
-            <Need title="3 structural tanks" tone="teal">
-              <p>
-                <strong>20,896 kg</strong> is the approximate usable capacity
-                for the supplied 737-800 NG configuration.
-              </p>
+            <Need title="3 tanks" tone="teal">
+              <p><strong>Total capacity: 20,896 kg.</strong></p>
             </Need>
             <Source>NG 12.20.1, 12.20.4 · MAX 12.20.1, 12.20.4</Source>
           </section>
           <section className="course-section" id="feed">
             <span className="section-num">02 / PUMPS & FUEL FEED</span>
             <h2>
-              Fuel-source priority is created by pump pressure, allowing the
-              center tank to feed first without FMC intervention.
+              The fuel pumps draw fuel from the tanks and deliver it under
+              pressure to the engine feed manifolds, providing a continuous
+              supply to the engines during normal operation.
             </h2>
             <h3>Fuel supply</h3>
             <ul className="study-points">
@@ -168,40 +166,27 @@ export default function Fuel() {
               </li>
             </ul>
             <p>
-              When all six pumps are operating, the center tank pumps produce
-              more pressure than the main tank pumps. This higher pressure
-              closes the check valves in the main tank feed lines, so center
-              tank fuel reaches both engine manifolds first. As center pump
-              pressure disappears, the check valves open and the main tanks
-              take over automatically. The sequence is therefore created by
-              hydraulic pressure, without the FMC selecting a tank.
+              When all six pumps operate, the center tank pumps produce more
+              pressure than the main tank pumps, so center tank fuel is consumed
+              first. To stop using the center tank, the crew switches its pumps
+              OFF and the main tank pumps supply the engines. There is no fuel
+              tank selector: pump selection and pressure establish the source.
             </p>
             <aside className="suction-warning">
               <strong>WARNING · DURING CLIMB</strong>
               <p>
-                As ambient pressure falls, dissolved air can be released from
-                the fuel and restrict suction flow. The engine may then suffer
-                thrust loss or flameout at altitude.
+                If the fuel pumps are switched OFF during climb, the engines
+                rely on suction feed. As ambient pressure falls, dissolved air
+                can be released from the fuel and restrict that flow, creating
+                a risk of thrust loss or flameout at altitude.
               </p>
             </aside>
-            <Deep title="Go deeper · Why altitude changes suction-feed capability">
-              <p>
-                After the aircraft reaches cruise, the dissolved air eventually
-                depletes. The time depends on altitude, fuel temperature and
-                fuel type. Once it has depleted, suction feed at cruise power
-                may be possible. The key distinction is between an available
-                flow path and a guaranteed supply under every flight condition.
-              </p>
-            </Deep>
             <FuelDiagram />
 
             <h3>Pump control and warning</h3>
             <p>
-              Six switches on the overhead fuel panel control the two
-              AC pumps in each tank. The main tank LOW PRESSURE lights illuminate
-              when pump output pressure is low, including when their switches
-              are OFF. Center tank LOW PRESSURE lights are inhibited when the
-              associated switch is OFF.
+              Six switches on the overhead fuel panel control the two AC pumps
+              in each tank.
             </p>
             <PumpControlPanel />
             <div className="pump-warning">
@@ -324,8 +309,7 @@ export default function Fuel() {
               when the associated engine start lever is moved to CUTOFF or the
               engine fire switch is pulled.
             </p>
-            <img className="valve-indication" src="/images/eng-valve-closed.png" alt="ENG VALVE CLOSED flight deck indication" />
-            <ul className="study-points">
+            <div className="valve-detail"><ul className="study-points">
               <li>
                 <strong>ENG VALVE CLOSED extinguished:</strong> valve open.
               </li>
@@ -336,7 +320,7 @@ export default function Fuel() {
                 <strong>Bright blue:</strong> valve in transit or disagreement
                 between commanded and actual position.
               </li>
-            </ul>
+            </ul><img className="valve-indication" src="/images/eng-valve-closed.png" alt="ENG VALVE CLOSED flight deck indication" /></div>
 
             <h3>Spar valve</h3>
             <p>
@@ -345,8 +329,7 @@ export default function Fuel() {
               it. Like the engine valve, it closes with the associated start
               lever at CUTOFF or when the engine fire switch is pulled.
             </p>
-            <img className="valve-indication" src="/images/spar-valve-closed.png" alt="SPAR VALVE CLOSED flight deck indication" />
-            <ul className="study-points">
+            <div className="valve-detail"><ul className="study-points">
               <li>
                 <strong>SPAR VALVE CLOSED extinguished:</strong> valve open.
               </li>
@@ -357,7 +340,7 @@ export default function Fuel() {
                 <strong>Bright blue:</strong> valve in transit or disagreement
                 between commanded and actual position.
               </li>
-            </ul>
+            </ul><img className="valve-indication" src="/images/spar-valve-closed.png" alt="SPAR VALVE CLOSED flight deck indication" /></div>
 
             <h3>Crossfeed valve</h3>
             <p>
@@ -368,12 +351,11 @@ export default function Fuel() {
               feeding changes lateral fuel balance by changing which tank is
               consumed.
             </p>
-            <img className="valve-indication" src="/images/crossfeed-valve-open.png" alt="VALVE OPEN crossfeed flight deck indication" />
-            <ul className="study-points">
+            <div className="valve-detail"><ul className="study-points">
               <li><strong>VALVE OPEN extinguished:</strong> crossfeed valve closed.</li>
               <li><strong>Dim blue:</strong> crossfeed valve open.</li>
               <li><strong>Bright blue:</strong> valve in transit or disagreement between commanded and actual position.</li>
-            </ul>
+            </ul><img className="valve-indication" src="/images/crossfeed-valve-open.png" alt="VALVE OPEN crossfeed flight deck indication" /></div>
             <aside className="transfer-warning">
               <strong>WARNING · CROSSFEED IS NOT FUEL TRANSFER</strong>
               <p>
@@ -391,53 +373,16 @@ export default function Fuel() {
               Fuel quantity indications and alerts help the crew monitor usable
               fuel, tank balance and the fuel predicted at destination.
             </h2>
+            <h3>Fuel QTY alert</h3>
             <ul className="study-points">
               <li>
                 <strong>Quantity indication:</strong> usable fuel; available
                 with AC or DC power.
               </li>
             </ul>
-            <Table className="course-table">
-              <TableHeader>
-                <TableRow>
-                  <TableHead>NG alert</TableHead>
-                  <TableHead>Appears when</TableHead>
-                  <TableHead>Clears when</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow>
-                  <TableCell>
-                    <strong>LOW</strong>
-                  </TableCell>
-                  <TableCell>A main tank has less than 453 kg.</TableCell>
-                  <TableCell>That tank reaches 567 kg.</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>
-                    <strong>CONFIG</strong>
-                  </TableCell>
-                  <TableCell>
-                    Either engine running, center quantity above 726 kg, both
-                    center pump switches OFF.
-                  </TableCell>
-                  <TableCell>
-                    Both engines stopped, or center below 363 kg, or either
-                    center pump switch ON.
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>
-                    <strong>IMBAL</strong>
-                  </TableCell>
-                  <TableCell>
-                    Main tanks differ by more than 453 kg, on the ground or in
-                    flight.
-                  </TableCell>
-                  <TableCell>Difference reduces to 91 kg.</TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
+            <div className="fuel-alert-card"><img src="/images/fuel-alert-low.png" alt="LOW fuel quantity alert" /><div><strong>LOW</strong><p>Appears below 453 kg in either main tank and clears when that tank reaches 567 kg.</p></div></div>
+            <div className="fuel-alert-card"><img src="/images/fuel-alert-config.png" alt="CONFIG center fuel alert" /><div><strong>CONFIG</strong><p>Appears with either engine running when center tank quantity is above 726 kg and both center pump switches are OFF. It clears when both engines are stopped, center quantity falls below 363 kg, or either center pump switch is ON.</p></div></div>
+            <div className="fuel-alert-card"><img src="/images/fuel-alert-imbal.png" alt="IMBAL main tank quantity alert" /><div><strong>IMBAL</strong><p>Appears on the lower-quantity main tank when the difference exceeds 453 kg. It clears when the difference decreases to 91 kg.</p></div></div>
             <ul className="study-points">
               <li>
                 <strong>IMBAL location:</strong> lower-quantity main tank.
@@ -450,50 +395,6 @@ export default function Fuel() {
                 repeated alert switching near a single value.
               </li>
             </ul>
-            <Max>
-              <strong>LOW uses 590 / 737 kg</strong> in the supplied 737-8200
-              FCOM: it appears below 590 kg and stays until quantity increases
-              to 737 kg. The listed CONFIG and IMBAL thresholds remain the same.
-            </Max>
-            <h3>Additional MAX fuel messages</h3>
-            <ul>
-              <li>
-                <strong>FUEL DISAGREE:</strong> totalizer quantity and FMC
-                calculated quantity disagree.
-              </li>
-              <li>
-                <strong>USING RSV FUEL:</strong> predicted destination fuel is
-                below the entered RESERVES value.
-              </li>
-              <li>
-                <strong>INSUFFICIENT FUEL:</strong> predicted destination fuel
-                is below 900 kg.
-              </li>
-              <li>
-                <strong>FUEL FLOW:</strong> actual engine flow differs from FMCS
-                expected flow beyond the MEDB threshold for five continuous
-                minutes; each engine is monitored independently.
-              </li>
-            </ul>
-            <p>
-              These are engine-display alerts in the supplied MAX fuel chapter.
-              That does not mean similarly named FMC messages are exclusive to
-              the MAX.
-            </p>
-            <h3>FILTER BYPASS</h3>
-            <div className="pump-warning filter-warning">
-              <img src="/images/fuel-filter-bypass.png" alt="Amber FILTER BYPASS indication" />
-              <div>
-                <strong>FILTER BYPASS</strong>
-                <p>Illuminated (amber) – impending fuel filter bypass due to a contaminated filter.</p>
-              </div>
-            </div>
-            <Max>
-              The MAX description includes{' '}
-              <strong>impending or actual bypass</strong>. If both FILTER BYPASS
-              lights illuminate, both remain illuminated until engine shutdown
-              on the ground.
-            </Max>
             <Deep title="Go deeper · Quantity indication is not perfectly exact">
               <p>
                 The NG FCOM allows indicated tank quantity to differ from actual
@@ -509,6 +410,32 @@ export default function Fuel() {
                 alone does not identify a MAX.
               </p>
             </Deep>
+            <h3>Filter alert</h3>
+            <div className="pump-warning filter-warning">
+              <img src="/images/fuel-filter-bypass.png" alt="Amber FILTER BYPASS indication" />
+              <div>
+                <strong>FILTER BYPASS</strong>
+                <p>Illuminated (amber) – impending fuel filter bypass due to a contaminated filter.</p>
+              </div>
+            </div>
+            <h3>MAX alert</h3>
+            <Max>
+              <strong>LOW uses 590 / 737 kg</strong> in the supplied 737-8200
+              FCOM: it appears below 590 kg and stays until quantity increases
+              to 737 kg. The listed CONFIG and IMBAL thresholds remain the same.
+            </Max>
+            <ul>
+              <li><strong>FUEL DISAGREE:</strong> totalizer quantity and FMC calculated quantity disagree.</li>
+              <li><strong>USING RSV FUEL:</strong> predicted destination fuel is below the entered RESERVES value.</li>
+              <li><strong>INSUFFICIENT FUEL:</strong> predicted destination fuel is below 900 kg.</li>
+              <li><strong>FUEL FLOW:</strong> actual engine flow differs from FMCS expected flow beyond the MEDB threshold for five continuous minutes; each engine is monitored independently.</li>
+            </ul>
+            <Max>
+              The MAX description includes{' '}
+              <strong>impending or actual bypass</strong>. If both FILTER BYPASS
+              lights illuminate, both remain illuminated until engine shutdown
+              on the ground.
+            </Max>
             <Source>NG 12.10.2–6, 12.20.3 · MAX 12.10.2–5, 12.20.3</Source>
           </section>
           <section className="course-section" id="temperature">
