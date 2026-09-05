@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/site-link';
 import {notFound} from 'next/navigation';
 import {chapters,slug} from '../../page';
 export function generateStaticParams(){return chapters.filter(name=>name!=='Fuel').map(name=>({slug:slug(name)}))}

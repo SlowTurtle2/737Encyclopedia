@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/site-link';
 import { ArrowUpRight, Plane } from 'lucide-react';
 import './globals.css';
 export const metadata: Metadata = { title: '737Encyclopedia | Understand the aircraft', description: 'Detailed Boeing 737 NG systems courses, annotated schematics and 737-8200 MAX differences for pilots and simulator enthusiasts.' };

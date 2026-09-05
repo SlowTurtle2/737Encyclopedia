@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/site-link';
 import FuelDiagram from './diagram';
 import TankLocation from './tank-location';
 import Quiz from './quiz';
@@ -122,19 +122,13 @@ export default function Fuel() {
               </li>
             </ul>
             <Deep title="Go deeper · Quantity, sequence and flow direction">
-              <ul className="study-points">
-                <li>
-                  <strong>Quantity displayed:</strong> usable fuel in each tank.
-                </li>
-                <li>
-                  <strong>Normal sequence:</strong> center tank first, then each
-                  engine’s associated main tank.
-                </li>
-                <li>
-                  <strong>Check valves:</strong> maintain flow direction and
-                  prevent unintended tank-to-tank transfer.
-                </li>
-              </ul>
+              <p>
+                The quantity indication shows the usable fuel in each tank. In
+                normal operation, the center tank supplies fuel first, followed
+                by each engine’s associated main tank. Check valves maintain the
+                intended direction of flow and prevent unintended tank-to-tank
+                transfer.
+              </p>
             </Deep>
             <Need title="3 tanks · 6 AC pumps" tone="teal">
               <p>
@@ -447,18 +441,16 @@ export default function Fuel() {
               </p>
             </Need>
             <Deep title="Go deeper · When does MASTER CAUTION appear?">
-              <ul>
-                <li>
-                  <strong>Main tank:</strong> two LOW PRESSURE lights in the
-                  same tank trigger MASTER CAUTION and the FUEL annunciator. A
-                  single light brings them up on recall.
-                </li>
-                <li>
-                  <strong>Center tank:</strong> with the switches ON, one LOW
-                  PRESSURE light continuously illuminated for 10 seconds
-                  triggers MASTER CAUTION and FUEL.
-                </li>
-              </ul>
+              <p>
+                For a main tank, two LOW PRESSURE lights in the same tank
+                trigger MASTER CAUTION and the FUEL annunciator. A single light
+                brings them up on recall.
+              </p>
+              <p>
+                For the center tank, with the switches ON, one LOW PRESSURE
+                light continuously illuminated for 10 seconds triggers MASTER
+                CAUTION and FUEL.
+              </p>
             </Deep>
             <Table className="course-table">
               <TableHeader>
