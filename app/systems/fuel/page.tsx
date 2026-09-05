@@ -182,13 +182,13 @@ export default function Fuel() {
                 protected by the Nitrogen Generation System.
               </p>
             </aside>
+            <h3>Fuel supply</h3>
             <p>
               If all pumps are lost, each engine-driven fuel pump can draw from
               its corresponding main tank through the suction-feed path. This
               path may become restricted at altitude, with a risk of thrust
               deterioration or engine flameout.
             </p>
-            <h3>Fuel supply</h3>
             <p>
               When all six pumps operate, the center tank pumps produce more
               pressure than the main tank pumps, so center tank fuel is consumed
