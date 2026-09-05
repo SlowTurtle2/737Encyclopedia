@@ -1,7 +1,6 @@
 import Link from '@/components/site-link';
 import FuelDiagram from './diagram';
 import PumpControlPanel from './pump-control-panel';
-import ValveLocations from './valve-locations';
 import TankLocation from './tank-location';
 import Quiz from './quiz';
 import Contents from './contents';
@@ -80,12 +79,6 @@ export default function Fuel() {
           <span className="pill">MAX DIFFERENCE INCLUDED</span>
         </div>
       </div>
-      <nav className="wrap course-nav" aria-label="Fuel chapter">
-        <a href="#overview">Overview</a>
-        <a href="#feed">Fuel feed</a>
-        <a href="#indications">Alerts & limits</a>
-        <a href="#quiz">Quiz ↗</a>
-      </nav>
       <div className="wrap course-layout">
         <article>
           <section className="course-section" id="overview">
@@ -179,11 +172,14 @@ export default function Fuel() {
                 compared with approximately <strong>10 PSI</strong> for the main
                 tank pumps.
               </p>
+            </aside>
+            <aside className="pump-location-warning">
+              <strong>WARNING · PUMP FUNCTION ≠ PHYSICAL LOCATION</strong>
               <p>
-                Although two pumps serve each tank, all six pump assemblies are
+                Two pumps serve each tank, but all six pump assemblies are
                 physically grouped in the center tank area. This arrangement
-                simplifies maintenance access and places the pumps in the area
-                protected by the Nitrogen Generation System (NGS).
+                simplifies maintenance access and places them in the area
+                protected by the Nitrogen Generation System.
               </p>
             </aside>
             <p>
@@ -312,7 +308,6 @@ export default function Fuel() {
               Three valve types control fuel isolation and the connection
               between the left and right engine feed manifolds.
             </h2>
-            <ValveLocations />
             <h3>Engine valve</h3>
             <p>
               The engine fuel shutoff valve is fuel-actuated and
@@ -562,6 +557,20 @@ export default function Fuel() {
               </p>
             </Deep>
             <h3>Nitrogen Generation System</h3>
+            <p>
+              The NGS converts engine bleed air into nitrogen-enriched air and
+              sends it to the center fuel tank. Reducing the oxygen content in
+              the tank ullage lowers its flammability while ignition-source
+              protection remains the primary safeguard.
+            </p>
+            <p>
+              Operation is automatic and transparent to the flight crew. The
+              system starts after takeoff, operates through climb, cruise,
+              descent and landing, then continues briefly during taxi. It needs
+              no crew action and has no flight deck indication; its operability
+              lights are in the right main wheel well near the APU fire control
+              panel.
+            </p>
             <ul className="study-points">
               <li>
                 <strong>Input:</strong> bleed air.
