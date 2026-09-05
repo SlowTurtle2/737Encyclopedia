@@ -166,9 +166,11 @@ export default function Fuel() {
               </li>
             </ul>
             <p>
-              Two AC-powered pumps are installed in each tank. Fuel passing
-              through each pump provides cooling and lubrication. The center
-              tank pumps deliver higher pressure than the main tank pumps.
+              Two AC-powered pumps are assigned to each tank, giving six pumps
+              in total. This describes which tank each pump draws from, not the
+              physical position of the pump assembly. Fuel passing through each
+              pump provides cooling and lubrication. The center tank pumps
+              deliver higher pressure than the main tank pumps.
             </p>
             <aside className="configuration-data">
               <strong>CONFIGURATION DATA · VERIFY AIRCRAFT APPLICABILITY</strong>
@@ -178,9 +180,10 @@ export default function Fuel() {
                 tank pumps.
               </p>
               <p>
-                The six pumps are installed in their respective tanks: two in
-                each main tank and two in the center tank. The NGS supplies
-                nitrogen-enriched air to the center tank only.
+                Although two pumps serve each tank, all six pump assemblies are
+                physically grouped in the center tank area. This arrangement
+                simplifies maintenance access and places the pumps in the area
+                protected by the Nitrogen Generation System (NGS).
               </p>
             </aside>
             <p>
