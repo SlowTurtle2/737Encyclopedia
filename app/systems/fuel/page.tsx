@@ -69,7 +69,6 @@ const sections = [
   ['ground', 'Ground servicing & NGS'],
   ['recap', 'Key takeaways'],
   ['quiz', 'Check your knowledge'],
-  ['sources', 'Sources & applicability'],
 ];
 export default function Fuel() {
   return (
@@ -105,19 +104,7 @@ export default function Fuel() {
                 <strong>Center tank:</strong> wing center section, extending
                 into the wing roots.
               </li>
-              <li>
-                <strong>Consumers:</strong> both engines and the APU.
-              </li>
             </ul>
-            <Deep title="Go deeper · Quantity, sequence and flow direction">
-              <p>
-                The quantity indication shows the usable fuel in each tank. In
-                normal operation, the center tank supplies fuel first, followed
-                by each engine’s associated main tank. Check valves maintain the
-                intended direction of flow and prevent unintended tank-to-tank
-                transfer.
-              </p>
-            </Deep>
             <Table className="course-table">
               <TableCaption>
                 Approximate usable capacities from the supplied NG and MAX
@@ -193,20 +180,14 @@ export default function Fuel() {
               engine also has a direct path from its associated main tank that
               bypasses the pumps.
             </p>
-            <ul className="study-points">
-              <li>
-                <strong>Supply path:</strong> each engine can draw from its own
-                main tank through a line that bypasses the pumps.
-              </li>
-              <li>
-                <strong>During climb:</strong> falling ambient pressure releases
-                dissolved air from the fuel.
-              </li>
-              <li>
-                <strong>Possible consequence:</strong> restricted suction flow,
+            <aside className="suction-warning">
+              <strong>WARNING · DURING CLIMB</strong>
+              <p>
+                As ambient pressure falls, dissolved air can be released from
+                the fuel and restrict suction flow. The engine may then suffer
                 thrust loss or flameout at altitude.
-              </li>
-            </ul>
+              </p>
+            </aside>
             <Deep title="Go deeper · Why altitude changes suction-feed capability">
               <p>
                 After the aircraft reaches cruise, the dissolved air eventually
@@ -295,11 +276,6 @@ export default function Fuel() {
                 started.
               </li>
             </ul>
-            <div className="mini-flow" aria-label="Scavenge flow">
-              <span>Center tank residual fuel</span> →{' '}
-              <span>Scavenge jet pump</span> → <span>Main tank 1</span>
-            </div>
-
             <h3>APU fuel</h3>
             <p>
               With an AC fuel pump operating, the APU receives pressurized fuel
@@ -331,55 +307,70 @@ export default function Fuel() {
                 Suction feed provides an alternate path, but it may not sustain
                 engine demand at altitude.
               </p>
+              <p>
+                One center LOW PRESSURE light continuously illuminated for{' '}
+                <strong>10 seconds</strong>, with the center pump switches ON,
+                triggers MASTER CAUTION and the FUEL annunciator. This timing is
+                separate from the automatic pump-shutdown delay.
+              </p>
             </Need>
             <Source>NG / MAX 12.10.2, 12.20.2–3 · NG L.10.10</Source>
           </section>
           <section className="course-section" id="crossfeed">
             <span className="section-num">03 / CROSSFEED & VALVES</span>
             <h2>
-              Crossfeed and shutoff valves connect or isolate the engine feed
-              manifolds without transferring fuel directly between main tanks.
+              Three valve types control fuel isolation and the connection
+              between the left and right engine feed manifolds.
             </h2>
+            <h3>Engine valve</h3>
+            <p>
+              The engine fuel shutoff valve is fuel-actuated and
+              solenoid-controlled. It isolates fuel at the engine and closes
+              when the associated engine start lever is moved to CUTOFF or the
+              engine fire switch is pulled.
+            </p>
             <ul className="study-points">
               <li>
-                <strong>Connection:</strong> left and right engine fuel
-                manifolds.
+                <strong>ENG VALVE CLOSED extinguished:</strong> valve open.
               </li>
               <li>
-                <strong>Actuation:</strong> DC motor, powered by the battery
-                bus.
+                <strong>Dim blue:</strong> valve closed.
               </li>
               <li>
-                <strong>Valve open:</strong> one main tank’s operating pumps can
-                supply both engines.
-              </li>
-              <li>
-                <strong>Continued use:</strong> changes lateral fuel balance as
-                the selected source is consumed.
+                <strong>Bright blue:</strong> valve in transit or disagreement
+                between commanded and actual position.
               </li>
             </ul>
+
+            <h3>Spar valve</h3>
+            <p>
+              The spar fuel shutoff valve is installed at the engine-mounting
+              wing station. A DC motor powered by the hot battery bus operates
+              it. Like the engine valve, it closes with the associated start
+              lever at CUTOFF or when the engine fire switch is pulled.
+            </p>
             <ul className="study-points">
               <li>
-                <strong>No direct transfer:</strong> crossfeed does not pump
-                fuel into the opposite tank.
+                <strong>SPAR VALVE CLOSED extinguished:</strong> valve open.
               </li>
               <li>
-                <strong>Balancing principle:</strong> change which tank is
-                consumed.
+                <strong>Dim blue:</strong> valve closed.
               </li>
               <li>
-                <strong>Assessment:</strong> follow the applicable procedure; an
-                imbalance may involve a leak.
+                <strong>Bright blue:</strong> valve in transit or disagreement
+                between commanded and actual position.
               </li>
             </ul>
-            <Deep title="Go deeper · Read a blue valve light correctly">
-              <p>
-                The label matters. A dim CROSSFEED VALVE OPEN light confirms an
-                open valve. A dim ENG VALVE CLOSED or SPAR VALVE CLOSED light
-                confirms a closed valve. Bright blue indicates transit or
-                disagreement between commanded and actual position.
-              </p>
-            </Deep>
+
+            <h3>Crossfeed valve</h3>
+            <p>
+              The crossfeed valve connects the left and right engine fuel
+              manifolds. Its DC motor is powered by the battery bus. Opening it
+              allows one pressurized manifold to supply both engines; it does
+              not transfer fuel into the opposite tank. Continued asymmetric
+              feeding changes lateral fuel balance by changing which tank is
+              consumed.
+            </p>
             <div className="valve-key">
               <div>
                 <span className="valve-lamp off">VALVE OPEN</span>
@@ -400,21 +391,6 @@ export default function Fuel() {
                 Transit or disagreement
               </div>
             </div>
-            <h3>Two shutoff valves per engine</h3>
-            <ul className="study-points">
-              <li>
-                <strong>Spar valve:</strong> at the engine-mounting wing
-                station; DC motor; hot battery bus.
-              </li>
-              <li>
-                <strong>Engine shutoff valve:</strong> fuel-actuated,
-                solenoid-controlled; battery bus.
-              </li>
-              <li>
-                <strong>Both close:</strong> associated start lever at CUTOFF or
-                engine fire switch pulled.
-              </li>
-            </ul>
             <Need title="Crossfeed ≠ tank-to-tank transfer" tone="teal">
               <p>
                 <strong>Crossfeed</strong> connects the engine manifolds, while
@@ -425,40 +401,17 @@ export default function Fuel() {
             <Source>NG / MAX 12.10.1–2, 12.20.2–3</Source>
           </section>
           <section className="course-section" id="indications">
-            <span className="section-num">04 / INDICATIONS & ALERTS</span>
+            <span className="section-num">04 / FUEL INDICATIONS & ALERTS</span>
             <h2>
-              Quantity indications describe usable fuel, while LOW PRESSURE
-              lights report the output of individual pumps.
+              Fuel quantity indications and alerts help the crew monitor usable
+              fuel, tank balance and the fuel predicted at destination.
             </h2>
             <ul className="study-points">
               <li>
                 <strong>Quantity indication:</strong> usable fuel; available
                 with AC or DC power.
               </li>
-              <li>
-                <strong>LOW PRESSURE:</strong> monitors pump output pressure.
-              </li>
-              <li>
-                <strong>Main pump switch OFF:</strong> related LOW PRESSURE
-                light illuminated.
-              </li>
-              <li>
-                <strong>Center pump switch OFF:</strong> related LOW PRESSURE
-                light extinguished.
-              </li>
             </ul>
-            <Deep title="Go deeper · When does MASTER CAUTION appear?">
-              <p>
-                For a main tank, two LOW PRESSURE lights in the same tank
-                trigger MASTER CAUTION and the FUEL annunciator. A single light
-                brings them up on recall.
-              </p>
-              <p>
-                For the center tank, with the switches ON, one LOW PRESSURE
-                light continuously illuminated for 10 seconds triggers MASTER
-                CAUTION and FUEL.
-              </p>
-            </Deep>
             <Table className="course-table">
               <TableHeader>
                 <TableRow>
@@ -574,14 +527,6 @@ export default function Fuel() {
                 alone does not identify a MAX.
               </p>
             </Deep>
-            <Need title="10 seconds · center-pump caution" tone="teal">
-              <p>
-                One center LOW PRESSURE light continuously illuminated for{' '}
-                <strong>10 seconds</strong>, with center switches ON, triggers
-                MASTER CAUTION and FUEL. This timing is separate from the
-                automatic pump-shutdown delay.
-              </p>
-            </Need>
             <Source>NG 12.10.2–6, 12.20.3 · MAX 12.10.2–5, 12.20.3</Source>
           </section>
           <section className="course-section" id="temperature">
@@ -781,58 +726,6 @@ export default function Fuel() {
             </h2>
             <p>Three free questions with explanations. No account required.</p>
             <Quiz />
-          </section>
-          <section id="sources">
-            <span className="section-num">09 / SOURCES & APPLICABILITY</span>
-            <h2>
-              Every operational statement can be traced to the supplied study
-              sheet and the applicable NG or MAX manual section.
-            </h2>
-            <div className="references">
-              <p>
-                This original course follows the supplied Fuel study sheet and
-                checks its claims against the two supplied FCOMs. References use
-                the manuals’ printed section numbers. Source PDFs are not
-                republished. The original aircraft location diagram also
-                references NG FCOM 1.10.2 for proportions.
-              </p>
-              <ul>
-                <li>
-                  <strong>737-800 NG:</strong> b737-800-fcom-revision-40
-                  (1).pdf, D6-27370-8AS-RYR(AS), chapter 12 and L.10.9–10. Fuel
-                  PDF pages 2111–2125; limitations pages 149–150. Some Fuel
-                  pages carry July 18, 2025 dates.
-                </li>
-                <li>
-                  <strong>737-8200 MAX:</strong> ryr-737-8200-fcom-rev-3b.pdf,
-                  D6-27370-MAX-RYR(P2), chapter 12, PDF pages 1619–1633,
-                  February 1, 2021.
-                </li>
-                <li>
-                  <strong>Study outline:</strong> 12. Fuel.pdf, supplied
-                  handwritten study sheet, pages 2–4.
-                </li>
-                <li>
-                  <strong>Further reading:</strong>{' '}
-                  <a
-                    href="https://www.b737.org.uk/fuel.htm"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    The Boeing 737 Technical Site — Fuel ↗
-                  </a>
-                  . Not used to validate this edition because the page was
-                  unavailable during preparation.
-                </li>
-              </ul>
-              <p>
-                Aircraft effectivity and operator configuration matter. Precise
-                pump pressures, probe counts, a 15-second shutdown delay and
-                spar-valve backup-battery details from the sheet were not
-                retained as established facts without support in the reviewed
-                FCOM sections.
-              </p>
-            </div>
           </section>
         </article>
         <aside className="course-aside">

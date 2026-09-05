@@ -1664,10 +1664,27 @@ summary:focus-visible {
 }
 .pump-panel img {
   display: block;
-  width: min(100%, 540px);
+  width: min(100%, 270px);
   height: auto;
   margin: 0 auto;
   border-radius: 7px;
+}
+.suction-warning {
+  margin: 20px 0;
+  padding: 18px 20px;
+  border: 1px solid #efcf8b;
+  border-left: 4px solid #d58d16;
+  border-radius: 0 10px 10px 0;
+  background: #fff8e7;
+}
+.suction-warning strong {
+  color: #8c5b0c;
+  font-size: 11px;
+  letter-spacing: 1.3px;
+}
+.suction-warning p {
+  margin: 8px 0 0 !important;
+  color: #705a32 !important;
 }
 .pump-panel figcaption {
   margin-top: 10px;
