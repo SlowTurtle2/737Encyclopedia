@@ -4,6 +4,10 @@ The repository is configured as a static Vinext export. Netlify reads
 `netlify.toml`, runs `pnpm build:netlify`, and publishes the `dist/client`
 directory.
 
+The build also creates directory-based copies such as
+`systems/fuel/index.html`, so links like `/systems/fuel` work consistently on
+static hosting providers.
+
 ## Git deployment
 
 1. Push the `encyclopedia` directory as the root of a Git repository.
