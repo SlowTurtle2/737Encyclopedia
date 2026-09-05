@@ -24,14 +24,14 @@ function Need({
   children,
   tone = 'blue',
 }: {
-  title: string;
+  title?: string;
   children: React.ReactNode;
   tone?: 'blue' | 'amber' | 'teal';
 }) {
   return (
     <aside className={'need-to-know ' + tone}>
       <span className="need-label">NEED TO KNOW</span>
-      <h3>{title}</h3>
+      {title && <h3>{title}</h3>}
       <div>{children}</div>
     </aside>
   );
@@ -67,8 +67,7 @@ const sections = [
   ['crossfeed', 'Crossfeed & valves'],
   ['indications', 'Indications & alerts'],
   ['temperature', 'Temperature & limits'],
-  ['ground', 'Ground servicing & NGS'],
-  ['recap', 'Key takeaways'],
+  ['ground', 'Refuelling NGS'],
   ['quiz', 'Check your knowledge'],
 ];
 export default function Fuel() {
@@ -138,7 +137,8 @@ export default function Fuel() {
                 ))}
               </TableBody>
             </Table>
-            <Need title="3 tanks" tone="teal">
+            <Need tone="teal">
+              <p><strong>3 tanks.</strong></p>
               <p><strong>Total capacity: 20,896 kg.</strong></p>
             </Need>
             <Source>NG 12.20.1, 12.20.4 · MAX 12.20.1, 12.20.4</Source>
@@ -150,7 +150,7 @@ export default function Fuel() {
               pressure to the engine feed manifolds, providing a continuous
               supply to the engines during normal operation.
             </h2>
-            <h3>Fuel supply</h3>
+            <h3>Fuel pump</h3>
             <ul className="study-points">
               <li>
                 <strong>Two pumps per tank:</strong> six AC-powered pumps in
@@ -165,6 +165,19 @@ export default function Fuel() {
                 tank pumps.
               </li>
             </ul>
+            <p>
+              Two AC-powered pumps are installed in each tank. Fuel passing
+              through each pump provides cooling and lubrication. The center
+              tank pumps deliver higher pressure than the main tank pumps, but
+              the supplied FCOM does not state 23 PSI and 10 PSI values.
+            </p>
+            <p>
+              If all pumps are lost, each engine-driven fuel pump can draw from
+              its corresponding main tank through the suction-feed path. This
+              path may become restricted at altitude, with a risk of thrust
+              deterioration or engine flameout.
+            </p>
+            <h3>Fuel supply</h3>
             <p>
               When all six pumps operate, the center tank pumps produce more
               pressure than the main tank pumps, so center tank fuel is consumed
@@ -214,31 +227,11 @@ export default function Fuel() {
               it is switched off or the logic stops it again. This delay is a
               separate function from the 10-second MASTER CAUTION logic.
             </p>
-            <Deep title="Go deeper · LOW PRESSURE is not a fuel-quantity switch">
-              <p>
-                Pressure sensing and quantity indication measure different
-                things. With little fuel remaining, aircraft attitude and small
-                differences in pump inlet position can make one center pump lose
-                pressure before the other. An indication can occur after center
-                quantity reads zero.
-              </p>
-              <p>
-                The FCOM describes possible flickering for up to five minutes
-                before the associated Master Caution appears. This explains a
-                possible indication sequence; it is not permission to ignore a
-                pump warning or intentionally run a center pump dry.
-              </p>
-              <p>
-                The supplied FCOM specifies a “short delay” for automatic
-                shutdown. It does not substantiate the exact 15-second value in
-                the study sheet.
-              </p>
-            </Deep>
 
             <h3>Scavenge pump</h3>
             <p>
-              The scavenge jet pump uses the output of main tank 1 forward pump
-              to draw residual fuel from the center tank into main tank 1.
+              The scavenge jet pump transfers residual fuel from the center tank
+              to main tank No. 1, the left wing tank.
             </p>
             <ul className="study-points">
               <li>
@@ -305,9 +298,9 @@ export default function Fuel() {
             <h3>Engine valve</h3>
             <p>
               The engine fuel shutoff valve is fuel-actuated and
-              solenoid-controlled. It isolates fuel at the engine and closes
-              when the associated engine start lever is moved to CUTOFF or the
-              engine fire switch is pulled.
+              solenoid-controlled from the battery bus. It isolates fuel at the
+              engine and closes when the associated engine start lever is moved
+              to CUTOFF or the engine fire switch is pulled.
             </p>
             <div className="valve-detail"><ul className="study-points">
               <li>
@@ -329,6 +322,13 @@ export default function Fuel() {
               it. Like the engine valve, it closes with the associated start
               lever at CUTOFF or when the engine fire switch is pulled.
             </p>
+            <Deep title="Go deeper · Spar valve electrical supply">
+              <p>
+                The spar valve motor is powered by the hot battery bus. The
+                supplied FCOM does not describe a separate autonomous battery
+                or state that it is recharged by DC bus 2.
+              </p>
+            </Deep>
             <div className="valve-detail"><ul className="study-points">
               <li>
                 <strong>SPAR VALVE CLOSED extinguished:</strong> valve open.
@@ -356,6 +356,14 @@ export default function Fuel() {
               <li><strong>Dim blue:</strong> crossfeed valve open.</li>
               <li><strong>Bright blue:</strong> valve in transit or disagreement between commanded and actual position.</li>
             </ul><img className="valve-indication" src="/images/crossfeed-valve-open.png" alt="VALVE OPEN crossfeed flight deck indication" /></div>
+            <aside className="study-tip">
+              <strong>TIP · “LOW GOES OFF”</strong>
+              <p>
+                Open crossfeed, then switch OFF the pumps on the lower-quantity
+                tank. Use this only as a memory aid and apply the current
+                operator procedure after confirming that a leak is not suspected.
+              </p>
+            </aside>
             <aside className="transfer-warning">
               <strong>WARNING · CROSSFEED IS NOT FUEL TRANSFER</strong>
               <p>
@@ -383,18 +391,7 @@ export default function Fuel() {
             <div className="fuel-alert-card"><img src="/images/fuel-alert-low.png" alt="LOW fuel quantity alert" /><div><strong>LOW</strong><p>Appears below 453 kg in either main tank and clears when that tank reaches 567 kg.</p></div></div>
             <div className="fuel-alert-card"><img src="/images/fuel-alert-config.png" alt="CONFIG center fuel alert" /><div><strong>CONFIG</strong><p>Appears with either engine running when center tank quantity is above 726 kg and both center pump switches are OFF. It clears when both engines are stopped, center quantity falls below 363 kg, or either center pump switch is ON.</p></div></div>
             <div className="fuel-alert-card"><img src="/images/fuel-alert-imbal.png" alt="IMBAL main tank quantity alert" /><div><strong>IMBAL</strong><p>Appears on the lower-quantity main tank when the difference exceeds 453 kg. It clears when the difference decreases to 91 kg.</p></div></div>
-            <ul className="study-points">
-              <li>
-                <strong>IMBAL location:</strong> lower-quantity main tank.
-              </li>
-              <li>
-                <strong>Priority:</strong> LOW takes precedence over IMBAL.
-              </li>
-              <li>
-                <strong>Separate entry / clearing thresholds:</strong> reduce
-                repeated alert switching near a single value.
-              </li>
-            </ul>
+            <p>LOW takes precedence over IMBAL when both conditions exist.</p>
             <Deep title="Go deeper · Quantity indication is not perfectly exact">
               <p>
                 The NG FCOM allows indicated tank quantity to differ from actual
@@ -428,7 +425,6 @@ export default function Fuel() {
               <li><strong>FUEL DISAGREE:</strong> totalizer quantity and FMC calculated quantity disagree.</li>
               <li><strong>USING RSV FUEL:</strong> predicted destination fuel is below the entered RESERVES value.</li>
               <li><strong>INSUFFICIENT FUEL:</strong> predicted destination fuel is below 900 kg.</li>
-              <li><strong>FUEL FLOW:</strong> actual engine flow differs from FMCS expected flow beyond the MEDB threshold for five continuous minutes; each engine is monitored independently.</li>
             </ul>
             <Max>
               The MAX description includes{' '}
@@ -454,19 +450,10 @@ export default function Fuel() {
               <li>
                 <strong>Power:</strong> AC.
               </li>
-              <li>
-                <strong>Reading:</strong> tank 1 temperature, not an average of
-                all tanks.
-              </li>
             </ul>
             <ul className="study-points">
-              <li>
-                <strong>Maximum:</strong> +49°C.
-              </li>
-              <li>
-                <strong>Minimum before takeoff and in flight:</strong> −43°C or
-                freezing point +3°C, whichever is higher.
-              </li>
+              <li><strong>Limit:</strong> maximum +49°C; minimum before takeoff
+                and in flight −43°C or freezing point +3°C, whichever is higher.</li>
             </ul>
             <Deep title="Worked example · Choose the warmer limit">
               <p>
@@ -515,11 +502,12 @@ export default function Fuel() {
             </Source>
           </section>
           <section className="course-section" id="ground">
-            <span className="section-num">06 / GROUND SERVICING & NGS</span>
+            <span className="section-num">06 / REFUELLING NGS</span>
             <h2>
               Ground servicing uses one pressure station, while the NGS reduces
               center-tank flammability automatically in flight.
             </h2>
+            <h3>Refuelling</h3>
             <ul className="study-points">
               <li>
                 <strong>Single-point station:</strong> right wing.
@@ -592,43 +580,8 @@ export default function Fuel() {
               12.20.3–4
             </Source>
           </section>
-          <section className="course-section" id="recap">
-            <span className="section-num">07 / KEY TAKEAWAYS</span>
-            <h2>
-              These relationships connect tank selection, pump indications,
-              crossfeed operation and the most important MAX difference.
-            </h2>
-            <ul>
-              <li>
-                Higher center-pump pressure explains center-tank priority.
-              </li>
-              <li>
-                Crossfeed connects engine manifolds. Scavenging transfers fuel
-                between tanks.
-              </li>
-              <li>
-                A center pump can shut down automatically while its switch
-                remains ON.
-              </li>
-              <li>
-                A blue light must be read with its label: OPEN and CLOSED mean
-                different things.
-              </li>
-              <li>
-                Tank 1 supplies the temperature reading, not an aircraft-wide
-                average.
-              </li>
-              <li>
-                The supplied MAX has a higher LOW threshold: 590 kg rather than
-                453 kg.
-              </li>
-            </ul>
-            <Link className="button secondary" href="/max-differences">
-              Review Fuel MAX differences →
-            </Link>
-          </section>
           <section className="course-section" id="quiz">
-            <span className="section-num">08 / CHECK YOUR KNOWLEDGE</span>
+            <span className="section-num">07 / CHECK YOUR KNOWLEDGE</span>
             <h2>
               Use these questions to check whether the key system relationships
               are clear.

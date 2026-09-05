@@ -45,7 +45,7 @@ export default function FuelDiagram() {
         </g>)}
         <g fill="none" strokeWidth="4" strokeLinejoin="round" strokeLinecap="round" className="fuel-flow-lines">
           <path d="M88 138V192H175V255M152 138V192" stroke={color(on.left)} />
-          <path d="M608 138V192H585V255M672 138V192" stroke={color(on.right)} />
+          <path d="M608 138V192H585V255M672 138V192H585" stroke={color(on.right)} />
           <path d="M348 138V220H175V255" stroke={color(on.center)} />
           <path d="M412 138V220H585V255" stroke={color(on.center)} />
           <path d="M175 255H361M399 255H585" stroke={color(on.crossfeed)} />

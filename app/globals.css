@@ -1757,6 +1757,17 @@ summary:focus-visible {
   margin: 8px 0 0 !important;
   color: #753f3f !important;
 }
+.study-tip { margin: 24px 0; padding: 18px 20px; border: 1px solid #b7d9ee; border-left: 4px solid #3988b8; border-radius: 0 10px 10px 0; background: #eef8fd; }
+.study-tip strong { color: #276b94; font-size: 11px; letter-spacing: 1.3px; }
+.study-tip p { margin: 8px 0 0 !important; color: #426b82 !important; }
+.site-safety-note { padding: 8px 20px; border-bottom: 1px solid #efc7c7; background: #fff1f1; color: #7c4141; font-size: 12px; text-align: center; }
+.systems-menu { position: relative; }
+.systems-menu summary { cursor: pointer; list-style: none; }
+.systems-menu summary::-webkit-details-marker { display: none; }
+.systems-menu summary::after { content: '⌄'; margin-left: 6px; }
+.systems-menu > div { position: absolute; z-index: 50; top: calc(100% + 12px); left: 50%; width: min(390px, 80vw); max-height: 70vh; overflow: auto; padding: 10px; border: 1px solid #dfe3e7; border-radius: 12px; background: white; box-shadow: 0 18px 45px rgba(25,35,45,.14); transform: translateX(-50%); }
+.systems-menu > div a { display: block; padding: 9px 11px; border-radius: 7px; }
+.systems-menu > div a:hover { background: #f1f6f8; }
 .fuel-alert-card {
   display: grid;
   grid-template-columns: minmax(180px, 250px) 1fr;

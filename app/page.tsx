@@ -1,4 +1,5 @@
 import Link from '@/components/site-link';
+import { chapters, slug } from '@/lib/systems';
 import {
   ArrowRight,
   ArrowUpRight,
@@ -28,32 +29,6 @@ import {
   Layers,
   GitCompareArrows,
 } from 'lucide-react';
-export const chapters = [
-  'Aircraft General',
-  'Fuselage',
-  'Air conditioning',
-  'Pressurisation',
-  'Automatic Flight',
-  'APU',
-  'Communications',
-  'Electrical',
-  'Emergency Equipment',
-  'Fire Protection',
-  'Flight Controls',
-  'Winglets',
-  'Flight Instruments',
-  'FMC',
-  'Fuel',
-  'Hydraulics',
-  'Ice & Rain Protection',
-  'Landing Gear',
-  'Navigation',
-  'Pneumatics',
-  'Power Plant',
-  'Warning Systems',
-];
-export const slug = (s: string) =>
-  s.toLowerCase().replaceAll(' & ', '-').replaceAll(' ', '-');
 const icons = [
   Plane,
   Box,
@@ -84,8 +59,6 @@ export default function Home() {
       <section className="landing-hero wrap">
         <p className="landing-label">BOEING 737 NG & MAX</p>
         <h1>
-          One aircraft family.
-          <br />
           <span>Every system, explained.</span>
         </h1>
         <p className="lead">
@@ -93,11 +66,6 @@ export default function Home() {
           <br />
           Detailed courses, clear schematics and the differences that matter.
         </p>
-        <div className="hero-actions">
-          <Link className="button" href="#systems">
-            Explore the systems <ArrowRight size={18} />
-          </Link>
-        </div>
         <p className="hero-audience">
           For pilots preparing for a Boeing 737 type rating and simmers who want
           to fly realistically.
@@ -125,7 +93,7 @@ export default function Home() {
             </p>
           </div>
           <span className="library-count">
-            22 systems <span> / 1 available</span>
+            15 systems <span> / 1 available</span>
           </span>
         </div>
         <div className="system-shortcuts">
