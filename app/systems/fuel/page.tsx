@@ -375,9 +375,19 @@ export default function Fuel() {
             <aside className="study-tip">
               <strong>TIP · “LOW GOES OFF”</strong>
               <p>
-                Open crossfeed, then switch OFF the pumps on the lower-quantity
-                tank. Use this only as a memory aid and apply the current
-                operator procedure after confirming that a leak is not suspected.
+                This memory aid applies when a fuel imbalance has been assessed
+                and the crew intends to correct it: open crossfeed, then switch
+                OFF the pumps on the lower-quantity tank. The higher-quantity
+                tank can then supply both engines while the imbalance decreases.
+              </p>
+            </aside>
+            <aside className="transfer-warning">
+              <strong>WARNING · RULE OUT A FUEL LEAK FIRST</strong>
+              <p>
+                Before operating the crossfeed valve to correct an imbalance,
+                make sure a fuel leak is not suspected. Feeding both engines
+                from a leaking side can accelerate fuel loss and make the
+                situation worse. Follow the applicable operator procedure.
               </p>
             </aside>
             <aside className="transfer-warning">
@@ -525,10 +535,6 @@ export default function Fuel() {
           </section>
           <section className="course-section" id="ground">
             <span className="section-num">06 / REFUELLING NGS</span>
-            <h2>
-              Ground servicing uses one pressure station, while the NGS reduces
-              center-tank flammability automatically in flight.
-            </h2>
             <h3>Refuelling</h3>
             <ul className="study-points">
               <li>
