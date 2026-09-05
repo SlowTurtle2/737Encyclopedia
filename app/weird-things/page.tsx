@@ -1,0 +1,3 @@
+import Link from 'next/link';
+export const metadata={title:'Weird things | 737Encyclopedia'};
+export default function Weird(){return <main id="main" className="wrap empty-page"><p className="eyebrow">THE LESS OBVIOUS SIDE OF THE 737</p><span className="pill">COMING SOON</span><h1 style={{marginTop:24}}>Weird things.</h1><p>Unexpected indications, system quirks and the explanations behind them. This section will grow alongside the systems courses.</p><p>Start with a Fuel example: center pump LOW PRESSURE lights may behave differently as the tank empties.</p><Link className="button" href="/systems/fuel#feed">Understand the Fuel example →</Link></main>}

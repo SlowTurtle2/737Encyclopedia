@@ -1,0 +1,3 @@
+'use client';
+import {SidebarProvider,Sidebar,SidebarContent,SidebarMenu,SidebarMenuItem,SidebarMenuButton} from '@/components/ui/sidebar';
+export default function Contents({sections}:{sections:string[][]}){return <SidebarProvider style={{minHeight:'auto',display:'block'}}><Sidebar collapsible="none" style={{width:'100%',background:'transparent'}}><SidebarContent><SidebarMenu aria-label="Chapter contents">{sections.map(([id,label],i)=><SidebarMenuItem key={id}><SidebarMenuButton render={<a href={'#'+id}/>} style={{height:'auto',padding:'5px 0',margin:'4px 0',whiteSpace:'normal'}}><span className="small">{String(i+1).padStart(2,'0')}</span> {label}</SidebarMenuButton></SidebarMenuItem>)}</SidebarMenu></SidebarContent></Sidebar></SidebarProvider>}
