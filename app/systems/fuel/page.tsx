@@ -74,24 +74,11 @@ const sections = [
 export default function Fuel() {
   return (
     <main id="main" className="system-course">
-      <div className="wrap page-head">
-        <div className="breadcrumb">
-          <Link href="/">Home</Link> / <Link href="/#systems">Systems</Link> /
-          Fuel
-        </div>
-        <p className="eyebrow">SYSTEMS / FCOM CHAPTER 12</p>
-        <h1>
-          Fuel<span className="brand-dot">.</span>
-        </h1>
-        <p className="lead">
-          Three tanks, six pumps, and a pressure-driven feed system. Understand
-          how fuel reaches the engines, what the indications mean, and what
-          changes on the MAX.
-        </p>
+      <div className="wrap fuel-course-banner">
+        <strong>SYSTEM / FUEL FCOM CHAPTER 12</strong>
         <div className="course-meta">
           <span className="pill available">737 NG</span>
-          <span className="pill">MAX DIFFERENCES INCLUDED</span>
-          <span>Detailed course · 3 free questions</span>
+          <span className="pill">MAX DIFFERENCE INCLUDED</span>
         </div>
       </div>
       <nav className="wrap course-nav" aria-label="Fuel chapter">
@@ -231,7 +218,7 @@ export default function Fuel() {
             </Deep>
             <FuelDiagram />
 
-            <h3>Pump control</h3>
+            <h3>Pump control and warning</h3>
             <p>
               Six guarded switches on the overhead fuel panel control the two
               AC pumps in each tank. The main tank LOW PRESSURE lights illuminate
@@ -240,6 +227,23 @@ export default function Fuel() {
               associated switch is OFF.
             </p>
             <PumpControlPanel />
+            <div className="pump-warning">
+              <img
+                src="/images/fuel-low-pressure.png"
+                alt="Amber LOW PRESSURE fuel pump warning"
+              />
+              <div>
+                <strong>LOW PRESSURE</strong>
+                <p>
+                  Illuminated (amber) – fuel pump output pressure is low, or
+                  FUEL PUMP switch is OFF.
+                </p>
+                <p className="warning-note">
+                  On center tank pumps, the light is extinguished when the
+                  associated switch is OFF.
+                </p>
+              </div>
+            </div>
             <p>
               Each center tank pump automatically stops after its own pressure
               sensor detects low pressure for a short delay, although the switch
@@ -270,6 +274,12 @@ export default function Fuel() {
             </Deep>
 
             <h3>Scavenge pump</h3>
+            <p>
+              The scavenge jet pump uses the output of main tank 1 forward pump
+              to draw residual fuel from the center tank into main tank 1. It
+              begins when main tank 1 is approximately half full and then
+              continues for the remainder of the flight.
+            </p>
             <ul className="study-points">
               <li>
                 <strong>Transfer:</strong> residual center fuel → main tank 1.
@@ -289,14 +299,14 @@ export default function Fuel() {
               <span>Center tank residual fuel</span> →{' '}
               <span>Scavenge jet pump</span> → <span>Main tank 1</span>
             </div>
-            <p>
-              The scavenge jet pump uses the output of main tank 1 forward pump
-              to draw residual fuel from the center tank into main tank 1. It
-              begins when main tank 1 is approximately half full and then
-              continues for the remainder of the flight.
-            </p>
 
             <h3>APU fuel</h3>
+            <p>
+              With an AC fuel pump operating, the APU receives pressurized fuel
+              from the left manifold. Without AC pump pressure, it can draw fuel
+              by suction from main tank 1. The tank feeding the left manifold
+              therefore determines the pressure-fed source available to the APU.
+            </p>
             <ul className="study-points">
               <li>
                 <strong>AC pumps operating:</strong> APU fed from the left fuel
@@ -311,12 +321,6 @@ export default function Fuel() {
                 the fuel supplying the left manifold.
               </li>
             </ul>
-            <p>
-              With an AC fuel pump operating, the APU receives pressurized fuel
-              from the left manifold. Without AC pump pressure, it can draw fuel
-              by suction from main tank 1. The tank feeding the left manifold
-              therefore determines the pressure-fed source available to the APU.
-            </p>
             <Need title="6 AC pumps · pressure sets priority" tone="teal">
               <p>
                 Two pumps serve each tank. With every pump selected ON, the

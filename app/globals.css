@@ -1535,6 +1535,28 @@ summary:focus-visible {
   padding-top: 28px;
   border-radius: 0 14px 14px 0;
 }
+.fuel-course-banner {
+  min-height: 68px;
+  margin-top: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-left: 4px solid #2191a3;
+  border-radius: 0 10px 10px 0;
+  background: linear-gradient(100deg, #f0f9fb 0%, white 75%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.fuel-course-banner > strong {
+  color: #214b65;
+  font-size: 12px;
+  letter-spacing: 1.25px;
+}
+.fuel-course-banner .course-meta {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
 .system-course .course-meta {
   padding-bottom: 5px;
 }
@@ -1545,7 +1567,7 @@ summary:focus-visible {
   color: #214b65;
 }
 .system-course .course-nav {
-  margin-top: 25px;
+  margin-top: 12px;
 }
 .study-points {
   list-style: none !important;
@@ -1640,11 +1662,62 @@ summary:focus-visible {
   width: 100%;
   height: auto;
 }
+.pump-panel img {
+  display: block;
+  width: min(100%, 540px);
+  height: auto;
+  margin: 0 auto;
+  border-radius: 7px;
+}
 .pump-panel figcaption {
   margin-top: 10px;
   color: #657680;
   font-size: 13px;
   text-align: center;
+}
+.pump-warning {
+  display: grid;
+  grid-template-columns: minmax(150px, 220px) 1fr;
+  align-items: center;
+  gap: 24px;
+  margin: 24px 0;
+  padding: 18px;
+  border: 1px solid #e6d39a;
+  border-radius: 12px;
+  background: #fffaf0;
+}
+.pump-warning img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.pump-warning > div > strong {
+  color: #9a6500;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+}
+.pump-warning p {
+  margin: 8px 0 0 !important;
+  color: #594c30 !important;
+}
+.pump-warning .warning-note {
+  font-size: 13px;
+  color: #766747 !important;
+}
+@media (max-width: 620px) {
+  .fuel-course-banner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .fuel-course-banner .course-meta {
+    justify-content: flex-start;
+  }
+  .pump-warning {
+    grid-template-columns: 1fr;
+  }
+  .pump-warning img {
+    width: min(100%, 240px);
+  }
 }
 .tank-location {
   background: #fff;
