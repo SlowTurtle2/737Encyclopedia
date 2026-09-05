@@ -1704,9 +1704,52 @@ summary:focus-visible {
   background: #fffaf0;
 }
 .pump-warning img {
-  width: 100%;
+  width: min(100%, 150px);
   height: auto;
   display: block;
+}
+.filter-warning img {
+  width: min(100%, 210px);
+}
+.valve-locations {
+  margin: 24px 0 32px;
+  padding: 20px;
+  border: 1px solid #d6e3ec;
+  border-radius: 14px;
+  background: #f8fafb;
+}
+.valve-locations svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.valve-locations figcaption {
+  color: #657680;
+  font-size: 13px;
+  text-align: center;
+}
+.valve-indication {
+  display: block;
+  width: min(100%, 245px);
+  height: auto;
+  margin: 16px 0 12px;
+}
+.transfer-warning {
+  margin: 24px 0;
+  padding: 18px 20px;
+  border: 1px solid #efcf8b;
+  border-left: 4px solid #d58d16;
+  border-radius: 0 10px 10px 0;
+  background: #fff8e7;
+}
+.transfer-warning strong {
+  color: #8c5b0c;
+  font-size: 11px;
+  letter-spacing: 1.3px;
+}
+.transfer-warning p {
+  margin: 8px 0 0 !important;
+  color: #705a32 !important;
 }
 .pump-warning > div > strong {
   color: #9a6500;

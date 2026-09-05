@@ -1,6 +1,7 @@
 import Link from '@/components/site-link';
 import FuelDiagram from './diagram';
 import PumpControlPanel from './pump-control-panel';
+import ValveLocations from './valve-locations';
 import TankLocation from './tank-location';
 import Quiz from './quiz';
 import Contents from './contents';
@@ -175,11 +176,6 @@ export default function Fuel() {
               take over automatically. The sequence is therefore created by
               hydraulic pressure, without the FMC selecting a tank.
             </p>
-            <p>
-              <strong>Suction feed is a fallback with limits.</strong> Each
-              engine also has a direct path from its associated main tank that
-              bypasses the pumps.
-            </p>
             <aside className="suction-warning">
               <strong>WARNING · DURING CLIMB</strong>
               <p>
@@ -201,7 +197,7 @@ export default function Fuel() {
 
             <h3>Pump control and warning</h3>
             <p>
-              Six guarded switches on the overhead fuel panel control the two
+              Six switches on the overhead fuel panel control the two
               AC pumps in each tank. The main tank LOW PRESSURE lights illuminate
               when pump output pressure is low, including when their switches
               are OFF. Center tank LOW PRESSURE lights are inhibited when the
@@ -257,9 +253,7 @@ export default function Fuel() {
             <h3>Scavenge pump</h3>
             <p>
               The scavenge jet pump uses the output of main tank 1 forward pump
-              to draw residual fuel from the center tank into main tank 1. It
-              begins when main tank 1 is approximately half full and then
-              continues for the remainder of the flight.
+              to draw residual fuel from the center tank into main tank 1.
             </p>
             <ul className="study-points">
               <li>
@@ -322,6 +316,7 @@ export default function Fuel() {
               Three valve types control fuel isolation and the connection
               between the left and right engine feed manifolds.
             </h2>
+            <ValveLocations />
             <h3>Engine valve</h3>
             <p>
               The engine fuel shutoff valve is fuel-actuated and
@@ -329,6 +324,7 @@ export default function Fuel() {
               when the associated engine start lever is moved to CUTOFF or the
               engine fire switch is pulled.
             </p>
+            <img className="valve-indication" src="/images/eng-valve-closed.png" alt="ENG VALVE CLOSED flight deck indication" />
             <ul className="study-points">
               <li>
                 <strong>ENG VALVE CLOSED extinguished:</strong> valve open.
@@ -349,6 +345,7 @@ export default function Fuel() {
               it. Like the engine valve, it closes with the associated start
               lever at CUTOFF or when the engine fire switch is pulled.
             </p>
+            <img className="valve-indication" src="/images/spar-valve-closed.png" alt="SPAR VALVE CLOSED flight deck indication" />
             <ul className="study-points">
               <li>
                 <strong>SPAR VALVE CLOSED extinguished:</strong> valve open.
@@ -371,33 +368,21 @@ export default function Fuel() {
               feeding changes lateral fuel balance by changing which tank is
               consumed.
             </p>
-            <div className="valve-key">
-              <div>
-                <span className="valve-lamp off">VALVE OPEN</span>
-                <strong>Extinguished</strong>
-                <br />
-                Crossfeed closed
-              </div>
-              <div>
-                <span className="valve-lamp">VALVE OPEN</span>
-                <strong>Dim blue</strong>
-                <br />
-                Crossfeed open
-              </div>
-              <div>
-                <span className="valve-lamp bright">VALVE OPEN</span>
-                <strong>Bright blue</strong>
-                <br />
-                Transit or disagreement
-              </div>
-            </div>
-            <Need title="Crossfeed ≠ tank-to-tank transfer" tone="teal">
+            <img className="valve-indication" src="/images/crossfeed-valve-open.png" alt="VALVE OPEN crossfeed flight deck indication" />
+            <ul className="study-points">
+              <li><strong>VALVE OPEN extinguished:</strong> crossfeed valve closed.</li>
+              <li><strong>Dim blue:</strong> crossfeed valve open.</li>
+              <li><strong>Bright blue:</strong> valve in transit or disagreement between commanded and actual position.</li>
+            </ul>
+            <aside className="transfer-warning">
+              <strong>WARNING · CROSSFEED IS NOT FUEL TRANSFER</strong>
               <p>
-                <strong>Crossfeed</strong> connects the engine manifolds, while
-                <strong> scavenging</strong> transfers residual center tank fuel
-                into main tank 1.
+                Crossfeed connects the two engine feed manifolds so one tank can
+                supply both engines. The fuel remains in its original tank until
+                an engine consumes it. Fuel transfer moves fuel physically from
+                one tank into another; the crossfeed valve does not do this.
               </p>
-            </Need>
+            </aside>
             <Source>NG / MAX 12.10.1–2, 12.20.2–3</Source>
           </section>
           <section className="course-section" id="indications">
@@ -496,16 +481,13 @@ export default function Fuel() {
               the MAX.
             </p>
             <h3>FILTER BYPASS</h3>
-            <ul className="study-points">
-              <li>
-                <strong>Amber FILTER BYPASS:</strong> impending fuel-filter
-                bypass due to contamination.
-              </li>
-              <li>
-                <strong>Meaning:</strong> filter restriction, not low pump
-                pressure.
-              </li>
-            </ul>
+            <div className="pump-warning filter-warning">
+              <img src="/images/fuel-filter-bypass.png" alt="Amber FILTER BYPASS indication" />
+              <div>
+                <strong>FILTER BYPASS</strong>
+                <p>Illuminated (amber) – impending fuel filter bypass due to a contaminated filter.</p>
+              </div>
+            </div>
             <Max>
               The MAX description includes{' '}
               <strong>impending or actual bypass</strong>. If both FILTER BYPASS
