@@ -168,9 +168,21 @@ export default function Fuel() {
             <p>
               Two AC-powered pumps are installed in each tank. Fuel passing
               through each pump provides cooling and lubrication. The center
-              tank pumps deliver higher pressure than the main tank pumps, but
-              the supplied FCOM does not state 23 PSI and 10 PSI values.
+              tank pumps deliver higher pressure than the main tank pumps.
             </p>
+            <aside className="configuration-data">
+              <strong>CONFIGURATION DATA · VERIFY AIRCRAFT APPLICABILITY</strong>
+              <p>
+                Center pump output is approximately <strong>23 PSI</strong>,
+                compared with approximately <strong>10 PSI</strong> for the main
+                tank pumps.
+              </p>
+              <p>
+                The six pumps are installed in their respective tanks: two in
+                each main tank and two in the center tank. The NGS supplies
+                nitrogen-enriched air to the center tank only.
+              </p>
+            </aside>
             <p>
               If all pumps are lost, each engine-driven fuel pump can draw from
               its corresponding main tank through the suction-feed path. This
@@ -231,7 +243,9 @@ export default function Fuel() {
             <h3>Scavenge pump</h3>
             <p>
               The scavenge jet pump transfers residual fuel from the center tank
-              to main tank No. 1, the left wing tank.
+              to main tank No. 1, the left wing tank. In the configuration data
+              supplied for this course, transfer begins at approximately
+              <strong> 1,990 kg in main tank No. 1</strong>.
             </p>
             <ul className="study-points">
               <li>
@@ -241,7 +255,8 @@ export default function Fuel() {
                 <strong>Required switch:</strong> No. 1 FWD fuel pump ON.
               </li>
               <li>
-                <strong>Starts:</strong> main tank 1 approximately half full.
+                <strong>Starts:</strong> main tank 1 approximately half full,
+                about 1,990 kg for the stated configuration.
               </li>
               <li>
                 <strong>Continues:</strong> for the remainder of the flight once
@@ -325,8 +340,11 @@ export default function Fuel() {
             <Deep title="Go deeper · Spar valve electrical supply">
               <p>
                 The spar valve motor is powered by the hot battery bus. The
-                supplied FCOM does not describe a separate autonomous battery
-                or state that it is recharged by DC bus 2.
+                configuration information supplied for this course also
+                describes a small autonomous backup battery, recharged by DC bus
+                2, which preserves engine-shutdown capability after a total
+                electrical power loss. Confirm this installation on the
+                applicable aircraft documentation.
               </p>
             </Deep>
             <div className="valve-detail"><ul className="study-points">
@@ -413,6 +431,12 @@ export default function Fuel() {
               <div>
                 <strong>FILTER BYPASS</strong>
                 <p>Illuminated (amber) – impending fuel filter bypass due to a contaminated filter.</p>
+                <p className="warning-note">
+                  Configuration data supplied for this course: the alert is
+                  triggered at approximately <strong>11.5 PSI differential</strong>
+                  and the bypass opens at approximately <strong>15 PSI</strong>.
+                  Confirm aircraft applicability.
+                </p>
               </div>
             </div>
             <h3>MAX alert</h3>

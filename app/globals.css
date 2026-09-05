@@ -1760,6 +1760,9 @@ summary:focus-visible {
 .study-tip { margin: 24px 0; padding: 18px 20px; border: 1px solid #b7d9ee; border-left: 4px solid #3988b8; border-radius: 0 10px 10px 0; background: #eef8fd; }
 .study-tip strong { color: #276b94; font-size: 11px; letter-spacing: 1.3px; }
 .study-tip p { margin: 8px 0 0 !important; color: #426b82 !important; }
+.configuration-data { margin: 20px 0; padding: 17px 20px; border: 1px solid #d8c9ec; border-left: 4px solid #8160ae; border-radius: 0 10px 10px 0; background: #f7f2fc; }
+.configuration-data > strong { color: #68488f; font-size: 11px; letter-spacing: 1.2px; }
+.configuration-data p { margin: 8px 0 0 !important; color: #5e5270 !important; }
 .site-safety-note { padding: 8px 20px; border-bottom: 1px solid #efc7c7; background: #fff1f1; color: #7c4141; font-size: 12px; text-align: center; }
 .systems-menu { position: relative; }
 .systems-menu summary { cursor: pointer; list-style: none; }
