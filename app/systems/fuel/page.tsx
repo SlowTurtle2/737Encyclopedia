@@ -1,5 +1,6 @@
 import Link from '@/components/site-link';
 import FuelDiagram from './diagram';
+import PumpControlPanel from './pump-control-panel';
 import TankLocation from './tank-location';
 import Quiz from './quiz';
 import Contents from './contents';
@@ -130,16 +131,6 @@ export default function Fuel() {
                 transfer.
               </p>
             </Deep>
-            <Need title="3 tanks · 6 AC pumps" tone="teal">
-              <p>
-                <strong>20,896 kg</strong> approximate usable fuel in the
-                supplied NG configuration.
-              </p>
-              <p>
-                Center fuel is used first because center pumps deliver higher
-                pressure.
-              </p>
-            </Need>
             <Table className="course-table">
               <TableCaption>
                 Approximate usable capacities from the supplied NG and MAX
@@ -172,12 +163,12 @@ export default function Fuel() {
                 ))}
               </TableBody>
             </Table>
-            <Max>
-              The supplied 737-8200 manual lists slightly lower usable
-              capacities. Treat these as a comparison of the two supplied
-              configurations, not a universal capacity table for every NG or
-              MAX.
-            </Max>
+            <Need title="3 structural tanks" tone="teal">
+              <p>
+                <strong>20,896 kg</strong> is the approximate usable capacity
+                for the supplied 737-800 NG configuration.
+              </p>
+            </Need>
             <Source>NG 12.20.1, 12.20.4 · MAX 12.20.1, 12.20.4</Source>
           </section>
           <section className="course-section" id="feed">
@@ -186,6 +177,7 @@ export default function Fuel() {
               Fuel-source priority is created by pump pressure, allowing the
               center tank to feed first without FMC intervention.
             </h2>
+            <h3>Fuel supply</h3>
             <ul className="study-points">
               <li>
                 <strong>Two pumps per tank:</strong> six AC-powered pumps in
@@ -199,63 +191,21 @@ export default function Fuel() {
                 <strong>Center pumps:</strong> higher output pressure than main
                 tank pumps.
               </li>
-              <li>
-                <strong>Result:</strong> center fuel takes priority, even with
-                all pumps operating.
-              </li>
             </ul>
-            <Need title="Pressure decides the source">
-              <p>
-                The FMC does not select the source tank.{' '}
-                <strong>Center pump pressure &gt; main pump pressure.</strong>
-              </p>
-            </Need>
-            <FuelDiagram />
-            <ul className="study-points">
-              <li>
-                <strong>Auto-shutoff:</strong> each center pump stops after a
-                short delay when its own sensor detects low pressure.
-              </li>
-              <li>
-                <strong>Switch OFF:</strong> resets that pump’s auto-shutoff
-                logic.
-              </li>
-              <li>
-                <strong>Switch ON again:</strong> reactivates the pump until
-                selected OFF or stopped by the logic.
-              </li>
-              <li>
-                <strong>Timing:</strong> auto-shutoff and Master Caution are
-                separate functions.
-              </li>
-            </ul>
-            <Deep title="Go deeper · LOW PRESSURE is not a fuel-quantity switch">
-              <p>
-                Pressure sensing and quantity indication measure different
-                things. With little fuel remaining, aircraft attitude and small
-                differences in pump inlet position can make one center pump lose
-                pressure before the other. An indication can occur after center
-                quantity reads zero.
-              </p>
-              <p>
-                The FCOM describes possible flickering for up to five minutes
-                before the associated Master Caution appears. This explains a
-                possible indication sequence; it is not permission to ignore a
-                pump warning or intentionally run a center pump dry.
-              </p>
-              <p>
-                The supplied FCOM specifies a “short delay” for automatic
-                shutdown. It does not substantiate the exact 15-second value in
-                the study sheet.
-              </p>
-            </Deep>
-            <h3>Suction feed: a fallback with limits</h3>
-            <Need title="A flow path is not a guarantee" tone="amber">
-              <p>
-                Suction feed can be restricted at altitude. Do not assume it can
-                always sustain engine demand.
-              </p>
-            </Need>
+            <p>
+              When all six pumps are operating, the center tank pumps produce
+              more pressure than the main tank pumps. This higher pressure
+              closes the check valves in the main tank feed lines, so center
+              tank fuel reaches both engine manifolds first. As center pump
+              pressure disappears, the check valves open and the main tanks
+              take over automatically. The sequence is therefore created by
+              hydraulic pressure, without the FMC selecting a tank.
+            </p>
+            <p>
+              <strong>Suction feed is a fallback with limits.</strong> Each
+              engine also has a direct path from its associated main tank that
+              bypasses the pumps.
+            </p>
             <ul className="study-points">
               <li>
                 <strong>Supply path:</strong> each engine can draw from its own
@@ -279,7 +229,47 @@ export default function Fuel() {
                 flow path and a guaranteed supply under every flight condition.
               </p>
             </Deep>
-            <h3>The last fuel in the center tank</h3>
+            <FuelDiagram />
+
+            <h3>Pump control</h3>
+            <p>
+              Six guarded switches on the overhead fuel panel control the two
+              AC pumps in each tank. The main tank LOW PRESSURE lights illuminate
+              when pump output pressure is low, including when their switches
+              are OFF. Center tank LOW PRESSURE lights are inhibited when the
+              associated switch is OFF.
+            </p>
+            <PumpControlPanel />
+            <p>
+              Each center tank pump automatically stops after its own pressure
+              sensor detects low pressure for a short delay, although the switch
+              remains ON. Selecting that switch OFF resets the automatic
+              shutdown logic; selecting it ON again reactivates the pump until
+              it is switched off or the logic stops it again. This delay is a
+              separate function from the 10-second MASTER CAUTION logic.
+            </p>
+            <Deep title="Go deeper · LOW PRESSURE is not a fuel-quantity switch">
+              <p>
+                Pressure sensing and quantity indication measure different
+                things. With little fuel remaining, aircraft attitude and small
+                differences in pump inlet position can make one center pump lose
+                pressure before the other. An indication can occur after center
+                quantity reads zero.
+              </p>
+              <p>
+                The FCOM describes possible flickering for up to five minutes
+                before the associated Master Caution appears. This explains a
+                possible indication sequence; it is not permission to ignore a
+                pump warning or intentionally run a center pump dry.
+              </p>
+              <p>
+                The supplied FCOM specifies a “short delay” for automatic
+                shutdown. It does not substantiate the exact 15-second value in
+                the study sheet.
+              </p>
+            </Deep>
+
+            <h3>Scavenge pump</h3>
             <ul className="study-points">
               <li>
                 <strong>Transfer:</strong> residual center fuel → main tank 1.
@@ -299,7 +289,14 @@ export default function Fuel() {
               <span>Center tank residual fuel</span> →{' '}
               <span>Scavenge jet pump</span> → <span>Main tank 1</span>
             </div>
-            <h3>The APU uses the left manifold</h3>
+            <p>
+              The scavenge jet pump uses the output of main tank 1 forward pump
+              to draw residual fuel from the center tank into main tank 1. It
+              begins when main tank 1 is approximately half full and then
+              continues for the remainder of the flight.
+            </p>
+
+            <h3>APU fuel</h3>
             <ul className="study-points">
               <li>
                 <strong>AC pumps operating:</strong> APU fed from the left fuel
@@ -314,6 +311,23 @@ export default function Fuel() {
                 the fuel supplying the left manifold.
               </li>
             </ul>
+            <p>
+              With an AC fuel pump operating, the APU receives pressurized fuel
+              from the left manifold. Without AC pump pressure, it can draw fuel
+              by suction from main tank 1. The tank feeding the left manifold
+              therefore determines the pressure-fed source available to the APU.
+            </p>
+            <Need title="6 AC pumps · pressure sets priority" tone="teal">
+              <p>
+                Two pumps serve each tank. With every pump selected ON, the
+                higher output pressure of the center pumps makes center fuel feed
+                both engines first.
+              </p>
+              <p>
+                Suction feed provides an alternate path, but it may not sustain
+                engine demand at altitude.
+              </p>
+            </Need>
             <Source>NG / MAX 12.10.2, 12.20.2–3 · NG L.10.10</Source>
           </section>
           <section className="course-section" id="crossfeed">
@@ -322,14 +336,6 @@ export default function Fuel() {
               Crossfeed and shutoff valves connect or isolate the engine feed
               manifolds without transferring fuel directly between main tanks.
             </h2>
-            <Need title="Crossfeed ≠ tank-to-tank transfer" tone="teal">
-              <p>
-                <strong>Crossfeed:</strong> connects engine manifolds.
-                <br />
-                <strong>Scavenging:</strong> transfers center fuel into main
-                tank 1.
-              </p>
-            </Need>
             <ul className="study-points">
               <li>
                 <strong>Connection:</strong> left and right engine fuel
@@ -405,6 +411,13 @@ export default function Fuel() {
                 engine fire switch pulled.
               </li>
             </ul>
+            <Need title="Crossfeed ≠ tank-to-tank transfer" tone="teal">
+              <p>
+                <strong>Crossfeed</strong> connects the engine manifolds, while
+                <strong> scavenging</strong> transfers residual center tank fuel
+                into main tank 1.
+              </p>
+            </Need>
             <Source>NG / MAX 12.10.1–2, 12.20.2–3</Source>
           </section>
           <section className="course-section" id="indications">
@@ -430,16 +443,6 @@ export default function Fuel() {
                 light extinguished.
               </li>
             </ul>
-            <Need title="10 seconds · center-pump caution" tone="amber">
-              <p>
-                One center LOW PRESSURE light continuously illuminated for{' '}
-                <strong>10 seconds</strong>, with center switches ON, triggers
-                MASTER CAUTION and FUEL.
-              </p>
-              <p>
-                This is <strong>not</strong> the automatic pump-shutdown delay.
-              </p>
-            </Need>
             <Deep title="Go deeper · When does MASTER CAUTION appear?">
               <p>
                 For a main tank, two LOW PRESSURE lights in the same tank
@@ -567,6 +570,14 @@ export default function Fuel() {
                 alone does not identify a MAX.
               </p>
             </Deep>
+            <Need title="10 seconds · center-pump caution" tone="teal">
+              <p>
+                One center LOW PRESSURE light continuously illuminated for{' '}
+                <strong>10 seconds</strong>, with center switches ON, triggers
+                MASTER CAUTION and FUEL. This timing is separate from the
+                automatic pump-shutdown delay.
+              </p>
+            </Need>
             <Source>NG 12.10.2–6, 12.20.3 · MAX 12.10.2–5, 12.20.3</Source>
           </section>
           <section className="course-section" id="temperature">
@@ -575,13 +586,6 @@ export default function Fuel() {
               Fuel temperature is measured in main tank 1 and must remain
               inside the applicable warm and cold operating limits.
             </h2>
-            <Need title="−43°C / freezing point +3°C" tone="amber">
-              <p>
-                Use the <strong>higher (warmer)</strong> minimum. Maximum tank
-                fuel temperature: <strong>+49°C</strong>.
-              </p>
-              <p>Limits shown: supplied 737-800 NG FCOM L.10.9–10.</p>
-            </Need>
             <ul className="study-points">
               <li>
                 <strong>Sensor:</strong> main tank 1.
@@ -640,6 +644,13 @@ export default function Fuel() {
               and the center-fuel loading threshold at 453 kg describe different
               conditions.
             </p>
+            <Need title="−43°C / freezing point +3°C" tone="teal">
+              <p>
+                Use the <strong>higher (warmer)</strong> minimum. Maximum tank
+                fuel temperature is <strong>+49°C</strong>. These limits come
+                from the supplied 737-800 NG FCOM L.10.9–10.
+              </p>
+            </Need>
             <Source>
               NG L.10.9–10; 12.20.3. Limits here are attributed to the supplied
               NG configuration.
