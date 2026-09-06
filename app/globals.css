@@ -1858,12 +1858,32 @@ summary:focus-visible {
 .logic-row span, .logic-output { padding: 16px 20px; border: 1px solid #b9cede; border-radius: 10px; background: #edf4fa; color: #173f66; }
 .logic-arrow { margin: 10px; color: #2875b7; font-size: 28px; }
 .logic-output { display: inline-flex; flex-direction: column; gap: 6px; border-color: #8fc7a7; background: #effaf4; }
+.course-photo img { display: block; width: 100%; height: auto; border-radius: 10px; }
+.window-layout-photo { margin-top: 22px; }
+.panel-photo { max-width: 760px; margin-inline: auto; }
+.window-alert-card {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 22px;
+  align-items: center;
+  margin: 20px 0;
+  padding: 18px;
+  border: 1px solid;
+  border-radius: 14px;
+}
+.window-alert-card img { display: block; width: 100%; height: auto; border-radius: 5px; }
+.window-alert-card p { margin: 7px 0 0 !important; }
+.window-alert-card > div > strong { letter-spacing: 1.1px; }
+.on-card { background: #effaf4; border-color: #9fd7b6; color: #245f3e; }
+.overheat-card { background: #fff0f0; border-color: #e6a2a2; color: #813737; }
 .max-alert-overview { display: grid; grid-template-columns: minmax(220px, 310px) 1fr; align-items: center; gap: 22px; margin: 18px 0; padding: 16px; border: 1px solid #cfd8ef; border-radius: 12px; background: #f3f5fc; }
 .max-alert-overview img { display: block; width: 100%; height: auto; }
 .max-alert-overview p { margin: 0 !important; color: #505d7d !important; }
 @media (max-width: 620px) {
   .valve-detail, .fuel-alert-card, .max-alert-overview, .fuel-display-grid, .ngs-status-card, .system-family-grid, .indication-grid { grid-template-columns: 1fr; }
   .logic-row { flex-direction: column; }
+  .window-alert-card { grid-template-columns: 1fr; }
+  .window-alert-card img { max-width: 220px; }
 }
 .pump-warning > div > strong {
   color: #9a6500;

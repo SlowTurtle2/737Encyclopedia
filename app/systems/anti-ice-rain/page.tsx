@@ -1,6 +1,6 @@
 import Link from '@/components/site-link';
 import Contents from '../fuel/contents';
-import { ProtectionOverview, StallLogicDiagram, WingAntiIceDiagram } from './diagrams';
+import { StallLogicDiagram, WingAntiIceDiagram } from './diagrams';
 
 export const metadata = {
   title: 'Anti-Ice, Rain | 737Encyclopedia',
@@ -37,31 +37,52 @@ export default function AntiIceRain() {
           <section className="course-section" id="overview">
             <span className="section-num">01 / THE BIG PICTURE</span>
             <h2>The 737 combines electrical heat, engine bleed air and mechanical rain removal to protect the surfaces and sensors needed for safe flight.</h2>
-            <ProtectionOverview />
-            <div className="system-family-grid">
-              <div><strong>Electrical heat</strong><p>Flight deck windows, pitot probes, alpha vanes and the temperature probe.</p></div>
-              <div><strong>Thermal anti-ice</strong><p>Engine cowl lips and the three inboard leading-edge slats on each wing.</p></div>
-              <div><strong>Rain removal</strong><p>Two windshield wipers and a permanent rain-repellent coating on the forward windows.</p></div>
-              <div><strong>Flight protection</strong><p>Dedicated stall-warning logic when engine or wing anti-ice is used.</p></div>
-            </div>
-            <Need title="Three protection methods"><p><strong>Electrical heat · bleed-air heat · windshield wipers.</strong></p></Need>
+            <ul className="study-points">
+              <li><strong>Flight deck window heat:</strong> AC electrical heating prevents ice and fog on windows No. 1 and No. 2 and preserves their impact strength.</li>
+              <li><strong>Windshield wipers:</strong> independent left and right wipers remove rain from the forward windows.</li>
+              <li><strong>Probe and sensor heat:</strong> electrical heaters protect pitot probes, alpha vanes and the total-air-temperature probe.</li>
+              <li><strong>Wing anti-ice:</strong> engine bleed air heats the three inboard leading-edge slats on each wing.</li>
+              <li><strong>Engine anti-ice:</strong> engine bleed air protects each cowl lip; the MAX also protects the engine core automatically.</li>
+              <li><strong>Stall-warning logic:</strong> anti-ice use changes stick-shaker and minimum maneuver-speed margins for icing conditions.</li>
+            </ul>
+            <figure className="figure course-photo">
+              <img src="/images/anti-ice-protection-overview.png" alt="737 overview identifying heated windshields, wipers, probe heat, wing anti-ice and engine anti-ice" />
+              <figcaption>Overview of the main ice and rain protection components.</figcaption>
+            </figure>
             <Source>NG / MAX 3.20.1</Source>
           </section>
 
           <section className="course-section" id="windows">
             <span className="section-num">02 / FLIGHT DECK WINDOW HEAT</span>
             <h2>Electrical heating keeps windows No. 1 and No. 2 clear and maintains their strength for bird impact protection.</h2>
+            <h3>Description</h3>
+            <p>Four flight deck windows are electrically heated by AC power: forward windows 1L and 1R, and side windows 2L and 2R. Windows No. 3 are not electrically heated. A conductive coating in each heated window converts electrical current into heat, preventing ice and fog while maintaining the window at the temperature required for maximum bird-impact strength.</p>
+            <figure className="figure course-photo window-layout-photo">
+              <img src="/images/window-heat-windows.png" alt="Front view of a 737 identifying electrically heated windows 1L, 1R, 2L and 2R" />
+              <figcaption>Windows 1L, 1R, 2L and 2R are electrically heated.</figcaption>
+            </figure>
             <ul className="study-points">
               <li><strong>FWD switches:</strong> control left and right window No. 1.</li>
               <li><strong>SIDE switches:</strong> control left and right window No. 2.</li>
               <li><strong>Window No. 3:</strong> not electrically heated.</li>
-              <li><strong>Temperature control:</strong> automatic after the related switch is selected ON.</li>
             </ul>
-            <div className="indication-grid">
-              <div className="indication green"><strong>ON</strong><p>Green: heat is being applied. The light may extinguish when the correct temperature is reached.</p></div>
-              <div className="indication amber"><strong>OVERHEAT</strong><p>Amber: overheat detected or electrical power to that window has been interrupted.</p></div>
+            <Warning title="WINDOW HEAT INOPERATIVE">If any required heated window loses its heating function, apply the applicable dispatch procedure. The restriction given in the course material is a maximum of <strong>250 kt below FL100</strong>.</Warning>
+            <h3>Command</h3>
+            <p>The pilot selects each FWD or SIDE WINDOW HEAT switch ON or OFF independently. Once selected ON, a temperature controller cycles electrical power automatically to maintain the correct window temperature. No manual temperature setting is required.</p>
+            <figure className="figure course-photo panel-photo">
+              <img src="/images/window-heat-panel.png" alt="737 window heat overhead panel with four switches, ON lights, OVERHEAT lights and test selector" />
+              <figcaption>Four window switches and the spring-loaded OVHT / PWR TEST selector.</figcaption>
+            </figure>
+            <div className="window-alert-card on-card">
+              <img src="/images/window-heat-on.png" alt="Green window heat ON light" />
+              <div><strong>ON</strong><p>Illuminated green when heat is being applied to the selected window. It extinguishes when the switch is OFF, an overheat or system failure occurs, or the window reaches the correct temperature and the controller removes power.</p></div>
             </div>
-            <p>If an overheat is detected, the controller automatically removes power from the affected window. The spring-loaded PWR TEST selector provides a confidence test; OVHT simulates an overheat condition.</p>
+            <p>The spring-loaded <strong>PWR TEST</strong> position provides a confidence test of available window heating. The <strong>OVHT</strong> position simulates an overheat condition.</p>
+            <h3>Warning</h3>
+            <div className="window-alert-card overheat-card">
+              <img src="/images/window-heat-overheat.png" alt="Amber window heat OVERHEAT warning light" />
+              <div><strong>OVERHEAT</strong><p>Illuminated amber when the related controller detects an overheat condition. It also illuminates if electrical power to the related window is interrupted. When a real overheat is detected, power to that window is removed automatically.</p></div>
+            </div>
             <Deep title="Go deeper · Construction and defogging"><p>Windows No. 1 and 2 use glass panes laminated around a vinyl core. A conductive coating on the outer pane supplies the heat. Conditioned air can also be directed to windows No. 1 for defogging.</p></Deep>
             <Need title="Four heated windows"><p>L1, L2, R1 and R2 are electrically heated. Window heat also preserves structural strength.</p></Need>
             <Source>NG 3.10.1–2, 3.20.2–3 · MAX 3.10.1–2, 3.20.2–3</Source>
