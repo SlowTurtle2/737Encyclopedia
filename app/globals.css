@@ -1126,6 +1126,21 @@ body {
   color: #91949b;
   margin: 16px 0 0;
 }
+.assessment-free-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 9px 14px;
+  border: 1px solid #c9ddd5;
+  border-radius: 999px;
+  background: #f1f8f5;
+  color: #3f6758;
+  font-size: 13px;
+}
+.assessment-free-note strong {
+  color: #285443;
+}
 .intro-strip {
   border-top: 0;
   border-bottom: 1px solid #e8e9ec;
@@ -1454,6 +1469,14 @@ summary:focus-visible {
   }
   .hero-audience {
     font-size: 12px;
+  }
+  .assessment-free-note {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: fit-content;
+    margin: 18px auto 0;
+    border-radius: 12px;
   }
   .intro-strip {
     align-items: center;

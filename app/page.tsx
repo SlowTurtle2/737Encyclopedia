@@ -62,8 +62,15 @@ export default function Home() {
           <span>Know the systems. Fly the logic.</span>
         </h1>
         <p className="lead">
+          One website. From your airline assessment to line training.
+        </p>
+        <p className="hero-audience">
           Built for Irish low-cost carrier cadets and serious 737 simmers.
         </p>
+        <div className="assessment-free-note">
+          <strong>Airline assessment preparation</strong>
+          <span>All the material you need, completely free.</span>
+        </div>
       </section>
       <div className="intro-strip wrap">
         <span>
