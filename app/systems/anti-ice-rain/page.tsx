@@ -78,7 +78,7 @@ export default function AntiIceRain() {
               <div><strong>ON</strong><p>Illuminated green when heat is being applied to the selected window. It extinguishes when the switch is OFF, an overheat or system failure occurs, or the window reaches the correct temperature and the controller removes power.</p></div>
             </div>
             <p>The spring-loaded <strong>PWR TEST</strong> position provides a confidence test of available window heating. The <strong>OVHT</strong> position simulates an overheat condition.</p>
-            <h3>Warning</h3>
+            <h3>Warning and indications</h3>
             <div className="window-alert-card overheat-card">
               <img src="/images/window-heat-overheat.png" alt="Amber window heat OVERHEAT warning light" />
               <div><strong>OVERHEAT</strong><p>Illuminated amber when the related controller detects an overheat condition. It also illuminates if electrical power to the related window is interrupted. When a real overheat is detected, power to that window is removed automatically.</p></div>
@@ -91,7 +91,7 @@ export default function AntiIceRain() {
           <section className="course-section" id="wipers">
             <span className="section-num">03 / WIPERS</span>
             <h2>Independent left and right wipers clear the forward windows, while a permanent coating helps shed rain.</h2>
-            <div className="selector-strip"><span>PARK</span><span>INT · 7 s</span><span>LOW</span><span>HIGH</span></div>
+            <p>Each wiper selector has four positions: <strong>PARK, INT, LOW and HIGH</strong>.</p>
             <ul className="study-points"><li><strong>PARK:</strong> stops the motor and stows the blade.</li><li><strong>INT:</strong> one sweep cycle approximately every seven seconds.</li><li><strong>LOW / HIGH:</strong> continuous operation at the selected speed.</li></ul>
             <Warning title="DRY WINDSHIELD">Operating the wipers on a dry windshield can scratch the windshield.</Warning>
             <Source>NG 3.10.2, 3.20.4 · MAX 3.10.2, 3.20.3</Source>
@@ -113,7 +113,7 @@ export default function AntiIceRain() {
               <figcaption>Probe heat systems A and B, shown with AUTO / ON switches.</figcaption>
             </figure>
             <Max>The supplied MAX uses AUTO/ON probe-heat switches. Some earlier NG aircraft use OFF/ON switches and therefore have no automatic mode: the crew must select probe heat ON. Later or modified NG aircraft may also use AUTO/ON switches, so the installed panel remains the controlling reference.</Max>
-            <h3>Warning</h3>
+            <h3>Warning and indications</h3>
             <p>An amber probe-heat light means that the related probe or sensor is not being heated. It identifies loss of the expected heating function rather than the presence of ice.</p>
             <Warning title="STANDBY POWER">On standby power, only the captain’s pitot probe is heated. The CAPT PITOT light does not indicate a heater failure while operating in this configuration, and the standby airspeed pitot probe is not heated.</Warning>
             <Deep title="Go deeper · Panel effectivity"><p>The supplied NG FCOM shows both OFF/ON and AUTO/ON panels according to service-bulletin status. Always identify the installed switch positions before applying a memorized flow.</p></Deep>
@@ -134,7 +134,7 @@ export default function AntiIceRain() {
             <p><strong>In flight,</strong> selecting WING ANTI-ICE ON opens both control valves and activates icing stall-warning logic. Duct-temperature and thrust-setting logic do not control valve operation in flight.</p>
             <p><strong>On the ground,</strong> both valves open only while both engines remain below the takeoff-warning thrust setting and both distribution ducts remain below the thermal-switch temperature. High thrust or a hot duct closes the valves; they reopen when both conditions return to normal.</p>
             <p><strong>During takeoff,</strong> advancing either thrust lever above the takeoff-warning setting closes both valves, so wing anti-ice is no longer using bleed air during the takeoff roll. The WING ANTI-ICE switch itself remains ON. At lift-off, when the air/ground logic changes to AIR as the wheels leave the runway, the switch automatically trips to OFF.</p>
-            <h3>Warning</h3>
+            <h3>Warning and indications</h3>
             <p>The valve lights show movement or a disagreement between the selected switch position and the actual position of the related wing anti-ice valve.</p>
             <div className="wing-warning-grid">
               <div className="wing-warning-card ng"><img src="/images/ng-wing-valve-open-lights.png" alt="Blue L VALVE OPEN and R VALVE OPEN lights on the 737 NG" /><div><strong>737 NG · VALVE OPEN</strong><p><b>Dim blue:</b> the related valve is open and agrees with the ON command.</p><p><b>Bright blue:</b> the valve is moving, or its actual position disagrees with the WING ANTI-ICE switch.</p><p><b>Extinguished:</b> the related valve is closed with the switch OFF.</p></div></div>
@@ -156,12 +156,11 @@ export default function AntiIceRain() {
               <figcaption>Engine thermal anti-ice heats the cowl inlet lip. The fan and spinner are not heated.</figcaption>
             </figure>
             <p>The cowl anti-ice air takeoff is upstream of the engine bleed valve. Engine anti-ice therefore remains available when the related engine bleed valve is closed; closing the bleed valve does not isolate the cowl anti-ice supply.</p>
-            <div className="configuration-data"><strong>BLEED-AIR SOURCE</strong><p><strong>737 NG:</strong> air is supplied from the 5th or 9th compressor stage. <strong>737 MAX:</strong> air is supplied from the 4th or 10th compressor stage.</p></div>
-            <Max>The MAX also protects the engine core. The EEC automatically directs bleed air to the core as required from engine and atmospheric data, with no crew input or indication during normal operation.</Max>
+            <Max>On the 737 NG, cowl anti-ice air comes from the 5th or 9th compressor stage and protects the cowl lip. On the 737 MAX, the source is the 4th or 10th compressor stage. The MAX also protects the engine core: the EEC automatically directs bleed air to it as required from engine and atmospheric data, with no crew input or indication during normal operation.</Max>
             <h3>Command</h3>
             <p>One ENG ANTI-ICE switch controls the cowl anti-ice valve on each engine. Selecting ON opens the related valve, supplies hot bleed air to the cowl lip and activates icing stall-warning logic. Selecting OFF closes the valve; normal stall-warning logic returns only if wing anti-ice has not been used in flight.</p>
             <Deep title="Go deeper · MAX idle logic"><p>With engine anti-ice ON, the supplied MAX uses icing idle with flaps UP and approach idle with the flaps extended. With engine anti-ice OFF, it uses flight idle below 15° and approach idle at 15° or more.</p></Deep>
-            <h3>Warning</h3>
+            <h3>Warning and indications</h3>
             <div className="engine-warning-grid">
               <div className="engine-warning-card ng">
                 <img src="/images/ng-engine-anti-ice-lights.png" alt="737 NG COWL ANTI-ICE and blue COWL VALVE OPEN lights" />
@@ -172,7 +171,10 @@ export default function AntiIceRain() {
                 <div><strong>737 MAX</strong><p><b>ENG ANTI-ICE · amber:</b> cowl anti-ice is inhibited by a system failure, or an engine core anti-ice valve has failed closed.</p><p><b>COWL ANTI-ICE · amber:</b> excessive pressure downstream of the cowl anti-ice valve.</p><p><b>COWL VALVE · momentary amber:</b> the valve is in transit.</p><p><b>COWL VALVE · steady amber:</b> valve position disagrees with the switch.</p><p><b>COWL VALVE extinguished:</b> the valve agrees with the commanded open or closed position.</p></div>
               </div>
             </div>
-            <p>The engine display also shows a <strong>green TAI</strong> indication when the cowl valve is open and the related ENG ANTI-ICE switch is ON. An <strong>amber TAI</strong> indicates that valve position does not agree with the switch.</p>
+            <div className="tai-card">
+              <img src="/images/engine-tai-indication.png" alt="Green TAI indication beside the engine N1 display" />
+              <div><strong>TAI · THERMAL ANTI-ICE</strong><p><b>Green:</b> the cowl anti-ice valve is open and the related ENG ANTI-ICE switch is ON.</p><p><b>Amber:</b> the cowl valve position does not agree with the related switch position.</p><p><b>Extinguished:</b> the cowl valve is closed and the related switch is OFF.</p></div>
+            </div>
             <Need title="Cowl lip on NG · cowl and core on MAX"><p>The flight crew directly selects cowl anti-ice. MAX core anti-ice is automatic through the EEC.</p></Need>
             <Source>NG 3.10.4–5, 3.20.5–6 · MAX 3.10.3–4, 3.20.4–6</Source>
           </section>
@@ -182,7 +184,6 @@ export default function AntiIceRain() {
             <h2>The crew must monitor natural ice-accretion cues because the protected surfaces do not provide a single flight-deck ice quantity display.</h2>
             <ul className="study-points"><li><strong>Windshield-wiper area:</strong> visible accumulation around the wiper can provide an early external cue.</li><li><strong>Windshield:</strong> broader accumulation may indicate more severe icing.</li><li><strong>Wing:</strong> inspect the visible leading-edge area and cues identified by the operator.</li></ul>
             <Warning title="VISUAL CUES ARE APPROXIMATE">Ice can accumulate away from the crew’s best viewing area. Use the applicable atmospheric criteria and operating procedure; do not wait for a large visible deposit before applying required anti-ice.</Warning>
-            <Need title="Look outside, then use the procedure"><p>Visual accumulation is one cue. Temperature, visible moisture and the operator’s defined icing criteria determine the required action.</p></Need>
             <Source>Course synthesis sheet · applicable operator procedures</Source>
           </section>
 

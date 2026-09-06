@@ -1905,6 +1905,20 @@ summary:focus-visible {
 .engine-warning-card.max { background: #fff7e9; border-color: #e8c982; color: #775000; }
 .engine-warning-card img { display: block; width: 100%; height: auto; }
 .engine-warning-card p { margin: 7px 0 0 !important; }
+.tai-card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 24px;
+  align-items: center;
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #a9d9bd;
+  border-radius: 14px;
+  background: #effaf4;
+  color: #245f3e;
+}
+.tai-card img { display: block; width: 100%; height: auto; border-radius: 5px; }
+.tai-card p { margin: 7px 0 0 !important; }
 .max-alert-overview { display: grid; grid-template-columns: minmax(220px, 310px) 1fr; align-items: center; gap: 22px; margin: 18px 0; padding: 16px; border: 1px solid #cfd8ef; border-radius: 12px; background: #f3f5fc; }
 .max-alert-overview img { display: block; width: 100%; height: auto; }
 .max-alert-overview p { margin: 0 !important; color: #505d7d !important; }
@@ -1917,6 +1931,8 @@ summary:focus-visible {
   .wing-warning-card img { max-width: 240px; }
   .engine-warning-card { grid-template-columns: 1fr; }
   .engine-warning-card img { max-width: 260px; }
+  .tai-card { grid-template-columns: 1fr; }
+  .tai-card img { max-width: 180px; }
 }
 .pump-warning > div > strong {
   color: #9a6500;
