@@ -134,6 +134,7 @@ export default function AntiIceRain() {
             <p><strong>In flight,</strong> selecting WING ANTI-ICE ON opens both control valves and activates icing stall-warning logic. Duct-temperature and thrust-setting logic do not control valve operation in flight.</p>
             <p><strong>On the ground,</strong> both valves open only while both engines remain below the takeoff-warning thrust setting and both distribution ducts remain below the thermal-switch temperature. High thrust or a hot duct closes the valves; they reopen when both conditions return to normal.</p>
             <p><strong>During takeoff,</strong> advancing either thrust lever above the takeoff-warning setting closes both valves, so wing anti-ice is no longer using bleed air during the takeoff roll. The WING ANTI-ICE switch itself remains ON. At lift-off, when the air/ground logic changes to AIR as the wheels leave the runway, the switch automatically trips to OFF.</p>
+            <aside className="study-tip"><strong>TIP · OPERATIONAL USE</strong><p>Wing anti-ice is operationally used more like a <b>de-icer</b>: the applicable procedure normally calls for it after evidence of ice accumulation, so the hot bleed air removes ice from the protected slats. Apply the operator’s current procedure and criteria.</p></aside>
             <h3>Warning and indications</h3>
             <p>The valve lights show movement or a disagreement between the selected switch position and the actual position of the related wing anti-ice valve.</p>
             <div className="wing-warning-grid">
@@ -159,6 +160,7 @@ export default function AntiIceRain() {
             <Max>On the 737 NG, cowl anti-ice air comes from the 5th or 9th compressor stage and protects the cowl lip. On the 737 MAX, the source is the 4th or 10th compressor stage. The MAX also protects the engine core: the EEC automatically directs bleed air to it as required from engine and atmospheric data, with no crew input or indication during normal operation.</Max>
             <h3>Command</h3>
             <p>One ENG ANTI-ICE switch controls the cowl anti-ice valve on each engine. Selecting ON opens the related valve, supplies hot bleed air to the cowl lip and activates icing stall-warning logic. Selecting OFF closes the valve; normal stall-warning logic returns only if wing anti-ice has not been used in flight.</p>
+            <aside className="study-tip"><strong>TIP · OPERATIONAL USE</strong><p>Engine anti-ice is operationally used as an <b>anti-icer</b>: it is selected preventively when the defined icing conditions exist, before ice is allowed to accumulate on the engine inlet. Apply the operator’s current procedure and criteria.</p></aside>
             <Deep title="Go deeper · MAX idle logic"><p>With engine anti-ice ON, the supplied MAX uses icing idle with flaps UP and approach idle with the flaps extended. With engine anti-ice OFF, it uses flight idle below 15° and approach idle at 15° or more.</p></Deep>
             <h3>Warning and indications</h3>
             <div className="engine-warning-grid">
@@ -183,6 +185,8 @@ export default function AntiIceRain() {
             <span className="section-num">07 / VISUAL INDICATION OF ICE</span>
             <h2>The crew must monitor natural ice-accretion cues because the protected surfaces do not provide a single flight-deck ice quantity display.</h2>
             <ul className="study-points"><li><strong>Windshield-wiper area:</strong> visible accumulation around the wiper can provide an early external cue.</li><li><strong>Windshield:</strong> broader accumulation may indicate more severe icing.</li><li><strong>Wing:</strong> inspect the visible leading-edge area and cues identified by the operator.</li></ul>
+            <Deep title="Go deeper · Optional NG ice detection system"><p>An optional ice detection system exists on the 737 NG, although relatively few aircraft are equipped with it. An additional detector probe is installed on the lower left side below the flight deck and provides an indication when ice is detected. Installed equipment and indication logic must be confirmed in the aircraft’s applicable manuals.</p></Deep>
+            <aside className="study-tip"><strong>TIP · TURNAROUND ENGINE CHECK</strong><p>Ice can remain on the rear side of the fan blades where it is difficult to see from directly in front of the engine. During a cold-weather turnaround, inspect behind the fan blades from the permitted viewing position and follow the operator’s engine inspection procedure.</p></aside>
             <Warning title="VISUAL CUES ARE APPROXIMATE">Ice can accumulate away from the crew’s best viewing area. Use the applicable atmospheric criteria and operating procedure; do not wait for a large visible deposit before applying required anti-ice.</Warning>
             <Source>Course synthesis sheet · applicable operator procedures</Source>
           </section>
