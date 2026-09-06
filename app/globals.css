@@ -1788,11 +1788,45 @@ summary:focus-visible {
 .fuel-alert-card img { display: block; width: 100%; height: auto; }
 .fuel-alert-card strong { color: #9a6500; font-size: 12px; letter-spacing: 1.2px; }
 .fuel-alert-card p { margin: 7px 0 0 !important; }
+
+.fuel-display-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 22px 0 34px;
+}
+.fuel-display-grid figure {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 220px;
+  margin: 0;
+  padding: 20px;
+  border: 1px solid #d6e2ee;
+  border-radius: 14px;
+  background: #f5f8fc;
+}
+.fuel-display-grid img { max-width: 100%; max-height: 190px; width: auto; height: auto; }
+.fuel-display-grid figcaption { margin-top: 14px; color: #5b6877; font-size: 13px; text-align: center; }
+
+.ngs-status-card {
+  display: grid;
+  grid-template-columns: minmax(190px, 260px) 1fr;
+  gap: 28px;
+  align-items: center;
+  margin: 24px 0;
+  padding: 20px;
+  border: 1px solid #d6e2ee;
+  border-radius: 14px;
+  background: #f5f8fc;
+}
+.ngs-status-card img { display: block; width: 100%; height: auto; border-radius: 4px; }
+.ngs-status-card p { margin: 0 !important; }
 .max-alert-overview { display: grid; grid-template-columns: minmax(220px, 310px) 1fr; align-items: center; gap: 22px; margin: 18px 0; padding: 16px; border: 1px solid #cfd8ef; border-radius: 12px; background: #f3f5fc; }
 .max-alert-overview img { display: block; width: 100%; height: auto; }
 .max-alert-overview p { margin: 0 !important; color: #505d7d !important; }
 @media (max-width: 620px) {
-  .valve-detail, .fuel-alert-card, .max-alert-overview { grid-template-columns: 1fr; }
+  .valve-detail, .fuel-alert-card, .max-alert-overview, .fuel-display-grid, .ngs-status-card { grid-template-columns: 1fr; }
 }
 .pump-warning > div > strong {
   color: #9a6500;

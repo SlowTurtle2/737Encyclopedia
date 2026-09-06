@@ -44,10 +44,12 @@ export default function FuelDiagram() {
           {[58, 122].map((offset, index) => <g key={offset}><circle cx={tank.x + offset} cy="121" r="16" fill="#fff" stroke={color(tank.active)} strokeWidth="3" /><text x={tank.x + offset} y="126" textAnchor="middle" fontSize="13" fill="#315373">P{index + 1}</text></g>)}
         </g>)}
         <g fill="none" strokeWidth="4" strokeLinejoin="round" strokeLinecap="round" className="fuel-flow-lines">
-          <path d="M88 138V192H175V255M152 138V192" stroke={color(on.left)} />
-          <path d="M608 138V192H585V255M672 138V192H585" stroke={color(on.right)} />
-          <path d="M348 138V220H175V255" stroke={color(on.center)} />
-          <path d="M412 138V220H585V255" stroke={color(on.center)} />
+          <path d="M88 138V192H175V220M152 138V192" stroke={color(on.left)} />
+          <path d="M608 138V192H585V220M672 138V192H585" stroke={color(on.right)} />
+          <path d="M348 138V220H175" stroke={color(on.center)} />
+          <path d="M412 138V220H585" stroke={color(on.center)} />
+          <path d="M175 220V255" stroke={color(on.left || on.center)} />
+          <path d="M585 220V255" stroke={color(on.right || on.center)} />
           <path d="M175 255H361M399 255H585" stroke={color(on.crossfeed)} />
           <path d="M175 255V328" stroke={blue} markerEnd="url(#flow-arrow)" />
           <path d="M585 255V328" stroke={blue} markerEnd="url(#flow-arrow)" />

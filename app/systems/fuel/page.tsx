@@ -160,10 +160,9 @@ export default function Fuel() {
             </ul>
             <p>
               Two AC-powered pumps are assigned to each tank, giving six pumps
-              in total. This describes which tank each pump draws from, not the
-              physical position of the pump assembly. Fuel passing through each
-              pump provides cooling and lubrication. The center tank pumps
-              deliver higher pressure than the main tank pumps.
+              in total. Fuel passing through each pump provides cooling and
+              lubrication. The center tank pumps deliver higher pressure than
+              the main tank pumps.
             </p>
             <aside className="configuration-data">
               <strong>CONFIGURATION DATA · VERIFY AIRCRAFT APPLICABILITY</strong>
@@ -184,17 +183,17 @@ export default function Fuel() {
             </aside>
             <h3>Fuel supply</h3>
             <p>
-              If all pumps are lost, each engine-driven fuel pump can draw from
-              its corresponding main tank through the suction-feed path. This
-              path may become restricted at altitude, with a risk of thrust
-              deterioration or engine flameout.
-            </p>
-            <p>
               When all six pumps operate, the center tank pumps produce more
               pressure than the main tank pumps, so center tank fuel is consumed
               first. To stop using the center tank, the crew switches its pumps
               OFF and the main tank pumps supply the engines. There is no fuel
               tank selector: pump selection and pressure establish the source.
+            </p>
+            <p>
+              If all pumps are lost, each engine-driven fuel pump can draw from
+              its corresponding main tank through the suction-feed path. This
+              path may become restricted at altitude, with a risk of thrust
+              deterioration or engine flameout.
             </p>
             <aside className="suction-warning">
               <strong>WARNING · DURING CLIMB</strong>
@@ -230,18 +229,16 @@ export default function Fuel() {
                 </p>
               </div>
             </div>
-            <h4>Center Pump Automatic</h4>
+            <h3>Center Pump Automatic</h3>
             <p>
               Each center tank pump automatically stops after its own pressure
               sensor detects low pressure for a short delay, although the switch
               remains ON. Selecting that switch OFF resets the automatic
               shutdown logic; selecting it ON again reactivates the pump until
               it is switched off or the logic stops it again. This delay is a
-              separate function from the 10-second MASTER CAUTION logic.
-            </p>
-            <p>
-              Intentional dry running of a center tank pump with its low-pressure
-              light illuminated is prohibited.
+              separate function from the 10-second MASTER CAUTION logic. Intentional
+              dry running of a center tank pump with its low-pressure light
+              illuminated is prohibited.
             </p>
 
             <h3>Scavenge pump</h3>
@@ -280,10 +277,6 @@ export default function Fuel() {
               <li>
                 <strong>AC pumps not operating:</strong> APU suction feed from
                 main tank 1.
-              </li>
-              <li>
-                <strong>Remember:</strong> the pressure-fed source depends on
-                the fuel supplying the left manifold.
               </li>
             </ul>
             <Need title="6 AC pumps · pressure sets priority" tone="teal">
@@ -410,6 +403,19 @@ export default function Fuel() {
               Fuel quantity indications and alerts help the crew monitor usable
               fuel, tank balance and the fuel predicted at destination.
             </h2>
+            <h3>Fuel display</h3>
+            <p>
+              Two fuel-quantity display layouts can be found across the 737 NG
+              fleet. Round gauges are generally associated with earlier NG
+              aircraft, while later NG aircraft and the 737 MAX use a digital
+              presentation with a totalizer. Display fit depends on aircraft
+              effectivity, so the installed layout should be confirmed in the
+              applicable aircraft manuals.
+            </p>
+            <div className="fuel-display-grid">
+              <figure><img src="/images/fuel-display-round.png" alt="Round fuel quantity gauges fitted to an earlier 737 NG" /><figcaption>Round fuel quantity gauges · earlier NG layout</figcaption></figure>
+              <figure><img src="/images/fuel-display-digital.png" alt="Digital fuel quantity display with totalizer fitted to later 737 NG and MAX aircraft" /><figcaption>Digital quantities and totalizer · later NG and MAX layout</figcaption></figure>
+            </div>
             <h3>Fuel QTY alert</h3>
             <ul className="study-points">
               <li>
@@ -418,6 +424,11 @@ export default function Fuel() {
               </li>
             </ul>
             <div className="fuel-alert-card"><img src="/images/fuel-alert-low.png" alt="LOW fuel quantity alert" /><div><strong>LOW</strong><p>Appears below 453 kg in either main tank and clears when that tank reaches 567 kg.</p></div></div>
+            <Max>
+              <strong>LOW uses 590 / 737 kg</strong> in the supplied 737-8200
+              FCOM: it appears below 590 kg and stays until quantity increases
+              to 737 kg. The listed CONFIG and IMBAL thresholds remain the same.
+            </Max>
             <div className="fuel-alert-card"><img src="/images/fuel-alert-config.png" alt="CONFIG center fuel alert" /><div><strong>CONFIG</strong><p>Appears with either engine running when center tank quantity is above 726 kg and both center pump switches are OFF. It clears when both engines are stopped, center quantity falls below 363 kg, or either center pump switch is ON.</p></div></div>
             <div className="fuel-alert-card"><img src="/images/fuel-alert-imbal.png" alt="IMBAL main tank quantity alert" /><div><strong>IMBAL</strong><p>Appears on the lower-quantity main tank when the difference exceeds 453 kg. It clears when the difference decreases to 91 kg.</p></div></div>
             <p>LOW takes precedence over IMBAL when both conditions exist.</p>
@@ -458,11 +469,6 @@ export default function Fuel() {
                 and quantity-consistency alerts described below.
               </p>
             </div>
-            <Max>
-              <strong>LOW uses 590 / 737 kg</strong> in the supplied 737-8200
-              FCOM: it appears below 590 kg and stays until quantity increases
-              to 737 kg. The listed CONFIG and IMBAL thresholds remain the same.
-            </Max>
             <ul>
               <li><strong>FUEL DISAGREE:</strong> totalizer quantity and FMC calculated quantity disagree.</li>
               <li><strong>USING RSV FUEL:</strong> predicted destination fuel is below the entered RESERVES value.</li>
@@ -578,24 +584,17 @@ export default function Fuel() {
                 <strong>Operation:</strong> automatic; no flight-deck control or
                 indication.
               </li>
-              <li>
-                <strong>Typical period:</strong> after takeoff through flight,
-                continuing briefly during taxi after landing.
-              </li>
             </ul>
-            <ul className="study-points">
-              <li>
-                <strong>Indicator location:</strong> right main wheel well, near
-                the APU fire-control panel.
-              </li>
-              <li>
-                <strong>Green:</strong> operational. <strong>Blue:</strong>{' '}
-                degraded.
-              </li>
-              <li>
-                <strong>Amber or no lights:</strong> inoperative.
-              </li>
-            </ul>
+            <div className="ngs-status-card">
+              <img src="/images/ngs-status-panel.png" alt="NGS serviceability panel showing green operational, blue degraded and amber inoperative indications" />
+              <p>
+                The NGS serviceability panel is in the right main wheel well,
+                near the APU fire-control panel. A <strong>green</strong> light
+                indicates OPERATIONAL, a <strong>blue</strong> light indicates
+                DEGRADED and an <strong>amber</strong> light, or no illuminated
+                light, indicates INOPERATIVE.
+              </p>
+            </div>
             <Deep title="Go deeper · Availability and automatic shutdown">
               <p>
                 In the supplied NG manual, NGS is effectivity-dependent; the MAX
