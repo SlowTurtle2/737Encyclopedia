@@ -150,15 +150,29 @@ export default function AntiIceRain() {
             <span className="section-num">06 / ENGINE ANTI-ICE</span>
             <h2>Engine bleed air flows through a controlled valve to prevent ice from forming on each engine cowl lip.</h2>
             <h3>Description</h3>
-            <p>Each engine has an electrically controlled, pressure-actuated cowl anti-ice valve. When open, it routes engine bleed air around the cowl lip to prevent ice formation. The cowl system can operate both on the ground and in flight.</p>
+            <p>Each engine has an electrically controlled, pressure-actuated cowl anti-ice valve. When open, it routes engine bleed air around the cowl inlet lip to prevent ice formation. The fan blades and spinner are not heated. The cowl system can operate both on the ground and in flight.</p>
+            <figure className="figure course-photo">
+              <img src="/images/engine-anti-ice-heated-area.png" alt="737 engine showing the heated cowl inlet lip and the unheated fan and spinner" />
+              <figcaption>Engine thermal anti-ice heats the cowl inlet lip. The fan and spinner are not heated.</figcaption>
+            </figure>
+            <p>The cowl anti-ice air takeoff is upstream of the engine bleed valve. Engine anti-ice therefore remains available when the related engine bleed valve is closed; closing the bleed valve does not isolate the cowl anti-ice supply.</p>
+            <div className="configuration-data"><strong>BLEED-AIR SOURCE</strong><p><strong>737 NG:</strong> air is supplied from the 5th or 9th compressor stage. <strong>737 MAX:</strong> air is supplied from the 4th or 10th compressor stage.</p></div>
             <Max>The MAX also protects the engine core. The EEC automatically directs bleed air to the core as required from engine and atmospheric data, with no crew input or indication during normal operation.</Max>
             <h3>Command</h3>
             <p>One ENG ANTI-ICE switch controls the cowl anti-ice valve on each engine. Selecting ON opens the related valve, supplies hot bleed air to the cowl lip and activates icing stall-warning logic. Selecting OFF closes the valve; normal stall-warning logic returns only if wing anti-ice has not been used in flight.</p>
             <Deep title="Go deeper · MAX idle logic"><p>With engine anti-ice ON, the supplied MAX uses icing idle with flaps UP and approach idle with the flaps extended. With engine anti-ice OFF, it uses flight idle below 15° and approach idle at 15° or more.</p></Deep>
             <h3>Warning</h3>
-            <ul className="study-points"><li><strong>COWL ANTI-ICE:</strong> amber indicates excessive pressure downstream of the cowl anti-ice valve.</li><li><strong>TAI:</strong> green when the cowl valve is open; amber when valve position disagrees with the switch.</li></ul>
-            <div className="indication-grid"><div className="indication blue"><strong>NG · COWL VALVE OPEN</strong><p>Dim blue when open; bright blue during transit or when position disagrees.</p></div><div className="indication amber"><strong>MAX · COWL VALVE</strong><p>Amber momentarily during transit and steady for a position disagreement; otherwise extinguished.</p></div></div>
-            <Max>An amber ENG ANTI-ICE light on the MAX indicates that cowl thermal anti-ice has been inhibited by a system failure or that an engine core anti-ice valve has failed closed.</Max>
+            <div className="engine-warning-grid">
+              <div className="engine-warning-card ng">
+                <img src="/images/ng-engine-anti-ice-lights.png" alt="737 NG COWL ANTI-ICE and blue COWL VALVE OPEN lights" />
+                <div><strong>737 NG</strong><p><b>COWL ANTI-ICE · amber:</b> excessive pressure in the duct downstream of the cowl anti-ice valve.</p><p><b>COWL VALVE OPEN · dim blue:</b> the valve is open with its switch ON.</p><p><b>COWL VALVE OPEN · bright blue:</b> the valve is moving or its position disagrees with the switch.</p><p><b>Extinguished:</b> the valve is closed with its switch OFF.</p></div>
+              </div>
+              <div className="engine-warning-card max">
+                <img src="/images/max-engine-anti-ice-lights.png" alt="737 MAX ENG ANTI-ICE, COWL ANTI-ICE and COWL VALVE lights" />
+                <div><strong>737 MAX</strong><p><b>ENG ANTI-ICE · amber:</b> cowl anti-ice is inhibited by a system failure, or an engine core anti-ice valve has failed closed.</p><p><b>COWL ANTI-ICE · amber:</b> excessive pressure downstream of the cowl anti-ice valve.</p><p><b>COWL VALVE · momentary amber:</b> the valve is in transit.</p><p><b>COWL VALVE · steady amber:</b> valve position disagrees with the switch.</p><p><b>COWL VALVE extinguished:</b> the valve agrees with the commanded open or closed position.</p></div>
+              </div>
+            </div>
+            <p>The engine display also shows a <strong>green TAI</strong> indication when the cowl valve is open and the related ENG ANTI-ICE switch is ON. An <strong>amber TAI</strong> indicates that valve position does not agree with the switch.</p>
             <Need title="Cowl lip on NG · cowl and core on MAX"><p>The flight crew directly selects cowl anti-ice. MAX core anti-ice is automatic through the EEC.</p></Need>
             <Source>NG 3.10.4–5, 3.20.5–6 · MAX 3.10.3–4, 3.20.4–6</Source>
           </section>
