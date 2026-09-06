@@ -23,8 +23,11 @@ export default function AirplaneGeneral() {
           <article><span>737-800 NG · WINGLETS</span><strong>39.47 m</strong><p>Length</p><strong>35.79 m</strong><p>Wingspan</p><strong>12.62 m</strong><p>Reference height</p></article>
           <article><span>737-8200 MAX</span><strong>39.47 m</strong><p>Length</p><strong>35.92 m</strong><p>Wingspan</p><strong>12.31 m</strong><p>Reference height</p></article>
         </div>
-        <ul className="study-points"><li><strong>NG minimum 180° pavement width:</strong> approximately 24.3 m.</li><li><strong>MAX minimum 180° pavement width:</strong> approximately 24.4 m.</li><li><strong>Largest turning arc:</strong> the wingtip determines minimum obstacle clearance.</li></ul>
-        <Warning title="GROUND CLEARANCE">FCOM dimensions are reference values. Use the airport/facilities planning data and approved ground procedures for actual obstacle and stand clearance.</Warning>
+        <figure className="figure course-photo">
+          <img src="/images/airplane-dimensions-ng-max.png" alt="Comparison of the 737-800 NG and 737-8200 MAX length, wingspan and reference height" />
+          <figcaption>737-800 NG and 737-8200 MAX reference dimensions.</figcaption>
+        </figure>
+        <ul className="study-points"><li><strong>NG minimum 180° pavement width:</strong> approximately 24.3 m.</li><li><strong>MAX minimum 180° pavement width:</strong> approximately 24.4 m.</li></ul>
         <Need title="Same length · slightly wider MAX"><p>Both are 39.47 m long. The supplied MAX wingspan is 0.13 m greater.</p></Need>
         <Source>NG 1.10.2, 1.10.5 · MAX 1.10.1–2</Source>
       </section>
@@ -34,6 +37,7 @@ export default function AirplaneGeneral() {
         <h2>Exterior lights make the aircraft visible, illuminate its path and help the crew inspect critical external areas.</h2>
         <h3>Exterior lights</h3>
         <ul className="study-points"><li><strong>Landing:</strong> forward illumination for takeoff, approach and landing.</li><li><strong>Taxi and runway turnoff:</strong> illuminate the taxi path and areas ahead of the main gear.</li><li><strong>Position:</strong> red left, green right and white aft navigation references.</li><li><strong>Strobe:</strong> high-intensity white anti-collision awareness.</li><li><strong>Anti-collision:</strong> red lights above and below the fuselage.</li><li><strong>Logo, wing and wheel-well:</strong> illuminate the tail, wing leading edges and gear bays.</li></ul>
+        <Deep title="Go deeper · Taxi-light variants"><p>Until 2015, the 250 W taxi light was installed on the nose landing gear. On LED-equipped aircraft, the taxi lights are installed in the wing roots and provide much more effective illumination. On later models, they switch off automatically when the landing gear retracts.</p></Deep>
         <Max>Exterior light installation varies by effectivity. The supplied NG includes configurations with separate retractable/fixed lights or combined LED landing, taxi and turnoff lights. The MAX uses its applicable LED installation.</Max>
         <h3>Emergency lights</h3>
         <p>With the flight deck switch guarded in <strong>ARMED</strong>, the emergency lights illuminate automatically if DC bus No. 1 fails or AC power is switched off. Selecting ON illuminates all emergency lights; OFF prevents automatic operation.</p>
@@ -71,10 +75,21 @@ export default function AirplaneGeneral() {
       <section className="course-section" id="doors">
         <span className="section-num">05 / AIRCRAFT DOORS</span>
         <h2>Entry, service, cargo, flight deck and emergency-exit doors use different locking and indication systems.</h2>
+        <h3>Description</h3>
         <ul className="study-points"><li><strong>Entry and service:</strong> four primary cabin doors with escape-slide provisions.</li><li><strong>Cargo:</strong> two inward-opening plug-type pressure doors on the lower right fuselage.</li><li><strong>Flight deck:</strong> electrically locked reinforced door with emergency access and decompression panels.</li><li><strong>Flight deck windows No. 2:</strong> can open and provide emergency egress; only the first officer’s can be opened externally.</li><li><strong>Overwing exits:</strong> mechanically retained and automatically flight-locked by 28 V DC logic.</li></ul>
         <Max>The 737-8200 adds two mid-exit doors aft of the wings. Its evacuation layout includes four entry/service doors, four overwing exits and two mid-exits. These additional doors also participate in flight-lock and door-warning logic.</Max>
+        <div className="general-figure-grid">
+          <figure className="figure course-photo"><img src="/images/max-8200-doors-exits-overview.png" alt="Location of the doors and emergency exits on both sides of a 737-8200 MAX" /><figcaption>737-8200 doors and exits, left and right sides.</figcaption></figure>
+          <figure className="figure course-photo"><img src="/images/max-8200-doors-exits-detail.png" alt="Detailed 737-8200 MAX door and exit locations including the mid exits" /><figcaption>Detailed view of the entry, service, overwing, mid-exit and cargo-door locations.</figcaption></figure>
+        </div>
         <Warning title="WIND LIMITS">Do not operate entry or service doors in steady wind above 40 kt, and do not leave them open when gusts exceed 65 kt. Strong winds can damage the aircraft structure.</Warning>
         <Deep title="Go deeper · Overwing flight locks"><p>Overwing exits lock when three of the four entry/service doors are closed, either engine is running, and the aircraft is airborne or both thrust levers are advanced. They unlock when any condition is lost or DC power fails.</p></Deep>
+        <h3>Indications</h3>
+        <p>An amber light identifies the door or exit that is not closed and locked. The 737-8200 panel adds separate <strong>LEFT MID EXIT</strong> and <strong>RIGHT MID EXIT</strong> indications for its additional exits.</p>
+        <div className="general-figure-grid door-indication-grid">
+          <figure className="figure course-photo"><img src="/images/ng-doors-annunciator-panel.png" alt="737 NG doors annunciator panel" /><figcaption>737 NG door indications.</figcaption></figure>
+          <figure className="figure course-photo"><img src="/images/max-8200-doors-annunciator-panel.png" alt="737-8200 MAX doors annunciator panel with left and right mid-exit lights" /><figcaption>737-8200 MAX panel with the additional mid-exit indications.</figcaption></figure>
+        </div>
         <Need title="Four cabin doors · two cargo doors"><p>The MAX 8200 also has two mid-exit doors aft of the wings.</p></Need>
         <Source>NG 1.30.10–14, 1.40.41–53 · MAX 1.30.10–14, 1.40.29–42</Source>
       </section>
@@ -93,7 +108,13 @@ export default function AirplaneGeneral() {
         <span className="section-num">07 / AIRSTAIR</span>
         <h2>The optional forward airstair allows boarding without airport stairs and stows below the forward entry door.</h2>
         <p>The electrically operated stair can be controlled from inside or outside. Its pressure door opens automatically before extension, and upper handrails are attached after the stair is fully extended.</p>
-        <ul className="study-points"><li><strong>Normal operation:</strong> requires AC and DC power.</li><li><strong>Standby operation:</strong> uses DC power and bypasses some normal control logic.</li><li><strong>STAIR OPER:</strong> white while the stair is moving.</li><li><strong>AIRSTAIR:</strong> amber when the pressure door is unlocked; also triggers DOORS and MASTER CAUTION.</li><li><strong>Tread lights AUTO:</strong> illuminate when fully extended and extinguish during retraction.</li></ul>
+        <h3>Operation from inside</h3>
+        <p>The interior controls are on the forward attendant panel. Open the forward entry door to the cocked position; the door-open safety circuit prevents normal or standby stair operation while it is closed. Hold <strong>EXTEND</strong> or <strong>RETRACT</strong> until travel is complete. Normal operation uses 115 V AC and DC power. If normal control is unavailable, keep the battery switch ON and hold <strong>STANDBY</strong> together with the required direction switch.</p>
+        <p>The <strong>STAIR OPER</strong> light remains illuminated while the stair is moving. With tread lights selected AUTO, they illuminate when the stair is fully extended and extinguish as it retracts.</p>
+        <h3>Operation from outside</h3>
+        <p>The exterior controls are in a recess below and to the right of the airstair compartment. The forward entry door does not need to be open because exterior control bypasses the door-open requirement. Use the airstair switch to select <strong>EXTEND</strong> or <strong>RETRACT</strong>. For standby operation, hold the spring-loaded <strong>NORMAL/STANDBY</strong> switch at STANDBY while commanding the required direction.</p>
+        <p>Exterior standby receives DC power directly from the battery bus, so the flight deck battery switch does not need to be ON. Handrail interlocks normally prevent retraction until the handrail extensions are stowed.</p>
+        <ul className="study-points"><li><strong>AIRSTAIR:</strong> amber when the pressure door is unlocked; also triggers DOORS and MASTER CAUTION.</li><li><strong>Tread lights AUTO:</strong> illuminate when fully extended and extinguish during retraction.</li></ul>
         <Warning title="HANDRAILS AND PLATFORM">Stow the handrail extensions before retraction. Standby or maintenance control can bypass safety circuits and cause substantial damage. Use care on the small platform when operating the forward entry door, especially in poor weather.</Warning>
         <Need title="Normal: AC + DC · standby: DC"><p>The forward entry door must be partially open for normal interior operation; exterior control bypasses that requirement.</p></Need>
         <Source>NG 1.30.23–24, 1.40.62–64 · MAX 1.30.18–20, 1.40.47–50</Source>

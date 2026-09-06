@@ -140,6 +140,9 @@ svg {
 .dimension-compare article > span { grid-column: 1/-1; margin-bottom: 14px; color: #237084; font-size: 12px; font-weight: 800; letter-spacing: 1.2px; }
 .dimension-compare strong { font-size: 21px; color: #183e62; }
 .dimension-compare p { margin: 0 !important; text-align: right; color: #68798a !important; }
+.general-figure-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 22px 0; }
+.general-figure-grid .figure { margin: 0; }
+.door-indication-grid { align-items: start; }
 .home-hero {
   display: grid;
   grid-template-columns: 1.15fr 1fr;
@@ -2271,7 +2274,8 @@ summary:focus-visible {
   .site-header .header-cta { display: none; }
   .mobile-nav > summary { padding: 8px 10px; }
   .glossary-grid { grid-template-columns: 1fr; }
-  .dimension-compare { grid-template-columns: 1fr; }
+  .dimension-compare,
+  .general-figure-grid { grid-template-columns: 1fr; }
   .system-pager { grid-template-columns: 1fr; }
   .system-pager > div, .system-pager .pager-next { text-align: left; }
   .system-pager-button { width: 100%; min-width: 0; }
