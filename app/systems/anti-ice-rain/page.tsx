@@ -61,14 +61,14 @@ export default function AntiIceRain() {
               <img src="/images/window-heat-windows.png" alt="Front view of a 737 identifying electrically heated windows 1L, 1R, 2L and 2R" />
               <figcaption>Windows 1L, 1R, 2L and 2R are electrically heated.</figcaption>
             </figure>
-            <ul className="study-points">
-              <li><strong>FWD switches:</strong> control left and right window No. 1.</li>
-              <li><strong>SIDE switches:</strong> control left and right window No. 2.</li>
-              <li><strong>Window No. 3:</strong> not electrically heated.</li>
-            </ul>
             <Warning title="WINDOW HEAT INOPERATIVE">If any required heated window loses its heating function, apply the applicable dispatch procedure. The restriction given in the course material is a maximum of <strong>250 kt below FL100</strong>.</Warning>
             <h3>Command</h3>
             <p>The pilot selects each FWD or SIDE WINDOW HEAT switch ON or OFF independently. Once selected ON, a temperature controller cycles electrical power automatically to maintain the correct window temperature. No manual temperature setting is required.</p>
+            <ul className="study-points">
+              <li><strong>FWD switches:</strong> control left and right window No. 1.</li>
+              <li><strong>SIDE switches:</strong> control left and right window No. 2.</li>
+              <li><strong>Window No. 3:</strong> not electrically heated and therefore has no WINDOW HEAT switch.</li>
+            </ul>
             <figure className="figure course-photo panel-photo">
               <img src="/images/window-heat-panel.png" alt="737 window heat overhead panel with four switches, ON lights, OVERHEAT lights and test selector" />
               <figcaption>Four window switches and the spring-loaded OVHT / PWR TEST selector.</figcaption>
@@ -101,9 +101,19 @@ export default function AntiIceRain() {
           <section className="course-section" id="probes">
             <span className="section-num">04 / PROBE HEAT</span>
             <h2>Electrical heaters prevent ice from corrupting the pressure, angle-of-attack and temperature data used by flight instruments and aircraft systems.</h2>
-            <ul className="study-points"><li><strong>Heated:</strong> five pitot probes, two alpha vanes and the total-air-temperature probe.</li><li><strong>Not heated:</strong> static ports.</li><li><strong>Amber probe light:</strong> the related probe is not heated.</li><li><strong>AUTO:</strong> both A and B systems receive power automatically when either engine is running.</li><li><strong>ON:</strong> supplies power directly to the related heat system.</li></ul>
-            <Warning title="STANDBY POWER">Only the captain’s pitot probe is heated on standby power. The CAPT PITOT light does not show a heater failure in this configuration, and the standby airspeed pitot probe is not heated.</Warning>
-            <Deep title="Go deeper · NG switch effectivity"><p>The supplied NG FCOM shows both OFF/ON and AUTO/ON probe-heat panels depending on service-bulletin status. The supplied MAX configuration uses AUTO/ON switches. Always identify the installed panel.</p></Deep>
+            <h3>Description</h3>
+            <p>The probe heat system uses electrical heating to keep the air-data and angle-of-attack sensors free of ice. It protects the captain and first-officer pitot probes, the left and right elevator pitot probes, the auxiliary pitot probe, both alpha vanes and the total-air-temperature probe. The static ports are not heated.</p>
+            <figure className="figure course-photo probe-location-photo">
+              <img src="/images/heated-probes-locations.png" alt="737 showing the locations of the captain, first officer, auxiliary and elevator pitot probes, both alpha vanes and temperature probe" />
+              <figcaption>Locations of the electrically heated probes and sensors.</figcaption>
+            </figure>
+            <h3>Command</h3>
+            <p>Two switches control probe heat systems A and B. Selecting <strong>ON</strong> supplies electrical power to the related heaters directly. On panels fitted with an <strong>AUTO</strong> position, both systems are powered automatically as soon as either engine is running; when neither engine is running, automatic heating is removed.</p>
+            <Max>The supplied MAX uses AUTO/ON probe-heat switches. Some earlier NG aircraft use OFF/ON switches and therefore have no automatic mode: the crew must select probe heat ON. Later or modified NG aircraft may also use AUTO/ON switches, so the installed panel remains the controlling reference.</Max>
+            <h3>Warning</h3>
+            <p>An amber probe-heat light means that the related probe or sensor is not being heated. It identifies loss of the expected heating function rather than the presence of ice.</p>
+            <Warning title="STANDBY POWER">On standby power, only the captain’s pitot probe is heated. The CAPT PITOT light does not indicate a heater failure while operating in this configuration, and the standby airspeed pitot probe is not heated.</Warning>
+            <Deep title="Go deeper · Panel effectivity"><p>The supplied NG FCOM shows both OFF/ON and AUTO/ON panels according to service-bulletin status. Always identify the installed switch positions before applying a memorized flow.</p></Deep>
             <Need title="Static ports are not heated"><p>The amber lights monitor probe heating, except that their status indication is unavailable on standby power.</p></Need>
             <Source>NG 3.10.3, 3.20.5 · MAX 3.10.3, 3.20.4</Source>
           </section>

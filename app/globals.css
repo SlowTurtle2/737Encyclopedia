@@ -1861,6 +1861,7 @@ summary:focus-visible {
 .course-photo img { display: block; width: 100%; height: auto; border-radius: 10px; }
 .window-layout-photo { margin-top: 22px; }
 .panel-photo { max-width: 760px; margin-inline: auto; }
+.probe-location-photo { margin: 22px 0 30px; }
 .window-alert-card {
   display: grid;
   grid-template-columns: 190px 1fr;
