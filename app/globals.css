@@ -2257,7 +2257,28 @@ summary:focus-visible {
   color: #536979;
 }
 
-@media (max-width: 1240px) {
+@media (min-width: 861px) and (max-width: 1240px) {
+  .site-header {
+    min-height: 72px;
+    padding: 12px 18px;
+    flex-wrap: nowrap;
+    gap: 14px;
+  }
+  .site-header .brand {
+    font-size: 18px;
+  }
+  .site-header .desktop-nav {
+    display: flex;
+    flex: 1;
+    order: initial;
+    width: auto;
+    justify-content: flex-end;
+    gap: 14px;
+    font-size: 12px;
+  }
+  .site-header .header-cta { display: none; }
+}
+@media (max-width: 860px) {
   .site-header { flex-wrap: nowrap; min-height: 72px; padding: 12px 24px; }
   .site-header .desktop-nav { display: none; }
   .mobile-nav { display: block; position: relative; margin-left: auto; }
