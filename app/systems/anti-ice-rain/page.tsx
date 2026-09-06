@@ -1,6 +1,6 @@
 import Link from '@/components/site-link';
 import Contents from '../fuel/contents';
-import { StallLogicDiagram, WingAntiIceDiagram } from './diagrams';
+import { StallLogicDiagram } from './diagrams';
 
 export const metadata = {
   title: 'Anti-Ice, Rain | 737Encyclopedia',
@@ -126,14 +126,22 @@ export default function AntiIceRain() {
             <h2>Bleed air heats the three inboard leading-edge slats on each wing; the leading-edge flaps and outboard slats remain unheated.</h2>
             <h3>Description</h3>
             <p>The wing thermal anti-ice system takes engine bleed air from the pneumatic manifold and routes it through two AC motor-operated control valves. With a valve open, hot air passes through the three inboard leading-edge slats on that wing and is then exhausted overboard. The system remains effective with the slats in any position.</p>
-            <WingAntiIceDiagram />
+            <figure className="figure course-photo">
+              <img src="/images/wing-anti-ice-slats.png" alt="737 showing the three heated inboard leading-edge slats on each wing and the unheated outboard slats" />
+              <figcaption>Wing anti-ice protects the three inboard leading-edge slats on each wing. Outboard slats and leading-edge flaps are not heated.</figcaption>
+            </figure>
             <h3>Command</h3>
             <p><strong>In flight,</strong> selecting WING ANTI-ICE ON opens both control valves and activates icing stall-warning logic. Duct-temperature and thrust-setting logic do not control valve operation in flight.</p>
-            <p><strong>On the ground,</strong> both valves open only while both engines remain below the takeoff-warning thrust setting and both distribution ducts remain below the thermal-switch temperature. High thrust or a hot duct closes the valves; they reopen when both conditions return to normal. The switch stays ON but automatically trips OFF at lift-off.</p>
+            <p><strong>On the ground,</strong> both valves open only while both engines remain below the takeoff-warning thrust setting and both distribution ducts remain below the thermal-switch temperature. High thrust or a hot duct closes the valves; they reopen when both conditions return to normal.</p>
+            <p><strong>During takeoff,</strong> advancing either thrust lever above the takeoff-warning setting closes both valves, so wing anti-ice is no longer using bleed air during the takeoff roll. The WING ANTI-ICE switch itself remains ON. At lift-off, when the air/ground logic changes to AIR as the wheels leave the runway, the switch automatically trips to OFF.</p>
             <h3>Warning</h3>
             <p>The valve lights show movement or a disagreement between the selected switch position and the actual position of the related wing anti-ice valve.</p>
-            <div className="indication-grid"><div className="indication blue"><strong>NG · VALVE OPEN</strong><p>Bright blue means transit or disagreement; dim blue means the valve is open.</p></div><div className="indication amber"><strong>MAX · L/R VALVE</strong><p>Amber momentarily in transit; steady amber means valve position disagrees with the switch.</p></div></div>
+            <div className="wing-warning-grid">
+              <div className="wing-warning-card ng"><img src="/images/ng-wing-valve-open-lights.png" alt="Blue L VALVE OPEN and R VALVE OPEN lights on the 737 NG" /><div><strong>737 NG · VALVE OPEN</strong><p><b>Dim blue:</b> the related valve is open and agrees with the ON command.</p><p><b>Bright blue:</b> the valve is moving, or its actual position disagrees with the WING ANTI-ICE switch.</p><p><b>Extinguished:</b> the related valve is closed with the switch OFF.</p></div></div>
+              <div className="wing-warning-card max"><img src="/images/max-wing-valve-lights.png" alt="Amber L VALVE and R VALVE lights on the 737 MAX" /><div><strong>737 MAX · L/R VALVE</strong><p><b>Momentary amber:</b> the related valve is in transit.</p><p><b>Steady amber:</b> valve position disagrees with the WING ANTI-ICE switch.</p><p><b>Extinguished:</b> the valve agrees with the commanded position, whether open or closed.</p></div></div>
+            </div>
             <Max>MAX wing-valve indications are amber and normally extinguished when valve position agrees with the switch. The supplied NG uses blue VALVE OPEN lights: dim when open and bright during transit or disagreement.</Max>
+            <Warning title="USE ABOVE FL350">Use of wing anti-ice above FL350 may cause a BLEED TRIP OFF and loss of the associated bleed-air source. Follow the applicable operating procedure and limitations.</Warning>
             <Need title="Only the inboard slats"><p>Wing anti-ice is effective with the slats in any position and uses engine bleed air.</p></Need>
             <Source>NG 3.10.6, 3.20.6–8 · MAX 3.10.5–6, 3.20.6–8</Source>
           </section>
