@@ -65,8 +65,8 @@ const sections = [
   ['feed', 'Pumps & fuel feed'],
   ['crossfeed', 'Crossfeed & valves'],
   ['indications', 'Indications & alerts'],
-  ['temperature', 'Temperature & limits'],
-  ['ground', 'Refuelling NGS'],
+  ['temperature', 'Fuel Temperature and Limits'],
+  ['ground', 'Refuelling and NGS'],
   ['quiz', 'Check your knowledge'],
 ];
 export default function Fuel() {
@@ -230,6 +230,7 @@ export default function Fuel() {
                 </p>
               </div>
             </div>
+            <h4>Center Pump Automatic</h4>
             <p>
               Each center tank pump automatically stops after its own pressure
               sensor detects low pressure for a short delay, although the switch
@@ -238,13 +239,16 @@ export default function Fuel() {
               it is switched off or the logic stops it again. This delay is a
               separate function from the 10-second MASTER CAUTION logic.
             </p>
+            <p>
+              Intentional dry running of a center tank pump with its low-pressure
+              light illuminated is prohibited.
+            </p>
 
             <h3>Scavenge pump</h3>
             <p>
               The scavenge jet pump transfers residual fuel from the center tank
-              to main tank No. 1, the left wing tank. In the configuration data
-              supplied for this course, transfer begins at approximately
-              <strong> 1,990 kg in main tank No. 1</strong>.
+              to main tank No. 1, the left wing tank. Transfer begins when main
+              tank No. 1 is approximately half full.
             </p>
             <ul className="study-points">
               <li>
@@ -254,8 +258,7 @@ export default function Fuel() {
                 <strong>Required switch:</strong> No. 1 FWD fuel pump ON.
               </li>
               <li>
-                <strong>Starts:</strong> main tank 1 approximately half full,
-                about 1,990 kg for the stated configuration.
+                <strong>Starts:</strong> main tank 1 approximately half full.
               </li>
               <li>
                 <strong>Continues:</strong> for the remainder of the flight once
@@ -448,6 +451,13 @@ export default function Fuel() {
               </div>
             </div>
             <h3>MAX alert</h3>
+            <div className="max-alert-overview">
+              <img src="/images/max-fuel-alerts.png" alt="MAX fuel display showing FUEL DISAGREE, USING RSV FUEL and INSUFFICIENT FUEL alerts" />
+              <p>
+                The supplied MAX display can present the three fuel prediction
+                and quantity-consistency alerts described below.
+              </p>
+            </div>
             <Max>
               <strong>LOW uses 590 / 737 kg</strong> in the supplied 737-8200
               FCOM: it appears below 590 kg and stays until quantity increases
@@ -467,7 +477,7 @@ export default function Fuel() {
             <Source>NG 12.10.2–6, 12.20.3 · MAX 12.10.2–5, 12.20.3</Source>
           </section>
           <section className="course-section" id="temperature">
-            <span className="section-num">05 / TEMPERATURE & LIMITS</span>
+            <span className="section-num">05 / FUEL TEMPERATURE AND LIMITS</span>
             <h2>
               Fuel temperature is measured in main tank 1 and must remain
               inside the applicable warm and cold operating limits.
@@ -500,27 +510,6 @@ export default function Fuel() {
                 icing-inhibitor additives do not change the minimum.
               </p>
             </Deep>
-            <h3>Other NG limitations worth remembering</h3>
-            <ul>
-              <li>
-                Scheduled lateral imbalance is zero; random imbalance must not
-                exceed <strong>453 kg</strong> for taxi, takeoff, flight or
-                landing.
-              </li>
-              <li>
-                Main tanks must be full if the center contains more than{' '}
-                <strong>453 kg</strong>.
-              </li>
-              <li>
-                Intentional dry running of a center tank pump with its
-                low-pressure light illuminated is prohibited.
-              </li>
-            </ul>
-            <p className="note">
-              An alert threshold is not a target. For example, CONFIG at 726 kg
-              and the center-fuel loading threshold at 453 kg describe different
-              conditions.
-            </p>
             <Need title="−43°C / freezing point +3°C" tone="teal">
               <p>
                 Use the <strong>higher (warmer)</strong> minimum. Maximum tank
@@ -534,7 +523,7 @@ export default function Fuel() {
             </Source>
           </section>
           <section className="course-section" id="ground">
-            <span className="section-num">06 / REFUELLING NGS</span>
+            <span className="section-num">06 / REFUELLING AND NGS</span>
             <h3>Refuelling</h3>
             <ul className="study-points">
               <li>

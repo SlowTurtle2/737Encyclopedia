@@ -1788,8 +1788,11 @@ summary:focus-visible {
 .fuel-alert-card img { display: block; width: 100%; height: auto; }
 .fuel-alert-card strong { color: #9a6500; font-size: 12px; letter-spacing: 1.2px; }
 .fuel-alert-card p { margin: 7px 0 0 !important; }
+.max-alert-overview { display: grid; grid-template-columns: minmax(220px, 310px) 1fr; align-items: center; gap: 22px; margin: 18px 0; padding: 16px; border: 1px solid #cfd8ef; border-radius: 12px; background: #f3f5fc; }
+.max-alert-overview img { display: block; width: 100%; height: auto; }
+.max-alert-overview p { margin: 0 !important; color: #505d7d !important; }
 @media (max-width: 620px) {
-  .valve-detail, .fuel-alert-card { grid-template-columns: 1fr; }
+  .valve-detail, .fuel-alert-card, .max-alert-overview { grid-template-columns: 1fr; }
 }
 .pump-warning > div > strong {
   color: #9a6500;
