@@ -62,7 +62,7 @@ export default function Home() {
           <span>Know the systems. Fly the logic.</span>
         </h1>
         <p className="lead">
-          Clear 737 courses for type-rating pilots and serious simmers.
+          Built for Irish low-cost carrier cadets and serious 737 simmers.
         </p>
       </section>
       <div className="intro-strip wrap">
@@ -87,13 +87,13 @@ export default function Home() {
             </p>
           </div>
           <span className="library-count">
-            15 systems <span> / 2 available</span>
+            15 systems <span> / 3 available</span>
           </span>
         </div>
         <div className="system-shortcuts">
           {chapters.map((name, index) => {
             const Icon = icons[index];
-            const available = name === 'Fuel' || name === 'Anti-Ice, Rain';
+            const available = name === 'Fuel' || name === 'Anti-Ice, Rain' || name === 'Airplane General, Emergency Equipment, Doors, Windows';
             return (
               <Link
                 key={name}

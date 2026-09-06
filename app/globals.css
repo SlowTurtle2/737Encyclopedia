@@ -129,6 +129,11 @@ svg {
 .glossary-grid article { padding: 20px; border: 1px solid #dce5ed; border-radius: 12px; background: #f7fafc; }
 .glossary-grid h2 { margin: 0 0 7px; font-size: 18px; color: #193f64; }
 .glossary-grid p { margin: 0; color: #5a6c7d; font-size: 14px; }
+.dimension-compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 24px 0; }
+.dimension-compare article { display: grid; grid-template-columns: 1fr auto; gap: 3px 16px; padding: 22px; border: 1px solid #cddde8; border-radius: 14px; background: #f4f8fb; }
+.dimension-compare article > span { grid-column: 1/-1; margin-bottom: 14px; color: #237084; font-size: 12px; font-weight: 800; letter-spacing: 1.2px; }
+.dimension-compare strong { font-size: 21px; color: #183e62; }
+.dimension-compare p { margin: 0 !important; text-align: right; color: #68798a !important; }
 .home-hero {
   display: grid;
   grid-template-columns: 1.15fr 1fr;
@@ -2236,6 +2241,7 @@ summary:focus-visible {
   .site-header .header-cta { display: none; }
   .mobile-nav > summary { padding: 8px 10px; }
   .glossary-grid { grid-template-columns: 1fr; }
+  .dimension-compare { grid-template-columns: 1fr; }
   .chapter-pager { grid-template-columns: 1fr 1fr; }
   .chapter-pager .pager-glossary { grid-column: 1 / -1; grid-row: 2; justify-self: center; }
 }
