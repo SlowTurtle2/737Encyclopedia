@@ -462,6 +462,11 @@ export default function Fuel() {
               </div>
             </div>
             <h3>MAX alert</h3>
+            <p>
+              In addition to the fuel alerts already available on the 737 NG,
+              the 737 MAX provides extra messages related to fuel quantity and
+              the FMC fuel prediction.
+            </p>
             <div className="max-alert-overview">
               <img src="/images/max-fuel-alerts.png" alt="MAX fuel display showing FUEL DISAGREE, USING RSV FUEL and INSUFFICIENT FUEL alerts" />
               <p>
@@ -474,12 +479,6 @@ export default function Fuel() {
               <li><strong>USING RSV FUEL:</strong> predicted destination fuel is below the entered RESERVES value.</li>
               <li><strong>INSUFFICIENT FUEL:</strong> predicted destination fuel is below 900 kg.</li>
             </ul>
-            <Max>
-              The MAX description includes{' '}
-              <strong>impending or actual bypass</strong>. If both FILTER BYPASS
-              lights illuminate, both remain illuminated until engine shutdown
-              on the ground.
-            </Max>
             <Source>NG 12.10.2–6, 12.20.3 · MAX 12.10.2–5, 12.20.3</Source>
           </section>
           <section className="course-section" id="temperature">
