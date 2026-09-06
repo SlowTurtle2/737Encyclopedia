@@ -174,12 +174,12 @@ export default function Fuel() {
               </p>
             </aside>
             <aside className="pump-location-warning">
-              <strong>WARNING · PUMP FUNCTION ≠ PHYSICAL LOCATION</strong>
+              <strong>WARNING · PUMP FUNCTION AND PHYSICAL LOCATION</strong>
               <p>
-                Two pumps serve each tank, but all six pump assemblies are
-                physically grouped in the center tank area. This arrangement
-                simplifies maintenance access and places them in the area
-                protected by the Nitrogen Generation System.
+                Each tank uses two pumps located in the fuel tanks. The two
+                center-tank pumps are installed within the center tank; the NGS
+                protects that tank’s ullage. Do not infer that all six pump
+                assemblies are grouped in the center tank area.
               </p>
             </aside>
             <h3>Fuel supply</h3>
@@ -241,6 +241,18 @@ export default function Fuel() {
               dry running of a center tank pump with its low-pressure light
               illuminated is prohibited.
             </p>
+            <Deep title="Go deeper · A dry pump can lose its prime">
+              <p>
+                Technical background material notes that a center pump left
+                running dry for roughly ten minutes can lose the fuel needed to
+                prime itself and may remain inoperative after refuelling. A LOW
+                PRESSURE light that remains illuminated for more than about 19
+                seconds after selection can be a maintenance clue. These are
+                indicative troubleshooting values, not a crew reset procedure:
+                switch the affected pump OFF and apply the aircraft’s current
+                QRH and maintenance process.
+              </p>
+            </Deep>
 
             <h3>Scavenge pump</h3>
             <p>
@@ -261,6 +273,10 @@ export default function Fuel() {
               <li>
                 <strong>Continues:</strong> for the remainder of the flight once
                 started.
+              </li>
+              <li>
+                <strong>Indicative transfer rate:</strong> at least approximately
+                100 kg/h and commonly nearer 200 kg/h; confirm effectivity.
               </li>
             </ul>
             <h3>APU fuel</h3>
@@ -413,6 +429,17 @@ export default function Fuel() {
               effectivity, so the installed layout should be confirmed in the
               applicable aircraft manuals.
             </p>
+            <Deep title="Go deeper · How fuel quantity is measured">
+              <p>
+                Tank units act as electrical capacitors, with fuel forming the
+                dielectric between their electrodes. Because capacitance changes
+                with the amount and properties of the fuel, the FQIS combines the
+                tank-unit signals and calibration data to calculate usable
+                quantity. Where installed, a densitometer compensates for fuel
+                density so the displayed mass is more accurate as fuel properties
+                change.
+              </p>
+            </Deep>
             <div className="fuel-display-grid">
               <figure><img src="/images/fuel-display-round.png" alt="Round fuel quantity gauges fitted to an earlier 737 NG" /><figcaption>Round fuel quantity gauges · earlier NG layout</figcaption></figure>
               <figure><img src="/images/fuel-display-digital.png" alt="Digital fuel quantity display with totalizer fitted to later 737 NG and MAX aircraft" /><figcaption>Digital quantities and totalizer · later NG and MAX layout</figcaption></figure>
@@ -499,6 +526,14 @@ export default function Fuel() {
                 <strong>Power:</strong> AC.
               </li>
             </ul>
+            <p>
+              Main tank No. 1 is used because it is normally the coldest tank;
+              it receives less warming from the smaller hydraulic system A. If
+              temperature approaches the applicable minimum, descending into
+              warmer air or increasing speed can increase fuel temperature
+              through warmer ambient air or kinetic heating. Any response must
+              follow the current operating procedure and flight constraints.
+            </p>
             <ul className="study-points">
               <li><strong>Limit:</strong> maximum +49°C; minimum before takeoff
                 and in flight −43°C or freezing point +3°C, whichever is higher.</li>
@@ -523,6 +558,16 @@ export default function Fuel() {
                 from the supplied 737-800 NG FCOM L.10.9–10.
               </p>
             </Need>
+            <Deep title="Go deeper · Cold-soaked fuel frost">
+              <p>
+                After a long flight with cold fuel, frost can form on the upper
+                or lower wing skin over the tanks even when outside air
+                temperature is above freezing. This is cold-soaked fuel frost,
+                not atmospheric in-flight icing. Dispatch relief applies only
+                within an approved, marked CSFF area and under the precise
+                inspection and thickness criteria in the applicable procedure.
+              </p>
+            </Deep>
             <Source>
               NG L.10.9–10; 12.20.3. Limits here are attributed to the supplied
               NG configuration.
@@ -604,6 +649,17 @@ export default function Fuel() {
                 engine not running in flight, cargo/main-deck fire or smoke
                 detection, left pack overheat or an open center refueling valve.
                 Dispatch decisions belong to the applicable MEL.
+              </p>
+            </Deep>
+            <Deep title="Go deeper · Why nitrogen reduces flammability">
+              <p>
+                The air-separation module sends nitrogen-enriched air to the
+                empty space above the center-tank fuel and vents the
+                oxygen-enriched stream overboard. FAA technical background uses
+                approximately <strong>12% oxygen</strong> as a representative
+                concentration at which ignition is not sustained. This figure
+                explains the design objective; it is not a flight deck target or
+                crew-controlled parameter.
               </p>
             </Deep>
             <Source>

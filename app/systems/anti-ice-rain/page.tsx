@@ -78,7 +78,7 @@ export default function AntiIceRain() {
               <img src="/images/window-heat-on.png" alt="Green window heat ON light" />
               <div><strong>ON</strong><p>Illuminated green when heat is being applied to the selected window. It extinguishes when the switch is OFF, an overheat or system failure occurs, or the window reaches the correct temperature and the controller removes power.</p></div>
             </div>
-            <p>The spring-loaded <strong>PWR TEST</strong> position provides a confidence test of available window heating. The <strong>OVHT</strong> position simulates an overheat condition.</p>
+            <p>The spring-loaded <strong>PWR TEST</strong> position provides a confidence test of available window heating. With the related WINDOW HEAT switches ON, it forces the controllers to full power and the associated green ON lights should illuminate. Normal temperature regulation is bypassed during the test, but overheat protection remains available. The test is intended for an extinguished ON light and should not be performed when all four ON lights are already illuminated. The <strong>OVHT</strong> position simulates an overheat condition.</p>
             <h3>Warning and indications</h3>
             <div className="window-alert-card overheat-card">
               <img src="/images/window-heat-overheat.png" alt="Amber window heat OVERHEAT warning light" />
@@ -94,6 +94,7 @@ export default function AntiIceRain() {
             <h2>Independent left and right wipers clear the forward windows, while a permanent coating helps shed rain.</h2>
             <p>Each wiper selector has four positions: <strong>PARK, INT, LOW and HIGH</strong>.</p>
             <ul className="study-points"><li><strong>PARK:</strong> stops the motor and stows the blade.</li><li><strong>INT:</strong> one sweep cycle approximately every seven seconds.</li><li><strong>LOW / HIGH:</strong> continuous operation at the selected speed.</li></ul>
+            <Deep title="Go deeper · Permanent rain-repellent coating"><p>Modern forward windows use a permanent hydrophobic rain-repellent coating rather than the earlier liquid rain-repellent system. The coating encourages water to bead and leave the glass in the airflow. Its effectiveness can deteriorate with wiper use, age and unsuitable cleaning methods, and maintenance can restore it using the approved process.</p></Deep>
             <Warning title="DRY WINDSHIELD">Operating the wipers on a dry windshield can scratch the windshield.</Warning>
             <Source>NG 3.10.2, 3.20.4 · MAX 3.10.2, 3.20.3</Source>
           </section>
@@ -126,7 +127,7 @@ export default function AntiIceRain() {
             <span className="section-num">05 / WING ANTI-ICE</span>
             <h2>Bleed air heats the three inboard leading-edge slats on each wing; the leading-edge flaps and outboard slats remain unheated.</h2>
             <h3>Description</h3>
-            <p>The wing thermal anti-ice system takes engine bleed air from the pneumatic manifold and routes it through two AC motor-operated control valves. With a valve open, hot air passes through the three inboard leading-edge slats on that wing and is then exhausted overboard. The system remains effective with the slats in any position.</p>
+            <p>The wing thermal anti-ice system takes engine bleed air from the common pneumatic manifold and routes it through two AC motor-operated control valves. The manifold arrangement allows either available bleed source to supply the wing system, including the required reconfiguration for engine-out operation. With a valve open, hot air passes through the three inboard leading-edge slats on that wing and is then exhausted overboard. The system remains effective with the slats in any position.</p>
             <figure className="figure course-photo">
               <img src="/images/wing-anti-ice-slats.png" alt="737 showing the three heated inboard leading-edge slats on each wing and the unheated outboard slats" />
               <figcaption>Wing anti-ice protects the three inboard leading-edge slats on each wing. Outboard slats and leading-edge flaps are not heated.</figcaption>
@@ -185,10 +186,13 @@ export default function AntiIceRain() {
           <section className="course-section" id="visual">
             <span className="section-num">07 / VISUAL INDICATION OF ICE</span>
             <h2>The crew must monitor natural ice-accretion cues because the protected surfaces do not provide a single flight-deck ice quantity display.</h2>
-            <ul className="study-points"><li><strong>Windshield-wiper area:</strong> visible accumulation around the wiper can provide an early external cue.</li><li><strong>Windshield:</strong> broader accumulation may indicate more severe icing.</li><li><strong>Wing:</strong> inspect the visible leading-edge area and cues identified by the operator.</li></ul>
-            <Deep title="Go deeper · Optional NG ice detection system"><p>An optional ice detection system exists on the 737 NG, although relatively few aircraft are equipped with it. An additional detector probe is installed on the lower left side below the flight deck and provides an indication when ice is detected. Installed equipment and indication logic must be confirmed in the aircraft’s applicable manuals.</p></Deep>
+            <ul className="study-points"><li><strong>Below the wiper blades:</strong> water runs upward toward the blades in flight, so ice can appear around their lower edge early.</li><li><strong>Wiper attachment nut:</strong> accumulation on this exposed fitting is a useful confirmation that ice may also exist elsewhere on the airframe.</li><li><strong>Center windshield pillar:</strong> accumulation here indicates significant icing exposure, but it does not provide a certified severity measurement.</li><li><strong>Wing:</strong> inspect the visible leading-edge area and cues identified by the operator.</li></ul>
+            <Deep title="Go deeper · Optional NG ice detection system"><p>An optional ice detection system exists on the 737 NG, although relatively few aircraft are equipped with it. An additional detector probe is installed on the lower left fuselage below the flight deck. <strong>ICING</strong> illuminates while ice is detected. After a previous detection, <strong>NO ICE</strong> illuminates when the probe no longer detects ice and is cancelled by pressing the light. An <strong>ICE DETECTOR</strong> light on the anti-ice panel indicates a detector-system failure. Installed equipment and indication logic must be confirmed in the aircraft’s applicable manuals.</p></Deep>
             <aside className="study-tip"><strong>TIP · TURNAROUND ENGINE CHECK</strong><p>Ice can remain on the rear side of the fan blades where it is difficult to see from directly in front of the engine. During a cold-weather turnaround, inspect behind the fan blades from the permitted viewing position and follow the operator’s engine inspection procedure.</p></aside>
             <Warning title="VISUAL CUES ARE APPROXIMATE">Ice can accumulate away from the crew’s best viewing area. Use the applicable atmospheric criteria and operating procedure; do not wait for a large visible deposit before applying required anti-ice.</Warning>
+            <h3>Cold-soaked fuel frost</h3>
+            <p>Cold fuel remaining after a long flight can cool the wing skin enough for frost to form over the tanks, including in above-freezing ambient conditions. This non-environmental icing may appear on the lower and upper surfaces. Frost visible below the wing outboard of measuring stick No. 4 can indicate frost on the upper surface.</p>
+            <Warning title="CSFF DISPATCH CRITERIA">Cold-soaked fuel frost is acceptable only where the aircraft has an approved defined area and every condition in the applicable inspection and dispatch procedure is satisfied. Frost outside that area, or frost that fails the permitted thickness and environmental criteria, must be removed using the approved deicing or anti-icing procedure.</Warning>
             <Source>Course synthesis sheet · applicable operator procedures</Source>
           </section>
 
