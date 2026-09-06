@@ -1,5 +1,5 @@
 import Link from '@/components/site-link';
-import ChapterPager from '@/components/chapter-pager';
+import SystemPager from '@/components/system-pager';
 import FuelDiagram from './diagram';
 import PumpControlPanel from './pump-control-panel';
 import TankLocation from './tank-location';
@@ -135,7 +135,7 @@ export default function Fuel() {
               <p><strong>3 tanks.</strong></p>
               <p><strong>Total capacity: 20,896 kg.</strong></p>
             </Need>
-            <Source>NG 12.20.1, 12.20.4 · MAX 12.20.1, 12.20.4</Source><ChapterPager sections={sections} current="overview" />
+            <Source>NG 12.20.1, 12.20.4 · MAX 12.20.1, 12.20.4</Source>
           </section>
           <section className="course-section" id="feed">
             <span className="section-num">02 / PUMPS & FUEL FEED</span>
@@ -297,7 +297,7 @@ export default function Fuel() {
                 separate from the automatic pump-shutdown delay.
               </p>
             </Need>
-            <Source>NG / MAX 12.10.2, 12.20.2–3 · NG L.10.10</Source><ChapterPager sections={sections} current="feed" />
+            <Source>NG / MAX 12.10.2, 12.20.2–3 · NG L.10.10</Source>
           </section>
           <section className="course-section" id="crossfeed">
             <span className="section-num">03 / CROSSFEED & VALVES</span>
@@ -396,7 +396,7 @@ export default function Fuel() {
                 one tank into another; the crossfeed valve does not do this.
               </p>
             </aside>
-            <Source>NG / MAX 12.10.1–2, 12.20.2–3</Source><ChapterPager sections={sections} current="crossfeed" />
+            <Source>NG / MAX 12.10.1–2, 12.20.2–3</Source>
           </section>
           <section className="course-section" id="indications">
             <span className="section-num">04 / FUEL INDICATIONS & ALERTS</span>
@@ -480,7 +480,7 @@ export default function Fuel() {
               <li><strong>USING RSV FUEL:</strong> predicted destination fuel is below the entered RESERVES value.</li>
               <li><strong>INSUFFICIENT FUEL:</strong> predicted destination fuel is below 900 kg.</li>
             </ul>
-            <Source>NG 12.10.2–6, 12.20.3 · MAX 12.10.2–5, 12.20.3</Source><ChapterPager sections={sections} current="indications" />
+            <Source>NG 12.10.2–6, 12.20.3 · MAX 12.10.2–5, 12.20.3</Source>
           </section>
           <section className="course-section" id="temperature">
             <span className="section-num">05 / FUEL TEMPERATURE AND LIMITS</span>
@@ -527,7 +527,7 @@ export default function Fuel() {
               NG L.10.9–10; 12.20.3. Limits here are attributed to the supplied
               NG configuration.
             </Source>
-            <ChapterPager sections={sections} current="temperature" />
+
           </section>
           <section className="course-section" id="ground">
             <span className="section-num">06 / REFUELLING AND NGS</span>
@@ -610,7 +610,7 @@ export default function Fuel() {
               NG 12.10.7–10, 12.20.1, 12.20.4 · MAX 12.10.6–9, 12.20.1,
               12.20.3–4
             </Source>
-            <ChapterPager sections={sections} current="ground" />
+
           </section>
           <section className="course-section" id="quiz">
             <span className="section-num">07 / CHECK YOUR KNOWLEDGE</span>
@@ -620,8 +620,9 @@ export default function Fuel() {
             </h2>
             <p>Three free questions with explanations. No account required.</p>
             <Quiz />
-            <ChapterPager sections={sections} current="quiz" />
+
           </section>
+          <SystemPager current="Fuel" />
         </article>
         <aside className="course-aside">
           <div className="aside-box">

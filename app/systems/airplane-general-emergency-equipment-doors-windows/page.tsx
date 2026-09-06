@@ -1,5 +1,5 @@
 import Link from '@/components/site-link';
-import ChapterPager from '@/components/chapter-pager';
+import SystemPager from '@/components/system-pager';
 import Contents from '../fuel/contents';
 
 export const metadata = { title: 'Airplane General | 737Encyclopedia', description: '737 NG and MAX dimensions, lighting, signs, oxygen, doors, water and airstair systems.' };
@@ -26,7 +26,7 @@ export default function AirplaneGeneral() {
         <ul className="study-points"><li><strong>NG minimum 180° pavement width:</strong> approximately 24.3 m.</li><li><strong>MAX minimum 180° pavement width:</strong> approximately 24.4 m.</li><li><strong>Largest turning arc:</strong> the wingtip determines minimum obstacle clearance.</li></ul>
         <Warning title="GROUND CLEARANCE">FCOM dimensions are reference values. Use the airport/facilities planning data and approved ground procedures for actual obstacle and stand clearance.</Warning>
         <Need title="Same length · slightly wider MAX"><p>Both are 39.47 m long. The supplied MAX wingspan is 0.13 m greater.</p></Need>
-        <Source>NG 1.10.2, 1.10.5 · MAX 1.10.1–2</Source><ChapterPager sections={sections} current="dimensions" />
+        <Source>NG 1.10.2, 1.10.5 · MAX 1.10.1–2</Source>
       </section>
 
       <section className="course-section" id="lights">
@@ -40,7 +40,7 @@ export default function AirplaneGeneral() {
         <ul className="study-points"><li><strong>Interior:</strong> aisle, ceiling and exit identification.</li><li><strong>Exterior:</strong> illuminate deployed escape slides.</li><li><strong>Aft attendant switch:</strong> overrides the flight deck control and turns the emergency lights on.</li></ul>
         <Deep title="Go deeper · Two cabin path systems"><p>Aircraft may use electrically powered floor-proximity lighting or photoluminescent aisle markings. Photoluminescent strips must receive the specified cabin-light charging time; the applicable Techlog notice identifies the installed system.</p></Deep>
         <Need title="Normal position: ARMED"><p>Automatic illumination follows loss of DC bus No. 1 or removal of AC power.</p></Need>
-        <Source>NG 1.30.5–8, 1.40.1–10 · MAX 1.30.5–8, 1.40.1–11</Source><ChapterPager sections={sections} current="lights" />
+        <Source>NG 1.30.5–8, 1.40.1–10 · MAX 1.30.5–8, 1.40.1–11</Source>
       </section>
 
       <section className="course-section" id="signs">
@@ -50,7 +50,7 @@ export default function AirplaneGeneral() {
         <h3>No smoking</h3><p>On the supplied fleet configuration, NO SMOKING signs remain permanently illuminated and the switch may be blanked. Earlier effectivities may provide OFF, AUTO and ON control.</p>
         <p>A low tone sounds over the passenger-address system whenever the passenger signs illuminate or extinguish.</p>
         <Need title="AUTO follows gear and flaps"><p>Either gear or flap extension illuminates the seat-belt and return-to-seat signs.</p></Need>
-        <Source>NG 1.30.7, 1.40.5 · MAX 1.30.7–8, 1.40.3</Source><ChapterPager sections={sections} current="signs" />
+        <Source>NG 1.30.7, 1.40.5 · MAX 1.30.7–8, 1.40.3</Source>
       </section>
 
       <section className="course-section" id="oxygen">
@@ -65,7 +65,7 @@ export default function AirplaneGeneral() {
         <p>Pulling one mask activates the source and releases all masks in that unit. Oxygen then flows continuously for approximately <strong>12 minutes</strong> and cannot be shut off.</p>
         <Warning title="PASSENGER OXYGEN">Observe the NO SMOKING indication strictly. Passenger masks mix oxygen with cabin air and do not protect against smoke. Do not activate them below 14,000 ft cabin altitude when smoke or abnormal heat is present unless directed by the applicable procedure.</Warning>
         <Need title="14,000 ft · approximately 12 minutes"><p>Mask deployment does not start oxygen flow; pulling a mask starts the chemical source.</p></Need>
-        <Source>NG 1.30.14–22, 1.40.12–25 · MAX 1.30.14–18, 1.40.12–21</Source><ChapterPager sections={sections} current="oxygen" />
+        <Source>NG 1.30.14–22, 1.40.12–25 · MAX 1.30.14–18, 1.40.12–21</Source>
       </section>
 
       <section className="course-section" id="doors">
@@ -76,7 +76,7 @@ export default function AirplaneGeneral() {
         <Warning title="WIND LIMITS">Do not operate entry or service doors in steady wind above 40 kt, and do not leave them open when gusts exceed 65 kt. Strong winds can damage the aircraft structure.</Warning>
         <Deep title="Go deeper · Overwing flight locks"><p>Overwing exits lock when three of the four entry/service doors are closed, either engine is running, and the aircraft is airborne or both thrust levers are advanced. They unlock when any condition is lost or DC power fails.</p></Deep>
         <Need title="Four cabin doors · two cargo doors"><p>The MAX 8200 also has two mid-exit doors aft of the wings.</p></Need>
-        <Source>NG 1.30.10–14, 1.40.41–53 · MAX 1.30.10–14, 1.40.29–42</Source><ChapterPager sections={sections} current="doors" />
+        <Source>NG 1.30.10–14, 1.40.41–53 · MAX 1.30.10–14, 1.40.29–42</Source>
       </section>
 
       <section className="course-section" id="water">
@@ -86,7 +86,7 @@ export default function AirplaneGeneral() {
         <p>Lavatories provide hot and cold water. Each heater is below its sink, reheats a new charge in approximately four minutes and includes automatic overheat protection. Galleys receive cold water.</p>
         <Deep title="Go deeper · Servicing and draining"><p>The exterior service panel is on the lower right aft fuselage and requires pressure filling. Selecting a local shutoff valve to DRAIN drains the related system overboard; the normal valve position is ON.</p></Deep>
         <Need title="One tank · two pressure sources"><p>Bleed air normally pressurizes distribution; the air compressor provides the alternate source.</p></Need>
-        <Source>NG 1.30.24, 1.40.61–62 · MAX 1.30.20, 1.40.48</Source><ChapterPager sections={sections} current="water" />
+        <Source>NG 1.30.24, 1.40.61–62 · MAX 1.30.20, 1.40.48</Source>
       </section>
 
       <section className="course-section" id="airstair">
@@ -96,8 +96,9 @@ export default function AirplaneGeneral() {
         <ul className="study-points"><li><strong>Normal operation:</strong> requires AC and DC power.</li><li><strong>Standby operation:</strong> uses DC power and bypasses some normal control logic.</li><li><strong>STAIR OPER:</strong> white while the stair is moving.</li><li><strong>AIRSTAIR:</strong> amber when the pressure door is unlocked; also triggers DOORS and MASTER CAUTION.</li><li><strong>Tread lights AUTO:</strong> illuminate when fully extended and extinguish during retraction.</li></ul>
         <Warning title="HANDRAILS AND PLATFORM">Stow the handrail extensions before retraction. Standby or maintenance control can bypass safety circuits and cause substantial damage. Use care on the small platform when operating the forward entry door, especially in poor weather.</Warning>
         <Need title="Normal: AC + DC · standby: DC"><p>The forward entry door must be partially open for normal interior operation; exterior control bypasses that requirement.</p></Need>
-        <Source>NG 1.30.23–24, 1.40.62–64 · MAX 1.30.18–20, 1.40.47–50</Source><ChapterPager sections={sections} current="airstair" />
+        <Source>NG 1.30.23–24, 1.40.62–64 · MAX 1.30.18–20, 1.40.47–50</Source>
       </section>
-    </article><aside className="course-aside"><div className="aside-box"><p className="eyebrow">IN THIS CHAPTER</p><Contents sections={sections} /><hr /><h3>General systems, operational focus.</h3><p className="muted">NG information is paired with the differences that affect the 737-8200.</p><Link className="button" href="/glossary">Open glossary →</Link></div></aside></div>
+      <SystemPager current="Airplane General, Emergency Equipment, Doors, Windows" />
+    </article><aside className="course-aside"><div className="aside-box"><p className="eyebrow">IN THIS CHAPTER</p><Contents sections={sections} /><hr /><h3>General systems, operational focus.</h3><p className="muted">NG information is paired with the differences that affect the 737-8200.</p></div></aside></div>
   </main>;
 }

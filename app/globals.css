@@ -116,13 +116,19 @@ svg {
   padding: 9px 15px;
   border-radius: 5px;
 }
-.chapter-pager { display: grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items: center; margin-top: 28px; padding-top: 20px; border-top: 1px solid #dce5ed; }
-.chapter-pager a { display: inline-flex; flex-direction: column; color: #244e73; }
-.chapter-pager a:hover { color: var(--primary); }
-.chapter-pager small { font-size: 10px; font-weight: 700; letter-spacing: 1.2px; color: #758596; }
-.chapter-pager span { font-size: 14px; font-weight: 700; }
-.chapter-pager .pager-glossary { display: inline-flex; padding: 7px 12px; border: 1px solid #cddbe7; border-radius: 999px; font-size: 12px; font-weight: 700; }
+.system-page-footer { margin: 20px 0 54px; padding-top: 24px; border-top: 1px solid #dce5ed; text-align: center; }
+.system-pager { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.system-pager > div:first-child { text-align: left; }
+.system-pager-button { display: inline-flex; min-width: 220px; flex-direction: column; padding: 14px 17px; border: 1px solid #c9d9e5; border-radius: 10px; color: #244e73; background: #f7fafc; }
+.system-pager-button:hover { color: var(--primary); border-color: #8cb7d8; }
+.system-pager-button small { font-size: 10px; font-weight: 700; letter-spacing: 1.2px; color: #758596; }
+.system-pager-button span { font-size: 14px; font-weight: 700; }
+.system-glossary-link { display: inline-block; margin-top: 18px; color: #326985; font-size: 13px; text-decoration: underline; }
 .pager-next { text-align: right; }
+.idea-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 28px 0; }
+.idea-list article { padding: 22px; border: 1px solid #d8e3ec; border-radius: 12px; background: #f6f9fc; }
+.idea-list span { color: #268294; font-size: 11px; font-weight: 800; letter-spacing: 1.4px; }
+.idea-list h2 { margin: 7px 0 0; font-size: 20px; }
 .glossary-page { padding-top: 58px; padding-bottom: 80px; }
 .glossary-page > h1 { margin: 4px 0 10px; }
 .glossary-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 34px 0; }
@@ -2242,8 +2248,10 @@ summary:focus-visible {
   .mobile-nav > summary { padding: 8px 10px; }
   .glossary-grid { grid-template-columns: 1fr; }
   .dimension-compare { grid-template-columns: 1fr; }
-  .chapter-pager { grid-template-columns: 1fr 1fr; }
-  .chapter-pager .pager-glossary { grid-column: 1 / -1; grid-row: 2; justify-self: center; }
+  .system-pager { grid-template-columns: 1fr; }
+  .system-pager > div, .system-pager .pager-next { text-align: left; }
+  .system-pager-button { width: 100%; min-width: 0; }
+  .idea-list { grid-template-columns: 1fr; }
 }
 
 .system-course .course-nav {

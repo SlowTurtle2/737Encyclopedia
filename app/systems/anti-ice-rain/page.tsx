@@ -1,5 +1,5 @@
 import Link from '@/components/site-link';
-import ChapterPager from '@/components/chapter-pager';
+import SystemPager from '@/components/system-pager';
 import Contents from '../fuel/contents';
 import { StallLogicDiagram } from './diagrams';
 
@@ -50,7 +50,7 @@ export default function AntiIceRain() {
               <img src="/images/anti-ice-protection-overview.png" alt="737 overview identifying heated windshields, wipers, probe heat, wing anti-ice and engine anti-ice" />
               <figcaption>Overview of the main ice and rain protection components.</figcaption>
             </figure>
-            <Source>NG / MAX 3.20.1</Source><ChapterPager sections={sections} current="overview" />
+            <Source>NG / MAX 3.20.1</Source>
           </section>
 
           <section className="course-section" id="windows">
@@ -86,7 +86,7 @@ export default function AntiIceRain() {
             </div>
             <Deep title="Go deeper · Construction and defogging"><p>Windows No. 1 and 2 use glass panes laminated around a vinyl core. A conductive coating on the outer pane supplies the heat. Conditioned air can also be directed to windows No. 1 for defogging.</p></Deep>
             <Need title="Four heated windows"><p>L1, L2, R1 and R2 are electrically heated. Window heat also preserves structural strength.</p></Need>
-            <Source>NG 3.10.1–2, 3.20.2–3 · MAX 3.10.1–2, 3.20.2–3</Source><ChapterPager sections={sections} current="windows" />
+            <Source>NG 3.10.1–2, 3.20.2–3 · MAX 3.10.1–2, 3.20.2–3</Source>
           </section>
 
           <section className="course-section" id="wipers">
@@ -95,7 +95,7 @@ export default function AntiIceRain() {
             <p>Each wiper selector has four positions: <strong>PARK, INT, LOW and HIGH</strong>.</p>
             <ul className="study-points"><li><strong>PARK:</strong> stops the motor and stows the blade.</li><li><strong>INT:</strong> one sweep cycle approximately every seven seconds.</li><li><strong>LOW / HIGH:</strong> continuous operation at the selected speed.</li></ul>
             <Warning title="DRY WINDSHIELD">Operating the wipers on a dry windshield can scratch the windshield.</Warning>
-            <Source>NG 3.10.2, 3.20.4 · MAX 3.10.2, 3.20.3</Source><ChapterPager sections={sections} current="wipers" />
+            <Source>NG 3.10.2, 3.20.4 · MAX 3.10.2, 3.20.3</Source>
           </section>
 
           <section className="course-section" id="probes">
@@ -119,7 +119,7 @@ export default function AntiIceRain() {
             <Warning title="STANDBY POWER">On standby power, only the captain’s pitot probe is heated. The CAPT PITOT light does not indicate a heater failure while operating in this configuration, and the standby airspeed pitot probe is not heated.</Warning>
             <Deep title="Go deeper · Panel effectivity"><p>The supplied NG FCOM shows both OFF/ON and AUTO/ON panels according to service-bulletin status. Always identify the installed switch positions before applying a memorized flow.</p></Deep>
             <Need title="Static ports are not heated"><p>The amber lights monitor probe heating, except that their status indication is unavailable on standby power.</p></Need>
-            <Source>NG 3.10.3, 3.20.5 · MAX 3.10.3, 3.20.4</Source><ChapterPager sections={sections} current="probes" />
+            <Source>NG 3.10.3, 3.20.5 · MAX 3.10.3, 3.20.4</Source>
           </section>
 
           <section className="course-section" id="wing">
@@ -145,7 +145,7 @@ export default function AntiIceRain() {
             <Max>MAX wing-valve indications are amber and normally extinguished when valve position agrees with the switch. The supplied NG uses blue VALVE OPEN lights: dim when open and bright during transit or disagreement.</Max>
             <Warning title="USE ABOVE FL350">Use of wing anti-ice above FL350 may cause a BLEED TRIP OFF and loss of the associated bleed-air source. Follow the applicable operating procedure and limitations.</Warning>
             <Need title="Only the inboard slats"><p>Wing anti-ice is effective with the slats in any position and uses engine bleed air.</p></Need>
-            <Source>NG 3.10.6, 3.20.6–8 · MAX 3.10.5–6, 3.20.6–8</Source><ChapterPager sections={sections} current="wing" />
+            <Source>NG 3.10.6, 3.20.6–8 · MAX 3.10.5–6, 3.20.6–8</Source>
           </section>
 
           <section className="course-section" id="engine">
@@ -179,7 +179,7 @@ export default function AntiIceRain() {
               <div><strong>TAI · THERMAL ANTI-ICE</strong><p><b>Green:</b> the cowl anti-ice valve is open and the related ENG ANTI-ICE switch is ON.</p><p><b>Amber:</b> the cowl valve position does not agree with the related switch position.</p><p><b>Extinguished:</b> the cowl valve is closed and the related switch is OFF.</p></div>
             </div>
             <Need title="Cowl lip on NG · cowl and core on MAX"><p>The flight crew directly selects cowl anti-ice. MAX core anti-ice is automatic through the EEC.</p></Need>
-            <Source>NG 3.10.4–5, 3.20.5–6 · MAX 3.10.3–4, 3.20.4–6</Source><ChapterPager sections={sections} current="engine" />
+            <Source>NG 3.10.4–5, 3.20.5–6 · MAX 3.10.3–4, 3.20.4–6</Source>
           </section>
 
           <section className="course-section" id="visual">
@@ -189,7 +189,7 @@ export default function AntiIceRain() {
             <Deep title="Go deeper · Optional NG ice detection system"><p>An optional ice detection system exists on the 737 NG, although relatively few aircraft are equipped with it. An additional detector probe is installed on the lower left side below the flight deck and provides an indication when ice is detected. Installed equipment and indication logic must be confirmed in the aircraft’s applicable manuals.</p></Deep>
             <aside className="study-tip"><strong>TIP · TURNAROUND ENGINE CHECK</strong><p>Ice can remain on the rear side of the fan blades where it is difficult to see from directly in front of the engine. During a cold-weather turnaround, inspect behind the fan blades from the permitted viewing position and follow the operator’s engine inspection procedure.</p></aside>
             <Warning title="VISUAL CUES ARE APPROXIMATE">Ice can accumulate away from the crew’s best viewing area. Use the applicable atmospheric criteria and operating procedure; do not wait for a large visible deposit before applying required anti-ice.</Warning>
-            <Source>Course synthesis sheet · applicable operator procedures</Source><ChapterPager sections={sections} current="visual" />
+            <Source>Course synthesis sheet · applicable operator procedures</Source>
           </section>
 
           <section className="course-section" id="stall">
@@ -199,8 +199,9 @@ export default function AntiIceRain() {
             <ul className="study-points"><li><strong>Engine anti-ice ON:</strong> icing logic is active.</li><li><strong>Engine anti-ice OFF:</strong> normal logic returns only if wing anti-ice has not been used in flight.</li><li><strong>Wing anti-ice used in flight:</strong> icing logic remains active for the rest of that flight, even after the switch is turned OFF.</li></ul>
             <Warning title="VREF IS NOT UPDATED">The logic adjusts stick shaker and minimum maneuver-speed bars on the airspeed indication. FMC-displayed VREF is not adjusted automatically.</Warning>
             <Need title="Wing use latches the logic"><p>After wing anti-ice has been used in flight, icing stall-warning logic remains active until the flight ends.</p></Need>
-            <Source>NG 3.10.4, 3.20.5, 3.20.7 · MAX 3.10.4–5, 3.20.5, 3.20.7</Source><ChapterPager sections={sections} current="stall" />
+            <Source>NG 3.10.4, 3.20.5, 3.20.7 · MAX 3.10.4–5, 3.20.5, 3.20.7</Source>
           </section>
+          <SystemPager current="Anti-Ice, Rain" />
         </article>
         <aside className="course-aside"><div className="aside-box"><p className="eyebrow">IN THIS CHAPTER</p><Contents sections={sections} /><hr /><h3>NG first. MAX alongside.</h3><p className="muted">Differences are placed beside the system they affect.</p><Link className="button" href="/academy">Quiz access →</Link></div></aside>
       </div>
