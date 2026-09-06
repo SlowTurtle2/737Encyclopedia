@@ -59,16 +59,10 @@ export default function Home() {
       <section className="landing-hero wrap">
         <p className="landing-label">BOEING 737 NG & MAX</p>
         <h1>
-          <span>Every system, explained.</span>
+          <span>Know the systems. Fly the logic.</span>
         </h1>
         <p className="lead">
-          Understand the logic behind the Boeing 737.
-          <br />
-          Detailed courses, clear schematics and the differences that matter.
-        </p>
-        <p className="hero-audience">
-          For pilots preparing for a Boeing 737 type rating and simmers who want
-          to fly realistically.
+          Clear 737 courses for type-rating pilots and serious simmers.
         </p>
       </section>
       <div className="intro-strip wrap">
@@ -93,13 +87,13 @@ export default function Home() {
             </p>
           </div>
           <span className="library-count">
-            15 systems <span> / 1 available</span>
+            15 systems <span> / 2 available</span>
           </span>
         </div>
         <div className="system-shortcuts">
           {chapters.map((name, index) => {
             const Icon = icons[index];
-            const available = name === 'Fuel';
+            const available = name === 'Fuel' || name === 'Anti-Ice, Rain';
             return (
               <Link
                 key={name}
