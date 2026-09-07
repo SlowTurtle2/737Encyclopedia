@@ -10,7 +10,7 @@ function Deep({ title, children }: { title: string; children: React.ReactNode })
 function Max({ children }: { children: React.ReactNode }) { return <aside className="max-note"><b>737 MAX / 8200 DIFFERENCE</b><p>{children}</p></aside>; }
 function Source({ children }: { children: React.ReactNode }) { return <p className="source">REFERENCE · {children}</p>; }
 
-const sections = [['dimensions', 'Airplane dimensions'], ['lights', 'Lights'], ['signs', 'Seat belts & no smoking'], ['oxygen', 'Oxygen system'], ['doors', 'Aircraft doors'], ['water', 'Water system'], ['airstair', 'Airstair']];
+const sections = [['dimensions', 'Airplane dimensions'], ['lights', 'Lights'], ['signs', 'Seat belts & no smoking'], ['oxygen', 'Oxygen system'], ['doors', 'Aircraft doors'], ['water', 'Water system'], ['airstair', 'Airstair'], ['access', 'Flight Deck Access Panel']];
 
 export default function AirplaneGeneral() {
   return <main id="main" className="system-course">
@@ -54,8 +54,11 @@ export default function AirplaneGeneral() {
       <section className="course-section" id="signs">
         <span className="section-num">03 / SEAT BELTS & NO SMOKING</span>
         <h2>Passenger signs combine manual crew control with automatic logic linked to aircraft configuration.</h2>
-        <h3>Fasten seat belts</h3><p>OFF extinguishes the FASTEN SEAT BELTS and RETURN TO SEAT signs. AUTO illuminates them when the landing gear or flaps are extended and extinguishes them when both are retracted. ON illuminates the signs continuously.</p>
-        <h3>No smoking</h3><p>On the supplied fleet configuration, NO SMOKING signs remain permanently illuminated and the switch may be blanked. Earlier effectivities may provide OFF, AUTO and ON control.</p>
+        <h3>Fasten seat belts</h3>
+        <ul className="study-points"><li><strong>OFF:</strong> the FASTEN SEAT BELTS and RETURN TO SEAT signs are not illuminated.</li><li><strong>AUTO:</strong> the signs illuminate or extinguish automatically according to aircraft configuration. They illuminate when the landing gear or flaps are extended and extinguish when both are retracted.</li><li><strong>ON:</strong> the signs are illuminated continuously.</li></ul>
+        <h3>No smoking</h3>
+        <ul className="study-points"><li><strong>OFF:</strong> the NO SMOKING signs are not illuminated.</li><li><strong>AUTO:</strong> the signs illuminate or extinguish automatically according to aircraft configuration.</li><li><strong>ON:</strong> the signs are illuminated continuously.</li></ul>
+        <p>On the supplied fleet configuration, the NO SMOKING signs are permanently illuminated and the switch is placarded <strong>INOP</strong>. The three switch positions apply only to aircraft equipped with the controllable installation.</p>
         <p>A low tone sounds over the passenger-address system whenever the passenger signs illuminate or extinguish.</p>
         <Need title="AUTO follows gear and flaps"><p>Either gear or flap extension illuminates the seat-belt and return-to-seat signs.</p></Need>
         <Source>NG 1.30.7, 1.40.5 · MAX 1.30.7–8, 1.40.3</Source>
@@ -64,6 +67,7 @@ export default function AirplaneGeneral() {
       <section className="course-section" id="oxygen">
         <span className="section-num">04 / OXYGEN SYSTEM</span>
         <h2>Flight crew and passengers use two independent oxygen systems designed for different operating needs.</h2>
+        <figure className="figure course-photo"><img src="/images/oxygen-control-panel.png" alt="Crew oxygen pressure indicator and passenger oxygen switch on the aft overhead panel" /><figcaption>Crew oxygen pressure indication and passenger oxygen manual-release control.</figcaption></figure>
         <h3>Flight crew oxygen</h3>
         <p>A single high-pressure cylinder supplies quick-donning masks at each crew station through a pressure-reducing regulator. Cylinder pressure is shown on the aft overhead panel and may be as high as <strong>1,850 psi</strong>.</p>
         <ul className="study-points"><li><strong>NORMAL:</strong> supplies a mixture of cabin air and oxygen according to demand.</li><li><strong>100%:</strong> supplies pure oxygen on demand.</li><li><strong>EMERGENCY:</strong> supplies 100% oxygen under positive pressure.</li></ul>
@@ -104,7 +108,7 @@ export default function AirplaneGeneral() {
       <section className="course-section" id="water">
         <span className="section-num">06 / WATER SYSTEM</span>
         <h2>A single pressurized potable-water tank supplies the galleys and lavatory sinks.</h2>
-        <ul className="study-points"><li><strong>Tank:</strong> behind the aft cargo compartment.</li><li><strong>Pressure:</strong> engine bleed air or the water-system air compressor.</li><li><strong>Quantity:</strong> displayed on the attendant panel.</li><li><strong>Isolation:</strong> shutoff valves at each galley and below each lavatory sink.</li><li><strong>Waste water:</strong> drains overboard through forward and aft heated drain masts.</li></ul>
+        <ul className="study-points"><li><strong>Tank:</strong> behind the aft cargo compartment.</li><li><strong>Pressure:</strong> engine bleed air or the water-system air compressor.</li><li><strong>Quantity:</strong> displayed on the attendant panel.</li><li><strong>Waste water:</strong> drains overboard through forward and aft heated drain masts.</li></ul>
         <p>Lavatories provide hot and cold water. Each heater is below its sink, reheats a new charge in approximately four minutes and includes automatic overheat protection. Galleys receive cold water.</p>
         <Source>NG 1.30.24, 1.40.61–62 · MAX 1.30.20, 1.40.48</Source>
       </section>
@@ -113,16 +117,30 @@ export default function AirplaneGeneral() {
         <span className="section-num">07 / AIRSTAIR</span>
         <h2>The optional forward airstair allows boarding without airport stairs and stows below the forward entry door.</h2>
         <p>The electrically operated stair can be controlled from inside or outside. Its pressure door opens automatically before extension, and upper handrails are attached after the stair is fully extended.</p>
+        <figure className="figure course-photo"><img src="/images/airstair-controls-and-handrails.png" alt="737 forward airstair extended with the exterior control and handrails identified" /><figcaption>Extended forward airstair, handrails and exterior control location.</figcaption></figure>
         <h3>Operation from inside</h3>
-        <p>The interior controls are on the forward attendant panel. Open the forward entry door to the cocked position; the door-open safety circuit prevents normal or standby stair operation while it is closed. Hold <strong>EXTEND</strong> or <strong>RETRACT</strong> until travel is complete. Normal operation uses 115 V AC and DC power. If normal control is unavailable, keep the battery switch ON and hold <strong>STANDBY</strong> together with the required direction switch.</p>
+        <p>The interior controls are on the forward attendant panel. First open the forward entry door to the cocked position: the door-open safety circuit prevents both normal and standby operation while the door is closed.</p>
+        <ul className="study-points"><li><strong>Normal operation — 115 V AC:</strong> hold <strong>EXTEND</strong> or <strong>RETRACT</strong> until travel is complete.</li><li><strong>Standby operation — DC:</strong> if normal operation is unavailable, ensure the flight deck BATTERY switch is ON, then hold <strong>STANDBY</strong> together with the required EXTEND or RETRACT switch.</li></ul>
         <p>The <strong>STAIR OPER</strong> light remains illuminated while the stair is moving. With tread lights selected AUTO, they illuminate when the stair is fully extended and extinguish as it retracts.</p>
         <h3>Operation from outside</h3>
-        <p>The exterior controls are in a recess below and to the right of the airstair compartment. The forward entry door does not need to be open because exterior control bypasses the door-open requirement. Use the airstair switch to select <strong>EXTEND</strong> or <strong>RETRACT</strong>. For standby operation, hold the spring-loaded <strong>NORMAL/STANDBY</strong> switch at STANDBY while commanding the required direction.</p>
-        <p>Exterior standby receives DC power directly from the battery bus, so the flight deck battery switch does not need to be ON. Handrail interlocks normally prevent retraction until the handrail extensions are stowed.</p>
+        <p>The exterior controls are in a recess below and to the right of the airstair compartment. They bypass the door-open interlock, so the forward entry door does not need to be open.</p>
+        <ul className="study-points"><li><strong>Normal operation:</strong> move and hold the airstair control at <strong>EXTEND</strong> or <strong>RETRACT</strong> until travel is complete.</li><li><strong>Standby operation — DC:</strong> hold the spring-loaded <strong>NORMAL/STANDBY</strong> switch at STANDBY while commanding EXTEND or RETRACT. Power comes directly from the battery bus, so the flight deck BATTERY switch does not need to be ON.</li><li><strong>Before retraction:</strong> stow both upper handrail extensions. The handrail interlocks normally prevent retraction while they remain extended.</li></ul>
         <ul className="study-points"><li><strong>AIRSTAIR:</strong> amber when the pressure door is unlocked; also triggers DOORS and MASTER CAUTION.</li><li><strong>Tread lights AUTO:</strong> illuminate when fully extended and extinguish during retraction.</li></ul>
         <Warning title="HANDRAILS AND PLATFORM">Stow the handrail extensions before retraction. Standby or maintenance control can bypass safety circuits and cause substantial damage. Use care on the small platform when operating the forward entry door, especially in poor weather.</Warning>
-        <Need title="Normal: AC + DC · standby: DC"><p>The forward entry door must be partially open for normal interior operation; exterior control bypasses that requirement.</p></Need>
+        <Need title="Normal: 115 V AC · standby: DC"><p>The forward entry door must be partially open for interior operation; exterior control bypasses that requirement.</p></Need>
         <Source>NG 1.30.23–24, 1.40.62–64 · MAX 1.30.18–20, 1.40.47–50</Source>
+      </section>
+
+      <section className="course-section" id="access">
+        <span className="section-num">08 / FLIGHT DECK ACCESS PANEL</span>
+        <h2>The cabin access panel combines a keypad, an emergency-entry sequence and three lights that show the state of the flight deck door.</h2>
+        <h3>Emergency access</h3>
+        <p>In case of pilot incapacitation, an authorised crew member enters the pre-programmed <strong>3-to-8-digit emergency access code</strong>, then presses <strong>ENT</strong>. A flight deck chime sounds and the amber AUTO UNLK light illuminates at the pilots&apos; panel.</p>
+        <ul className="study-points"><li><strong>UNLKD selected:</strong> the pilots unlock the door immediately while the selector is held.</li><li><strong>DENY selected:</strong> the request is rejected and further emergency-code entries are inhibited for several minutes.</li><li><strong>No pilot action:</strong> after the programmed time delay, the door unlocks automatically. Before it unlocks, the chime sounds continuously and AUTO UNLK flashes.</li></ul>
+        <h3>Access lights</h3>
+        <ul className="study-points"><li><strong>Red:</strong> the flight deck door is locked, or the Flight Deck Access System switch is OFF.</li><li><strong>Amber:</strong> the correct emergency access code has been entered and the timed access sequence is active.</li><li><strong>Green:</strong> the flight deck door is unlocked.</li></ul>
+        <Need title="Code + ENT"><p>The emergency code does not unlock the door immediately. It starts a timed sequence that the pilots can accept or deny.</p></Need>
+        <Source>NG 1.30.12–14, 1.40.41–42 · MAX 1.30.12–14, 1.40.29–30</Source>
       </section>
       <SystemPager current="Airplane General, Emergency Equipment, Doors, Windows" />
     </article><aside className="course-aside"><div className="aside-box"><p className="eyebrow">IN THIS CHAPTER</p><Contents sections={sections} /><hr /><h3>General systems, operational focus.</h3><p className="muted">NG information is paired with the differences that affect the 737-8200.</p></div></aside></div>
