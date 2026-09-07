@@ -43,6 +43,7 @@ export default function FireProtection() {
         <h2>Each engine uses two detector loops for both overheat and fire sensing, while two bottles are shared across both engines.</h2>
         <h3>Engine fire detection</h3>
         <p>Engine detection is powered by the battery bus. Each engine has loops A and B. In <strong>NORMAL</strong>, both loops must normally sense the temperature rise before an alert is generated. An overheat threshold produces the ENG OVERHEAT caution; a higher fire threshold produces the fire warning.</p>
+        <figure className="figure course-photo"><img src="/images/engine-fire-protection-panel.png" alt="737 engine and APU overheat and fire protection panel" /><figcaption>Engine and APU overheat/fire detection, fire switches and extinguisher-test controls.</figcaption></figure>
         <ul className="study-points">
           <li><strong>Overheat:</strong> both MASTER CAUTION lights, OVHT/DET annunciator and the related ENG OVERHEAT light illuminate.</li>
           <li><strong>Fire:</strong> the fire bell sounds, both master FIRE WARN lights and the related engine fire switch illuminate; the engine start lever also illuminates where installed.</li>
@@ -50,16 +51,22 @@ export default function FireProtection() {
           <li><strong>Both loops fail:</strong> the FAULT light illuminates and detection for that engine is inoperative.</li>
           <li><strong>A or B selected:</strong> only the selected loop operates. A failure of that loop illuminates FAULT.</li>
         </ul>
-        <Placeholder>Engine/APU overheat and fire protection panel.</Placeholder>
+        <div className="emergency-light-card"><img src="/images/engine-overheat-light.png" alt="Amber ENG 1 OVERHEAT light" /><div><strong>ENG OVERHEAT</strong><p>Illuminates amber when the active detection logic senses an overheat condition in the related engine. It remains illuminated until detector temperature falls below the overheat onset threshold.</p></div></div>
+        <div className="emergency-light-card"><img src="/images/fire-fault-light.png" alt="Amber FAULT light" /><div><strong>FAULT</strong><p>In NORMAL, illuminates when both detector loops fail. With A or B selected, it illuminates when the selected loop fails. The OVHT/DET system annunciator and both MASTER CAUTION lights also illuminate.</p></div></div>
         <Warning title="SINGLE-LOOP FAILURE CAN BE HIDDEN">With the selector in NORMAL, failure of one engine detector loop has no flight deck indication. The remaining loop becomes the active single-loop detector.</Warning>
         <Deep title="Go deeper · Test and faulty-loop diagnosis"><p>Hold the FAULT/INOP and OVHT/FIRE TEST switch at <strong>OVHT/FIRE</strong>. Both engine fire switches and both ENG OVERHEAT lights should illuminate. If the expected indication for one engine is missing, select loop <strong>A</strong> for that engine and repeat the test, then select loop <strong>B</strong> and repeat it. The loop that does not produce the expected fire/overheat indication is the faulty loop. Return the selector to <strong>NORMAL</strong> after the check and apply the approved maintenance or operating procedure.</p></Deep>
         <h3>Engine fire extinguisher</h3>
         <p>The hot battery bus powers the extinguishing system, so it remains available independently of the normal electrical configuration. Either bottle can be discharged into either engine.</p>
         <p>Pulling the illuminated engine fire switch isolates the affected engine by closing the engine and spar fuel shutoff valves, engine bleed valve and hydraulic fluid shutoff valve. It trips the generator, disables the related thrust reverser and arms one squib on each bottle. Rotating the switch discharges one bottle; rotating it the opposite way discharges the remaining bottle.</p>
         <ul className="study-points"><li><strong>Fire switch locked:</strong> protected against inadvertent operation.</li><li><strong>Fire switch illuminated or ENG OVERHEAT:</strong> the switch unlocks automatically; manual override remains available.</li><li><strong>L/R BOTTLE DISCHARGED:</strong> illuminates amber a few seconds after discharge, or if bottle pressure is low.</li></ul>
+        <div className="emergency-light-card"><img src="/images/engine-bottle-discharged-light.png" alt="Amber L BOTTLE DISCHARGED light" /><div><strong>L / R BOTTLE DISCHARGED</strong><p>Illuminates amber a few seconds after the related extinguisher bottle is discharged. It also illuminates if pressure in that bottle is low.</p></div></div>
         <figure className="figure course-photo fire-schematic-photo"><img src="/images/engine-fire-extinguisher-schematic.png" alt="Engine fire extinguisher schematic showing two bottles available to either engine" /><figcaption>Either extinguisher bottle can be discharged into either engine.</figcaption></figure>
         <Need title="Two bottles · either engine"><p>Both bottles are common to both engines. The direction in which the fire switch is rotated selects the bottle, while the pulled switch selects the engine.</p></Need>
-        <Source>NG 8.20.1–3 · MAX 8.20.1–3</Source>
+        <h3>Fire test</h3>
+        <p><strong>FAULT/INOP test:</strong> hold the FAULT/INOP and OVHT/FIRE TEST switch at FAULT/INOP to check the engine and APU fault-monitoring circuits. Both MASTER CAUTION lights, the OVHT/DET system annunciator, the amber FAULT light and the amber APU DET INOP light must illuminate.</p>
+        <p><strong>OVHT/FIRE test:</strong> hold the switch at OVHT/FIRE to check the engine overheat/fire loops, APU fire loop and main-wheel-well detector. Confirm the fire warning bell, both master FIRE WARN lights, both MASTER CAUTION lights, the OVHT/DET annunciator, both engine fire switches, both ENG OVERHEAT lights and the APU fire switch. Both engine start levers illuminate where installed. With AC power available, the WHEEL WELL light illuminates; on the ground, the wheel-well APU horn sounds and its APU fire warning light flashes.</p>
+        <Need title="Two test positions · two different purposes"><p>FAULT/INOP checks monitoring of failed detector circuits. OVHT/FIRE simulates the temperature-detection paths and verifies the associated warnings.</p></Need>
+        <Source>NG 8.20.1–3, 8.20.8–9 · MAX 8.20.1–3, 8.20.7–8</Source>
       </section>
 
       <section className="course-section" id="apu">
