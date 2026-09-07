@@ -42,6 +42,10 @@ export default function AirplaneGeneral() {
         <h3>Emergency lights</h3>
         <p>With the flight deck switch guarded in <strong>ARMED</strong>, the emergency lights illuminate automatically if DC bus No. 1 fails or AC power is switched off. Selecting ON illuminates all emergency lights; OFF prevents automatic operation.</p>
         <ul className="study-points"><li><strong>Interior:</strong> aisle, ceiling and exit identification.</li><li><strong>Exterior:</strong> illuminate deployed escape slides.</li><li><strong>Aft attendant switch:</strong> overrides the flight deck control and turns the emergency lights on.</li></ul>
+        <div className="emergency-light-card">
+          <img src="/images/emergency-exit-lights-not-armed.png" alt="Amber EMER EXIT LIGHTS NOT ARMED indication" />
+          <div><strong>NOT ARMED</strong><p>Illuminates amber whenever the EMER EXIT LIGHTS switch is not in the guarded ARMED position. It warns that automatic emergency-light operation is not armed.</p></div>
+        </div>
         <Deep title="Go deeper · Two cabin path systems"><p>Aircraft may use electrically powered floor-proximity lighting or photoluminescent aisle markings. Photoluminescent strips must receive the specified cabin-light charging time; the applicable Techlog notice identifies the installed system.</p></Deep>
         <Need title="Normal position: ARMED"><p>Automatic illumination follows loss of DC bus No. 1 or removal of AC power.</p></Need>
         <Source>NG 1.30.5–8, 1.40.1–10 · MAX 1.30.5–8, 1.40.1–11</Source>
@@ -66,9 +70,12 @@ export default function AirplaneGeneral() {
         <Deep title="Go deeper · Mask and microphone"><p>Removing the quick-donning mask from its stowage box and opening the doors initiates oxygen flow and activates the mask microphone. The flow indicator confirms oxygen flow.</p></Deep>
         <h3>Passenger oxygen</h3>
         <p>Independent chemical oxygen sources are installed at passenger service units, attendant stations and lavatories. The masks drop automatically at approximately <strong>14,000 ft cabin altitude</strong>, or manually when PASS OXYGEN is selected ON.</p>
-        <p>Pulling one mask activates the source and releases all masks in that unit. Oxygen then flows continuously for approximately <strong>12 minutes</strong> and cannot be shut off.</p>
-        <Warning title="PASSENGER OXYGEN">Observe the NO SMOKING indication strictly. Passenger masks mix oxygen with cabin air and do not protect against smoke. Do not activate them below 14,000 ft cabin altitude when smoke or abnormal heat is present unless directed by the applicable procedure.</Warning>
+        <p>Pulling one mask activates the source and releases all masks in that unit. One chemical generator can supply up to <strong>four masks</strong>. Oxygen then flows continuously for approximately <strong>12 minutes</strong> and cannot be shut off.</p>
+        <Warning title="OXYGEN AND CABIN FIRE">Once a mask is pulled, the chemical generator supplies oxygen continuously and cannot be shut off. Releasing oxygen near a cabin fire can feed combustion and intensify the fire. Passenger masks also mix oxygen with cabin air and do not protect against smoke. Do not activate passenger oxygen below 14,000 ft cabin altitude when smoke or an abnormal heat source is present unless directed by the applicable procedure.</Warning>
         <Need title="14,000 ft · approximately 12 minutes"><p>Mask deployment does not start oxygen flow; pulling a mask starts the chemical source.</p></Need>
+        <h3>Portable oxygen</h3>
+        <p>Portable first-aid and supplemental oxygen cylinders are installed at suitable locations in the passenger cabin for passengers or crew members who develop a physiological need for oxygen. The standard cylinder described in the supplied FCOM contains <strong>120 litres</strong> of free oxygen when charged to approximately <strong>1,800 psi</strong> at 21°C.</p>
+        <ul className="study-points"><li><strong>2 L/min outlet:</strong> walk-around flow, providing approximately 60 minutes from a full 120-litre cylinder.</li><li><strong>4 L/min outlet:</strong> first-aid flow, providing approximately 30 minutes.</li><li><strong>Equipment:</strong> pressure gauge, pressure regulator and ON/OFF valve.</li></ul>
         <Source>NG 1.30.14–22, 1.40.12–25 · MAX 1.30.14–18, 1.40.12–21</Source>
       </section>
 
@@ -76,14 +83,14 @@ export default function AirplaneGeneral() {
         <span className="section-num">05 / AIRCRAFT DOORS</span>
         <h2>Entry, service, cargo, flight deck and emergency-exit doors use different locking and indication systems.</h2>
         <h3>Description</h3>
-        <ul className="study-points"><li><strong>Entry and service:</strong> four primary cabin doors with escape-slide provisions.</li><li><strong>Cargo:</strong> two inward-opening plug-type pressure doors on the lower right fuselage.</li><li><strong>Flight deck:</strong> electrically locked reinforced door with emergency access and decompression panels.</li><li><strong>Flight deck windows No. 2:</strong> can open and provide emergency egress; only the first officer’s can be opened externally.</li><li><strong>Overwing exits:</strong> mechanically retained and automatically flight-locked by 28 V DC logic.</li></ul>
-        <Max>The 737-8200 adds two mid-exit doors aft of the wings. Its evacuation layout includes four entry/service doors, four overwing exits and two mid-exits. These additional doors also participate in flight-lock and door-warning logic.</Max>
-        <div className="general-figure-grid">
+        <div className="general-figure-grid door-location-grid">
           <figure className="figure course-photo"><img src="/images/ng-800-doors-exits-overview.png" alt="Location of the doors and emergency exits on both sides of a 737-800 NG" /><figcaption>737-800 NG doors and exits.</figcaption></figure>
           <figure className="figure course-photo"><img src="/images/max-8200-doors-exits-overview.png" alt="Location of the doors and emergency exits on both sides of a 737-8200 MAX" /><figcaption>737-8200 MAX doors and exits, including the additional mid exits.</figcaption></figure>
         </div>
-        <Warning title="WIND LIMITS">Do not operate entry or service doors in steady wind above 40 kt, and do not leave them open when gusts exceed 65 kt. Strong winds can damage the aircraft structure.</Warning>
-        <Deep title="Go deeper · Overwing flight locks"><p>Overwing exits lock when three of the four entry/service doors are closed, either engine is running, and the aircraft is airborne or both thrust levers are advanced. They unlock when any condition is lost or DC power fails.</p></Deep>
+        <ul className="study-points"><li><strong>Entry and service:</strong> four primary cabin doors with escape-slide provisions.</li><li><strong>Cargo:</strong> two inward-opening plug-type pressure doors on the lower right fuselage.</li><li><strong>Flight deck:</strong> electrically locked reinforced door with emergency access and decompression panels.</li><li><strong>Flight deck windows No. 2:</strong> can open and provide emergency egress; only the first officer’s can be opened externally.</li><li><strong>Overwing exits:</strong> mechanically retained and automatically flight-locked by 28 V DC logic.</li></ul>
+        <Max>The 737-8200 adds two mid-exit doors aft of the wings. Its evacuation layout includes four entry/service doors, four overwing exits and two mid-exits. These additional doors also participate in flight-lock and door-warning logic.</Max>
+        <Warning title="WIND LIMITS">Do not operate entry or service doors in steady wind above 40 kt, and do not leave them open when gusts exceed 65 kt.</Warning>
+        <Deep title="Go deeper · Overwing flight locks"><p>The overwing exits lock automatically when all of the following conditions are satisfied:</p><ul><li>three of the four entry and service doors are closed;</li><li>either engine is running;</li><li>the aircraft is airborne, or both thrust levers are advanced.</li></ul><p>The exits unlock if any one of these conditions is lost or if DC power fails.</p></Deep>
         <h3>Indications</h3>
         <p>An amber light identifies the door or exit that is not closed and locked. The 737-8200 panel adds separate <strong>LEFT MID EXIT</strong> and <strong>RIGHT MID EXIT</strong> indications for its additional exits.</p>
         <div className="general-figure-grid door-indication-grid">
@@ -99,8 +106,6 @@ export default function AirplaneGeneral() {
         <h2>A single pressurized potable-water tank supplies the galleys and lavatory sinks.</h2>
         <ul className="study-points"><li><strong>Tank:</strong> behind the aft cargo compartment.</li><li><strong>Pressure:</strong> engine bleed air or the water-system air compressor.</li><li><strong>Quantity:</strong> displayed on the attendant panel.</li><li><strong>Isolation:</strong> shutoff valves at each galley and below each lavatory sink.</li><li><strong>Waste water:</strong> drains overboard through forward and aft heated drain masts.</li></ul>
         <p>Lavatories provide hot and cold water. Each heater is below its sink, reheats a new charge in approximately four minutes and includes automatic overheat protection. Galleys receive cold water.</p>
-        <Deep title="Go deeper · Servicing and draining"><p>The exterior service panel is on the lower right aft fuselage and requires pressure filling. Selecting a local shutoff valve to DRAIN drains the related system overboard; the normal valve position is ON.</p></Deep>
-        <Need title="One tank · two pressure sources"><p>Bleed air normally pressurizes distribution; the air compressor provides the alternate source.</p></Need>
         <Source>NG 1.30.24, 1.40.61–62 · MAX 1.30.20, 1.40.48</Source>
       </section>
 
