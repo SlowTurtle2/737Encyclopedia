@@ -146,6 +146,7 @@ svg {
 .door-indication-grid { grid-template-columns: 1fr; align-items: start; }
 .door-indication-grid .figure { width: min(82%, 760px); margin-inline: auto; }
 .compact-system-panel { width: min(72%, 640px); margin-inline: auto; }
+.fire-schematic-photo { width: min(72%, 680px); margin-inline: auto; }
 .illustration-placeholder { display: grid; min-height: 190px; margin: 24px 0; padding: 28px; place-content: center; text-align: center; border: 1px dashed #8ba8b8; border-radius: 12px; color: #496777; background: repeating-linear-gradient(135deg, #f7fafb, #f7fafb 12px, #f0f5f7 12px, #f0f5f7 24px); }
 .illustration-placeholder span { font-size: 12px; font-weight: 800; letter-spacing: 1.4px; }
 .illustration-placeholder p { margin: 8px 0 0 !important; color: #657f8c; }
@@ -2308,7 +2309,8 @@ summary:focus-visible {
   .dimension-compare,
   .general-figure-grid { grid-template-columns: 1fr; }
   .door-indication-grid .figure,
-  .compact-system-panel { width: 100%; }
+  .compact-system-panel,
+  .fire-schematic-photo { width: 100%; }
   .system-pager { grid-template-columns: 1fr; }
   .system-pager > div, .system-pager .pager-next { text-align: left; }
   .system-pager-button { width: 100%; min-width: 0; }

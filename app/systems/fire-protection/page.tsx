@@ -57,7 +57,7 @@ export default function FireProtection() {
         <p>The hot battery bus powers the extinguishing system, so it remains available independently of the normal electrical configuration. Either bottle can be discharged into either engine.</p>
         <p>Pulling the illuminated engine fire switch isolates the affected engine by closing the engine and spar fuel shutoff valves, engine bleed valve and hydraulic fluid shutoff valve. It trips the generator, disables the related thrust reverser and arms one squib on each bottle. Rotating the switch discharges one bottle; rotating it the opposite way discharges the remaining bottle.</p>
         <ul className="study-points"><li><strong>Fire switch locked:</strong> protected against inadvertent operation.</li><li><strong>Fire switch illuminated or ENG OVERHEAT:</strong> the switch unlocks automatically; manual override remains available.</li><li><strong>L/R BOTTLE DISCHARGED:</strong> illuminates amber a few seconds after discharge, or if bottle pressure is low.</li></ul>
-        <Placeholder>Engine fire extinguisher bottle routing and fire-switch actions.</Placeholder>
+        <figure className="figure course-photo fire-schematic-photo"><img src="/images/engine-fire-extinguisher-schematic.png" alt="Engine fire extinguisher schematic showing two bottles available to either engine" /><figcaption>Either extinguisher bottle can be discharged into either engine.</figcaption></figure>
         <Need title="Two bottles · either engine"><p>Both bottles are common to both engines. The direction in which the fire switch is rotated selects the bottle, while the pulled switch selects the engine.</p></Need>
         <Source>NG 8.20.1–3 · MAX 8.20.1–3</Source>
       </section>
