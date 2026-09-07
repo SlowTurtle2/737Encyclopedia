@@ -67,7 +67,7 @@ export default function AirplaneGeneral() {
       <section className="course-section" id="oxygen">
         <span className="section-num">04 / OXYGEN SYSTEM</span>
         <h2>Flight crew and passengers use two independent oxygen systems designed for different operating needs.</h2>
-        <figure className="figure course-photo"><img src="/images/oxygen-control-panel.png" alt="Crew oxygen pressure indicator and passenger oxygen switch on the aft overhead panel" /><figcaption>Crew oxygen pressure indication and passenger oxygen manual-release control.</figcaption></figure>
+        <figure className="figure course-photo compact-system-panel"><img src="/images/oxygen-control-panel.png" alt="Crew oxygen pressure indicator and passenger oxygen switch on the aft overhead panel" /><figcaption>Crew oxygen pressure indication and passenger oxygen manual-release control.</figcaption></figure>
         <h3>Flight crew oxygen</h3>
         <p>A single high-pressure cylinder supplies quick-donning masks at each crew station through a pressure-reducing regulator. Cylinder pressure is shown on the aft overhead panel and may be as high as <strong>1,850 psi</strong>.</p>
         <ul className="study-points"><li><strong>NORMAL:</strong> supplies a mixture of cabin air and oxygen according to demand.</li><li><strong>100%:</strong> supplies pure oxygen on demand.</li><li><strong>EMERGENCY:</strong> supplies 100% oxygen under positive pressure.</li></ul>
@@ -134,7 +134,7 @@ export default function AirplaneGeneral() {
       <section className="course-section" id="access">
         <span className="section-num">08 / FLIGHT DECK ACCESS PANEL</span>
         <h2>The cabin access panel combines a keypad, an emergency-entry sequence and three lights that show the state of the flight deck door.</h2>
-        <figure className="figure course-photo"><img src="/images/flight-deck-access-panel.png" alt="Flight deck access panel with numeric keypad, ENT key and red, amber and green status lights" /><figcaption>Flight deck access panel, numeric keypad and status indicator lights.</figcaption></figure>
+        <figure className="figure course-photo compact-system-panel"><img src="/images/flight-deck-access-panel.png" alt="Flight deck access panel with numeric keypad, ENT key and red, amber and green status lights" /><figcaption>Flight deck access panel, numeric keypad and status indicator lights.</figcaption></figure>
         <h3>Emergency access</h3>
         <p>In case of pilot incapacitation, an authorised crew member enters the pre-programmed <strong>3-to-8-digit emergency access code</strong>, then presses <strong>ENT</strong>. A flight deck chime sounds and the amber AUTO UNLK light illuminates at the pilots&apos; panel.</p>
         <ul className="study-points"><li><strong>UNLKD selected:</strong> the pilots unlock the door immediately while the selector is held.</li><li><strong>DENY selected:</strong> the request is rejected and further emergency-code entries are inhibited for several minutes.</li><li><strong>No pilot action:</strong> after the programmed time delay, the door unlocks automatically. Before it unlocks, the chime sounds continuously and AUTO UNLK flashes.</li></ul>
