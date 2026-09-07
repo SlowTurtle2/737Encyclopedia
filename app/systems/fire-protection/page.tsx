@@ -34,7 +34,7 @@ export default function FireProtection() {
           <li><strong>Lavatories:</strong> local smoke detection plus an automatic, heat-activated extinguisher beneath each sink.</li>
         </ul>
         <Placeholder>Overview of protected zones and extinguisher bottles.</Placeholder>
-        <Need title="Detection is not extinguishing"><p>The main wheel well has detection only. Cargo protection suppresses a fire for the diversion; it may not extinguish it completely.</p></Need>
+        <Need title="No wheel-well extinguisher"><p>The main wheel well has fire detection, but no extinguishing system. The nose wheel well has neither fire detection nor extinguishing.</p></Need>
         <Source>NG 8.20.1 · MAX 8.20.1</Source>
       </section>
 
@@ -52,6 +52,7 @@ export default function FireProtection() {
         </ul>
         <Placeholder>Engine/APU overheat and fire protection panel.</Placeholder>
         <Warning title="SINGLE-LOOP FAILURE CAN BE HIDDEN">With the selector in NORMAL, failure of one engine detector loop has no flight deck indication. The remaining loop becomes the active single-loop detector.</Warning>
+        <Deep title="Go deeper · Test and faulty-loop diagnosis"><p>Hold the FAULT/INOP and OVHT/FIRE TEST switch at <strong>OVHT/FIRE</strong>. Both engine fire switches and both ENG OVERHEAT lights should illuminate. If the expected indication for one engine is missing, select loop <strong>A</strong> for that engine and repeat the test, then select loop <strong>B</strong> and repeat it. The loop that does not produce the expected fire/overheat indication is the faulty loop. Return the selector to <strong>NORMAL</strong> after the check and apply the approved maintenance or operating procedure.</p></Deep>
         <h3>Engine fire extinguisher</h3>
         <p>The hot battery bus powers the extinguishing system, so it remains available independently of the normal electrical configuration. Either bottle can be discharged into either engine.</p>
         <p>Pulling the illuminated engine fire switch isolates the affected engine by closing the engine and spar fuel shutoff valves, engine bleed valve and hydraulic fluid shutoff valve. It trips the generator, disables the related thrust reverser and arms one squib on each bottle. Rotating the switch discharges one bottle; rotating it the opposite way discharges the remaining bottle.</p>
