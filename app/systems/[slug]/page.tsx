@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { chapters, slug } from '@/lib/systems';
 
 export function generateStaticParams() {
-  return chapters.filter(name => name !== 'Fuel' && name !== 'Anti-Ice, Rain' && name !== 'Airplane General, Emergency Equipment, Doors, Windows').map(name => ({ slug: slug(name) }));
+  return chapters.filter(name => name !== 'Fuel' && name !== 'Anti-Ice, Rain' && name !== 'Airplane General, Emergency Equipment, Doors, Windows' && name !== 'Fire Protection').map(name => ({ slug: slug(name) }));
 }
 
 export default async function Chapter({ params }: { params: Promise<{ slug: string }> }) {

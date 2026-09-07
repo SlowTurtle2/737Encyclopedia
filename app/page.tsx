@@ -94,13 +94,13 @@ export default function Home() {
             </p>
           </div>
           <span className="library-count">
-            15 systems <span> / 3 available</span>
+            15 systems <span> / 4 available</span>
           </span>
         </div>
         <div className="system-shortcuts">
           {chapters.map((name, index) => {
             const Icon = icons[index];
-            const available = name === 'Fuel' || name === 'Anti-Ice, Rain' || name === 'Airplane General, Emergency Equipment, Doors, Windows';
+            const available = name === 'Fuel' || name === 'Anti-Ice, Rain' || name === 'Airplane General, Emergency Equipment, Doors, Windows' || name === 'Fire Protection';
             return (
               <Link
                 key={name}
