@@ -59,10 +59,11 @@ export default function Home() {
       <section className="landing-hero wrap">
         <p className="landing-label">BOEING 737 NG & MAX</p>
         <h1>
-          <span>Know the systems. Fly the logic.</span>
+          <span>Prepare for the airline. Master the 737.</span>
         </h1>
         <p className="lead">
-          One website. From your airline assessment to line training.
+          Free airline-assessment preparation, growing NG/MAX systems courses,
+          and practical tools for type rating and line training.
         </p>
         <p className="hero-audience">
           Built for Irish low-cost carrier cadets and serious 737 simmers.
@@ -87,7 +88,7 @@ export default function Home() {
         <div className="section-heading">
           <div>
             <p className="eyebrow">EXPLORE THE AIRCRAFT</p>
-            <h2>Choose your system.</h2>
+            <h2>Study the 737, system by system.</h2>
             <p className="library-description">
               Each aircraft system has its own dedicated page. Courses are added
               as their content is completed and verified.
@@ -136,10 +137,10 @@ export default function Home() {
       <section className="wrap study-banner">
         <div>
           <p className="eyebrow">YOUR NEXT STEP</p>
-          <h2>Read it. Understand it. Recall it.</h2>
+          <h2>Test what you know.</h2>
           <p>
-            Try the available free questions. Discover the planned premium
-            question bank and original English revision sheets.
+            Use the available free questions to turn systems knowledge into
+            reliable exam and interview recall.
           </p>
         </div>
         <Link className="button" href="/academy">
