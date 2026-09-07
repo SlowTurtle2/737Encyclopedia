@@ -62,7 +62,7 @@ export default function AntiIceRain() {
               <img src="/images/window-heat-windows.png" alt="Front view of a 737 identifying electrically heated windows 1L, 1R, 2L and 2R" />
               <figcaption>Windows 1L, 1R, 2L and 2R are electrically heated.</figcaption>
             </figure>
-            <Warning title="WINDOW HEAT INOPERATIVE">If any required heated window loses its heating function, apply the applicable dispatch procedure. The restriction given in the course material is a maximum of <strong>250 kt below FL100</strong>.</Warning>
+            <Warning title="WINDOW HEAT INOPERATIVE">If any required heated window loses its heating function, apply the applicable dispatch procedure. The restriction given in the course material is a maximum of 250 kt below FL100.</Warning>
             <h3>Command</h3>
             <p>The pilot selects each FWD or SIDE WINDOW HEAT switch ON or OFF independently. Once selected ON, a temperature controller cycles electrical power automatically to maintain the correct window temperature. No manual temperature setting is required.</p>
             <ul className="study-points">
@@ -136,6 +136,7 @@ export default function AntiIceRain() {
             <p><strong>In flight,</strong> selecting WING ANTI-ICE ON opens both control valves and activates icing stall-warning logic. Duct-temperature and thrust-setting logic do not control valve operation in flight.</p>
             <p><strong>On the ground,</strong> both valves open only while both engines remain below the takeoff-warning thrust setting and both distribution ducts remain below the thermal-switch temperature. High thrust or a hot duct closes the valves; they reopen when both conditions return to normal.</p>
             <p><strong>During takeoff,</strong> advancing either thrust lever above the takeoff-warning setting closes both valves, so wing anti-ice is no longer using bleed air during the takeoff roll. The WING ANTI-ICE switch itself remains ON. At lift-off, when the air/ground logic changes to AIR as the wheels leave the runway, the switch automatically trips to OFF.</p>
+            <Need title="Takeoff automatically resets wing anti-ice"><p>If wing anti-ice is used on the ground before takeoff, the valves close when takeoff thrust is set. At lift-off, the system automatically deactivates and the WING ANTI-ICE switch flips to OFF.</p></Need>
             <aside className="study-tip"><strong>TIP · OPERATIONAL USE</strong><p>Wing anti-ice is operationally used more like a <b>de-icer</b>: the applicable procedure normally calls for it after evidence of ice accumulation, so the hot bleed air removes ice from the protected slats. Apply the operator’s current procedure and criteria.</p></aside>
             <h3>Warning and indications</h3>
             <p>The valve lights show movement or a disagreement between the selected switch position and the actual position of the related wing anti-ice valve.</p>
@@ -162,7 +163,7 @@ export default function AntiIceRain() {
             <Max>On the 737 NG, cowl anti-ice air comes from the 5th or 9th compressor stage and protects the cowl lip. On the 737 MAX, the source is the 4th or 10th compressor stage. The MAX also protects the engine core: the EEC automatically directs bleed air to it as required from engine and atmospheric data, with no crew input or indication during normal operation.</Max>
             <h3>Command</h3>
             <p>One ENG ANTI-ICE switch controls the cowl anti-ice valve on each engine. Selecting ON opens the related valve, supplies hot bleed air to the cowl lip and activates icing stall-warning logic. Selecting OFF closes the valve; normal stall-warning logic returns only if wing anti-ice has not been used in flight.</p>
-            <aside className="study-tip"><strong>TIP · OPERATIONAL USE</strong><p>Engine anti-ice is operationally used as an <b>anti-icer</b>: it is selected preventively when the defined icing conditions exist, before ice is allowed to accumulate on the engine inlet. Apply the operator’s current procedure and criteria.</p></aside>
+            <aside className="study-tip"><strong>TIP · OPERATIONAL USE</strong><p>Engine anti-ice is operationally used as an <b>Anti-Ice</b>: it is selected preventively when the defined icing conditions exist, before ice is allowed to accumulate on the engine inlet. Apply the operator’s current procedure and criteria.</p></aside>
             <Deep title="Go deeper · MAX idle logic"><p>With engine anti-ice ON, the supplied MAX uses icing idle with flaps UP and approach idle with the flaps extended. With engine anti-ice OFF, it uses flight idle below 15° and approach idle at 15° or more.</p></Deep>
             <h3>Warning and indications</h3>
             <div className="engine-warning-grid">
