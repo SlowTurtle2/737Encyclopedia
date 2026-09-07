@@ -33,7 +33,7 @@ export default function FireProtection() {
           <li><strong>Cargo compartments:</strong> dual-loop smoke detection and a shared suppression system selectable to the forward or aft compartment.</li>
           <li><strong>Lavatories:</strong> local smoke detection plus an automatic, heat-activated extinguisher beneath each sink.</li>
         </ul>
-        <Placeholder>Overview of protected zones and extinguisher bottles.</Placeholder>
+        <figure className="figure course-photo"><img src="/images/fire-protection-main-components.png" alt="737 showing the principal engine, APU, wheel-well and cargo fire-protection components" /><figcaption>Main fire-protection detector loops, smoke detectors and extinguisher bottles.</figcaption></figure>
         <Need title="No wheel-well extinguisher"><p>The main wheel well has fire detection, but no extinguishing system. The nose wheel well has neither fire detection nor extinguishing.</p></Need>
         <Source>NG 8.20.1 · MAX 8.20.1</Source>
       </section>
