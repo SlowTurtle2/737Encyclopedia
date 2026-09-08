@@ -189,44 +189,37 @@ export default function SimulatorSession() {
             </h2>
             <p>
               The pair is usually split: one pilot gets a technical failure and
-              the other a cabin or medical event.
+              the other a cabin, medical or exterior event. The two are handled
+              differently.
+            </p>
+
+            <h3>Case 1 — Technical failure</h3>
+            <p className="q-intro">
+              A caution or warning during the detail — for example a dual fuel
+              filter bypass, GEN 1 (bus) off or disconnect with the APU
+              inoperative, a forward-door caution, or a master caution in a busy
+              phase.
+            </p>
+            <p>Fly first: if it happens in a busy phase, call <strong>&ldquo;standby&rdquo;</strong> and finish the manoeuvre. Then run the flow the assessors are looking for:</p>
+            <ul className="study-points">
+              <li><strong>1 · State the malfunction.</strong> Call out what you see and confirm it with the other pilot.</li>
+              <li><strong>2 · Do the QRH.</strong> Read-and-do the checklist; the assessor lets you use it even if you are not familiar with the 737.</li>
+              <li><strong>3 · PIOSEE.</strong> Problem, Information, Options, Select, Execute, Evaluate — reach a clear decision, and keep it sharp.</li>
+              <li><strong>4 · Set up and brief.</strong> Set fuel, course and minima, configure the FMC/navaids, and brief the approach (NITS to your PM).</li>
+              <li><strong>5 · Report ready.</strong> Declare to ATC as appropriate (PAN or MAYDAY), then report ready for the approach and return.</li>
+            </ul>
+
+            <h3>Case 2 — Cabin, medical or exterior event</h3>
+            <p className="q-intro">
+              An event away from the systems — for example an unwell passenger, a
+              suspected heart attack or stroke, an unruly passenger, spilled
+              chemicals, a small cabin fire (a charger, say) or a cargo fire.
             </p>
             <ul className="study-points">
-              <li>
-                <strong>Technical:</strong> dual fuel filter bypass, GEN 1 (bus)
-                off or disconnect with the APU inoperative, a forward-door
-                caution, or a master caution during a busy phase.
-              </li>
-              <li>
-                <strong>Cabin / medical:</strong> an unwell passenger, a suspected
-                heart attack or stroke, an unruly passenger, spilled chemicals, a
-                small cabin fire (for example a charger), or a cargo fire.
-              </li>
-            </ul>
-            <ul className="study-points">
-              <li>
-                <strong>Fly first:</strong> if it happens in a busy phase, call{' '}
-                <strong>&ldquo;standby&rdquo;</strong> and finish the manoeuvre —
-                aviate, navigate, communicate.
-              </li>
-              <li>
-                <strong>Manage it:</strong> pass control, work{' '}
-                <strong>PIOSEE</strong> (Problem, Information, Options, Select,
-                Execute, Evaluate) — keep it sharp, not long.
-              </li>
-              <li>
-                <strong>Brief:</strong> pass <strong>NITS</strong> (Nature,
-                Intentions, Time, Special instructions) and make the PA — sometimes
-                the examiner does the PA, or it is not requested.
-              </li>
-              <li>
-                <strong>QRH:</strong> read-and-do the checklist; the assessor lets
-                you use it even if you are not familiar with the 737.
-              </li>
-              <li>
-                <strong>Then:</strong> declare to ATC (MAYDAY as appropriate), set
-                fuel / course / minima, and return to the departure airport.
-              </li>
+              <li><strong>Fly first:</strong> aviate, navigate, communicate; call <strong>&ldquo;standby&rdquo;</strong> if it lands in a busy phase.</li>
+              <li><strong>Decide:</strong> pass control and work <strong>PIOSEE</strong> (Problem, Information, Options, Select, Execute, Evaluate) to a clear plan — continue, return or divert.</li>
+              <li><strong>Brief with NITS:</strong> Nature, Intentions, Time, Special instructions; make the PA — sometimes the examiner makes the PA, or it is not requested.</li>
+              <li><strong>Finish it:</strong> action any applicable checklist, set up for the approach and report ready.</li>
             </ul>
             <Need>
               <p>
