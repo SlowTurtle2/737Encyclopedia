@@ -95,7 +95,7 @@ export default function MAX() {
             </p>
             <ul className="study-points">
               <li>
-                <strong>No changes</strong> to memory items or procedure flows —
+                <strong>No changes</strong> to memory items or procedure flows,
                 only minor step changes and a few non-normal checklists.
               </li>
               <li>
@@ -108,7 +108,7 @@ export default function MAX() {
               </li>
               <li>
                 The <strong>MAX Display System</strong> shows the same
-                information as the NG — mostly restyled, not re-engineered.
+                information as the NG, mostly restyled, not re-engineered.
               </li>
             </ul>
           </section>
@@ -173,8 +173,8 @@ export default function MAX() {
               <li>
                 <Tag kind="redesign" />
                 <strong>Advanced technology winglets:</strong> taller blades
-                with only 3.1 m clearance (vs 3.9 m) — damage-prone on stand and
-                closer to the ground in the flare. Worth ~1–1.8% fuel.
+                with only 3.1 m clearance (vs 3.9 m), damage-prone on stand and
+                closer to the ground in the flare. Worth ~1 to 1.8% fuel.
               </li>
               <li>
                 <Tag kind="redesign" />
@@ -185,7 +185,7 @@ export default function MAX() {
               <li>
                 <Tag kind="redesign" />
                 <strong>Taller nose gear:</strong> strut 8 inches longer to keep
-                the bigger engine clear of the ground — hence the higher nose.
+                the bigger engine clear of the ground, hence the higher nose.
               </li>
               <li>
                 <Tag kind="new" />
@@ -201,7 +201,7 @@ export default function MAX() {
               </li>
               <li>
                 <Tag kind="redesign" />
-                <strong>APU inlet door:</strong> three positions — ground/open
+                <strong>APU inlet door:</strong> three positions, ground/open
                 (~45°), in-flight (~17°) and closed. All APU cooling air now
                 comes through this door.
               </li>
@@ -219,7 +219,7 @@ export default function MAX() {
             </ul>
 
             <Ops>
-              The LEAP-1B has noticeable residual thrust at idle — the aircraft
+              The LEAP-1B has noticeable residual thrust at idle, the aircraft
               accelerates to taxi speed on idle alone, more so with anti-ice on
               (+4% N1). It also needs a 3-minute warm-up/cool-down and oil at
               least 31°C before takeoff.
@@ -249,7 +249,7 @@ export default function MAX() {
           <section className="course-section" id="air-systems">
             <span className="section-num">CHAPTER 2 / AIR SYSTEMS</span>
             <h2>
-              A new electronic bleed air system — same operation, smarter
+              A new electronic bleed air system, same operation, smarter
               indications.
             </h2>
             <p>
@@ -268,7 +268,7 @@ export default function MAX() {
                 <Tag kind="new" />
                 <strong>BLEED light (was BLEED TRIP OFF):</strong> still lights
                 for over-temperature or over-pressure, but now also for
-                under-pressure or a system fault — which may not be resettable. A
+                under-pressure or a system fault, which may not be resettable. A
                 new BLEED non-normal checklist replaces BLEED TRIP OFF.
               </li>
               <li>
@@ -281,7 +281,7 @@ export default function MAX() {
               <li>
                 <Tag kind="redesign" />
                 <Tag kind="new" />
-                <strong>PACK light:</strong> adds two cases — a Flow Control
+                <strong>PACK light:</strong> adds two cases, a Flow Control
                 Valve stuck closed, and the same post-take-off configuration
                 logic (both lights if both pack switches are OFF; either ON
                 clears it).
@@ -290,11 +290,11 @@ export default function MAX() {
                 <Tag kind="redesign" />
                 <strong>Cross bleed start:</strong> extra thrust is normally{' '}
                 <strong>not</strong> needed to reach the 30 PSI duct pressure to
-                start the second engine — the NG needs additional thrust.
+                start the second engine, the NG needs additional thrust.
               </li>
               <li>
                 <Tag kind="redesign" />
-                <strong>RAM DOOR FULL OPEN lights:</strong> removed — they were
+                <strong>RAM DOOR FULL OPEN lights:</strong> removed, they were
                 not used in normal or non-normal procedures.
               </li>
               <li>
@@ -308,7 +308,7 @@ export default function MAX() {
 
             <Ops>
               On a No Engine Bleed take-off, the BLEED lights can illuminate if
-              the after-take-off no-bleed checklist is not completed — sequence
+              the after-take-off no-bleed checklist is not completed, sequence
               it deliberately to avoid the nuisance indication.
             </Ops>
             <Need>
@@ -338,7 +338,7 @@ export default function MAX() {
                 <Tag kind="new" />
                 <strong>Engine core anti-ice:</strong> the LEAP-1B adds core
                 heating. The EEC directs bleed air to the engine core
-                automatically as needed — no crew action and no indication in
+                automatically as needed, no crew action and no indication in
                 normal operation.
               </li>
               <li>
@@ -350,17 +350,17 @@ export default function MAX() {
               </li>
               <li>
                 <Tag kind="redesign" />
-                <strong>Valve lights — blue to amber:</strong> all anti-ice
+                <strong>Valve lights, blue to amber:</strong> all anti-ice
                 valve lights are now amber, renamed (COWL VALVE OPEN → COWL
                 VALVE; L/R VALVE OPEN → L/R VALVE). They flash amber in transit
                 and are extinguished once the valve reaches the commanded
-                position — open <em>or</em> closed.
+                position, open <em>or</em> closed.
               </li>
               <li>
                 <Tag kind="new" />
                 <strong>Disagreement alerting:</strong> if a valve disagrees
                 with its switch, the light stays on and MASTER CAUTION
-                illuminates after about 6 seconds — the NG only shows a steady
+                illuminates after about 6 seconds, the NG only shows a steady
                 bright-blue light.
               </li>
               <li>
@@ -380,7 +380,7 @@ export default function MAX() {
             </Ops>
             <Need>
               <p>
-                Amber, not blue — and normally dark once in position. The engine
+                Amber, not blue, and normally dark once in position. The engine
                 now protects its core by itself; confirm engine anti-ice with
                 the green TAI, not the valve light.
               </p>
@@ -440,7 +440,7 @@ export default function MAX() {
               After a stick-shaker event, once recovered re-set the target
               airspeed in the MCP speed window and expect the active pitch mode
               to have changed. If the Cross FCC Trim Monitor has tripped, on the
-              ground below 30 kt the STAB OUT OF TRIM light comes on — action the
+              ground below 30 kt the STAB OUT OF TRIM light comes on, action the
               STABILISER OUT OF TRIM checklist, do not take off, and record the
               defect.
             </Ops>
@@ -530,14 +530,14 @@ export default function MAX() {
               <li>
                 <Tag kind="new" />
                 <strong>Bowed Rotor Motoring:</strong> the start motors the
-                engine at 18–24% N2 for 6–90 seconds to straighten a
+                engine at 18 to 24% N2 for 6 to 90 seconds to straighten a
                 heat-bowed rotor, shown as MOTORING on the N2 display. This makes
                 the overall start noticeably longer.
               </li>
               <li>
                 <Tag kind="new" />
                 <strong>EOS / TCMA start self-test:</strong> moving the start
-                lever to IDLE runs a test — fuel flow reads zero, the fuel
+                lever to IDLE runs a test, fuel flow reads zero, the fuel
                 shutoff valve cycles and ENG VALVE CLOSED stays bright blue (up
                 to ~15 s) before the start continues.
               </li>
@@ -579,7 +579,7 @@ export default function MAX() {
             </ul>
 
             <Ops>
-              Plan for a longer start — bowed-rotor motoring plus the EOS/TCMA
+              Plan for a longer start, bowed-rotor motoring plus the EOS/TCMA
               self-test add time and extra indications, so let it run rather than
               suspecting a fault. In-flight relight fuel-on N2 values differ
               between a windmill and a cross-bleed start; check the QRH.
@@ -587,7 +587,7 @@ export default function MAX() {
             <Need>
               <p>
                 A new engine that can shut itself down (EOS/TCMA) and a start
-                that now includes bowed-rotor motoring and a self-test — longer,
+                that now includes bowed-rotor motoring and a self-test, longer,
                 with more to watch. The APU is unchanged apart from its
                 indications.
               </p>
@@ -629,7 +629,7 @@ export default function MAX() {
                 <Tag kind="new" />
                 <strong>Maneuver Load Alleviation (MLA):</strong> at high load
                 factor and gross weight it automatically bleeds off speedbrake to
-                cut structural loads — transparent to you, and the lever does not
+                cut structural loads, transparent to you, and the lever does not
                 move.
               </li>
               <li>
@@ -657,7 +657,7 @@ export default function MAX() {
                 <Tag kind="redesign" />
                 <strong>Stab trim cutout switches:</strong> now labelled PRI and
                 B/U, and each one cuts out both main-electric and autopilot trim.
-                Checklist actions are unchanged — both go to CUTOUT.
+                Checklist actions are unchanged, both go to CUTOUT.
               </li>
               <li>
                 <Tag kind="redesign" />
@@ -671,7 +671,7 @@ export default function MAX() {
                 <Tag kind="new" />
                 <strong>MCAS in the Speed Trim System:</strong> adds nose-down
                 stabiliser trim at high AOA (flaps up, autopilot off, Mach below
-                0.84, from 10 s after takeoff), with FCC 12.1.2 safeguards — AOA
+                0.84, from 10 s after takeoff), with FCC 12.1.2 safeguards, AOA
                 comparison (vanes disagreeing 5.5° or more with flaps up trips
                 SPEED TRIM FAIL and the whole system), a Maximum Command Limit
                 and single-activation logic. If either Speed Trim function fails,
@@ -691,7 +691,7 @@ export default function MAX() {
               <p>
                 Fly-by-wire spoilers bring automatic helpers (MLA, LAM, EDS,
                 EJLA) that mostly work without moving the lever, and MCAS adds
-                nose-down trim at high AOA — all to keep the MAX flying like the
+                nose-down trim at high AOA, all to keep the MAX flying like the
                 NG.
               </p>
             </Need>
@@ -700,7 +700,7 @@ export default function MAX() {
           <section className="course-section" id="flight-instruments">
             <span className="section-num">CHAPTER 10 / FLIGHT INSTRUMENTS, DISPLAYS</span>
             <h2>
-              Four large displays with a new layout — the same information,
+              Four large displays with a new layout, the same information,
               presented differently, plus new roll-awareness alerts.
             </h2>
             <p>
@@ -737,7 +737,7 @@ export default function MAX() {
               </li>
               <li>
                 <Tag kind="redesign" />
-                <strong>EFIS range &amp; VSD:</strong> range is now 0.5–640 nm
+                <strong>EFIS range &amp; VSD:</strong> range is now 0.5 to 640 nm
                 shown on the ND (not the EFIS panel) with +/− symbols, and a
                 dedicated VSD button replaces the old selection method.
               </li>
@@ -745,13 +745,13 @@ export default function MAX() {
                 <Tag kind="redesign" />
                 <strong>Engine display control panel:</strong> ENG / SYS / INFO
                 / ENG TFR keys manage the engine, system (hydraulic quantity and
-                pressure) and N1 / V-speed pages — the INFO page replaces the
+                pressure) and N1 / V-speed pages, the INFO page replaces the
                 NG&rsquo;s N1 and speed-reference knobs.
               </li>
               <li>
                 <Tag kind="new" />
                 <strong>Roll-saturation &amp; bank-angle alerts:</strong> new PFD
-                alerts — ROLL/YAW ASYMMETRY and ROLL AUTHORITY for single-channel
+                alerts, ROLL/YAW ASYMMETRY and ROLL AUTHORITY for single-channel
                 autopilot saturation, plus an enhanced bank-angle warning with a
                 red ROLL COMMAND arrow and aural &ldquo;ROLL LEFT / RIGHT&rdquo;
                 beyond 45°.
@@ -789,7 +789,7 @@ export default function MAX() {
               <li>
                 <Tag kind="redesign" />
                 <strong>Fuel source on PERF INIT:</strong> PERF INIT shows the
-                fuel source — SENS (totalizer), CALC or MAN — replacing the
+                fuel source, SENS (totalizer), CALC or MAN, replacing the
                 NG&rsquo;s PLAN FUEL entry.
               </li>
               <li>
@@ -827,8 +827,8 @@ export default function MAX() {
               <li>
                 <Tag kind="redesign" />
                 <strong>FILTER BYPASS logic:</strong> the two lights are now
-                linked — if both illuminate they stay on until engine shutdown on
-                the ground — and the light covers impending or actual bypass.
+                linked, if both illuminate they stay on until engine shutdown on
+                the ground, and the light covers impending or actual bypass.
               </li>
               <li>
                 <Tag kind="redesign" />
@@ -867,7 +867,7 @@ export default function MAX() {
             <ul className="study-points">
               <li>
                 <Tag kind="redesign" />
-                <strong>Two-position gear lever:</strong> UP / DOWN only — the
+                <strong>Two-position gear lever:</strong> UP / DOWN only, the
                 OFF position is gone. The lever electrically controls the
                 hydraulics, and pressure is removed automatically 10 s after the
                 gear is up and locked. Do not move the lever after selecting UP,
@@ -878,7 +878,7 @@ export default function MAX() {
                 <strong>Relocated controls:</strong> the gear lever sits
                 centrally between the inboard displays, with LOCK OVRD beside it
                 and NOSE WHEEL STEER moved next to it; the AUTO BRAKE switch and
-                brake-pressure indicator move to the forward aisle stand — adjust
+                brake-pressure indicator move to the forward aisle stand, adjust
                 your scan for the DISARM / ANTI SKID INOP lights.
               </li>
               <li>
@@ -917,7 +917,7 @@ export default function MAX() {
               <li>
                 <Tag kind="new" />
                 <strong>RSAT suite:</strong> Boeing&rsquo;s Runway Situation
-                Awareness Tools replace the NG&rsquo;s Honeywell RAAS — Boeing
+                Awareness Tools replace the NG&rsquo;s Honeywell RAAS, Boeing
                 RAAS plus overrun and speedbrake warnings (some Honeywell
                 callouts are dropped, covered by other warnings).
               </li>

@@ -4,7 +4,7 @@ import Contents from '../../systems/fuel/contents';
 export const metadata = {
   title: 'Simulator Session | 737Encyclopedia',
   description:
-    'A walkthrough of the 737 simulator assessment — the departure profile, raw-data airwork, navigation, the failure and CRM, and the approach — built from recent feedback.',
+    'A walkthrough of the 737 simulator assessment, the departure profile, raw-data airwork, navigation, the failure and CRM, and the approach, built from recent feedback.',
 };
 
 function Need({ children }: { children: React.ReactNode }) {
@@ -49,7 +49,7 @@ export default function SimulatorSession() {
           <section className="course-section" id="overview">
             <span className="section-num">OVERVIEW</span>
             <h2>
-              About an hour in a 737, flown as a pair — they are looking at your
+              About an hour in a 737, flown as a pair. They are looking at your
               raw-data handling, awareness and CRM, not a type rating.
             </h2>
             <p>
@@ -60,8 +60,8 @@ export default function SimulatorSession() {
               are fine as long as you notice and correct them.
             </p>
             <p>
-              Crews are usually mixed — one candidate from a 737 MCC and one from
-              an A320 MCC — so your partner may be more, or less, comfortable on
+              Crews are usually mixed, one candidate from a 737 MCC and one from
+              an A320 MCC, so your partner may be more, or less, comfortable on
               the 737 than you. That is normal, and the assessor takes it into
               account.
             </p>
@@ -72,7 +72,7 @@ export default function SimulatorSession() {
             </p>
             <Need>
               <p>
-                Do a sim prep. Passing cold — with no 737 time — is very hard;
+                Do a sim prep. Passing cold, with no 737 time, is very hard;
                 a few hours of preparation and some backseating make the biggest
                 difference.
               </p>
@@ -93,7 +93,7 @@ export default function SimulatorSession() {
               </li>
               <li>
                 <strong>Pre-set:</strong> the aircraft is usually set up for you
-                — you verify rather than build it.
+               , you verify rather than build it.
               </li>
               <li>
                 <strong>Takeoff:</strong> flight directors and autothrottle ON;
@@ -106,7 +106,7 @@ export default function SimulatorSession() {
               </li>
               <li>
                 <strong>Automation off:</strong> after the after-takeoff
-                checklist, flight directors and autothrottle OFF — the rest is
+                checklist, flight directors and autothrottle OFF, the rest is
                 hand-flown raw data.
               </li>
             </ul>
@@ -122,7 +122,7 @@ export default function SimulatorSession() {
           <section className="course-section" id="airwork">
             <span className="section-num">CHAPTER 2 / RAW-DATA AIRWORK</span>
             <h2>
-              A sequence of hand-flown exercises — intercepts, level and speed
+              A sequence of hand-flown exercises: intercepts, level and speed
               changes, and a steep turn.
             </h2>
             <ul className="study-points">
@@ -150,9 +150,9 @@ export default function SimulatorSession() {
             </ul>
             <Tip>
               The assessor may pack several instructions into one transmission
-              (climb + turn + speed). Prioritise — fly the aircraft first — then
+              (climb + turn + speed). Prioritise, fly the aircraft first, then
               read back and action the rest in order. If you are unsure of an
-              instruction, do not hesitate to ask the assessor to repeat it —
+              instruction, do not hesitate to ask the assessor to repeat it,
               acting on a doubtful clearance is worse than asking.
             </Tip>
           </section>
@@ -160,12 +160,12 @@ export default function SimulatorSession() {
           <section className="course-section" id="navigation">
             <span className="section-num">CHAPTER 3 / NAVIGATION &amp; HOLDING</span>
             <h2>
-              Show where you are and how you would join a hold — using raw
+              Show where you are and how you would join a hold, using raw
               navaids and the chart.
             </h2>
             <ul className="study-points">
               <li>
-                <strong>Position fix:</strong> &ldquo;where are you?&rdquo; — fix
+                <strong>Position fix:</strong> &ldquo;where are you?&rdquo;, fix
                 your position on the chart using a VOR, NDB or ADF, and give the
                 distance from the airport.
               </li>
@@ -175,12 +175,12 @@ export default function SimulatorSession() {
               </li>
               <li>
                 <strong>Hold entry:</strong> from your present position, state the
-                entry — direct, parallel or teardrop (offset).
+                entry, direct, parallel or teardrop (offset).
               </li>
             </ul>
             <Need>
               <p>
-                If you call the wrong hold entry, correct yourself — assessors are
+                If you call the wrong hold entry, correct yourself, assessors are
                 happy when you catch and fix it. Work from your radial relative to
                 the station.
               </p>
@@ -190,7 +190,7 @@ export default function SimulatorSession() {
           <section className="course-section" id="failure">
             <span className="section-num">CHAPTER 4 / THE FAILURE &amp; CRM</span>
             <h2>
-              One technical failure or a cabin event — fly first, then manage it
+              One technical failure or a cabin event. Fly first, then manage it
               as a crew.
             </h2>
             <p>
@@ -199,9 +199,9 @@ export default function SimulatorSession() {
               differently.
             </p>
 
-            <h3>Case 1 — Technical failure</h3>
+            <h3>Case 1, Technical failure</h3>
             <p className="q-intro">
-              A caution or warning during the detail — for example a dual fuel
+              A caution or warning during the detail, for example a dual fuel
               filter bypass, GEN 1 (bus) off or disconnect with the APU
               inoperative, a forward-door caution, or a master caution in a busy
               phase.
@@ -210,27 +210,27 @@ export default function SimulatorSession() {
             <ul className="study-points">
               <li><strong>1 · State the malfunction.</strong> Call out what you see and confirm it with the other pilot.</li>
               <li><strong>2 · Do the QRH.</strong> Read-and-do the checklist; the assessor lets you use it even if you are not familiar with the 737.</li>
-              <li><strong>3 · PIOSEE.</strong> Problem, Information, Options, Select, Execute, Evaluate — reach a clear decision, and keep it sharp.</li>
+              <li><strong>3 · PIOSEE.</strong> Problem, Information, Options, Select, Execute, Evaluate, reach a clear decision, and keep it sharp.</li>
               <li><strong>4 · Set up and brief.</strong> Set fuel, course and minima, configure the FMC/navaids, and brief the approach (NITS to your PM).</li>
               <li><strong>5 · Report ready.</strong> Declare to ATC as appropriate (PAN or MAYDAY), then report ready for the approach and return.</li>
             </ul>
 
-            <h3>Case 2 — Cabin, medical or exterior event</h3>
+            <h3>Case 2, Cabin, medical or exterior event</h3>
             <p className="q-intro">
-              An event away from the systems — for example an unwell passenger, a
+              An event away from the systems, for example an unwell passenger, a
               suspected heart attack or stroke, an unruly passenger, spilled
               chemicals, a small cabin fire (a charger, say) or a cargo fire.
             </p>
             <ul className="study-points">
               <li><strong>Fly first:</strong> aviate, navigate, communicate; call <strong>&ldquo;standby&rdquo;</strong> if it lands in a busy phase.</li>
-              <li><strong>Decide:</strong> pass control and work <strong>PIOSEE</strong> (Problem, Information, Options, Select, Execute, Evaluate) to a clear plan — continue, return or divert.</li>
-              <li><strong>Brief with NITS:</strong> Nature, Intentions, Time, Special instructions; make the PA — sometimes the examiner makes the PA, or it is not requested.</li>
+              <li><strong>Decide:</strong> pass control and work <strong>PIOSEE</strong> (Problem, Information, Options, Select, Execute, Evaluate) to a clear plan, continue, return or divert.</li>
+              <li><strong>Brief with NITS:</strong> Nature, Intentions, Time, Special instructions; make the PA, sometimes the examiner makes the PA, or it is not requested.</li>
               <li><strong>Finish it:</strong> action any applicable checklist, set up for the approach and report ready.</li>
             </ul>
             <Need>
               <p>
                 The failure is a CRM exercise, not a systems exam. They want a
-                calm, prioritised process — fly the aircraft, share a clear plan,
+                calm, prioritised process, fly the aircraft, share a clear plan,
                 use the QRH.
               </p>
             </Need>
@@ -238,7 +238,7 @@ export default function SimulatorSession() {
 
           <section className="course-section" id="approach">
             <span className="section-num">CHAPTER 5 / THE APPROACH</span>
-            <h2>Radar vectors to a raw-data ILS, to a full stop.</h2>
+            <h2>Radar vectors to a raw-data ILS, flown to a full stop.</h2>
             <ul className="study-points">
               <li>
                 <strong>Vectors:</strong> radar vectors to final (for example
@@ -251,7 +251,7 @@ export default function SimulatorSession() {
               <li>
                 <strong>Expect a twist:</strong> a glide-slope failure with the
                 runway in sight (continue visually), or a go-around if you are
-                unstable — you may be re-vectored to a short final for a second
+                unstable, you may be re-vectored to a short final for a second
                 approach.
               </li>
             </ul>
@@ -273,7 +273,7 @@ export default function SimulatorSession() {
               </li>
               <li>
                 <strong>Catch and correct.</strong> Mistakes are tolerated if you
-                see them and fix them quickly — one candidate gained 400 ft,
+                see them and fix them quickly, one candidate gained 400 ft,
                 corrected it in seconds, and still passed.
               </li>
               <li>
@@ -281,7 +281,7 @@ export default function SimulatorSession() {
                 once, do the important one first, then the rest.
               </li>
               <li>
-                <strong>Aviate, navigate, communicate</strong> — in that order,
+                <strong>Aviate, navigate, communicate</strong>, in that order,
                 always.
               </li>
               <li>
@@ -289,7 +289,7 @@ export default function SimulatorSession() {
                 those two, trim out the forces, and make small corrections.
               </li>
               <li>
-                <strong>As PM, call deviations early</strong> — clear, timely
+                <strong>As PM, call deviations early</strong>, clear, timely
                 callouts are exactly what they want to see.
               </li>
               <li>
@@ -311,7 +311,7 @@ export default function SimulatorSession() {
             <Contents sections={chapters} />
             <hr />
             <p className="muted">
-              A walkthrough built from recent candidate feedback — expect small
+              A walkthrough built from recent candidate feedback, expect small
               variations by assessor and by day.
             </p>
             <Link href="/airline-assessment/technical-interview">

@@ -4,7 +4,7 @@ import Contents from '../../systems/fuel/contents';
 export const metadata = {
   title: 'HR Interview | 737Encyclopedia',
   description:
-    'A question bank for the airline HR interview — your experience, behavioural examples and the tick-box questions — with the topics seen most in recent assessments.',
+    'A question bank for the airline HR interview, your experience, behavioural examples and the tick-box questions, with the topics seen most in recent assessments.',
 };
 
 function Hot() {
@@ -58,10 +58,10 @@ export default function HRInterview() {
               and whether the boxes are ticked.
             </h2>
             <p>
-              The HR interview is usually brief (around 10–25 minutes) and
-              relaxed. Much of it is a checklist — motivation, background and
-              administrative facts — so answer honestly and concisely. They may
-              verify what you say afterwards, so never invent anything.
+              The HR interview is usually brief (around 10 to 25 minutes) and
+              relaxed. Much of it is a checklist: motivation, background and
+              administrative facts. Answer honestly and concisely, and remember
+              they may verify what you say afterwards, so never invent anything.
             </p>
             <p>
               Questions marked <Hot /> come from assessment feedback in the last
@@ -79,8 +79,8 @@ export default function HRInterview() {
           <section className="course-section" id="your-experience">
             <span className="section-num">CHAPTER 1 / YOUR EXPERIENCE</span>
             <h2>
-              Your motivation, your background and your ambitions — know your
-              own story and know the company.
+              Your motivation, your background and your ambitions. Know your
+              own story, and know the company.
             </h2>
 
             <h3>Motivation &amp; the company</h3>
@@ -88,7 +88,7 @@ export default function HRInterview() {
               <li><Hot />Why do you want to become a pilot?</li>
               <li><Hot />Why do you want to fly for us?</li>
               <li>Tell me about yourself.</li>
-              <li>What do you know about the company — its fleet, group and bases?</li>
+              <li>What do you know about the company, its fleet, group and bases?</li>
               <li>Why should we hire you?</li>
               <li>What are the operational differences between us and another airline you could join?</li>
               <li>Is speaking other languages an advantage?</li>
@@ -107,8 +107,8 @@ export default function HRInterview() {
             <ul className="study-points q-list">
               <li><Hot />Where do you see yourself in five years?</li>
               <li><Hot />Would you like to become a captain, and what makes a good captain?</li>
-              <li><Hot />What do you expect to be your biggest challenge — in training, or once you start here?</li>
-              <li><Hot />You come with prior experience — how do you feel about starting again from zero?</li>
+              <li><Hot />What do you expect to be your biggest challenge, in training, or once you start here?</li>
+              <li><Hot />You come with prior experience. How do you feel about starting again from zero?</li>
             </ul>
 
             <h3>Other applications &amp; preparation</h3>
@@ -116,7 +116,7 @@ export default function HRInterview() {
               <li><Hot />Have you applied to other airlines? Which ones, and has anyone responded?</li>
               <li><Hot />If another airline offered you a place before you heard from us, what would you do?</li>
               <li><Hot />Did you do any simulator preparation, and where?</li>
-              <li>Did you prepare for this interview — where, and how many hours?</li>
+              <li>Did you prepare for this interview, where, and how many hours?</li>
               <li>Which areas do you feel weakest on for the 737 sim assessment?</li>
             </ul>
           </section>
@@ -124,11 +124,11 @@ export default function HRInterview() {
           <section className="course-section" id="your-behavior">
             <span className="section-num">CHAPTER 2 / YOUR BEHAVIOR</span>
             <h2>
-              Competency and judgement questions — they want a concrete example
+              Competency and judgement questions. They want a concrete example
               and to see how you think.
             </h2>
             <Tip>
-              Answer with a real, specific example — a situation you actually
+              Answer with a real, specific example, a situation you actually
               lived through, with enough detail that the assessor can picture it.
               Keep the focus on what <em>you</em> personally did and how it turned
               out, rather than a generic or hypothetical answer.
@@ -158,22 +158,22 @@ export default function HRInterview() {
 
             <h3>Judgement scenarios</h3>
             <ul className="study-points q-list">
-              <li>Your captain wants to continue the approach below minima without becoming visual — what do you do?</li>
-              <li>You report for duty and smell alcohol on the captain&rsquo;s breath — what do you do?</li>
-              <li>A passenger feels unwell and needs immediate medical assistance — what do you do?</li>
-              <li>You are in a non-aviation life-threatening situation — say someone near you at a stadium has a heart attack — how do you handle it, and what are your priorities?</li>
+              <li>Your captain wants to continue the approach below minima without becoming visual. What do you do?</li>
+              <li>You report for duty and smell alcohol on the captain&rsquo;s breath. What do you do?</li>
+              <li>A passenger feels unwell and needs immediate medical assistance. What do you do?</li>
+              <li>You are in a non-aviation life-threatening situation (say someone near you at a stadium has a heart attack). How do you handle it, and what are your priorities?</li>
             </ul>
           </section>
 
           <section className="course-section" id="tick-box">
             <span className="section-num">CHAPTER 3 / TICK-BOX QUESTIONS</span>
             <h2>
-              Quick administrative checks — answer honestly and to the point.
+              Quick administrative checks, answer honestly and to the point.
             </h2>
             <ul className="study-points q-list">
               <li><Hot />Run me through any gaps in your CV.</li>
               <li><Hot />Do you have the right to live and work in the UK?</li>
-              <li><Hot />Have you travelled outside the EU in the last ten years — where and when?</li>
+              <li><Hot />Have you travelled outside the EU in the last ten years, where and when?</li>
               <li><Hot />Have you ever been fired or dismissed from a job?</li>
               <li><Hot />Have you had any accidents or incidents in your flying?</li>
               <li><Hot />What is your notice period, and when can you start?</li>
@@ -183,7 +183,7 @@ export default function HRInterview() {
               <li>Do you have any criminal record or unspent convictions?</li>
             </ul>
             <Tip>
-              They often check these afterwards, so never lie — and be ready to
+              They often check these afterwards, so never lie, and be ready to
               justify a gap or an unusual date in detail. Keep your CV in front
               of you to answer precisely.
             </Tip>
