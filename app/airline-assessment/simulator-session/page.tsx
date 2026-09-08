@@ -78,13 +78,11 @@ export default function SimulatorSession() {
               expect small variations by assessor and by day. Charts are handed
               out during the morning briefing.
             </p>
-            <Need>
-              <p>
-                Do a sim prep. Passing cold, with no 737 time, is very hard;
-                a few hours of preparation and some backseating make the biggest
-                difference.
-              </p>
-            </Need>
+            <Tip>
+              Do a sim prep. Passing cold, with no 737 time, is very hard; a few
+              hours of preparation and some backseating make the biggest
+              difference.
+            </Tip>
           </section>
 
           <section className="course-section" id="profile">
@@ -123,13 +121,12 @@ export default function SimulatorSession() {
                 hand-flown raw data.
               </li>
             </ul>
-            <Need>
-              <p>
-                Your two raw-data references are <strong>pitch</strong> and{' '}
-                <strong>N1%</strong>. A prep session gives you the specific
-                numbers for each phase.
-              </p>
-            </Need>
+            <Warning>
+              At the level-off, the large thrust reduction produces a strong
+              nose-down effect that can cost several hundred feet if it is not
+              corrected immediately. Pull on the control column and trim without
+              delay.
+            </Warning>
             <Warning>
               Know the departure and approach profiles by heart. They are given
               several weeks in advance and there are very few of them (normally
@@ -312,6 +309,12 @@ export default function SimulatorSession() {
                 approach.
               </li>
             </ul>
+            <Tip>
+              At each flap extension the aircraft tends to balloon and gain
+              altitude, so trim, or push gently on the control column, to hold
+              your altitude. Ballooning after selecting flap is one of the most
+              common candidate errors during the assessment.
+            </Tip>
             <Tip>
               A go-around is not an automatic fail. Candidates who went around for
               being unstable were set up on a short final and given another
