@@ -68,9 +68,7 @@ export default function TechnicalInterview() {
             </p>
             <p>
               Questions marked <Hot /> come from assessment feedback in the last
-              six months. The rest are long-standing favourites. Wording here is
-              paraphrased and reordered — treat it as a topic checklist, not a
-              script.
+              six months. The rest are long-standing favourites.
             </p>
             <Need>
               <p>
