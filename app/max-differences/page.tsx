@@ -232,9 +232,7 @@ export default function MAX() {
                 Flight Instruments, Displays
               </Link>
               .
-            </p>
-            <p className="source">REFERENCE · 737-8200 Familiarisation, Ch.1 · FCOM Ch.1</p>
-          </section>
+            </p>          </section>
 
           <section className="course-section" id="air-systems">
             <span className="section-num">CHAPTER 2 / AIR SYSTEMS</span>
@@ -307,9 +305,7 @@ export default function MAX() {
                 reasons for BLEED and PACK lights, a configuration check after
                 take-off, and a new EQUIP SMOKE alert.
               </p>
-            </Need>
-            <p className="source">REFERENCE · 737-8200 Familiarisation, Ch.2 · FCOM Ch.2</p>
-          </section>
+            </Need>          </section>
 
           <section className="course-section" id="anti-ice">
             <span className="section-num">CHAPTER 3 / ANTI-ICE</span>
@@ -381,9 +377,7 @@ export default function MAX() {
               Full valve indications and idle logic are in the{' '}
               <Link href="/systems/anti-ice-rain">Anti-Ice, Rain</Link> system
               course.
-            </p>
-            <p className="source">REFERENCE · 737-8200 Familiarisation, Ch.3 · FCOM Ch.3</p>
-          </section>
+            </p>          </section>
 
           <div className="system-page-footer">
             <Link className="system-glossary-link" href="/glossary">
