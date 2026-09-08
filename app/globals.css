@@ -2354,3 +2354,13 @@ summary:focus-visible {
 .course-section h3 .diff-tag {
   vertical-align: middle;
 }
+
+/* "Hot" tag — question seen in recent (< 6 months) feedback */
+.diff-tag.hot {
+  background: #fdecdf;
+  color: #b4531b;
+  border: 1px solid #f0cba7;
+}
+/* Interview question lists */
+.q-list > li strong { color: #29475f; }
+.q-intro { color: #5b6b7a; margin: 0 0 4px; }
