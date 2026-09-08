@@ -67,6 +67,12 @@ export default function TechnicalInterview() {
               the 737.
             </p>
             <p>
+              Questions are usually steered by your background. A candidate with
+              an engineering background should expect more technical questions
+              about the aircraft, while a candidate from a social-sciences
+              background is more likely to get CRM or human-factors questions.
+            </p>
+            <p>
               Questions marked <Hot /> come from assessment feedback in the last
               six months. The rest are long-standing favourites.
             </p>
@@ -121,10 +127,10 @@ export default function TechnicalInterview() {
 
             <h3>Instruments &amp; air data</h3>
             <ul className="study-points q-list">
-              <li><Hot />What is a pitot tube, and what is a static port? Which instruments use each?<span className="q-hint">Pitot = total pressure (ASI); static = static pressure (ASI, ALT, VSI).</span></li>
+              <li><Hot />What is a pitot tube, and what is a static port? Which instruments use each?<span className="q-hint">Pitot = total pressure (ASI); static = static pressure (ALT, VSI).</span></li>
               <li><Hot />The pitot blocks with ice in the climb (or descent), what does the airspeed do, and how do you fly (pitch and power)?<span className="q-hint">Acts like an altimeter: over-reads in the climb, under-reads in the descent; fly known pitch + power.</span></li>
               <li><Hot />What is a radio altimeter, and which systems use it (for example the GPWS)?<span className="q-hint">Height AGL below ~2500 ft; feeds GPWS/EGPWS, autoland and minima callouts.</span></li>
-              <li><Hot />What is TAT? Is it higher or lower than the real air temperature, and why?<span className="q-hint">Higher than SAT, ram/kinetic heating adds a rise.</span></li>
+              <li><Hot />What is TAT? Is it higher or lower than the real air temperature, and why?<span className="q-hint">Total Air Temperature: higher than SAT, because ram/kinetic heating adds a rise.</span></li>
               <li><Hot />Does TAS increase or decrease with altitude for a fixed IAS, and why?<span className="q-hint">Increases, lower air density with height.</span></li>
               <li><Hot />You set 1023 instead of 1013 on the altimeter, are you higher or lower than indicated? What is this error called?<span className="q-hint">Subscale ~10 hPa too high → altimeter under-reads (~280 ft low) → you are actually higher; a pressure-setting error.</span></li>
               <li>What is a gyroscope, and which of your instruments used one?<span className="q-hint">Rigidity &amp; precession; attitude indicator, heading indicator/DG, turn coordinator.</span></li>
@@ -134,15 +140,15 @@ export default function TechnicalInterview() {
             <h3>Performance &amp; flight planning</h3>
             <ul className="study-points q-list">
               <li><Hot />Your destination is forecast foggy, what conditions make an alternate legal?<span className="q-hint">Alternate forecast at/above its planning minima for the ETA window, with fuel to reach it.</span></li>
-              <li><Hot />Why do we carry contingency fuel? What is final reserve fuel, and how much is it?<span className="q-hint">Contingency ~5% of trip for the unexpected; final reserve = 30 min holding at 1500 ft.</span></li>
+              <li><Hot />Why do we carry contingency fuel? What is final reserve fuel, and how much is it?<span className="q-hint">Contingency (~5% of trip fuel) covers the unexpected in flight, such as wind or routing that differs from the plan, ATC re-routes, or a level lower than planned. Final reserve = 30 min holding at 1500 ft.</span></li>
               <li><Hot />When do you call &ldquo;MAYDAY FUEL&rdquo;?<span className="q-hint">When usable fuel on landing at the nearest suitable will be below final reserve.</span></li>
               <li><Hot />Work through a simple crosswind calculation.<span className="q-hint">Crosswind = wind × sin(angle); rule of thumb 30°≈½, 45°≈0.7, 60°≈full.</span></li>
               <li><Hot />Flying in cold or hot weather, how do indicated altitude and airspeed change, and how many feet do you add or subtract per degree?<span className="q-hint">Cold → altimeter over-reads (true lower) → add corrections; ~4 ft per 1000 ft per °C from ISA.</span></li>
               <li><Hot />Why must you be careful flying into very cold weather?<span className="q-hint">True altitude is below indicated, apply cold-temperature corrections to minima and terrain clearance.</span></li>
               <li>What is TODA? What are a stopway and a clearway? Can you taxi on a clearway?<span className="q-hint">TODA = TORA + clearway; stopway = paved area to stop in; clearway = obstacle-free area beyond, no taxiing on it.</span></li>
-              <li>What is screen height?<span className="q-hint">Height to clear at the end of the takeoff distance, 35 ft dry, 15 ft wet.</span></li>
+              <li>What is screen height?<span className="q-hint">The height the aircraft must reach or clear over the runway end. Takeoff: 35 ft dry, 15 ft wet. Landing: 50 ft over the threshold.</span></li>
               <li>What is V<sub>MCG</sub>, and can it be higher than V1?<span className="q-hint">Min speed for directional control on the ground with an engine out; V1 is not set below V<sub>MCG</sub>.</span></li>
-              <li>What are CAT I / II / III minima? What are planning minima? What is the difference between MDA and DA?<span className="q-hint">DA (precision, no level-off) vs MDA (non-precision, don&rsquo;t go below); CAT I 200 ft/550 m, II 100 ft, III lower/RVR; planning minima applied at planning stage.</span></li>
+              <li>What are CAT I / II / III minima? What are planning minima? What is the difference between MDA and DA?<span className="q-hint">DA (precision, no level-off) vs MDA (non-precision, don&rsquo;t go below). CAT I: DH 200 ft, RVR 550 m. CAT II: DH 100 ft, RVR 300 m. CAT III: IIIA DH below 100 ft, RVR 200 m; IIIB DH below 50 ft, RVR 75 m; IIIC no DH, RVR 0. Planning minima are applied at the planning stage.</span></li>
               <li>What is TUC at 40,000 ft?<span className="q-hint">Time of useful consciousness ~15 to 20 seconds.</span></li>
               <li>Why might a runway have a permanently displaced threshold?<span className="q-hint">Approach obstacles, noise, or declared-distance limits (landing displaced, takeoff can use full length).</span></li>
             </ul>
@@ -151,14 +157,14 @@ export default function TechnicalInterview() {
             <ul className="study-points q-list">
               <li><Hot />What would you do in the event of a radio / communications failure?<span className="q-hint">Squawk 7600, continue per last clearance / expected route and level, follow lost-comms rules, try other means.</span></li>
               <li><Hot />What is the difference between VHF and HF?<span className="q-hint">VHF line-of-sight, short range, clear; HF long-range sky-wave for oceanic, noisier.</span></li>
-              <li><Hot />Do you have to monitor HF continuously? (There is a system that alerts you, SELCAL.)<span className="q-hint">No, SELCAL chimes when they call you.</span></li>
+              <li><Hot />Do you have to monitor HF continuously?<span className="q-hint">No, SELCAL chimes when they call you.</span></li>
               <li><Hot />Explain datalink / CPDLC.<span className="q-hint">Text clearances/messages between crew and ATC; cuts R/T, used oceanic and remote.</span></li>
               <li><Hot />Tell me about the North Atlantic tracks, routing, required equipment and position reporting.<span className="q-hint">Organised daily tracks; need MNPS/PBN plus HF or CPDLC; position reports at waypoints.</span></li>
               <li><Hot />What is TCAS? What are the two alert types, which one do you manoeuvre for, and what do you tell ATC after an RA?<span className="q-hint">TA (advisory, don&rsquo;t manoeuvre) and RA (follow it, even against ATC); report &ldquo;TCAS RA&rdquo;, then &ldquo;clear of conflict&rdquo;.</span></li>
               <li><Hot />What is the difference between the GPWS and the EGPWS? Explain the EGPWS.<span className="q-hint">GPWS is reactive (radio alt, modes 1 to 7); EGPWS adds a terrain database + GPS for predictive look-ahead and a terrain display.</span></li>
               <li>You get a TCAS RA to climb at your service ceiling. What do you do?<span className="q-hint">Follow the RA with the performance available; it may not achieve the full rate.</span></li>
               <li>What equipment is required to fly in Class D airspace, and what are the differences between airspace classes?<span className="q-hint">D: two-way radio and a clearance (transponder as required); classes differ by IFR/VFR mix, clearance and separation.</span></li>
-              <li>What is CFIT, and what is UPRT?<span className="q-hint">CFIT = flying a serviceable aircraft into terrain; UPRT = upset prevention &amp; recovery training.</span></li>
+              <li>What is CFIT, and what is UPRT?<span className="q-hint">CFIT = Controlled Flight Into Terrain: an airworthy aircraft, under the control of the crew, is flown unintentionally into terrain, water or an obstacle, usually with no awareness by the crew until too late. UPRT = upset prevention &amp; recovery training.</span></li>
             </ul>
 
             <h3>Icing &amp; unreliable airspeed</h3>
@@ -183,7 +189,7 @@ export default function TechnicalInterview() {
 
             <h3>Talking about your aircraft</h3>
             <ul className="study-points q-list">
-              <li><Hot />Tell me about your first, last and multi-engine aircraft.</li>
+              <li><Hot />Tell me about your multi-engine aircraft.</li>
               <li><Hot />Tell me about your flight school, how many aircraft, what types, the airport and facilities.</li>
               <li><Hot />Which airspace did you fly in, and what are the dangers at the airports you used?</li>
               <li><Hot />What are the differences between two types you flew (for example C150 vs C172, or a DR400 vs the rest)?</li>
@@ -263,7 +269,7 @@ export default function TechnicalInterview() {
               <li><Hot />During a flaps-5 takeoff ENG2 fails, can you retract the flaps?</li>
               <li>What is the difference between flaps and slats? How are the slats and engine cowls heated?</li>
               <li>What are the flap gates at 1 and 15 for?</li>
-              <li>Why would you take off at flaps 1 (better second segment)?</li>
+              <li>Why would you take off at flaps 1?</li>
               <li>Why are the wings swept, and how much dihedral does the 737 have?</li>
               <li>What are the &ldquo;spikey&rdquo; things below the wings (static dischargers / vortex generators)?</li>
             </ul>
@@ -343,10 +349,6 @@ export default function TechnicalInterview() {
               <li>
                 <strong>Recover from mistakes.</strong> Catching and correcting
                 an error is a good sign, do not let one slip rattle you.
-              </li>
-              <li>
-                <strong>Bring your CV.</strong> They may ask about specific dates;
-                having it in front of you helps you answer precisely.
               </li>
               <li>
                 <strong>Prioritise a busy request.</strong> The assessor may pack
