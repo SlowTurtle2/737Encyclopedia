@@ -44,10 +44,18 @@ function Warning({ children }: { children: React.ReactNode }) {
 // Each chapter of this page mirrors a system chapter. Add a new entry here and
 // a matching <section> below to publish another chapter.
 const chapters = [
-  ['overview', 'Overview'],
-  ['airplane-general', 'Airplane General'],
-  ['air-systems', 'Air Systems'],
+  ['overview', 'Overview', ''],
+  ['airplane-general', 'Airplane General', '01'],
+  ['air-systems', 'Air Systems', '02'],
 ];
+
+function Tag({ kind }: { kind: 'new' | 'redesign' }) {
+  return (
+    <span className={'diff-tag ' + kind}>
+      {kind === 'new' ? 'New Feature' : 'Redesign'}
+    </span>
+  );
+}
 
 export default function MAX() {
   return (
@@ -99,7 +107,7 @@ export default function MAX() {
               difference.
             </h2>
 
-            <h3>Weights</h3>
+            <h3><Tag kind="redesign" />Weights</h3>
             <p>
               The MAX seats <strong>197</strong> against <strong>189</strong> on
               the NG, so every certified weight is higher. Use the figures on
@@ -129,7 +137,7 @@ export default function MAX() {
               </TableBody>
             </Table>
 
-            <h3>Dimensions</h3>
+            <h3><Tag kind="redesign" />Dimensions</h3>
             <p>
               Practically the same length (~39.5 m) and wingspan (35.79 →
               35.92 m). The number that matters is winglet ground clearance.
@@ -150,40 +158,48 @@ export default function MAX() {
             <h3>Key differences at a glance</h3>
             <ul className="study-points">
               <li>
+                <Tag kind="redesign" />
                 <strong>Advanced technology winglets:</strong> taller blades
                 with only 3.1 m clearance (vs 3.9 m) — damage-prone on stand and
                 closer to the ground in the flare. Worth ~1–1.8% fuel.
               </li>
               <li>
+                <Tag kind="redesign" />
                 <strong>LEAP-1B engine:</strong> 69-inch fan (vs 61-inch), moved
                 up and forward; 27,000 lb thrust (+1,000), bypass ratio ~9, about
                 15% less fuel and CO₂.
               </li>
               <li>
+                <Tag kind="redesign" />
                 <strong>Taller nose gear:</strong> strut 8 inches longer to keep
                 the bigger engine clear of the ground — hence the higher nose.
               </li>
               <li>
+                <Tag kind="new" />
                 <strong>Nose-wheel intercom:</strong> an extra interphone jack
                 and pilot call button in the nose wheel well, because the taller
                 nose makes the ground power hatch harder to reach.
               </li>
               <li>
+                <Tag kind="new" />
                 <strong>Extra mid exits:</strong> one Type II mid-exit door on
                 each side for 197 passengers, adding LEFT / RIGHT MID EXIT door
                 lights; cabin zones shift slightly.
               </li>
               <li>
+                <Tag kind="redesign" />
                 <strong>APU inlet door:</strong> three positions — ground/open
                 (~45°), in-flight (~17°) and closed. All APU cooling air now
                 comes through this door.
               </li>
               <li>
+                <Tag kind="redesign" />
                 <strong>Redesigned tailcone:</strong> no tail vortex generators,
                 ~1% less drag, and an extra strobe and position light on each
                 side.
               </li>
               <li>
+                <Tag kind="redesign" />
                 <strong>Flight deck:</strong> mostly presentation (MDS vs CDS);
                 four circuit breakers move from the aisle stand to the P6 panel.
               </li>
@@ -237,34 +253,42 @@ export default function MAX() {
             <h3>Key differences at a glance</h3>
             <ul className="study-points">
               <li>
+                <Tag kind="redesign" />
+                <Tag kind="new" />
                 <strong>BLEED light (was BLEED TRIP OFF):</strong> still lights
                 for over-temperature or over-pressure, but now also for
                 under-pressure or a system fault — which may not be resettable. A
                 new BLEED non-normal checklist replaces BLEED TRIP OFF.
               </li>
               <li>
+                <Tag kind="new" />
                 <strong>Configuration check:</strong> both BLEED lights come on
                 45 seconds after flap retraction if both bleed switches are left
                 OFF after take-off or go-around. Turning either switch ON clears
                 a configuration light.
               </li>
               <li>
+                <Tag kind="redesign" />
+                <Tag kind="new" />
                 <strong>PACK light:</strong> adds two cases — a Flow Control
                 Valve stuck closed, and the same post-take-off configuration
                 logic (both lights if both pack switches are OFF; either ON
                 clears it).
               </li>
               <li>
+                <Tag kind="redesign" />
                 <strong>Cross bleed start:</strong> extra thrust is normally{' '}
                 <strong>not</strong> needed to reach the 30 PSI duct pressure to
                 start the second engine — the NG needs additional thrust.
               </li>
               <li>
+                <Tag kind="redesign" />
                 <strong>RAM DOOR FULL OPEN lights:</strong> removed — they were
                 not used in normal or non-normal procedures.
               </li>
               <li>
-                <strong>EQUIP SMOKE light (new):</strong> illuminates when smoke
+                <Tag kind="new" />
+                <strong>EQUIP SMOKE light:</strong> illuminates when smoke
                 is detected in the equipment cooling system and clears 30 seconds
                 after it is gone; the supply OFF lights move to the top of the
                 panel, with a new non-normal checklist.
