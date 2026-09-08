@@ -145,7 +145,9 @@ export default function SimulatorSession() {
             <Tip>
               The assessor may pack several instructions into one transmission
               (climb + turn + speed). Prioritise — fly the aircraft first — then
-              read back and action the rest in order.
+              read back and action the rest in order. If you are unsure of an
+              instruction, do not hesitate to ask the assessor to repeat it —
+              acting on a doubtful clearance is worse than asking.
             </Tip>
           </section>
 
