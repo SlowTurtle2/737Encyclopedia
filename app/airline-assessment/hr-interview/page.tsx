@@ -70,8 +70,8 @@ export default function HRInterview() {
             <Need>
               <p>
                 Be honest, be humble, and keep your CV to hand for dates. For
-                &ldquo;give me an example&rdquo; questions, use the CAR method in
-                the next chapter.
+                &ldquo;give me an example&rdquo; questions, tell a concrete,
+                real situation you lived through.
               </p>
             </Need>
           </section>
@@ -127,26 +127,12 @@ export default function HRInterview() {
               Competency and judgement questions — they want a concrete example
               and to see how you think.
             </h2>
-            <aside className="car-model">
-              <strong>ANSWER METHOD · CAR</strong>
-              <p>
-                A simple structure for behavioural (&ldquo;give me an
-                example&rdquo;) questions:
-              </p>
-              <ul>
-                <li>
-                  <b>Context</b> — set the scene briefly: the situation or task,
-                  and the difficulty to overcome.
-                </li>
-                <li>
-                  <b>Action</b> — what <em>you</em> did (not the group). Say what
-                  you did, not what you would do.
-                </li>
-                <li>
-                  <b>Result</b> — how it ended, and what you achieved or learned.
-                </li>
-              </ul>
-            </aside>
+            <Tip>
+              Answer with a real, specific example — a situation you actually
+              lived through, with enough detail that the assessor can picture it.
+              Keep the focus on what <em>you</em> personally did and how it turned
+              out, rather than a generic or hypothetical answer.
+            </Tip>
 
             <h3>Competency examples</h3>
             <ul className="study-points q-list">
