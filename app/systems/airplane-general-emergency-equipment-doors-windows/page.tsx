@@ -8,13 +8,12 @@ function Need({ title, children }: { title: string; children: React.ReactNode })
 function Warning({ title, children }: { title: string; children: React.ReactNode }) { return <aside className="suction-warning"><strong>WARNING · {title}</strong><p>{children}</p></aside>; }
 function Deep({ title, children }: { title: string; children: React.ReactNode }) { return <details className="deep"><summary>{title}</summary><div>{children}</div></details>; }
 function Max({ children }: { children: React.ReactNode }) { return <aside className="max-note"><b>737 MAX / 8200 DIFFERENCE</b><p>{children}</p></aside>; }
-function Source({ children }: { children: React.ReactNode }) { return <p className="source">REFERENCE · {children}</p>; }
 
 const sections = [['dimensions', 'Airplane dimensions'], ['lights', 'Lights'], ['signs', 'Seat belts & no smoking'], ['oxygen', 'Oxygen system'], ['doors', 'Aircraft doors'], ['water', 'Water system'], ['airstair', 'Airstair'], ['access', 'Flight Deck Access Panel']];
 
 export default function AirplaneGeneral() {
   return <main id="main" className="system-course">
-    <div className="wrap fuel-course-banner"><strong>SYSTEM / AIRPLANE GENERAL · FCOM CHAPTER 1</strong><div className="course-meta"><span className="pill available">737 NG</span><span className="pill">MAX DIFFERENCES INCLUDED</span></div></div>
+    <div className="wrap fuel-course-banner"><strong>SYSTEM / AIRPLANE GENERAL</strong><div className="course-meta"><span className="pill available">737 NG</span><span className="pill">MAX DIFFERENCES INCLUDED</span></div></div>
     <div className="wrap course-layout"><article>
       <section className="course-section" id="dimensions">
         <span className="section-num">01 / AIRPLANE DIMENSIONS</span>
@@ -29,7 +28,6 @@ export default function AirplaneGeneral() {
         </figure>
         <ul className="study-points"><li><strong>NG minimum 180° pavement width:</strong> approximately 24.3 m.</li><li><strong>MAX minimum 180° pavement width:</strong> approximately 24.4 m.</li></ul>
         <Need title="Same length · slightly wider MAX"><p>Both are 39.47 m long. The supplied MAX wingspan is 0.13 m greater.</p></Need>
-        <Source>NG 1.10.2, 1.10.5 · MAX 1.10.1–2</Source>
       </section>
 
       <section className="course-section" id="lights">
@@ -46,9 +44,8 @@ export default function AirplaneGeneral() {
           <img src="/images/emergency-exit-lights-not-armed.png" alt="Amber EMER EXIT LIGHTS NOT ARMED indication" />
           <div><strong>NOT ARMED</strong><p>Illuminates amber whenever the EMER EXIT LIGHTS switch is not in the guarded ARMED position. It warns that automatic emergency-light operation is not armed.</p></div>
         </div>
-        <Deep title="Go deeper · Two cabin path systems"><p>Aircraft may use electrically powered floor-proximity lighting or photoluminescent aisle markings. Photoluminescent strips must receive the specified cabin-light charging time; the applicable Techlog notice identifies the installed system.</p></Deep>
+        <Deep title="Go deeper · Two cabin path systems"><p>Aircraft may use electrically powered floor-proximity lighting or photoluminescent aisle markings. Photoluminescent strips must receive the specified cabin-light charging time; crews must identify the system installed on their aircraft.</p></Deep>
         <Need title="Normal position: ARMED"><p>Automatic illumination follows loss of DC bus No. 1 or removal of AC power.</p></Need>
-        <Source>NG 1.30.5–8, 1.40.1–10 · MAX 1.30.5–8, 1.40.1–11</Source>
       </section>
 
       <section className="course-section" id="signs">
@@ -61,7 +58,6 @@ export default function AirplaneGeneral() {
         <p>On the supplied fleet configuration, the NO SMOKING signs are permanently illuminated and the switch is placarded <strong>INOP</strong>. The three switch positions apply only to aircraft equipped with the controllable installation.</p>
         <p>A low tone sounds over the passenger-address system whenever the passenger signs illuminate or extinguish.</p>
         <Need title="AUTO follows gear and flaps"><p>Either gear or flap extension illuminates the seat-belt and return-to-seat signs.</p></Need>
-        <Source>NG 1.30.7, 1.40.5 · MAX 1.30.7–8, 1.40.3</Source>
       </section>
 
       <section className="course-section" id="oxygen">
@@ -78,9 +74,8 @@ export default function AirplaneGeneral() {
         <Warning title="OXYGEN AND CABIN FIRE">Once a mask is pulled, the chemical generator supplies oxygen continuously and cannot be shut off. Releasing oxygen near a cabin fire can feed combustion and intensify the fire. Passenger masks also mix oxygen with cabin air and do not protect against smoke. Do not activate passenger oxygen below 14,000 ft cabin altitude when smoke or an abnormal heat source is present unless directed by the applicable procedure.</Warning>
         <Need title="14,000 ft · approximately 12 minutes"><p>Mask deployment does not start oxygen flow; pulling a mask starts the chemical source.</p></Need>
         <h3>Portable oxygen</h3>
-        <p>Portable first-aid and supplemental oxygen cylinders are installed at suitable locations in the passenger cabin for passengers or crew members who develop a physiological need for oxygen. The standard cylinder described in the supplied FCOM contains <strong>120 litres</strong> of free oxygen when charged to approximately <strong>1,800 psi</strong> at 21°C.</p>
+        <p>Portable first-aid and supplemental oxygen cylinders are installed at suitable locations in the passenger cabin for passengers or crew members who develop a physiological need for oxygen. The standard cylinder contains <strong>120 litres</strong> of free oxygen when charged to approximately <strong>1,800 psi</strong> at 21°C.</p>
         <ul className="study-points"><li><strong>2 L/min outlet:</strong> walk-around flow, providing approximately 60 minutes from a full 120-litre cylinder.</li><li><strong>4 L/min outlet:</strong> first-aid flow, providing approximately 30 minutes.</li><li><strong>Equipment:</strong> pressure gauge, pressure regulator and ON/OFF valve.</li></ul>
-        <Source>NG 1.30.14–22, 1.40.12–25 · MAX 1.30.14–18, 1.40.12–21</Source>
       </section>
 
       <section className="course-section" id="doors">
@@ -102,7 +97,6 @@ export default function AirplaneGeneral() {
           <figure className="figure course-photo"><img src="/images/max-8200-doors-annunciator-panel.png" alt="737-8200 MAX doors annunciator panel with left and right mid-exit lights" /><figcaption>737-8200 MAX panel with the additional mid-exit indications.</figcaption></figure>
         </div>
         <Need title="Four cabin doors · two cargo doors"><p>The MAX 8200 also has two mid-exit doors aft of the wings.</p></Need>
-        <Source>NG 1.30.10–14, 1.40.41–53 · MAX 1.30.10–14, 1.40.29–42</Source>
       </section>
 
       <section className="course-section" id="water">
@@ -110,7 +104,6 @@ export default function AirplaneGeneral() {
         <h2>A single pressurized potable-water tank supplies the galleys and lavatory sinks.</h2>
         <ul className="study-points"><li><strong>Tank:</strong> behind the aft cargo compartment.</li><li><strong>Pressure:</strong> engine bleed air or the water-system air compressor.</li><li><strong>Quantity:</strong> displayed on the attendant panel.</li><li><strong>Waste water:</strong> drains overboard through forward and aft heated drain masts.</li></ul>
         <p>Lavatories provide hot and cold water. Each heater is below its sink, reheats a new charge in approximately four minutes and includes automatic overheat protection. Galleys receive cold water.</p>
-        <Source>NG 1.30.24, 1.40.61–62 · MAX 1.30.20, 1.40.48</Source>
       </section>
 
       <section className="course-section" id="airstair">
@@ -128,7 +121,6 @@ export default function AirplaneGeneral() {
         <div className="emergency-light-card"><img src="/images/air-stair-warning-light.png" alt="Amber AIR STAIR warning light" /><div><strong>AIR STAIR</strong><p>Illuminates amber when the airstair pressure door is unlocked. It also activates the <strong>DOORS</strong> system annunciator and the <strong>MASTER CAUTION</strong> lights.</p></div></div>
         <Warning title="HANDRAILS AND PLATFORM">Stow the handrail extensions before retraction. Standby or maintenance control can bypass safety circuits and cause substantial damage. Use care on the small platform when operating the forward entry door, especially in poor weather.</Warning>
         <Need title="Normal: 115 V AC · standby: DC"><p>The forward entry door must be partially open for interior operation; exterior control bypasses that requirement.</p></Need>
-        <Source>NG 1.30.23–24, 1.40.62–64 · MAX 1.30.18–20, 1.40.47–50</Source>
       </section>
 
       <section className="course-section" id="access">
@@ -141,7 +133,6 @@ export default function AirplaneGeneral() {
         <h3>Access lights</h3>
         <ul className="study-points"><li><strong>Red:</strong> the flight deck door is locked, or the Flight Deck Access System switch is OFF.</li><li><strong>Amber:</strong> the correct emergency access code has been entered and the timed access sequence is active.</li><li><strong>Green:</strong> the flight deck door is unlocked.</li></ul>
         <Need title="Code + ENT"><p>The emergency code does not unlock the door immediately. It starts a timed sequence that the pilots can accept or deny.</p></Need>
-        <Source>NG 1.30.12–14, 1.40.41–42 · MAX 1.30.12–14, 1.40.29–30</Source>
       </section>
       <SystemPager current="Airplane General, Emergency Equipment, Doors, Windows" />
     </article><aside className="course-aside"><div className="aside-box"><p className="eyebrow">IN THIS CHAPTER</p><Contents sections={sections} /><hr /><h3>General systems, operational focus.</h3><p className="muted">NG information is paired with the differences that affect the 737-8200.</p></div></aside></div>

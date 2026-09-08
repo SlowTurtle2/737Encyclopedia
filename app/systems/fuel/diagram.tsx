@@ -62,7 +62,7 @@ export default function FuelDiagram() {
         <text x="55" y="365" textAnchor="middle" fontSize="14" fill="#41617f">APU</text>
       </svg>
       <p className="scenario-copy" aria-live="polite">{explanations[mode]}</p>
-      <figcaption>Original teaching diagram based on NG / MAX FCOM 12.20.1–5. Blue = active feed; grey = inactive feed in this example. Shutoff valves, check valves, suction and scavenge paths are omitted.</figcaption>
+      <figcaption>Fuel-feed teaching diagram. Blue = active feed; grey = inactive feed in this example. Shutoff valves, check valves, suction and scavenge paths are omitted.</figcaption>
     </figure>
   );
 }

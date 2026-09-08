@@ -10,7 +10,6 @@ function Need({ title, children }: { title: string; children: React.ReactNode })
 function Warning({ title, children }: { title: string; children: React.ReactNode }) { return <aside className="suction-warning"><strong>WARNING · {title}</strong><p>{children}</p></aside>; }
 function Deep({ title, children }: { title: string; children: React.ReactNode }) { return <details className="deep"><summary>{title}</summary><div>{children}</div></details>; }
 function Max({ children }: { children: React.ReactNode }) { return <aside className="max-note"><b>737 MAX / 8200 DIFFERENCE</b><p>{children}</p></aside>; }
-function Source({ children }: { children: React.ReactNode }) { return <p className="source">REFERENCE · {children}</p>; }
 
 const sections = [
   ['overview', 'The big picture'], ['engine', 'Engine fire protection'],
@@ -20,7 +19,7 @@ const sections = [
 
 export default function FireProtection() {
   return <main id="main" className="system-course">
-    <div className="wrap fuel-course-banner"><strong>SYSTEM / FIRE PROTECTION · FCOM CHAPTER 8</strong><div className="course-meta"><span className="pill available">737 NG</span><span className="pill">MAX DIFFERENCES INCLUDED</span></div></div>
+    <div className="wrap fuel-course-banner"><strong>SYSTEM / FIRE PROTECTION</strong><div className="course-meta"><span className="pill available">737 NG</span><span className="pill">MAX DIFFERENCES INCLUDED</span></div></div>
     <div className="wrap course-layout"><article>
       <section className="course-section" id="overview">
         <span className="section-num">01 / THE BIG PICTURE</span>
@@ -33,7 +32,6 @@ export default function FireProtection() {
           <li><strong>Lavatories:</strong> local smoke detection plus an automatic, heat-activated extinguisher beneath each sink.</li>
         </ul>
         <Need title="No wheel-well extinguisher"><p>The main wheel well has fire detection, but no extinguishing system. The nose wheel well has neither fire detection nor extinguishing.</p></Need>
-        <Source>NG 8.20.1 · MAX 8.20.1</Source>
       </section>
 
       <section className="course-section" id="engine">
@@ -59,7 +57,6 @@ export default function FireProtection() {
         <ul className="study-points"><li>The <strong>fire warning bell</strong> sounds.</li><li>Both master <strong>FIRE WARN</strong> lights illuminate.</li><li>Both <strong>MASTER CAUTION</strong> lights and the <strong>OVHT/DET</strong> annunciator illuminate.</li><li>Both engine fire switches and both <strong>ENG OVERHEAT</strong> lights illuminate.</li><li>The <strong>APU fire switch</strong> illuminates.</li><li>Both engine start levers illuminate where installed.</li><li>With AC power available, the <strong>WHEEL WELL</strong> light illuminates.</li><li>On the ground, the wheel-well APU horn sounds and its APU fire warning light flashes.</li></ul>
         <Warning title="SINGLE-LOOP FAILURE CAN BE HIDDEN">With the selector in NORMAL, failure of one engine detector loop has no flight deck indication. The remaining loop becomes the active single-loop detector.</Warning>
         <Need title="Two test positions · two different purposes"><p>FAULT/INOP checks monitoring of failed detector circuits. OVHT/FIRE simulates the temperature-detection paths and verifies the associated warnings.</p></Need>
-        <Source>NG 8.20.1–3, 8.20.8–9 · MAX 8.20.1–3, 8.20.7–8</Source>
       </section>
 
       <section className="course-section" id="apu">
@@ -77,7 +74,6 @@ export default function FireProtection() {
         <figure className="figure course-photo apu-ground-control-photo"><img src="/images/apu-ground-fire-control.png" alt="APU ground fire-control panel with fire handle, bottle discharge switch and horn cutout" /><figcaption>APU fire controls in the right main wheel well.</figcaption></figure>
         <ul className="study-points"><li><strong>Fire control handle — pull down:</strong> arms the local bottle-discharge switch, closes the APU fuel shutoff and bleed-air valves, closes the APU inlet door, and trips the generator control relay and breaker.</li><li><strong>BOTTLE DISCHARGE — move left:</strong> discharges the APU extinguisher, provided the local fire-control handle has first been pulled.</li><li><strong>HORN CUTOUT — push:</strong> silences the fire bell and wheel-well horn; the red APU fire light stops flashing and remains steadily illuminated.</li></ul>
         <Need title="Detection: battery bus · discharge: hot battery bus"><p>Ground personnel can shut down the APU, silence the horn and discharge the bottle from the right main wheel well.</p></Need>
-        <Source>NG 8.20.4–5 · MAX 8.20.4–5</Source>
       </section>
 
       <section className="course-section" id="wheel-well">
@@ -87,7 +83,6 @@ export default function FireProtection() {
         <p><strong>WHEEL WELL:</strong> the red light illuminates when the main-wheel-well detector senses a fire. The fire warning bell sounds and both master FIRE WARN lights illuminate. The light remains illuminated until detector temperature falls below the onset threshold.</p>
         <Max>The 737 NG uses a single detector loop in the main wheel well. The 737 MAX uses a dual detector loop. Neither version has a main-wheel-well extinguisher, and neither has fire detection in the nose wheel well.</Max>
         <Warning title="NO EXTINGUISHER">There is no flight deck discharge action for a wheel-well fire. The applicable non-normal response uses aircraft configuration and airflow to manage the condition.</Warning>
-        <Source>NG 8.20.5 · MAX 8.20.5</Source>
       </section>
 
       <section className="course-section" id="cargo">
@@ -101,10 +96,9 @@ export default function FireProtection() {
         <h3>Cargo fire suppression</h3>
         <p>Pushing the appropriate <strong>FWD</strong> or <strong>AFT ARMED</strong> switch selects the compartment and arms its discharge path. Pushing <strong>DISCH</strong> releases the extinguishing agent. The DISCH light may take up to 30 seconds to illuminate.</p>
         <div className="emergency-light-card"><img src="/images/cargo-disch-switch.png" alt="Cargo fire DISCH switch and amber discharge light" /><div><strong>DISCH</strong><p>With a compartment armed, press the switch for at least one second to discharge the first or only extinguisher bottle and start the applicable second-bottle timer. The lower amber DISCH light indicates that a bottle has discharged or its pressure is low.</p></div></div>
-        <Max>The MAX uses two Halon bottles: a 25 lb high-rate bottle discharges immediately and starts a 15-minute timer, then a 13 lb low-rate bottle meters agent into the selected compartment. Total suppression time is 75 minutes: 60 minutes for diversion plus a 15-minute reserve. NG installation varies by effectivity: the supplied FCOM includes a single-bottle 75-minute system and a two-bottle 195-minute system.</Max>
+        <Max>The MAX uses two Halon bottles: a 25 lb high-rate bottle discharges immediately and starts a 15-minute timer, then a 13 lb low-rate bottle meters agent into the selected compartment. Total suppression time is 75 minutes: 60 minutes for diversion plus a 15-minute reserve. NG installation varies by effectivity and includes a single-bottle 75-minute system or a two-bottle 195-minute system.</Max>
         <Warning title="SUPPRESSION, NOT GUARANTEED EXTINGUISHING">The system is designed to suppress a cargo fire until landing. Smoke can remain or continue, and the optical detectors can respond to the extinguishing agent itself.</Warning>
         <Deep title="Go deeper · Why the warning can return"><p>Cargo detectors sense airborne particles and cannot distinguish smoke from suppression agent. A re-illuminated FWD or AFT light after discharge does not, by itself, prove that suppression has failed.</p></Deep>
-        <Source>NG 8.20.5–7 · MAX 8.20.5–7</Source>
       </section>
 
       <section className="course-section" id="lavatory">
@@ -116,7 +110,6 @@ export default function FireProtection() {
         <h3>Extinguisher</h3>
         <p>A dedicated extinguisher is installed beneath the sink in each lavatory. Heat activates it automatically and directs extinguishing agent toward the waste container. The flight deck receives no indication that the bottle has discharged.</p>
         <Need title="Local warning · automatic bottle"><p>Lavatory smoke produces no flight deck indication, and extinguisher discharge is also not indicated in the flight deck.</p></Need>
-        <Source>NG 8.10.9–11, 8.20.7–8 · MAX 8.10.9–10, 8.20.7</Source>
       </section>
 
       <SystemPager current="Fire Protection" />

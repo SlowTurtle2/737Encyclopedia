@@ -36,9 +36,6 @@ function Need({
     </aside>
   );
 }
-function Source({ children }: { children: React.ReactNode }) {
-  return <p className="source">REFERENCE · {children}</p>;
-}
 function Deep({
   title,
   children,
@@ -74,7 +71,7 @@ export default function Fuel() {
   return (
     <main id="main" className="system-course">
       <div className="wrap fuel-course-banner">
-        <strong>SYSTEM / FUEL FCOM CHAPTER 12</strong>
+        <strong>SYSTEM / FUEL</strong>
         <div className="course-meta">
           <span className="pill available">737 NG</span>
           <span className="pill">MAX DIFFERENCE INCLUDED</span>
@@ -101,10 +98,9 @@ export default function Fuel() {
             </ul>
             <Table className="course-table">
               <TableCaption>
-                Approximate usable capacities from the supplied NG and MAX
-                manuals, at level attitude and 0.8029 kg/L. Actual loading
-                figures depend on density and the applicable Weight and Balance
-                Manual.
+                Approximate usable capacities for the NG and MAX, at level
+                attitude and 0.8029 kg/L. Actual loading figures depend on fuel
+                density and aircraft configuration.
               </TableCaption>
               <TableHeader>
                 <TableRow>
@@ -135,7 +131,6 @@ export default function Fuel() {
               <p><strong>3 tanks.</strong></p>
               <p><strong>Total capacity: 20,896 kg.</strong></p>
             </Need>
-            <Source>NG 12.20.1, 12.20.4 · MAX 12.20.1, 12.20.4</Source>
           </section>
           <section className="course-section" id="feed">
             <span className="section-num">02 / PUMPS & FUEL FEED</span>
@@ -250,7 +245,7 @@ export default function Fuel() {
                 seconds after selection can be a maintenance clue. These are
                 indicative troubleshooting values, not a crew reset procedure:
                 switch the affected pump OFF and apply the aircraft’s current
-                QRH and maintenance process.
+                approved operational and maintenance procedure.
               </p>
             </Deep>
 
@@ -313,7 +308,6 @@ export default function Fuel() {
                 separate from the automatic pump-shutdown delay.
               </p>
             </Need>
-            <Source>NG / MAX 12.10.2, 12.20.2–3 · NG L.10.10</Source>
           </section>
           <section className="course-section" id="crossfeed">
             <span className="section-num">03 / CROSSFEED & VALVES</span>
@@ -412,7 +406,6 @@ export default function Fuel() {
                 one tank into another; the crossfeed valve does not do this.
               </p>
             </aside>
-            <Source>NG / MAX 12.10.1–2, 12.20.2–3</Source>
           </section>
           <section className="course-section" id="indications">
             <span className="section-num">04 / FUEL INDICATIONS & ALERTS</span>
@@ -427,7 +420,7 @@ export default function Fuel() {
               aircraft, while later NG aircraft and the 737 MAX use a digital
               presentation with a totalizer. Display fit depends on aircraft
               effectivity, so the installed layout should be confirmed in the
-              applicable aircraft manuals.
+              configuration installed on the aircraft.
             </p>
             <Deep title="Go deeper · How fuel quantity is measured">
               <p>
@@ -453,8 +446,7 @@ export default function Fuel() {
             </ul>
             <div className="fuel-alert-card"><img src="/images/fuel-alert-low.png" alt="LOW fuel quantity alert" /><div><strong>LOW</strong><p>Appears below 453 kg in either main tank and clears when that tank reaches 567 kg.</p></div></div>
             <Max>
-              <strong>LOW uses 590 / 737 kg</strong> in the supplied 737-8200
-              FCOM: it appears below 590 kg and stays until quantity increases
+              <strong>LOW uses 590 / 737 kg</strong> on the 737-8200: it appears below 590 kg and stays until quantity increases
               to 737 kg. The listed CONFIG and IMBAL thresholds remain the same.
             </Max>
             <div className="fuel-alert-card"><img src="/images/fuel-alert-config.png" alt="CONFIG center fuel alert" /><div><strong>CONFIG</strong><p>Appears with either engine running when center tank quantity is above 726 kg and both center pump switches are OFF. It clears when both engines are stopped, center quantity falls below 363 kg, or either center pump switch is ON.</p></div></div>
@@ -462,15 +454,15 @@ export default function Fuel() {
             <p>LOW takes precedence over IMBAL when both conditions exist.</p>
             <Deep title="Go deeper · Quantity indication is not perfectly exact">
               <p>
-                The NG FCOM allows indicated tank quantity to differ from actual
-                quantity by up to 2.0% on the ground and 2.5% in flight. The MAX
-                fuel description states up to 2.5% in flight. These are
+                Indicated tank quantity may differ from actual quantity by up to
+                2.0% on the ground and 2.5% in flight on the NG, and by up to
+                2.5% in flight on the MAX. These are
                 indication-accuracy statements, not extra usable fuel or
                 operational allowances.
               </p>
               <p>
-                NG cockpit presentations vary by aircraft effectivity: the
-                supplied manual includes both round indicators and a numeric
+                NG cockpit presentations vary by aircraft effectivity and include
+                both round indicators and a numeric
                 layout with a total quantity display. A different display layout
                 alone does not identify a MAX.
               </p>
@@ -507,7 +499,6 @@ export default function Fuel() {
               <li><strong>USING RSV FUEL:</strong> predicted destination fuel is below the entered RESERVES value.</li>
               <li><strong>INSUFFICIENT FUEL:</strong> predicted destination fuel is below 900 kg.</li>
             </ul>
-            <Source>NG 12.10.2–6, 12.20.3 · MAX 12.10.2–5, 12.20.3</Source>
           </section>
           <section className="course-section" id="temperature">
             <span className="section-num">05 / FUEL TEMPERATURE AND LIMITS</span>
@@ -547,15 +538,13 @@ export default function Fuel() {
               </p>
               <p>
                 The rule is not simply “freezing point plus three” in every
-                case. The supplied limitations also state that fuel-system
-                icing-inhibitor additives do not change the minimum.
+                case. Fuel-system icing-inhibitor additives do not change the minimum.
               </p>
             </Deep>
             <Need title="−43°C / freezing point +3°C" tone="teal">
               <p>
                 Use the <strong>higher (warmer)</strong> minimum. Maximum tank
-                fuel temperature is <strong>+49°C</strong>. These limits come
-                from the supplied 737-800 NG FCOM L.10.9–10.
+                fuel temperature is <strong>+49°C</strong>. These limits apply to the 737-800 NG configuration presented here.
               </p>
             </Need>
             <Deep title="Go deeper · Cold-soaked fuel frost">
@@ -568,10 +557,6 @@ export default function Fuel() {
                 inspection and thickness criteria in the applicable procedure.
               </p>
             </Deep>
-            <Source>
-              NG L.10.9–10; 12.20.3. Limits here are attributed to the supplied
-              NG configuration.
-            </Source>
 
           </section>
           <section className="course-section" id="ground">
@@ -643,8 +628,7 @@ export default function Fuel() {
             </div>
             <Deep title="Go deeper · Availability and automatic shutdown">
               <p>
-                In the supplied NG manual, NGS is effectivity-dependent; the MAX
-                chapter also describes it. It is not a MAX-only feature. The
+                NGS is effectivity-dependent on the NG and is also fitted to the MAX. It is not a MAX-only feature. The
                 system can automatically shut down for conditions including an
                 engine not running in flight, cargo/main-deck fire or smoke
                 detection, left pack overheat or an open center refueling valve.
@@ -662,10 +646,6 @@ export default function Fuel() {
                 crew-controlled parameter.
               </p>
             </Deep>
-            <Source>
-              NG 12.10.7–10, 12.20.1, 12.20.4 · MAX 12.10.6–9, 12.20.1,
-              12.20.3–4
-            </Source>
 
           </section>
           <section className="course-section" id="quiz">
@@ -687,8 +667,7 @@ export default function Fuel() {
             <hr />
             <h3>NG first. MAX alongside.</h3>
             <p className="muted">
-              Blue-violet notes identify changes in the supplied 737-8200
-              manual.
+              Blue-violet notes identify 737-8200 differences.
             </p>
             <Link href="/academy">Quiz & revision sheets →</Link>
           </div>

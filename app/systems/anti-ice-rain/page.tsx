@@ -20,7 +20,6 @@ function Deep({ title, children }: { title: string; children: React.ReactNode })
 function Max({ children }: { children: React.ReactNode }) {
   return <aside className="max-note"><b>737 MAX / 8200 DIFFERENCE</b><p>{children}</p></aside>;
 }
-function Source({ children }: { children: React.ReactNode }) { return <p className="source">REFERENCE · {children}</p>; }
 
 const sections = [
   ['overview', 'The big picture'], ['windows', 'Flight deck window heat'],
@@ -32,7 +31,7 @@ const sections = [
 export default function AntiIceRain() {
   return (
     <main id="main" className="system-course">
-      <div className="wrap fuel-course-banner"><strong>SYSTEM / ANTI-ICE, RAIN · FCOM CHAPTER 3</strong><div className="course-meta"><span className="pill available">737 NG</span><span className="pill">MAX DIFFERENCES INCLUDED</span></div></div>
+      <div className="wrap fuel-course-banner"><strong>SYSTEM / ANTI-ICE, RAIN</strong><div className="course-meta"><span className="pill available">737 NG</span><span className="pill">MAX DIFFERENCES INCLUDED</span></div></div>
       <div className="wrap course-layout">
         <article>
           <section className="course-section" id="overview">
@@ -50,7 +49,6 @@ export default function AntiIceRain() {
               <img src="/images/anti-ice-protection-overview.png" alt="737 overview identifying heated windshields, wipers, probe heat, wing anti-ice and engine anti-ice" />
               <figcaption>Overview of the main ice and rain protection components.</figcaption>
             </figure>
-            <Source>NG / MAX 3.20.1</Source>
           </section>
 
           <section className="course-section" id="windows">
@@ -86,7 +84,6 @@ export default function AntiIceRain() {
             </div>
             <Deep title="Go deeper · Construction and defogging"><p>Windows No. 1 and 2 use glass panes laminated around a vinyl core. A conductive coating on the outer pane supplies the heat. Conditioned air can also be directed to windows No. 1 for defogging.</p></Deep>
             <Need title="Four heated windows"><p>L1, L2, R1 and R2 are electrically heated. Window heat also preserves structural strength.</p></Need>
-            <Source>NG 3.10.1–2, 3.20.2–3 · MAX 3.10.1–2, 3.20.2–3</Source>
           </section>
 
           <section className="course-section" id="wipers">
@@ -96,7 +93,6 @@ export default function AntiIceRain() {
             <ul className="study-points"><li><strong>PARK:</strong> stops the motor and stows the blade.</li><li><strong>INT:</strong> one sweep cycle approximately every seven seconds.</li><li><strong>LOW / HIGH:</strong> continuous operation at the selected speed.</li></ul>
             <Deep title="Go deeper · Permanent rain-repellent coating"><p>Modern forward windows use a permanent hydrophobic rain-repellent coating rather than the earlier liquid rain-repellent system. The coating encourages water to bead and leave the glass in the airflow. Its effectiveness can deteriorate with wiper use, age and unsuitable cleaning methods, and maintenance can restore it using the approved process.</p></Deep>
             <Warning title="DRY WINDSHIELD">Operating the wipers on a dry windshield can scratch the windshield.</Warning>
-            <Source>NG 3.10.2, 3.20.4 · MAX 3.10.2, 3.20.3</Source>
           </section>
 
           <section className="course-section" id="probes">
@@ -114,13 +110,12 @@ export default function AntiIceRain() {
               <img src="/images/probe-heat-panel.png" alt="737 probe heat panel with A and B AUTO and ON switches and eight amber probe lights" />
               <figcaption>Probe heat systems A and B, shown with AUTO / ON switches.</figcaption>
             </figure>
-            <Max>The supplied MAX uses AUTO/ON probe-heat switches. Some earlier NG aircraft use OFF/ON switches and therefore have no automatic mode: the crew must select probe heat ON. Later or modified NG aircraft may also use AUTO/ON switches, so the installed panel remains the controlling reference.</Max>
+            <Max>The MAX uses AUTO/ON probe-heat switches. Some earlier NG aircraft use OFF/ON switches and therefore have no automatic mode: the crew must select probe heat ON. Later or modified NG aircraft may also use AUTO/ON switches, so crews must identify the installed panel.</Max>
             <h3>Warning and indications</h3>
             <p>An amber probe-heat light means that the related probe or sensor is not being heated. It identifies loss of the expected heating function rather than the presence of ice.</p>
             <Warning title="STANDBY POWER">On standby power, only the captain’s pitot probe is heated. The CAPT PITOT light does not indicate a heater failure while operating in this configuration, and the standby airspeed pitot probe is not heated.</Warning>
-            <Deep title="Go deeper · Panel effectivity"><p>The supplied NG FCOM shows both OFF/ON and AUTO/ON panels according to service-bulletin status. Always identify the installed switch positions before applying a memorized flow.</p></Deep>
+            <Deep title="Go deeper · Panel effectivity"><p>NG aircraft may have OFF/ON or AUTO/ON panels depending on effectivity. Always identify the installed switch positions before applying a memorized flow.</p></Deep>
             <Need title="Static ports are not heated"><p>The amber lights monitor probe heating, except that their status indication is unavailable on standby power.</p></Need>
-            <Source>NG 3.10.3, 3.20.5 · MAX 3.10.3, 3.20.4</Source>
           </section>
 
           <section className="course-section" id="wing">
@@ -147,7 +142,6 @@ export default function AntiIceRain() {
             <Max>MAX wing-valve indications are amber and normally extinguished when valve position agrees with the switch. The supplied NG uses blue VALVE OPEN lights: dim when open and bright during transit or disagreement.</Max>
             <Warning title="USE ABOVE FL350">Use of wing anti-ice above FL350 may cause a BLEED TRIP OFF and loss of the associated bleed-air source. Follow the applicable operating procedure and limitations.</Warning>
             <Need title="Only the inboard slats"><p>Wing anti-ice is effective with the slats in any position and uses engine bleed air.</p></Need>
-            <Source>NG 3.10.6, 3.20.6–8 · MAX 3.10.5–6, 3.20.6–8</Source>
           </section>
 
           <section className="course-section" id="engine">
@@ -181,20 +175,18 @@ export default function AntiIceRain() {
               <div><strong>TAI · THERMAL ANTI-ICE</strong><p><b>Green:</b> the cowl anti-ice valve is open and the related ENG ANTI-ICE switch is ON.</p><p><b>Amber:</b> the cowl valve position does not agree with the related switch position.</p><p><b>Extinguished:</b> the cowl valve is closed and the related switch is OFF.</p></div>
             </div>
             <Need title="Cowl lip on NG · cowl and core on MAX"><p>The flight crew directly selects cowl anti-ice. MAX core anti-ice is automatic through the EEC.</p></Need>
-            <Source>NG 3.10.4–5, 3.20.5–6 · MAX 3.10.3–4, 3.20.4–6</Source>
           </section>
 
           <section className="course-section" id="visual">
             <span className="section-num">07 / VISUAL INDICATION OF ICE</span>
             <h2>The crew must monitor natural ice-accretion cues because the protected surfaces do not provide a single flight-deck ice quantity display.</h2>
             <ul className="study-points"><li><strong>Below the wiper blades:</strong> water runs upward toward the blades in flight, so ice can appear around their lower edge early.</li><li><strong>Wiper attachment nut:</strong> accumulation on this exposed fitting is a useful confirmation that ice may also exist elsewhere on the airframe.</li><li><strong>Center windshield pillar:</strong> accumulation here indicates significant icing exposure, but it does not provide a certified severity measurement.</li><li><strong>Wing:</strong> inspect the visible leading-edge area and cues identified by the operator.</li></ul>
-            <Deep title="Go deeper · Optional NG ice detection system"><p>An optional ice detection system exists on the 737 NG, although relatively few aircraft are equipped with it. An additional detector probe is installed on the lower left fuselage below the flight deck. <strong>ICING</strong> illuminates while ice is detected. After a previous detection, <strong>NO ICE</strong> illuminates when the probe no longer detects ice and is cancelled by pressing the light. An <strong>ICE DETECTOR</strong> light on the anti-ice panel indicates a detector-system failure. Installed equipment and indication logic must be confirmed in the aircraft’s applicable manuals.</p></Deep>
+            <Deep title="Go deeper · Optional NG ice detection system"><p>An optional ice detection system exists on the 737 NG, although relatively few aircraft are equipped with it. An additional detector probe is installed on the lower left fuselage below the flight deck. <strong>ICING</strong> illuminates while ice is detected. After a previous detection, <strong>NO ICE</strong> illuminates when the probe no longer detects ice and is cancelled by pressing the light. An <strong>ICE DETECTOR</strong> light on the anti-ice panel indicates a detector-system failure. Crews must identify the equipment and indication logic installed on their aircraft.</p></Deep>
             <aside className="study-tip"><strong>TIP · TURNAROUND ENGINE CHECK</strong><p>Ice can remain on the rear side of the fan blades where it is difficult to see from directly in front of the engine. During a cold-weather turnaround, inspect behind the fan blades from the permitted viewing position and follow the operator’s engine inspection procedure.</p></aside>
             <Warning title="VISUAL CUES ARE APPROXIMATE">Ice can accumulate away from the crew’s best viewing area. Use the applicable atmospheric criteria and operating procedure; do not wait for a large visible deposit before applying required anti-ice.</Warning>
             <h3>Cold-soaked fuel frost</h3>
             <p>Cold fuel remaining after a long flight can cool the wing skin enough for frost to form over the tanks, including in above-freezing ambient conditions. This non-environmental icing may appear on the lower and upper surfaces. Frost visible below the wing outboard of measuring stick No. 4 can indicate frost on the upper surface.</p>
             <Warning title="CSFF DISPATCH CRITERIA">Cold-soaked fuel frost is acceptable only where the aircraft has an approved defined area and every condition in the applicable inspection and dispatch procedure is satisfied. Frost outside that area, or frost that fails the permitted thickness and environmental criteria, must be removed using the approved deicing or anti-icing procedure.</Warning>
-            <Source>Course synthesis sheet · applicable operator procedures</Source>
           </section>
 
           <section className="course-section" id="stall">
@@ -204,7 +196,6 @@ export default function AntiIceRain() {
             <ul className="study-points"><li><strong>Engine anti-ice ON:</strong> icing logic is active.</li><li><strong>Engine anti-ice OFF:</strong> normal logic returns only if wing anti-ice has not been used in flight.</li><li><strong>Wing anti-ice used in flight:</strong> icing logic remains active for the rest of that flight, even after the switch is turned OFF.</li></ul>
             <Warning title="VREF IS NOT UPDATED">The logic adjusts stick shaker and minimum maneuver-speed bars on the airspeed indication. FMC-displayed VREF is not adjusted automatically.</Warning>
             <Need title="Wing use latches the logic"><p>After wing anti-ice has been used in flight, icing stall-warning logic remains active until the flight ends.</p></Need>
-            <Source>NG 3.10.4, 3.20.5, 3.20.7 · MAX 3.10.4–5, 3.20.5, 3.20.7</Source>
           </section>
           <SystemPager current="Anti-Ice, Rain" />
         </article>
