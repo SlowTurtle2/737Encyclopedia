@@ -47,6 +47,7 @@ const chapters = [
   ['overview', 'Overview', ''],
   ['airplane-general', 'Airplane General', '01'],
   ['air-systems', 'Air Systems', '02'],
+  ['anti-ice', 'Anti-Ice', '03'],
 ];
 
 function Tag({ kind }: { kind: 'new' | 'redesign' }) {
@@ -308,6 +309,80 @@ export default function MAX() {
               </p>
             </Need>
             <p className="source">REFERENCE · 737-8200 Familiarisation, Ch.2 · FCOM Ch.2</p>
+          </section>
+
+          <section className="course-section" id="anti-ice">
+            <span className="section-num">CHAPTER 3 / ANTI-ICE</span>
+            <h2>
+              New automatic engine-core protection, and anti-ice valve lights
+              that switch from blue to amber.
+            </h2>
+            <p>
+              The anti-ice system now draws bleed air from the{' '}
+              <strong>4th and 10th</strong> compressor stages (vs the 5th and
+              9th on the NG), and both the engine and wing anti-ice indications
+              change. The way you operate the switches is unchanged.
+            </p>
+
+            <h3>Key differences at a glance</h3>
+            <ul className="study-points">
+              <li>
+                <Tag kind="new" />
+                <strong>Engine core anti-ice:</strong> the LEAP-1B adds core
+                heating. The EEC directs bleed air to the engine core
+                automatically as needed — no crew action and no indication in
+                normal operation.
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>ENG ANTI-ICE light:</strong> a new amber annunciator
+                (none on the NG). It lights if cowl anti-ice is inhibited by a
+                failure, or if an engine core anti-ice valve fails closed, with
+                its own non-normal checklist.
+              </li>
+              <li>
+                <Tag kind="redesign" />
+                <strong>Valve lights — blue to amber:</strong> all anti-ice
+                valve lights are now amber, renamed (COWL VALVE OPEN → COWL
+                VALVE; L/R VALVE OPEN → L/R VALVE). They flash amber in transit
+                and are extinguished once the valve reaches the commanded
+                position — open <em>or</em> closed.
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>Disagreement alerting:</strong> if a valve disagrees
+                with its switch, the light stays on and MASTER CAUTION
+                illuminates after about 6 seconds — the NG only shows a steady
+                bright-blue light.
+              </li>
+              <li>
+                <Tag kind="redesign" />
+                <strong>Wing valve lights on the ground:</strong> when the wing
+                valves close for high thrust or a duct over-temperature, the
+                lights are now inhibited on the ground instead of showing blue.
+              </li>
+            </ul>
+
+            <Ops>
+              Because a MAX valve light looks the same when the system is OFF and
+              when it is ON (extinguished once in position), the light alone will
+              not tell you anti-ice is running. Use the green TAI indication on
+              the engine display to confirm engine anti-ice status, and stay
+              alert to anti-ice left ON when it is not needed.
+            </Ops>
+            <Need>
+              <p>
+                Amber, not blue — and normally dark once in position. The engine
+                now protects its core by itself; confirm engine anti-ice with
+                the green TAI, not the valve light.
+              </p>
+            </Need>
+            <p className="muted">
+              Full valve indications and idle logic are in the{' '}
+              <Link href="/systems/anti-ice-rain">Anti-Ice, Rain</Link> system
+              course.
+            </p>
+            <p className="source">REFERENCE · 737-8200 Familiarisation, Ch.3 · FCOM Ch.3</p>
           </section>
 
           <div className="system-page-footer">
