@@ -2376,3 +2376,25 @@ summary:focus-visible {
   content: '\2192\00a0';
   color: #9aa8b4;
 }
+
+.schematic-placeholder {
+  display: grid;
+  min-height: 210px;
+  place-items: center;
+  gap: 14px;
+  margin: 28px 0;
+  padding: 34px;
+  border: 1px dashed #9db1c1;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #f6f9fb, #eaf1f5);
+  color: #50697b;
+  text-align: center;
+}
+.schematic-placeholder span {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+.schematic-placeholder figcaption {
+  color: #617788;
+}
