@@ -2364,3 +2364,15 @@ summary:focus-visible {
 /* Interview question lists */
 .q-list > li strong { color: #29475f; }
 .q-intro { color: #5b6b7a; margin: 0 0 4px; }
+
+/* Short answer hint under an interview question */
+.q-hint {
+  display: block;
+  margin-top: 5px;
+  font-size: 13px;
+  color: #5f7180;
+}
+.q-hint::before {
+  content: '\2192\00a0';
+  color: #9aa8b4;
+}
