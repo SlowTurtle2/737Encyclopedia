@@ -48,6 +48,9 @@ const chapters = [
   ['airplane-general', 'Airplane General', '01'],
   ['air-systems', 'Air Systems', '02'],
   ['anti-ice', 'Anti-Ice', '03'],
+  ['automatic-flight', 'Automatic Flight', '04'],
+  ['communications', 'Communications', '05'],
+  ['electrical', 'Electrical', '06'],
 ];
 
 function Tag({ kind }: { kind: 'new' | 'redesign' }) {
@@ -378,6 +381,114 @@ export default function MAX() {
               <Link href="/systems/anti-ice-rain">Anti-Ice, Rain</Link> system
               course.
             </p>          </section>
+
+          <section className="course-section" id="automatic-flight">
+            <span className="section-num">CHAPTER 4 / AUTOMATIC FLIGHT</span>
+            <h2>
+              New stall-protection and trim-monitoring logic in the autoflight
+              system.
+            </h2>
+            <p>
+              The flight control computer logic is updated (from FCC logic 11 to
+              12.1.2), adding several AFDS enhancements built around stick-shaker
+              activation and stabiliser trim. &ldquo;Amber bar&rdquo; below means
+              the minimum-manoeuvre-speed bar on the speed tape.
+            </p>
+
+            <h3>Key differences at a glance</h3>
+            <ul className="study-points">
+              <li>
+                <Tag kind="new" />
+                <strong>Autopilot drops at the shaker:</strong> in pitch modes
+                without minimum-speed reversion, the autopilot automatically
+                disengages about 1 second after stick-shaker activation and
+                cannot be re-engaged until speed is back above the amber bar.
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>Flight directors blank, then return:</strong> the FD
+                bars are removed from the PFD at the same time and come back once
+                speed is above the amber bar. The pitch mode may return
+                different from the one selected (roll mode unchanged).
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>Nose-up trim inhibit:</strong> the FCC inhibits autopilot
+                nose-up stabiliser trim when the trailing-edge flaps are extended
+                and speed is 3 knots or more into the amber bar.
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>Cross FCC Trim Monitor:</strong> the two FCCs
+                continuously cross-check each other&rsquo;s trim commands (except
+                on a dual-channel approach). A faulty FCC is locked out and the
+                other supplies trim for the rest of the flight; SPEED TRIM FAIL
+                may illuminate.
+              </li>
+            </ul>
+
+            <Ops>
+              After a stick-shaker event, once recovered re-set the target
+              airspeed in the MCP speed window and expect the active pitch mode
+              to have changed. If the Cross FCC Trim Monitor has tripped, on the
+              ground below 30 kt the STAB OUT OF TRIM light comes on — action the
+              STABILISER OUT OF TRIM checklist, do not take off, and record the
+              defect.
+            </Ops>
+            <Need>
+              <p>
+                The autoflight system now backs out of a stall by itself and
+                watches its own trim. Expect the autopilot to drop and the flight
+                directors to blank at the shaker, both returning above the amber
+                bar.
+              </p>
+            </Need>
+          </section>
+
+          <section className="course-section" id="communications">
+            <span className="section-num">CHAPTER 5 / COMMUNICATIONS</span>
+            <h2>No differences.</h2>
+            <p>
+              Boeing lists no specific communications differences between the
+              737-800 and the 737-8200.
+            </p>
+          </section>
+
+          <section className="course-section" id="electrical">
+            <span className="section-num">CHAPTER 6 / ELECTRICAL</span>
+            <h2>
+              No system changes, but the generators were reshaped for the new
+              engine.
+            </h2>
+            <p>
+              The electrical system itself is unchanged. The only difference is
+              hardware: the integrated drive generators (IDGs) were redesigned to
+              fit around the LEAP-1B.
+            </p>
+
+            <h3>Key differences at a glance</h3>
+            <ul className="study-points">
+              <li>
+                <Tag kind="redesign" />
+                <strong>Redesigned IDGs:</strong> adapted to the shape of the
+                LEAP-1B engine, with no change to how the system is operated.
+              </li>
+            </ul>
+
+            <Ops>
+              On a single IDG (one AC source), the QRH directs switching
+              CAB/UTIL, IFE and PASS SEAT off to meet the IDG&rsquo;s cooling
+              needs. Cabin lighting goes out, but passenger reading lights keep
+              working. This requirement may be removed on later aircraft.
+            </Ops>
+            <Need>
+              <p>
+                Same electrics to operate. Just remember the single-IDG cooling
+                step in the QRH turns the cabin lights off while reading lights
+                stay on.
+              </p>
+            </Need>
+          </section>
 
           <div className="system-page-footer">
             <Link className="system-glossary-link" href="/glossary">
