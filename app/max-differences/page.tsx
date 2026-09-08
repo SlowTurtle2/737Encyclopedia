@@ -46,6 +46,7 @@ function Warning({ children }: { children: React.ReactNode }) {
 const chapters = [
   ['overview', 'Overview'],
   ['airplane-general', 'Airplane General'],
+  ['air-systems', 'Air Systems'],
 ];
 
 export default function MAX() {
@@ -216,6 +217,73 @@ export default function MAX() {
               .
             </p>
             <p className="source">REFERENCE · 737-8200 Familiarisation, Ch.1 · FCOM Ch.1</p>
+          </section>
+
+          <section className="course-section" id="air-systems">
+            <span className="section-num">CHAPTER 2 / AIR SYSTEMS</span>
+            <h2>
+              A new electronic bleed air system — same operation, smarter
+              indications.
+            </h2>
+            <p>
+              The 737-8200 uses an all-new, electronically controlled and
+              pneumatically actuated bleed air system. It takes bleed air from
+              the <strong>4th and 10th</strong> compressor stages (vs the
+              <strong> 5th and 9th</strong> on the NG), a single engine bleed can
+              feed both packs in flight, and it detects and isolates faults on
+              its own. What you do at the panel does not change.
+            </p>
+
+            <h3>Key differences at a glance</h3>
+            <ul className="study-points">
+              <li>
+                <strong>BLEED light (was BLEED TRIP OFF):</strong> still lights
+                for over-temperature or over-pressure, but now also for
+                under-pressure or a system fault — which may not be resettable. A
+                new BLEED non-normal checklist replaces BLEED TRIP OFF.
+              </li>
+              <li>
+                <strong>Configuration check:</strong> both BLEED lights come on
+                45 seconds after flap retraction if both bleed switches are left
+                OFF after take-off or go-around. Turning either switch ON clears
+                a configuration light.
+              </li>
+              <li>
+                <strong>PACK light:</strong> adds two cases — a Flow Control
+                Valve stuck closed, and the same post-take-off configuration
+                logic (both lights if both pack switches are OFF; either ON
+                clears it).
+              </li>
+              <li>
+                <strong>Cross bleed start:</strong> extra thrust is normally{' '}
+                <strong>not</strong> needed to reach the 30 PSI duct pressure to
+                start the second engine — the NG needs additional thrust.
+              </li>
+              <li>
+                <strong>RAM DOOR FULL OPEN lights:</strong> removed — they were
+                not used in normal or non-normal procedures.
+              </li>
+              <li>
+                <strong>EQUIP SMOKE light (new):</strong> illuminates when smoke
+                is detected in the equipment cooling system and clears 30 seconds
+                after it is gone; the supply OFF lights move to the top of the
+                panel, with a new non-normal checklist.
+              </li>
+            </ul>
+
+            <Ops>
+              On a No Engine Bleed take-off, the BLEED lights can illuminate if
+              the after-take-off no-bleed checklist is not completed — sequence
+              it deliberately to avoid the nuisance indication.
+            </Ops>
+            <Need>
+              <p>
+                Same panel, same actions. The system now watches itself: extra
+                reasons for BLEED and PACK lights, a configuration check after
+                take-off, and a new EQUIP SMOKE alert.
+              </p>
+            </Need>
+            <p className="source">REFERENCE · 737-8200 Familiarisation, Ch.2 · FCOM Ch.2</p>
           </section>
 
           <div className="system-page-footer">
