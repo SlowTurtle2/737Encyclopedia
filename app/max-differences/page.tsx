@@ -54,6 +54,12 @@ const chapters = [
   ['engines-apu', 'Engines / APU', '07'],
   ['fire-protection', 'Fire Protection', '08'],
   ['flight-controls', 'Flight Controls', '09'],
+  ['flight-instruments', 'Flight Instruments', '10'],
+  ['flight-management', 'Flight Management', '11'],
+  ['fuel', 'Fuel', '12'],
+  ['hydraulics', 'Hydraulics', '13'],
+  ['landing-gear', 'Landing Gear', '14'],
+  ['warning-systems', 'Warning Systems', '15'],
 ];
 
 function Tag({ kind }: { kind: 'new' | 'redesign' }) {
@@ -687,6 +693,264 @@ export default function MAX() {
                 EJLA) that mostly work without moving the lever, and MCAS adds
                 nose-down trim at high AOA — all to keep the MAX flying like the
                 NG.
+              </p>
+            </Need>
+          </section>
+
+          <section className="course-section" id="flight-instruments">
+            <span className="section-num">CHAPTER 10 / FLIGHT INSTRUMENTS, DISPLAYS</span>
+            <h2>
+              Four large displays with a new layout — the same information,
+              presented differently, plus new roll-awareness alerts.
+            </h2>
+            <p>
+              The 737-8200 uses four large-format display units (two inboard,
+              two outboard) in place of the NG&rsquo;s six. Most of this chapter
+              is about how the information is arranged; a few genuinely new
+              alerts are the exception.
+            </p>
+
+            <h3>Key differences at a glance</h3>
+            <ul className="study-points">
+              <li>
+                <Tag kind="redesign" />
+                <strong>Four large displays:</strong> two inboard and two
+                outboard replace the NG&rsquo;s six DUs, and the compact engine
+                display is gone. On a failure the engine display moves to the
+                opposite inboard DU, and a failed inboard turns the PFD compass
+                into a fixed 20 nm Mini Map.
+              </li>
+              <li>
+                <Tag kind="redesign" />
+                <Tag kind="new" />
+                <strong>AUX area &amp; automatic clock:</strong> the outboard DU
+                adds an AUX area. With no physical clock, UTC time and date show
+                there and are set automatically by GPS, and the elapsed timer
+                runs automatically (from weight-off-wheels to weight-on-wheels
+                plus 30 s).
+              </li>
+              <li>
+                <Tag kind="redesign" />
+                <strong>Display select simplified:</strong> the select switches
+                move below the displays onto the brightness panel and become a
+                single three-position PFD/MFD switch.
+              </li>
+              <li>
+                <Tag kind="redesign" />
+                <strong>EFIS range &amp; VSD:</strong> range is now 0.5–640 nm
+                shown on the ND (not the EFIS panel) with +/− symbols, and a
+                dedicated VSD button replaces the old selection method.
+              </li>
+              <li>
+                <Tag kind="redesign" />
+                <strong>Engine display control panel:</strong> ENG / SYS / INFO
+                / ENG TFR keys manage the engine, system (hydraulic quantity and
+                pressure) and N1 / V-speed pages — the INFO page replaces the
+                NG&rsquo;s N1 and speed-reference knobs.
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>Roll-saturation &amp; bank-angle alerts:</strong> new PFD
+                alerts — ROLL/YAW ASYMMETRY and ROLL AUTHORITY for single-channel
+                autopilot saturation, plus an enhanced bank-angle warning with a
+                red ROLL COMMAND arrow and aural &ldquo;ROLL LEFT / RIGHT&rdquo;
+                beyond 45°.
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>Updated weather radar:</strong> an updated RDR-4000 with
+                better interference rejection, convective-weather discrimination,
+                turbulence detection extended to 60 nm, REACT attenuation arcs
+                and hail / lightning hazard icons.
+              </li>
+            </ul>
+
+            <Need>
+              <p>
+                Fewer, bigger screens with the same data rearranged. The clock
+                and timer are automatic now, and the PFD gains real roll-upset
+                and autopilot-saturation alerts.
+              </p>
+            </Need>
+          </section>
+
+          <section className="course-section" id="flight-management">
+            <span className="section-num">CHAPTER 11 / FLIGHT MANAGEMENT</span>
+            <h2>New ways to source fuel figures, and updated thrust ratings.</h2>
+
+            <h3>Key differences at a glance</h3>
+            <ul className="study-points">
+              <li>
+                <Tag kind="new" />
+                <strong>FUEL PROGRESS page:</strong> a new progress page 5/5 lets
+                you use TOTALIZER (default) or FMC CALCULATED fuel for the
+                FMC&rsquo;s calculations and shows APU FUEL USED.
+              </li>
+              <li>
+                <Tag kind="redesign" />
+                <strong>Fuel source on PERF INIT:</strong> PERF INIT shows the
+                fuel source — SENS (totalizer), CALC or MAN — replacing the
+                NG&rsquo;s PLAN FUEL entry.
+              </li>
+              <li>
+                <Tag kind="redesign" />
+                <strong>N1 Limit page:</strong> full thrust is 27K with TO-1
+                (10%) and TO-2 (20%) derates and temperature assumption on all
+                fixed settings, versus the NG&rsquo;s 26K / 24K / 22K.
+              </li>
+            </ul>
+          </section>
+
+          <section className="course-section" id="fuel">
+            <span className="section-num">CHAPTER 12 / FUEL</span>
+            <h2>A higher LOW threshold and several new fuel alerts.</h2>
+
+            <h3>Key differences at a glance</h3>
+            <ul className="study-points">
+              <li>
+                <Tag kind="redesign" />
+                <strong>LOW fuel threshold:</strong> appears at 590 kg and clears
+                at 737 kg, versus 453 / 567 kg on the NG.
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>FUEL DISAGREE:</strong> new alert when the totalizer and
+                FMC-calculated fuel quantities disagree (engine display and CDU),
+                with its own checklist.
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>FUEL FLOW:</strong> new leak-detection alert when actual
+                and FMC-expected fuel flow differ beyond a threshold for 5
+                continuous minutes.
+              </li>
+              <li>
+                <Tag kind="redesign" />
+                <strong>FILTER BYPASS logic:</strong> the two lights are now
+                linked — if both illuminate they stay on until engine shutdown on
+                the ground — and the light covers impending or actual bypass.
+              </li>
+              <li>
+                <Tag kind="redesign" />
+                <strong>Prediction messages on the display:</strong> USING RSV
+                FUEL and INSUFFICIENT FUEL now also appear on the engine display,
+                each with a new checklist.
+              </li>
+            </ul>
+
+            <Ops>
+              Keep the actual aircraft speed entered in the FMC so the FUEL FLOW
+              alert does not give nuisance warnings.
+            </Ops>
+            <p className="muted">
+              The full fuel system is covered in the{' '}
+              <Link href="/systems/fuel">Fuel</Link> system course.
+            </p>
+          </section>
+
+          <section className="course-section" id="hydraulics">
+            <span className="section-num">CHAPTER 13 / HYDRAULICS</span>
+            <h2>No differences.</h2>
+            <p>
+              Boeing lists no specific hydraulics differences between the 737-800
+              and the 737-8200.
+            </p>
+          </section>
+
+          <section className="course-section" id="landing-gear">
+            <span className="section-num">CHAPTER 14 / LANDING GEAR</span>
+            <h2>
+              A two-position gear lever, relocated controls and carbon brakes.
+            </h2>
+
+            <h3>Key differences at a glance</h3>
+            <ul className="study-points">
+              <li>
+                <Tag kind="redesign" />
+                <strong>Two-position gear lever:</strong> UP / DOWN only — the
+                OFF position is gone. The lever electrically controls the
+                hydraulics, and pressure is removed automatically 10 s after the
+                gear is up and locked. Do not move the lever after selecting UP,
+                or the gear may extend.
+              </li>
+              <li>
+                <Tag kind="redesign" />
+                <strong>Relocated controls:</strong> the gear lever sits
+                centrally between the inboard displays, with LOCK OVRD beside it
+                and NOSE WHEEL STEER moved next to it; the AUTO BRAKE switch and
+                brake-pressure indicator move to the forward aisle stand — adjust
+                your scan for the DISARM / ANTI SKID INOP lights.
+              </li>
+              <li>
+                <Tag kind="redesign" />
+                <strong>Carbon brakes:</strong> Messier-Bugatti carbon brakes
+                save ~300 kg with better energy absorption and faster cool-down.
+                Wear depends on the number of applications, so use firm, steady
+                applications and avoid riding the brakes (autobrake 2 or 3
+                optimises wear and stopping).
+              </li>
+              <li>
+                <Tag kind="redesign" />
+                <strong>Flaps 40 speed:</strong> placard raised to 166 kt (was
+                162 kt).
+              </li>
+            </ul>
+          </section>
+
+          <section className="course-section" id="warning-systems">
+            <span className="section-num">CHAPTER 15 / WARNING SYSTEMS</span>
+            <h2>
+              A broader MAINT light, and Boeing&rsquo;s runway-safety suite in
+              place of the NG&rsquo;s.
+            </h2>
+
+            <h3>Key differences at a glance</h3>
+            <ul className="study-points">
+              <li>
+                <Tag kind="redesign" />
+                <strong>MAINT replaces PSEU:</strong> the MAINT light covers all
+                former PSEU faults plus additional detectable ones. It works on
+                the ground until first engine start and is inhibited until 30 s
+                after landing. If it lights, do not take off and run the
+                checklist.
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>RSAT suite:</strong> Boeing&rsquo;s Runway Situation
+                Awareness Tools replace the NG&rsquo;s Honeywell RAAS — Boeing
+                RAAS plus overrun and speedbrake warnings (some Honeywell
+                callouts are dropped, covered by other warnings).
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>SPEEDBRAKE warning:</strong> a time-critical visual and
+                aural alert if the speedbrakes are not up on landing or a
+                rejected takeoff above 80 kt.
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>In-air overrun warning:</strong> a GO AROUND alert with
+                &ldquo;OVERRUN, GO AROUND&rdquo;, armed from 500 ft to touchdown
+                when the predicted landing distance exceeds the runway.
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>On-ground overrun warning:</strong> a MAX REVERSE alert
+                with &ldquo;MAX BRAKES, MAX REVERSE&rdquo; when maximum effort is
+                needed to stop by the runway end.
+              </li>
+            </ul>
+
+            <Ops>
+              Enter the landing runway condition in the FMC during the approach
+              brief (INIT APP page 2/2) so the overrun warnings have the data
+              they need.
+            </Ops>
+            <Need>
+              <p>
+                One broader MAINT light, and a new runway-safety suite: speedbrake
+                and overrun warnings that call for a go-around or maximum braking
+                when the aircraft is running out of runway.
               </p>
             </Need>
           </section>
