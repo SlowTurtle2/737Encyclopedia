@@ -23,6 +23,14 @@ function Tip({ children }: { children: React.ReactNode }) {
     </aside>
   );
 }
+function Warning({ children }: { children: React.ReactNode }) {
+  return (
+    <aside className="suction-warning">
+      <strong>WATCH OUT</strong>
+      <p>{children}</p>
+    </aside>
+  );
+}
 
 const chapters = [
   ['overview', 'Overview', ''],
@@ -87,13 +95,18 @@ export default function SimulatorSession() {
             </h2>
             <ul className="study-points">
               <li>
+                <strong>Briefing:</strong> the full brief is done beforehand in a
+                briefing room; in the sim you usually get only a very short
+                departure brief.
+              </li>
+              <li>
                 <strong>Airport &amp; departure:</strong> commonly East Midlands
                 (TNT2N / TNT2T &ldquo;Trent&rdquo;) or Liverpool (WAL2T
                 &ldquo;Wallasey&rdquo;, ILS 27), returning to the departure field.
               </li>
               <li>
-                <strong>Pre-set:</strong> the aircraft is usually set up for you
-               , you verify rather than build it.
+                <strong>Pre-set:</strong> the aircraft is usually set up for you;
+                you verify rather than build it.
               </li>
               <li>
                 <strong>Takeoff:</strong> flight directors and autothrottle ON;
@@ -117,6 +130,13 @@ export default function SimulatorSession() {
                 numbers for each phase.
               </p>
             </Need>
+            <Warning>
+              Know the departure and approach profiles by heart. They are given
+              several weeks in advance and there are very few of them (normally
+              just one departure and one approach). Always fly the profile from
+              the official briefing pack, never a version from a mediocre sim
+              prep.
+            </Warning>
           </section>
 
           <section className="course-section" id="airwork">
@@ -148,6 +168,26 @@ export default function SimulatorSession() {
                 <strong>&ldquo;disregard&rdquo;</strong>.
               </li>
             </ul>
+
+            <h3>Typical pitch &amp; power</h3>
+            <ul className="study-points">
+              <li><strong>Straight and level, 220 kt:</strong> 55% N1, 4° pitch.</li>
+              <li><strong>Acceleration 220 to 320 kt:</strong> 80% N1, pitch decreasing to 2.5°.</li>
+              <li><strong>Steep turn:</strong> add 2 to 3% N1 and 2° of pitch in the turn.</li>
+            </ul>
+            <p className="q-intro">
+              These are reference values; confirm the exact figures during your
+              prep session.
+            </p>
+
+            <Need>
+              <p>
+                Trim, and trim often. Keep the aircraft in trim so you are never
+                holding a force, and re-trim after every speed or configuration
+                change. It is one of the key points to flying the raw-data
+                profile smoothly.
+              </p>
+            </Need>
             <Tip>
               The assessor may pack several instructions into one transmission
               (climb + turn + speed). Prioritise, fly the aircraft first, then
@@ -208,12 +248,25 @@ export default function SimulatorSession() {
             </p>
             <p>Fly first: if it happens in a busy phase, call <strong>&ldquo;standby&rdquo;</strong> and finish the manoeuvre. Then run the flow the assessors are looking for:</p>
             <ul className="study-points">
-              <li><strong>1 · State the malfunction.</strong> Call out what you see and confirm it with the other pilot.</li>
-              <li><strong>2 · Do the QRH.</strong> Read-and-do the checklist; the assessor lets you use it even if you are not familiar with the 737.</li>
-              <li><strong>3 · PIOSEE.</strong> Problem, Information, Options, Select, Execute, Evaluate, reach a clear decision, and keep it sharp.</li>
-              <li><strong>4 · Set up and brief.</strong> Set fuel, course and minima, configure the FMC/navaids, and brief the approach (NITS to your PM).</li>
-              <li><strong>5 · Report ready.</strong> Declare to ATC as appropriate (PAN or MAYDAY), then report ready for the approach and return.</li>
+              <li><strong>1 · PM calls the light.</strong> For example &ldquo;Source OFF&rdquo;, or any warning.</li>
+              <li><strong>2 · PF calls it.</strong> &ldquo;[Name of the light], QRH non-normal checklist, my radio.&rdquo;</li>
+              <li><strong>3 · PM reads and does the QRH.</strong> Most of the time the assessor pauses the sim to explain the QRH, or simply calls it completed.</li>
+              <li><strong>4 · PF hands control to the PM and starts a PIOSEE.</strong> Problem, Information, Options, Select, Execute, Evaluate.</li>
+              <li><strong>5 · PF performs NITS.</strong> Nature, Intentions, Time, Special instructions.</li>
+              <li><strong>6 · PF performs the PA.</strong></li>
+              <li><strong>7 · PF sets up for the approach.</strong> Frequency, course and minima; there is no FMC to do.</li>
+              <li><strong>8 · PF gives a quick approach briefing.</strong></li>
+              <li><strong>9 · If there are no questions,</strong> PF takes control back and the PM reports ready.</li>
+              <li><strong>10 · PF calls for the descent and approach checklists.</strong></li>
+              <li><strong>11 · Re-evaluate if you can.</strong> If you have the bandwidth, re-check everything just before intercepting the LOC; if you are not comfortable, focus on the approach.</li>
             </ul>
+            <Tip>
+              If the instructor mentions during the briefing that the APU is
+              inoperative, the failure is very likely a generator failure (a
+              source off). The QRH will ask you to start the APU, so remember at
+              that point that it is inoperative, and the QRH will then direct you
+              to land at the nearest suitable airport.
+            </Tip>
 
             <h3>Case 2, Cabin, medical or exterior event</h3>
             <p className="q-intro">
@@ -221,11 +274,15 @@ export default function SimulatorSession() {
               suspected heart attack or stroke, an unruly passenger, spilled
               chemicals, a small cabin fire (a charger, say) or a cargo fire.
             </p>
+            <p>Fly first: aviate, navigate, communicate, and call <strong>&ldquo;standby&rdquo;</strong> if it lands in a busy phase. There is usually no QRH to run, so start directly at the PIOSEE:</p>
             <ul className="study-points">
-              <li><strong>Fly first:</strong> aviate, navigate, communicate; call <strong>&ldquo;standby&rdquo;</strong> if it lands in a busy phase.</li>
-              <li><strong>Decide:</strong> pass control and work <strong>PIOSEE</strong> (Problem, Information, Options, Select, Execute, Evaluate) to a clear plan, continue, return or divert.</li>
-              <li><strong>Brief with NITS:</strong> Nature, Intentions, Time, Special instructions; make the PA, sometimes the examiner makes the PA, or it is not requested.</li>
-              <li><strong>Finish it:</strong> action any applicable checklist, set up for the approach and report ready.</li>
+              <li><strong>1 · PF hands control to the PM and starts a PIOSEE.</strong> Problem, Information, Options, Select, Execute, Evaluate, to a clear plan: continue, return or divert.</li>
+              <li><strong>2 · PF performs NITS.</strong> Nature, Intentions, Time, Special instructions.</li>
+              <li><strong>3 · PF performs the PA.</strong> Sometimes the examiner makes the PA, or it is not requested.</li>
+              <li><strong>4 · PF sets up for the approach.</strong> Frequency, course and minima.</li>
+              <li><strong>5 · PF gives a quick approach briefing.</strong></li>
+              <li><strong>6 · If there are no questions,</strong> PF takes control back and the PM reports ready.</li>
+              <li><strong>7 · PF calls for the descent and approach checklists.</strong></li>
             </ul>
             <Need>
               <p>
