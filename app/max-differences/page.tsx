@@ -51,6 +51,9 @@ const chapters = [
   ['automatic-flight', 'Automatic Flight', '04'],
   ['communications', 'Communications', '05'],
   ['electrical', 'Electrical', '06'],
+  ['engines-apu', 'Engines / APU', '07'],
+  ['fire-protection', 'Fire Protection', '08'],
+  ['flight-controls', 'Flight Controls', '09'],
 ];
 
 function Tag({ kind }: { kind: 'new' | 'redesign' }) {
@@ -486,6 +489,204 @@ export default function MAX() {
                 Same electrics to operate. Just remember the single-IDG cooling
                 step in the QRH turns the cabin lights off while reading lights
                 stay on.
+              </p>
+            </Need>
+          </section>
+
+          <section className="course-section" id="engines-apu">
+            <span className="section-num">CHAPTER 7 / ENGINES, APU</span>
+            <h2>
+              A completely new engine with self-protecting controls, a longer
+              start and several extra indications.
+            </h2>
+            <p>
+              The 737-8200 is powered by two CFM LEAP-1B engines. The APU is the
+              same unit as the NG, with a few indication changes. Most of the
+              differences here are about the engine start and the new alerts you
+              will see.
+            </p>
+
+            <h3>Key differences at a glance</h3>
+            <ul className="study-points">
+              <li>
+                <Tag kind="redesign" />
+                <strong>New engine &amp; ratings:</strong> LEAP-1B rated at 27K
+                thrust, with TO-1 / TO-2 derates (10% / 20%) and temperature
+                assumption available on all fixed thrust settings.
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>EOS &amp; TCMA auto-shutdowns:</strong> the EEC shuts an
+                engine down for a rotor overspeed (Electronic Overspeed), or on
+                the ground if the engine will not follow an IDLE command (Thrust
+                Control Malfunction Accommodation). Both show as ENG FAIL.
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>Bowed Rotor Motoring:</strong> the start motors the
+                engine at 18–24% N2 for 6–90 seconds to straighten a
+                heat-bowed rotor, shown as MOTORING on the N2 display. This makes
+                the overall start noticeably longer.
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>EOS / TCMA start self-test:</strong> moving the start
+                lever to IDLE runs a test — fuel flow reads zero, the fuel
+                shutoff valve cycles and ENG VALVE CLOSED stays bright blue (up
+                to ~15 s) before the start continues.
+              </li>
+              <li>
+                <Tag kind="redesign" />
+                <strong>Start limits &amp; EGT gauge:</strong> each normal start
+                attempt is now limited to 3 minutes (was 2), the engine reaches
+                stabilised idle more slowly, and EGT is a 4-digit gauge (vs
+                3-digit).
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>Icing idle:</strong> a fourth, highest idle set by the
+                EEC in flight when engine anti-ice is ON with flaps and gear up;
+                it ramps in between 30,400 ft and 22,000 ft.
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>THRUST &amp; FUEL FLOW alerts:</strong> new engine-display
+                alerts. THRUST compares commanded and actual thrust, with an
+                amber N1 command sector, blinking for 10 s (blinking inhibited
+                near takeoff, landing and go-around).
+              </li>
+              <li>
+                <Tag kind="redesign" />
+                <Tag kind="new" />
+                <strong>Reverser alerts:</strong> REVERSER LIMITED replaces the
+                NG REVERSER alert (reverse unavailable or limited to idle); new
+                REVERSER COMMAND (reverser commanded in flight) and REVERSER
+                AIR/GND (air-ground protection lost), each with its own checklist.
+              </li>
+              <li>
+                <Tag kind="redesign" />
+                <strong>APU indications:</strong> same APU, but no EGT gauge and
+                no blue MAINT light. A DOOR light replaces MAINT for the new
+                three-position inlet door, lighting if the door is not in the
+                commanded position after ~165 s.
+              </li>
+            </ul>
+
+            <Ops>
+              Plan for a longer start — bowed-rotor motoring plus the EOS/TCMA
+              self-test add time and extra indications, so let it run rather than
+              suspecting a fault. In-flight relight fuel-on N2 values differ
+              between a windmill and a cross-bleed start; check the QRH.
+            </Ops>
+            <Need>
+              <p>
+                A new engine that can shut itself down (EOS/TCMA) and a start
+                that now includes bowed-rotor motoring and a self-test — longer,
+                with more to watch. The APU is unchanged apart from its
+                indications.
+              </p>
+            </Need>
+          </section>
+
+          <section className="course-section" id="fire-protection">
+            <span className="section-num">CHAPTER 8 / FIRE PROTECTION</span>
+            <h2>No differences.</h2>
+            <p>
+              Boeing lists no specific fire protection differences between the
+              737-800 and the 737-8200.
+            </p>
+          </section>
+
+          <section className="course-section" id="flight-controls">
+            <span className="section-num">CHAPTER 9 / FLIGHT CONTROLS</span>
+            <h2>
+              A fly-by-wire spoiler system adds several automatic protections,
+              and MCAS augments pitch feel at high angle of attack.
+            </h2>
+            <p>
+              The 737-8200 is designed to fly like the 737-800. The big change is
+              that the spoilers are now fly-by-wire, controlled by a Spoiler
+              Control Electronics (SCE) unit, which enables the new functions
+              below. All are designed to keep the MAX handling like the NG.
+            </p>
+
+            <h3>Key differences at a glance</h3>
+            <ul className="study-points">
+              <li>
+                <Tag kind="new" />
+                <strong>Fly-by-wire spoilers:</strong> the SCE electrically
+                controls the flight spoilers (ground spoilers via a Ground
+                Spoiler Control Module). A new SPOILERS light flags an
+                inoperative spoiler pair.
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>Maneuver Load Alleviation (MLA):</strong> at high load
+                factor and gross weight it automatically bleeds off speedbrake to
+                cut structural loads — transparent to you, and the lever does not
+                move.
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>Landing Attitude Modifier (LAM):</strong> auto-deploys
+                flight spoilers on approach to keep an NG-like pitch attitude and
+                glidepath capture; the lever does not move and mild buffet is
+                possible.
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>Emergency Descent Speedbrake (EDS):</strong> above
+                30,000 ft with a cabin-altitude warning active, selecting the
+                flight detent raises the speedbrakes higher than normal for a
+                faster emergency descent.
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>Elevator Jam Landing Assist (EJLA):</strong> a new
+                overhead switch that uses the flight spoilers, driven by
+                control-column inputs, to control descent rate if the pitch
+                controls jam (flaps 1+, autopilot off, per the checklist).
+              </li>
+              <li>
+                <Tag kind="redesign" />
+                <strong>Stab trim cutout switches:</strong> now labelled PRI and
+                B/U, and each one cuts out both main-electric and autopilot trim.
+                Checklist actions are unchanged — both go to CUTOUT.
+              </li>
+              <li>
+                <Tag kind="redesign" />
+                <Tag kind="new" />
+                <strong>Speedbrake lights &amp; logic:</strong> the DO NOT ARM /
+                ARMED / EXTENDED lights move above the inboard displays and are
+                SCE-driven; SPEEDBRAKES EXTENDED gains thrust-lever triggers, and
+                the SCE blocks spoiler extension past the in-flight position.
+              </li>
+              <li>
+                <Tag kind="new" />
+                <strong>MCAS in the Speed Trim System:</strong> adds nose-down
+                stabiliser trim at high AOA (flaps up, autopilot off, Mach below
+                0.84, from 10 s after takeoff), with FCC 12.1.2 safeguards — AOA
+                comparison (vanes disagreeing 5.5° or more with flaps up trips
+                SPEED TRIM FAIL and the whole system), a Maximum Command Limit
+                and single-activation logic. If either Speed Trim function fails,
+                both are lost for the flight.
+              </li>
+            </ul>
+
+            <Ops>
+              With the autopilot engaged for most line operations, MCAS should
+              not normally activate. If an out-of-trim condition develops, trim
+              back without delay; if uncommanded stabiliser movement continues,
+              action Runaway Stabilizer. Aft control-column movement does not
+              stop MCAS nose-down trim, but forward movement interrupts MCAS
+              nose-up trim.
+            </Ops>
+            <Need>
+              <p>
+                Fly-by-wire spoilers bring automatic helpers (MLA, LAM, EDS,
+                EJLA) that mostly work without moving the lever, and MCAS adds
+                nose-down trim at high AOA — all to keep the MAX flying like the
+                NG.
               </p>
             </Need>
           </section>
