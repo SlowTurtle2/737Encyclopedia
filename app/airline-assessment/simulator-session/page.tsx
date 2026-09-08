@@ -60,6 +60,12 @@ export default function SimulatorSession() {
               are fine as long as you notice and correct them.
             </p>
             <p>
+              Crews are usually mixed — one candidate from a 737 MCC and one from
+              an A320 MCC — so your partner may be more, or less, comfortable on
+              the 737 than you. That is normal, and the assessor takes it into
+              account.
+            </p>
+            <p>
               The profile below is drawn from recent candidate feedback, so
               expect small variations by assessor and by day. Charts are handed
               out during the morning briefing.
