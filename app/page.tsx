@@ -116,6 +116,70 @@ export default function Home() {
           </article>
         </div>
       </section>
+      <section className="wrap assessment-path paid-learning-path" aria-labelledby="type-rating-path-title">
+        <div className="assessment-path-head">
+          <div>
+            <p className="eyebrow">PREPARE YOUR TYPE RATING</p>
+            <h2 id="type-rating-path-title">Build the knowledge you need for the course.</h2>
+            <p>Study the aircraft systems, prepare for the written exams and consolidate the flows and FMC work used during simulator training.</p>
+          </div>
+          <span className="paid-access-tag">PAID RESOURCES</span>
+        </div>
+        <div className="assessment-steps">
+          <article className="assessment-step assessment-step-double">
+            <span className="assessment-step-number">01</span>
+            <h3>Technical foundations</h3>
+            <div className="assessment-step-links">
+              <Link href="/#systems">Aircraft systems <ArrowUpRight size={17} /></Link>
+              <Link href="/type-rating/technical-exam">Technical exam <ArrowUpRight size={17} /></Link>
+            </div>
+          </article>
+          <ArrowRight className="assessment-flow-arrow" aria-hidden="true" />
+          <article className="assessment-step">
+            <span className="assessment-step-number">02</span>
+            <h3>Performance exam</h3>
+            <Link href="/type-rating/performance-exam">Open section <ArrowUpRight size={17} /></Link>
+          </article>
+          <ArrowRight className="assessment-flow-arrow" aria-hidden="true" />
+          <article className="assessment-step assessment-step-double">
+            <span className="assessment-step-number">03</span>
+            <h3>Procedures and FMC</h3>
+            <div className="assessment-step-links">
+              <Link href="/type-rating/sop-exam">SOP exam <ArrowUpRight size={17} /></Link>
+              <Link href="/fmc">FMC tutorial <ArrowUpRight size={17} /></Link>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section className="wrap assessment-path paid-learning-path" aria-labelledby="line-training-path-title">
+        <div className="assessment-path-head">
+          <div>
+            <p className="eyebrow">PREPARE YOUR LINE TRAINING</p>
+            <h2 id="line-training-path-title">Turn simulator knowledge into line-ready practice.</h2>
+            <p>Review the operational topics that matter during supervised sectors, from descent planning to refuelling and datalink communication.</p>
+          </div>
+          <span className="paid-access-tag">PAID RESOURCES</span>
+        </div>
+        <div className="assessment-steps">
+          <article className="assessment-step">
+            <span className="assessment-step-number">01</span>
+            <h3>Descent management</h3>
+            <Link href="/descent-management">Open section <ArrowUpRight size={17} /></Link>
+          </article>
+          <ArrowRight className="assessment-flow-arrow" aria-hidden="true" />
+          <article className="assessment-step">
+            <span className="assessment-step-number">02</span>
+            <h3>Refuelling procedure</h3>
+            <Link href="/line-training/refuelling-procedure">Open section <ArrowUpRight size={17} /></Link>
+          </article>
+          <ArrowRight className="assessment-flow-arrow" aria-hidden="true" />
+          <article className="assessment-step">
+            <span className="assessment-step-number">03</span>
+            <h3>CPDLC</h3>
+            <Link href="/line-training/cpdlc">Open section <ArrowUpRight size={17} /></Link>
+          </article>
+        </div>
+      </section>
       <section className="wrap section" id="systems">
         <div className="section-heading">
           <div>

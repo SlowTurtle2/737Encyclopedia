@@ -2468,6 +2468,24 @@ summary:focus-visible {
   font-weight: 800;
   letter-spacing: .1em;
 }
+.paid-access-tag {
+  flex: none;
+  padding: 8px 12px;
+  border: 1px solid #dbc99d;
+  border-radius: 999px;
+  background: #fff8e8;
+  color: #795d1e;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+.paid-learning-path {
+  border-color: #e4e0d5;
+  background: #faf9f5;
+}
+.paid-learning-path .assessment-step {
+  border-color: #e2ded3;
+}
 .assessment-steps {
   display: grid;
   grid-template-columns: 1.15fr auto 1fr auto 1fr;
