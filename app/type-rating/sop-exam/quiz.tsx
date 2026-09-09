@@ -2,10 +2,8 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
 
-// Questions are fetched from Supabase (table sop_questions), which is
-// protected by RLS: only a user with paid access receives rows. They are
-// never shipped in the client bundle.
-type Q = { q: string; a: number; o: string[] };
+// Questions come from Supabase (RLS-gated); never shipped in the bundle.
+type Q = { id: number; q: string; a: number; o: string[] };
 
 function shuffle<T>(arr: T[]): T[] {
   const a = arr.slice();
@@ -17,36 +15,40 @@ function shuffle<T>(arr: T[]): T[] {
 }
 
 const PRESETS = [10, 20, 50, 100];
+type Phase = 'menu' | 'running' | 'done' | 'review' | 'browse';
 
 export default function Quiz() {
   const [all, setAll] = useState<Q[] | null>(null);
-  const [phase, setPhase] = useState<'menu' | 'running' | 'done'>('menu');
+  const [uid, setUid] = useState<string | null>(null);
+  const [phase, setPhase] = useState<Phase>('menu');
   const [count, setCount] = useState(20);
+  const [notice, setNotice] = useState<string | null>(null);
+
   const [deck, setDeck] = useState<Q[]>([]);
+  const [answers, setAnswers] = useState<(number | null)[]>([]);
   const [pos, setPos] = useState(0);
   const [choice, setChoice] = useState<number | null>(null);
   const [score, setScore] = useState(0);
-  const [wrong, setWrong] = useState<Q[]>([]);
   const [missedPool, setMissedPool] = useState<Q[]>([]);
 
   useEffect(() => {
     let active = true;
     (async () => {
-      const { data, error } = await supabase
-        .from('sop_questions')
-        .select('q,a,options')
-        .order('id');
+      const [{ data: qs, error }, { data: userData }] = await Promise.all([
+        supabase.from('sop_questions').select('id,q,a,options').order('id'),
+        supabase.auth.getUser(),
+      ]);
       if (!active) return;
-      if (error) {
-        setAll([]);
-        return;
-      }
+      setUid(userData.user?.id ?? null);
       setAll(
-        (data ?? []).map((r) => ({
-          q: r.q as string,
-          a: r.a as number,
-          o: (r.options as string[]) ?? [],
-        })),
+        error
+          ? []
+          : (qs ?? []).map((r) => ({
+              id: r.id as number,
+              q: r.q as string,
+              a: r.a as number,
+              o: (r.options as string[]) ?? [],
+            })),
       );
     })();
     return () => {
@@ -67,28 +69,126 @@ export default function Quiz() {
 
   function begin(pool: Q[], n: number) {
     setDeck(shuffle(pool).slice(0, Math.min(n, pool.length)));
+    setAnswers([]);
     setPos(0);
     setChoice(null);
     setScore(0);
-    setWrong([]);
+    setNotice(null);
     setPhase('running');
   }
   function pick(i: number) {
     if (choice !== null) return;
+    const q = deck[pos];
+    const correct = i === q.a;
     setChoice(i);
-    if (i === deck[pos].a) setScore((s) => s + 1);
-    else setWrong((w) => [...w, deck[pos]]);
+    setAnswers((a) => {
+      const n = a.slice();
+      n[pos] = i;
+      return n;
+    });
+    if (correct) setScore((s) => s + 1);
+    if (uid) {
+      // Fire-and-forget: log the attempt for "weak questions".
+      supabase
+        .from('question_attempts')
+        .insert({ user_id: uid, bank: 'sop', question_id: q.id, correct })
+        .then(() => {});
+    }
   }
   function next() {
     if (pos === deck.length - 1) {
-      setMissedPool(wrong);
+      setMissedPool(deck.filter((q, idx) => answers[idx] !== q.a));
       setPhase('done');
     } else {
       setPos((p) => p + 1);
       setChoice(null);
     }
   }
+  async function practiceWeak() {
+    setNotice(null);
+    const { data, error } = await supabase.rpc('weak_sop_questions', {
+      p_limit: 50,
+    });
+    if (error || !data || data.length === 0) {
+      setNotice(
+        'No frequently-missed questions yet — finish a few quizzes and the ones you get wrong will show up here.',
+      );
+      return;
+    }
+    begin(
+      (data as { id: number; q: string; a: number; options: string[] }[]).map(
+        (r) => ({ id: r.id, q: r.q, a: r.a, o: r.options }),
+      ),
+      data.length,
+    );
+  }
 
+  // ---- Browse all questions ----------------------------------------------
+  if (phase === 'browse') {
+    return (
+      <div>
+        <div className="quiz-actions" style={{ marginBottom: 18 }}>
+          <button className="button" onClick={() => setPhase('menu')}>
+            ← Back to menu
+          </button>
+          <span className="eyebrow">{all.length} QUESTIONS</span>
+        </div>
+        <ol className="q-review-list">
+          {all.map((q) => (
+            <li key={q.id}>
+              <p className="q-review-q">{q.q}</p>
+              <p className="q-review-a">{q.o[q.a]}</p>
+            </li>
+          ))}
+        </ol>
+        <div className="quiz-actions">
+          <button className="button" onClick={() => setPhase('menu')}>
+            ← Back to menu
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // ---- Review the last quiz ----------------------------------------------
+  if (phase === 'review') {
+    return (
+      <div>
+        <div className="quiz-actions" style={{ marginBottom: 18 }}>
+          <button className="button" onClick={() => setPhase('done')}>
+            ← Back to results
+          </button>
+        </div>
+        <ol className="q-review-list">
+          {deck.map((q, idx) => {
+            const yours = answers[idx];
+            const ok = yours === q.a;
+            return (
+              <li key={idx}>
+                <p className="q-review-q">{q.q}</p>
+                <p className="q-review-a">✓ {q.o[q.a]}</p>
+                {!ok && (
+                  <p className="q-review-you">
+                    Your answer: {yours != null ? q.o[yours] : '—'}
+                  </p>
+                )}
+              </li>
+            );
+          })}
+        </ol>
+        <div className="quiz-actions">
+          <button className="button" onClick={() => begin(deck, deck.length)}>
+            Replay this quiz →
+          </button>
+          <button className="button" onClick={() => setPhase('menu')}>
+            New quiz
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // ---- Menu ---------------------------------------------------------------
   if (phase === 'menu') {
     return (
       <div className="quiz-menu">
@@ -135,18 +235,23 @@ export default function Quiz() {
             disabled={missedPool.length === 0}
             onClick={() => begin(missedPool, missedPool.length)}
           >
-            Review missed questions{missedPool.length ? ` (${missedPool.length})` : ''}
+            Review missed{missedPool.length ? ` (${missedPool.length})` : ''}
           </button>
         </div>
-        {missedPool.length === 0 && (
-          <p className="q-intro">
-            Finish a quiz first to unlock a review of the questions you missed.
-          </p>
-        )}
+        <div className="quiz-actions">
+          <button className="button" onClick={practiceWeak}>
+            Practice my weak questions
+          </button>
+          <button className="button" onClick={() => setPhase('browse')}>
+            Browse all questions
+          </button>
+        </div>
+        {notice && <p className="q-intro">{notice}</p>}
       </div>
     );
   }
 
+  // ---- Results ------------------------------------------------------------
   if (phase === 'done') {
     const pct = Math.round((score / deck.length) * 100);
     return (
@@ -160,12 +265,20 @@ export default function Quiz() {
           )}
         </p>
         <div className="quiz-actions">
+          <button className="button" onClick={() => setPhase('review')}>
+            Review answers →
+          </button>
+          <button className="button" onClick={() => begin(deck, deck.length)}>
+            Replay this quiz
+          </button>
+        </div>
+        <div className="quiz-actions">
           {missedPool.length > 0 && (
             <button
               className="button"
               onClick={() => begin(missedPool, missedPool.length)}
             >
-              Review missed ({missedPool.length}) →
+              Review missed ({missedPool.length})
             </button>
           )}
           <button className="button" onClick={() => setPhase('menu')}>
@@ -176,6 +289,7 @@ export default function Quiz() {
     );
   }
 
+  // ---- Running ------------------------------------------------------------
   const question = deck[pos];
   const runPct = pos > 0 ? Math.round((score / pos) * 100) : 0;
   return (
