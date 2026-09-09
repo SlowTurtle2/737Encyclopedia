@@ -66,8 +66,8 @@ export function FmcTrainer() {
     setScratch(''); setMessage(''); setModified(false); setPage('IDENT');
   }
 
-  const leftActions: Array<(() => void) | undefined> = Array(6);
-  const rightActions: Array<(() => void) | undefined> = Array(6);
+  const leftActions: Array<(() => void) | undefined> = Array.from({ length: 6 }, () => undefined);
+  const rightActions: Array<(() => void) | undefined> = Array.from({ length: 6 }, () => undefined);
   if (page === 'IDENT') { leftActions[5] = () => setPage('INDEX'); rightActions[5] = () => setPage('POS INIT'); }
   if (page === 'INDEX') { leftActions[0] = () => setPage('IDENT'); leftActions[1] = () => setPage('POS INIT'); leftActions[2] = () => setPage('PERF INIT'); leftActions[3] = () => setPage('TAKEOFF REF'); rightActions[0] = () => setPage('RTE'); }
   if (page === 'RTE') { leftActions[0] = () => transferRoute('origin'); leftActions[1] = () => transferRoute('runway'); rightActions[0] = () => transferRoute('destination'); rightActions[1] = () => transferRoute('flightNo'); rightActions[5] = () => setPage('PERF INIT'); }
