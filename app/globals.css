@@ -2434,8 +2434,8 @@ summary:focus-visible {
 .course-table-wrap .course-table td { text-align: center; }
 
 .assessment-path {
-  margin-top: 34px;
-  padding: 38px;
+  margin-top: 26px;
+  padding: 30px 32px;
   border: 1px solid #e1e4e8;
   border-radius: 18px;
   background: #f7f8f9;
@@ -2445,7 +2445,7 @@ summary:focus-visible {
   align-items: flex-start;
   justify-content: space-between;
   gap: 32px;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 .assessment-path-head h2 {
   margin: 0 0 10px;
@@ -2494,9 +2494,9 @@ summary:focus-visible {
 }
 .assessment-step {
   display: flex;
-  min-height: 175px;
+  min-height: 145px;
   flex-direction: column;
-  padding: 22px;
+  padding: 18px;
   border: 1px solid #dde1e5;
   border-radius: 13px;
   background: #fff;
@@ -2508,7 +2508,7 @@ summary:focus-visible {
   letter-spacing: .12em;
 }
 .assessment-step h3 {
-  margin: 17px 0 22px;
+  margin: 12px 0 16px;
   font-size: 19px;
 }
 .assessment-step > a,
@@ -2518,7 +2518,7 @@ summary:focus-visible {
   justify-content: space-between;
   gap: 12px;
   margin-top: auto;
-  padding: 11px 13px;
+  padding: 9px 12px;
   border: 1px solid #d9dfe4;
   border-radius: 8px;
   color: #254d6a;
