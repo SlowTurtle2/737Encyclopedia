@@ -44,6 +44,51 @@ body {
   font-size: 16px;
   line-height: 1.65;
 }
+
+/* Interactive FMC trainer */
+.fmc-page { min-height: calc(100vh - 126px); background: #e9edf1; padding: 54px 38px 72px; }
+.fmc-workspace { width: min(1180px, 100%); margin: auto; display: grid; grid-template-columns: minmax(280px, .72fr) minmax(500px, 1fr); gap: 62px; align-items: center; }
+.fmc-intro h1 { font-size: clamp(40px, 5vw, 64px); letter-spacing: -3px; }
+.fmc-intro > p:not(.eyebrow):not(.fmc-legal) { max-width: 530px; color: #566879; font-size: 18px; }
+.fmc-steps { display: grid; gap: 9px; margin: 32px 0 26px; }
+.fmc-steps span { color: #87939d; font-size: 14px; font-weight: 700; }
+.fmc-steps span.active { color: #185eb1; }
+.fmc-reset { border: 1px solid #b9c4cd; border-radius: 5px; padding: 9px 13px; background: transparent; color: #3f5263; font-size: 13px; }
+.fmc-legal { max-width: 470px; margin-top: 25px; color: #788693; font-size: 12px; line-height: 1.55; }
+.cdu-shell { position: relative; max-width: 650px; width: 100%; margin: auto; padding: 27px; border: 1px solid #121619; border-radius: 28px; background: linear-gradient(145deg,#363c41,#181c1f 55%,#101315); box-shadow: 0 34px 60px #28323b42, inset 0 1px 1px #ffffff2b; color: #e5e9eb; }
+.cdu-brand { display: flex; justify-content: space-between; padding: 0 8px 12px; color: #c5ccd1; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; }
+.cdu-brand small { font-size: 9px; color: #7e898f; }
+.cdu-screen { position: relative; min-height: 315px; padding: 18px 22px 12px; border: 10px solid #090c0d; border-radius: 13px; background: radial-gradient(circle at 50% 35%,#172627,#071011 78%); box-shadow: inset 0 0 30px #000; font-family: 'Courier New', monospace; color: #79f4df; text-shadow: 0 0 8px #39dab280; }
+.cdu-screen header { position: relative; text-align: center; font-weight: 700; letter-spacing: 1px; }
+.cdu-screen header small { position: absolute; right: 0; font-size: 12px; }
+.cdu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 17px 32px; margin-top: 18px; }
+.cdu-cell { min-width: 0; line-height: 1.1; }
+.cdu-cell.right { text-align: right; }
+.cdu-cell span { display: block; margin-bottom: 3px; color: #9cb6af; font-size: 10px; letter-spacing: 1px; }
+.cdu-cell b { font-size: 16px; font-weight: 500; white-space: nowrap; }
+.cdu-field { border: 0; padding: 0; background: transparent; color: inherit; text-shadow: inherit; font-family: inherit; }
+.cdu-field:hover b { color: white; }
+.cdu-hint { margin: 90px 0 0; text-align: center; color: #9cb6af; font-size: 12px; }
+.scratchpad { position: absolute; left: 22px; right: 22px; bottom: 14px; min-height: 24px; border-top: 1px solid #21403d; padding-top: 7px; font-size: 17px; }
+.scratchpad.message { color: #f3c86c; }
+.cdu-function-row, .cdu-subnav { display: grid; grid-template-columns: repeat(5,1fr); gap: 8px; margin: 18px 2px 14px; }
+.cdu-function-row button, .cdu-subnav button { min-height: 35px; border: 1px solid #050606; border-radius: 5px; background: linear-gradient(#3a4145,#202529); box-shadow: inset 0 1px #657078, 0 2px 2px #000; color: #eef1f2; font-size: 10px; font-weight: 700; }
+.cdu-keyboard { display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+.cdu-alpha, .cdu-numeric { display: grid; gap: 7px; }
+.cdu-alpha { grid-template-columns: repeat(6,1fr); }
+.cdu-numeric { grid-template-columns: repeat(3,1fr); }
+.cdu-alpha button, .cdu-numeric button { aspect-ratio: 1.25; border: 1px solid #050607; border-radius: 6px; background: linear-gradient(#4a5156,#282d31); box-shadow: inset 0 1px #747c81, 0 2px 2px #000; color: #f8f8f8; font-weight: 800; }
+.cdu-alpha button:active, .cdu-numeric button:active, .cdu-function-row button:active { transform: translateY(2px); box-shadow: inset 0 1px #111; }
+.cdu-numeric .exec { background: linear-gradient(#d4a949,#886511); color: #15130d; font-size: 10px; }
+.cdu-numeric .clear { background: linear-gradient(#6a4141,#3b2525); font-size: 10px; }
+.cdu-subnav { grid-template-columns: 1fr 1fr; margin-bottom: 0; }
+.cdu-legs { margin-top: 16px; }
+.cdu-legs > div { display: grid; grid-template-columns: 35px 1fr 1fr; gap: 8px; padding: 6px 0; }
+.cdu-legs > div:first-child { padding-bottom: 2px; color: #9cb6af; font-size: 9px; }
+.cdu-legs b, .cdu-legs strong, .cdu-legs em { font-size: 14px; font-style: normal; font-weight: 500; }
+.cdu-legs em { text-align: right; }
+@media (max-width: 900px) { .fmc-workspace { grid-template-columns: 1fr; gap: 35px; } .fmc-intro { text-align: center; } .fmc-intro > p, .fmc-legal { margin-left: auto; margin-right: auto; } .fmc-steps { grid-template-columns: repeat(3,1fr); } }
+@media (max-width: 600px) { .fmc-page { padding: 32px 10px 54px; } .cdu-shell { padding: 15px 10px; border-radius: 18px; } .cdu-screen { min-height: 285px; padding: 15px 13px; } .cdu-keyboard { grid-template-columns: 1fr 118px; gap: 10px; } .cdu-alpha, .cdu-numeric { gap: 5px; } .cdu-grid { gap: 14px 15px; } .cdu-cell b { font-size: 13px; } .fmc-steps { grid-template-columns: 1fr; } }
 a {
   text-decoration: none;
   color: inherit;
@@ -474,6 +519,8 @@ footer > span {
   font: 11px monospace;
   white-space: nowrap;
 }
+.footer-meta { display: grid; justify-items: end; gap: 7px; font: 11px monospace; white-space: nowrap; }
+.footer-meta a { color: #536b80; text-decoration: underline; text-underline-offset: 3px; }
 .skip {
   position: fixed;
   left: 12px;
@@ -2594,12 +2641,20 @@ summary:focus-visible {
 .pricing-plan > .button { justify-content: center; margin-top: auto; }
 .pricing-note { display: grid; grid-template-columns: auto 1fr; gap: 22px; margin-top: 24px; padding: 20px 24px; border: 1px solid #e2e5e8; border-radius: 12px; background: #fafbfc; }
 .pricing-note p { margin: 0; color: #73808b; }
+.legal-page { max-width: 860px; padding-top: 58px; padding-bottom: 80px; }
+.legal-head { margin-bottom: 38px; padding-bottom: 26px; border-bottom: 1px solid #dfe3e7; }
+.legal-head h1 { margin: 0 0 10px; font-size: clamp(38px, 5vw, 58px); letter-spacing: -.04em; }
+.legal-head > p:last-child { margin: 0; color: #7b858e; font-size: 13px; }
+.legal-page section { margin: 0 0 28px; }
+.legal-page section h2 { margin: 0 0 8px; font-size: 19px; }
+.legal-page section p { margin: 0; color: #5f6d78; line-height: 1.75; }
 
 @media (max-width: 700px) {
   .pricing-page { padding-top: 38px; }
   .pricing-comparison { grid-template-columns: 1fr; }
   .pricing-plan { min-height: 0; padding: 25px 22px; }
   .pricing-note { grid-template-columns: 1fr; gap: 7px; }
+  .footer-meta { justify-items: start; }
 }
 
 /* SOP quiz answer feedback */
