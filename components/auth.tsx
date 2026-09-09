@@ -251,6 +251,18 @@ export function ResetPasswordForm() {
 // ---------------------------------------------------------------------------
 export function AccountPanel() {
   const { user, loading, hasAccess } = useUser();
+  const [busy, setBusy] = useState(false);
+  const [notice, setNotice] = useState<string | null>(null);
+  const [err, setErr] = useState<string | null>(null);
+
+  useEffect(() => {
+    const p = new URLSearchParams(window.location.search).get('checkout');
+    if (p === 'success')
+      setNotice(
+        'Payment received. Your access is being activated — this can take a few seconds. Use Refresh if the badge below has not updated.',
+      );
+    else if (p === 'cancel') setNotice('Checkout cancelled.');
+  }, []);
 
   if (loading) return <p className="eyebrow">Loading…</p>;
 
@@ -270,22 +282,50 @@ export function AccountPanel() {
     await supabase.auth.signOut();
     window.location.assign('/');
   }
+  async function buy() {
+    setErr(null);
+    setBusy(true);
+    const { data, error } = await supabase.functions.invoke('create-checkout', {
+      method: 'POST',
+    });
+    setBusy(false);
+    if (error || !data?.url) {
+      setErr(error?.message ?? 'Could not start checkout. Please try again.');
+      return;
+    }
+    window.location.assign(data.url as string);
+  }
 
   return (
     <div className="auth-card">
       <h1>My account</h1>
       <p className="auth-sub">{user.email}</p>
+      {notice && <p className="auth-notice">{notice}</p>}
       <div className={hasAccess ? 'access-badge on' : 'access-badge'}>
         {hasAccess ? 'Full access active' : 'No paid access yet'}
       </div>
       {!hasAccess && (
-        <p className="auth-sub">
-          Type Rating and Line Training unlock with a one-time purchase.
-        </p>
+        <>
+          <p className="auth-sub">
+            Unlock all Type Rating and Line Training content with a one-time
+            payment.
+          </p>
+          {err && <p className="auth-error">{err}</p>}
+          <button className="button" disabled={busy} type="button" onClick={buy}>
+            {busy ? 'Starting…' : 'Get full access — €29.99'}
+          </button>
+        </>
       )}
       <div className="auth-links">
         <button className="linklike" type="button" onClick={logout}>
           Log out
+        </button>
+        <button
+          className="linklike"
+          type="button"
+          onClick={() => window.location.reload()}
+        >
+          Refresh
         </button>
         <SiteLink href="/reset-password">Change password</SiteLink>
       </div>
