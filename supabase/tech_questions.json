@@ -1,7 +1,7 @@
 [
 {
 "system": 1,
-"q": "Some Ryanair B737-800 aircraft have no Taxi light mounted on the nose landing gear.",
+"q": "On some Ryanair 737-800s, no taxi light is fitted on the nose landing gear.",
 "a": 0,
 "options": [
 "True",
@@ -10,7 +10,7 @@
 },
 {
 "system": 1,
-"q": "What is the minimum distance required to make a turn away from an obstacle to the front of the aircraft?",
+"q": "What is the minimum distance needed to turn away from an obstacle ahead of the aircraft?",
 "a": 2,
 "options": [
 "9.8m",
@@ -21,7 +21,7 @@
 },
 {
 "system": 1,
-"q": "What indication is there on the Flight Deck if a correct emergency access code has been entered in the Flight Deck Door keypad?",
+"q": "What flight-deck indication appears when a correct emergency access code is entered on the flight-deck door keypad?",
 "a": 1,
 "options": [
 "Amber light illuminates on Flight Deck Emergency Access Panel.",
@@ -32,7 +32,7 @@
 },
 {
 "system": 1,
-"q": "Where is the potable water contents indicator located?",
+"q": "Where is the potable-water quantity indicator located?",
 "a": 3,
 "options": [
 "In the forward galley adjacent to the water heater.",
@@ -43,7 +43,7 @@
 },
 {
 "system": 1,
-"q": "What action must be carried out prior to discharging a Halon fire extinguisher in the flight deck?",
+"q": "What must be done before discharging a Halon fire extinguisher on the flight deck?",
 "a": 3,
 "options": [
 "The air conditioning re-circulation fans must be switched ON.",
@@ -54,7 +54,7 @@
 },
 {
 "system": 1,
-"q": "In an emergency, the Emergency Lights and Forward Airstairs can be operated from the Aft Attendant's panel.",
+"q": "In an emergency, the emergency lights and forward airstairs can be operated from the aft attendant's panel.",
 "a": 1,
 "options": [
 "True",
@@ -63,7 +63,7 @@
 },
 {
 "system": 1,
-"q": "Where is the circuit breaker light control located?",
+"q": "Where is the circuit-breaker panel light control located?",
 "a": 0,
 "options": [
 "Forward overhead panel.",
@@ -74,7 +74,7 @@
 },
 {
 "system": 1,
-"q": "In the event of having to evacuate the aircraft, Escape Straps can be used to aid egress.  Which of the following statements are correct for Ryanair aircraft Escape Straps.",
+"q": "During an evacuation, escape straps can help egress. Which statement is correct for Ryanair escape straps?",
 "a": 0,
 "options": [
 "There are four escape straps fitted - one above the L2 window and one above the R2 window to allow the flight deck crew to egress through the L2 or R2 windows; and one above each of the aft emergency exit door frames, to be attached to the door frame and the wind to aid exiting onto the wing in a ditching situation.",
@@ -85,7 +85,7 @@
 },
 {
 "system": 1,
-"q": "What is the flight crew maximum oxygen pressure for the first flight of the day?",
+"q": "What is the maximum flight-crew oxygen pressure for the first flight of the day?",
 "a": 2,
 "options": [
 "3000 psi",
@@ -96,7 +96,7 @@
 },
 {
 "system": 1,
-"q": "When the PASS OXY switch on the AFT overhead panel is selected to ON, at what cabin altitude will the passenger oxygen system activate?",
+"q": "With the PASS OXY switch (aft overhead) selected ON, at what cabin altitude does the passenger oxygen system activate?",
 "a": 0,
 "options": [
 "At altitude selected ON.",
@@ -107,7 +107,7 @@
 },
 {
 "system": 1,
-"q": "How long does the PBE, stored under the flight deck left jump seat, provide oxygen once activated?",
+"q": "Once activated, for how long does the PBE (stowed under the flight-deck left jump seat) supply oxygen?",
 "a": 2,
 "options": [
 "Approximately 6 minutes.",
@@ -118,7 +118,7 @@
 },
 {
 "system": 1,
-"q": "When operating the Airstairs from outside the aircraft - moving the AIRSTAIRS switch to Extend requires both AC and DC power for the airstairs to extend.",
+"q": "Operating the airstairs from outside, moving the AIRSTAIRS switch to Extend needs both AC and DC power to extend them.",
 "a": 0,
 "options": [
 "True",
@@ -127,7 +127,7 @@
 },
 {
 "system": 1,
-"q": "Prior to discharging a Halon fire extinguisher on the flight deck, both recirculation fans must be selected to ON and at least one flight deck number 2 window must be unlocked.",
+"q": "Before discharging a Halon extinguisher on the flight deck, both recirculation fans must be ON and at least one No 2 flight-deck window unlocked.",
 "a": 1,
 "options": [
 "True",
@@ -136,7 +136,7 @@
 },
 {
 "system": 1,
-"q": "What is the correct method to close the Flight Deck No 2 window?",
+"q": "What is the correct way to close a No 2 flight-deck window?",
 "a": 0,
 "options": [
 "Pull latch mechanism rod to unlock window.   Move window forward whilst depressing trigger mechanism, turn handle forward and outboard, release trigger to lock.",
@@ -147,7 +147,7 @@
 },
 {
 "system": 1,
-"q": "What is the Ryanair B737-800 wingspan when fitted with Winglets?",
+"q": "What is the wingspan of the Ryanair 737-800 with winglets fitted?",
 "a": 3,
 "options": [
 "Ryanair aircraft are not fitted with Winglets.",
@@ -158,7 +158,7 @@
 },
 {
 "system": 1,
-"q": "Can the Flight Deck No2 windows be opened both on the ground and in flight?",
+"q": "Can the No 2 flight-deck windows be opened both on the ground and in flight?",
 "a": 0,
 "options": [
 "True",
@@ -167,7 +167,7 @@
 },
 {
 "system": 1,
-"q": "How can the Emergency Exit Lights be illuminated?",
+"q": "How can the emergency exit lights be turned on?",
 "a": 2,
 "options": [
 "If the three position switch located on the FWD Overhead panel is selected to ON.",
@@ -178,7 +178,7 @@
 },
 {
 "system": 1,
-"q": "The flight deck door has one decompression panel that automatically opens during an aircraft rapid decompression, and one emergency egress panel that flight deck crew can manually remove to exit if the door is jammed.",
+"q": "The flight-deck door has a decompression panel that opens automatically on rapid decompression, and an emergency-egress panel the crew can remove by hand to exit if the door jams.",
 "a": 1,
 "options": [
 "True",
@@ -187,7 +187,7 @@
 },
 {
 "system": 1,
-"q": "How many oxygen masks are provided from each passenger service unit?",
+"q": "How many oxygen masks does each passenger service unit provide?",
 "a": 2,
 "options": [
 "1",
@@ -198,7 +198,7 @@
 },
 {
 "system": 1,
-"q": "The Aircraft battery need to be selected ON for STANDBY operation of the Forward Airstairs from the FWD Attendant's Panel?",
+"q": "Does the aircraft battery need to be ON for STANDBY operation of the forward airstairs from the forward attendant's panel?",
 "a": 0,
 "options": [
 "True",
@@ -207,7 +207,7 @@
 },
 {
 "system": 1,
-"q": "With the EMER EXIT LIGHTS switch in the guarded position, when would the Emergency Exit Lights automatically illuminate?",
+"q": "With the EMER EXIT LIGHTS switch in its guarded position, when do the emergency exit lights come on automatically?",
 "a": 3,
 "options": [
 "Whenever the FASTEN SEATBELTS signs are illuminated, with the Flaps beyond Flap 15.",
@@ -218,7 +218,7 @@
 },
 {
 "system": 1,
-"q": "The water supply in the Lavatories can be manually selected to supply only the toilet or only the sink taps.",
+"q": "In the lavatories, the water supply can be manually set to feed only the toilet or only the sink taps.",
 "a": 0,
 "options": [
 "True",
@@ -227,7 +227,7 @@
 },
 {
 "system": 1,
-"q": "The retractable landing lights may only be extended below the following airspeed.",
+"q": "Below which airspeed may the retractable landing lights be extended?",
 "a": 2,
 "options": [
 "There are no retractable landing lights fitted on any Ryanair B737-800.",
@@ -238,7 +238,7 @@
 },
 {
 "system": 1,
-"q": "Which statement is correct for the No 2 windows.",
+"q": "Which statement about the No 2 windows is correct?",
 "a": 1,
 "options": [
 "Both the Captain's and First Officer's No 2 Windows can be opened from outside the aircraft.",
@@ -249,7 +249,7 @@
 },
 {
 "system": 1,
-"q": "hen operating the forward airstairs, with the external control, what position must the forward entry door be in?",
+"q": "When operating the forward airstairs from the external control, what position must the forward entry door be in?",
 "a": 3,
 "options": [
 "Must be fully closed",
@@ -260,7 +260,7 @@
 },
 {
 "system": 1,
-"q": "What does an amber light indicate on the Flight Deck Door Emergency Access Panel?",
+"q": "On the flight-deck door emergency access panel, what does an amber light indicate?",
 "a": 0,
 "options": [
 "Correct access code entered, if in AUTO door will unlock after timer expires.",
@@ -271,7 +271,7 @@
 },
 {
 "system": 1,
-"q": "How many fire extinguishers are located on the flight deck, what type of extinguisher are they and where are they located?",
+"q": "How many fire extinguishers are on the flight deck, of what type, and where are they located?",
 "a": 2,
 "options": [
 "1 Halon extinguisher located behind the FO, and 1 CO2 extinguisher located under the second observer's jump seat.",
@@ -282,7 +282,7 @@
 },
 {
 "system": 2,
-"q": "When operating on the Standby Pack Controls, what temperatures will the packs be producing?",
+"q": "On standby pack controls, what temperatures do the packs produce?",
 "a": 1,
 "options": [
 "The trim air modulating valves close so no pack air is provided to the two cabin zones, only re-circulated air is provided.",
@@ -293,7 +293,7 @@
 },
 {
 "system": 2,
-"q": "Which systems use engine bleed air during operation?",
+"q": "Which systems use engine bleed air in operation?",
 "a": 2,
 "options": [
 "Engine and wing anti-icing, engine starting, cabin pressurisation, hydraulic reservoir pressurisation.",
@@ -304,7 +304,7 @@
 },
 {
 "system": 2,
-"q": "The TRIP RESET switch is pushed to reset a PACK, WING-BODY OVERHEAT and BLEED TRIP OFF, it isolates the associated valve and extinguishes the alert.",
+"q": "The TRIP RESET switch resets a PACK, WING-BODY OVERHEAT or BLEED TRIP OFF: it isolates the associated valve and clears the alert.",
 "a": 1,
 "options": [
 "True",
@@ -313,7 +313,7 @@
 },
 {
 "system": 2,
-"q": "If all zone and primary pack controls fail, how is cabin temperatures controlled?",
+"q": "If all zone and primary pack controls fail, how is cabin temperature controlled?",
 "a": 3,
 "options": [
 "The cabin temperatures cannot be controlled in this situation.",
@@ -324,7 +324,7 @@
 },
 {
 "system": 2,
-"q": "The APU is capable of supplying bleed air for two packs on the ground, or one pack in flight.",
+"q": "The APU can supply bleed air for two packs on the ground, or one pack in flight.",
 "a": 0,
 "options": [
 "True",
@@ -333,7 +333,7 @@
 },
 {
 "system": 2,
-"q": "If all Temperature Selectors are positioned OFF, the pack controls will cause the packs to produce which fixed temperatures?",
+"q": "With all temperature selectors OFF, what fixed temperatures do the pack controls produce?",
 "a": 1,
 "options": [
 "Left Pack, 22 degrees Centigrade.  Right Pack, 20 degrees Centigrade.",
@@ -344,7 +344,7 @@
 },
 {
 "system": 2,
-"q": "Engine bleed air pressure is controlled by means of the bleed air valve which acts as both a shutoff and pressure regulating valve.",
+"q": "Engine bleed-air pressure is controlled by the bleed air valve, which acts as both a shutoff and a pressure-regulating valve.",
 "a": 0,
 "options": [
 "True",
@@ -353,7 +353,7 @@
 },
 {
 "system": 2,
-"q": "What is the primary function of the recirculation fans?",
+"q": "What is the main function of the recirculation fans?",
 "a": 0,
 "options": [
 "Reduce engine bleed air demand and load on the packs.",
@@ -364,7 +364,7 @@
 },
 {
 "system": 2,
-"q": "Conditioned air from the left hand pack flows directly to the Flight Deck from the Mix Manifold.",
+"q": "Conditioned air from the left pack flows to the flight deck directly from the mix manifold.",
 "a": 1,
 "options": [
 "True",
@@ -373,7 +373,7 @@
 },
 {
 "system": 2,
-"q": "The packs produce the coolest temperature selected in any of the zones, with the other zones temperature controlled by adding hot trim air to produce the required temperature.",
+"q": "The packs produce the coolest temperature selected across the zones, and the other zones are then trimmed to their target with hot trim air.",
 "a": 0,
 "options": [
 "True",
@@ -382,7 +382,7 @@
 },
 {
 "system": 2,
-"q": "How many Trim Air Pressure Regulators are there in the Air Conditioning system?",
+"q": "How many trim-air pressure regulators are in the air-conditioning system?",
 "a": 2,
 "options": [
 "2",
@@ -393,7 +393,7 @@
 },
 {
 "system": 2,
-"q": "The differential pressure of the cabin is limited by a pressure relief system - which of the following statements is correct?",
+"q": "Cabin differential pressure is limited by a pressure-relief system. Which statement is correct?",
 "a": 1,
 "options": [
 "There are two negative pressure relief valves, which limit the cabin pressure to 9.1 psi above ambient.",
@@ -404,7 +404,7 @@
 },
 {
 "system": 2,
-"q": "What is the result if all temperature zone selectors are positioned to OFF?",
+"q": "What happens if all temperature-zone selectors are set to OFF?",
 "a": 0,
 "options": [
 "Left pack will produce 24 degrees centigrade and right pack will produce 18 degrees centigrade.",
@@ -425,7 +425,7 @@
 },
 {
 "system": 2,
-"q": "Bleed air is taken from stage 4 and stage 10 of the high pressure compressor.",
+"q": "Bleed air is taken from the 4th and 10th stages of the high-pressure compressor.",
 "a": 1,
 "options": [
 "True",
@@ -434,7 +434,7 @@
 },
 {
 "system": 2,
-"q": "What is the result if one pack fails in-flight?",
+"q": "What happens if one pack fails in flight?",
 "a": 2,
 "options": [
 "The remaining pack when selected to AUTO will be capable of maintaining pressurisation up to aircraft ceiling, only if all Zone Temperature Controllers are selected to OFF.",
@@ -445,7 +445,7 @@
 },
 {
 "system": 2,
-"q": "What is the function of the duel Bleed Light?",
+"q": "What is the function of the dual BLEED light?",
 "a": 3,
 "options": [
 "Illuminates to warn of possible backpressure whenever both engines are providing bleed air, and engines are at different thrust settings.",
@@ -456,7 +456,7 @@
 },
 {
 "system": 2,
-"q": "Which statement is correct:",
+"q": "Which statement is correct?",
 "a": 1,
 "options": [
 "Bleed air is only supplied from the 5th stage when the valve modulates open if bleed air requirement is greater than the 9th stage alone can supply.",
@@ -466,7 +466,7 @@
 },
 {
 "system": 2,
-"q": "Cabin pressurisation is controlled by the position of the Outflow Valve, but some air is also exhausted through the toilet and galley vents.",
+"q": "Cabin pressurisation is controlled by the outflow valve position, though some air is also exhausted through the toilet and galley vents.",
 "a": 0,
 "options": [
 "True",
@@ -475,7 +475,7 @@
 },
 {
 "system": 3,
-"q": "The engine Cowl Anti-Ice valve is located UPSTREAM of the Engine Bleed Air Valve.",
+"q": "The engine cowl anti-ice valve is located upstream of the engine bleed air valve.",
 "a": 0,
 "options": [
 "True",
@@ -484,7 +484,7 @@
 },
 {
 "system": 3,
-"q": "If the cowl anti-ice valve fails to move to the position indicated by the ENG ANTI-ICE switch, the COWL VALVE OPEN light remains illuminated bright blue and an amber TAI indication immediately illuminates on the CDS.",
+"q": "If the cowl anti-ice valve fails to reach the position commanded by the ENG ANTI-ICE switch, the COWL VALVE OPEN light stays bright blue and an amber TAI indication appears immediately on the CDS.",
 "a": 1,
 "options": [
 "True",
@@ -493,7 +493,7 @@
 },
 {
 "system": 3,
-"q": "Positioning ENG ANTI-ICE switch to on has what effect?",
+"q": "What is the effect of selecting the ENG ANTI-ICE switch ON?",
 "a": 0,
 "options": [
 "Stall warning logic adjusts stick shaker and minimum maneuver speed bars on airspeed indicator.",
@@ -504,7 +504,7 @@
 },
 {
 "system": 3,
-"q": "When operating on standby power only the Captain's pitot probe is still heated - if the Captain's pitot probe heating fails in this condition, there is no CAPT PITOT alert given.",
+"q": "On standby power only the Captain's pitot probe is heated, and if that heating then fails there is no CAPT PITOT alert.",
 "a": 0,
 "options": [
 "True",
@@ -513,7 +513,7 @@
 },
 {
 "system": 3,
-"q": "On the ground and in flight, the wing anti-ice valves close if the forward thrust levers are advanced above the takeoff warning setting.",
+"q": "Both on the ground and in flight, the wing anti-ice valves close when the forward thrust levers are advanced above the takeoff warning setting.",
 "a": 1,
 "options": [
 "True",
@@ -522,7 +522,7 @@
 },
 {
 "system": 3,
-"q": "The rain removal system for the forward windows comprises of the following:",
+"q": "The rain-removal system for the forward windows consists of which of the following?",
 "a": 2,
 "options": [
 "Windshield wipers, heated windows, hydroscopic rain repellent coating.",
@@ -533,7 +533,7 @@
 },
 {
 "system": 3,
-"q": "What do the green ON lights indicate above the Window heat switches?",
+"q": "What do the green ON lights above the window-heat switches indicate?",
 "a": 0,
 "options": [
 "Illuminated means heat being applied to windows, extinguished means windows at correct temperature",
@@ -544,7 +544,7 @@
 },
 {
 "system": 4,
-"q": "In flight below 2000 feet RA, on an ILS Autopilot approach with flare armed, what happens if you push a TO/GA switch once?",
+"q": "In flight below 2000 ft RA on an ILS autopilot approach with flare armed, what happens if you press a TO/GA switch once?",
 "a": 0,
 "options": [
 "Autopilot will disengage, and CWS P will annunciate.",
@@ -555,7 +555,7 @@
 },
 {
 "system": 4,
-"q": "After takeoff the autothrottle will remain in Throttle Hold (THR HLD) until 800 feet RA.",
+"q": "After takeoff, the autothrottle stays in Throttle Hold (THR HLD) until 800 ft RA.",
 "a": 0,
 "options": [
 "True",
@@ -564,7 +564,7 @@
 },
 {
 "system": 4,
-"q": "The autopilot disengages automatically 2 seconds after touchdown.",
+"q": "Two seconds after touchdown, the autopilot disengages automatically.",
 "a": 1,
 "options": [
 "True",
@@ -573,7 +573,7 @@
 },
 {
 "system": 4,
-"q": "What components make up the Automatic Flight System (AFS)?",
+"q": "Which components make up the Automatic Flight System (AFS)?",
 "a": 1,
 "options": [
 "Flight directors, MCP mode selector system, autothrottles.",
@@ -584,7 +584,7 @@
 },
 {
 "system": 4,
-"q": "What normally provides the N1 limits and target N1 values to the Autothrottle?",
+"q": "What normally supplies the N1 limits and target N1 values to the autothrottle?",
 "a": 1,
 "options": [
 "The Autothrottle Computer.",
@@ -595,7 +595,7 @@
 },
 {
 "system": 4,
-"q": "What does an illuminated green light mean in the MCP buttons?",
+"q": "What does a lit green light in an MCP button mean?",
 "a": 1,
 "options": [
 "That mode is currently de-selected and inactive.",
@@ -606,7 +606,7 @@
 },
 {
 "system": 4,
-"q": "If you engage Level Change by pressing the LVL CHG switch on the MCP and the green light illuminates, what other indications will occur as this mode engages?",
+"q": "When you engage Level Change (LVL CHG on the MCP) and its green light comes on, what other indications occur as the mode engages?",
 "a": 3,
 "options": [
 "Speed window blanks, MCP SPD annunciated for pitch mode, N1 annunciated for thrust mode.",
@@ -617,7 +617,7 @@
 },
 {
 "system": 4,
-"q": "In flight, with Autopilot engaged in CMD B, which FCC controls the logic for the flight directors on the Captain's PFD.",
+"q": "In flight with the autopilot in CMD B, which FCC controls the flight-director logic on the Captain's PFD?",
 "a": 3,
 "options": [
 "FMS B",
@@ -628,7 +628,7 @@
 },
 {
 "system": 4,
-"q": "The VOR/LOC mode must be armed before the second Autopilot can be selected during a duel channel autopilot approach.",
+"q": "During a dual-channel autopilot approach, VOR/LOC must be armed before the second autopilot can be selected.",
 "a": 1,
 "options": [
 "True",
@@ -637,7 +637,7 @@
 },
 {
 "system": 4,
-"q": "What does a flashing \"A\" displayed to the left of the selected MCP speed indicate?",
+"q": "What does a flashing 'A' to the left of the selected MCP speed indicate?",
 "a": 2,
 "options": [
 "Overspeeed limiting at Mmo limit",
@@ -648,7 +648,7 @@
 },
 {
 "system": 4,
-"q": "An altitude restriction is entered at the top of descent, the aircraft will not now follow the Idle Descent path but will descend to meet the altitude restriction.  After achieving the altitude restriction which of the indicated flight paths will the aircraft follow for the rest of the decent?",
+"q": "An altitude restriction is entered at top of descent, so the aircraft no longer follows the idle descent path but descends to meet the restriction. After meeting it, which path does the aircraft follow for the rest of the descent?",
 "a": 1,
 "options": [
 "Descends to achieve restriction then descends at 1000 fpm until intercepting original idle descent path. (B)",
@@ -659,7 +659,7 @@
 },
 {
 "system": 4,
-"q": "In the IAS/MACH Display, to the left of the displayed figure, what does a flashing \"A\" indicate?",
+"q": "In the IAS/MACH display, what does a flashing 'A' to the left of the figure indicate?",
 "a": 3,
 "options": [
 "Overspeed limiting, current speed selection greater than current flap setting limit.",
@@ -670,7 +670,7 @@
 },
 {
 "system": 4,
-"q": "For approach, what altitude must the second Autopilot be selected for duel Autopilot operation?",
+"q": "For a dual-autopilot approach, by what altitude must the second autopilot be selected?",
 "a": 1,
 "options": [
 "500 feet RA",
@@ -681,7 +681,7 @@
 },
 {
 "system": 4,
-"q": "The autopilot automatically disengages 2 seconds after touchdown.",
+"q": "The autopilot automatically disengages two seconds after touchdown.",
 "a": 1,
 "options": [
 "True",
@@ -690,7 +690,7 @@
 },
 {
 "system": 4,
-"q": "Below which RA should FLARE mode be armed during AUTOLAND?",
+"q": "Below what RA should FLARE mode be armed during an autoland?",
 "a": 2,
 "options": [
 "350 feet RA.",
@@ -701,7 +701,7 @@
 },
 {
 "system": 4,
-"q": "If an altitude restriction is entered before TOD, the aircraft will commence the descent early to follow a new idle descent path to achieve the descent restriction.  If ALT INTV is then selected after the descent restriction, which of the paths will the aircraft follow?",
+"q": "An altitude restriction is entered before TOD, so the aircraft starts down early on a new idle path to meet it. If ALT INTV is then selected after the restriction, which path does the aircraft follow?",
 "a": 1,
 "options": [
 "Path A.  Descends to achieve restriction then maintains level flight until intercepts the original idle descent path.",
@@ -712,7 +712,7 @@
 },
 {
 "system": 4,
-"q": "With VNAV engaged, pushing the SPD INTV switch has what effect?",
+"q": "With VNAV engaged, what is the effect of pressing SPD INTV?",
 "a": 1,
 "options": [
 "No effect, VNAV remains enagaged with the FMC controlling target speed.",
@@ -723,7 +723,7 @@
 },
 {
 "system": 4,
-"q": "The N1 limits and target N1 values are normally provided to the Autothrottle from where?",
+"q": "From where are the N1 limits and target N1 values normally provided to the autothrottle?",
 "a": 0,
 "options": [
 "Flight Management Computer.",
@@ -734,7 +734,7 @@
 },
 {
 "system": 4,
-"q": "At what altitude will the FLARE manoeuvre start during AUTOLAND?",
+"q": "At what altitude does the FLARE manoeuvre begin during an autoland?",
 "a": 3,
 "options": [
 "500 feet AGL.",
@@ -745,7 +745,7 @@
 },
 {
 "system": 4,
-"q": "Why do we check that FLARE mode is armed at 500 feet RA?",
+"q": "Why do we check that FLARE mode is armed at 500 ft RA?",
 "a": 0,
 "options": [
 "To be aware that A/P will disengage at 350 feet RA if not armed.",
@@ -756,7 +756,7 @@
 },
 {
 "system": 4,
-"q": "Other than by selecting N1 mode by pressing the N1 switch on the MCP, when else will N1 mode automatically engage.",
+"q": "Apart from pressing the N1 switch on the MCP, when else does N1 mode engage automatically?",
 "a": 3,
 "options": [
 "LVL CHG and VNAV engaged within first 2.5 minutes after takeoff.",
@@ -767,7 +767,7 @@
 },
 {
 "system": 4,
-"q": "What happens when TO/GA is pressed once on an ILS Autopilot approach with FLARE armed?",
+"q": "What happens when TO/GA is pressed once on an ILS autopilot approach with FLARE armed?",
 "a": 3,
 "options": [
 "Autothrottle advanced the thrust levers to full Go-Around thrust.",
@@ -778,7 +778,7 @@
 },
 {
 "system": 4,
-"q": "After takeoff, the Autothrottle remains in Throttle Hold (THR HLD) until 800 feet RA.",
+"q": "After takeoff, the autothrottle remains in Throttle Hold (THR HLD) until 800 ft RA.",
 "a": 0,
 "options": [
 "True",
@@ -787,7 +787,7 @@
 },
 {
 "system": 4,
-"q": "The VOR/LOC mode must be armed before the second Autopilot can be selected during a duel channel Autopilot approach.",
+"q": "VOR/LOC must be armed before the second autopilot can be selected on a dual-channel autopilot approach.",
 "a": 1,
 "options": [
 "True",
@@ -796,7 +796,7 @@
 },
 {
 "system": 4,
-"q": "What are the components of the Automatic Flight System (AFS)?",
+"q": "Which parts make up the Automatic Flight System (AFS)?",
 "a": 1,
 "options": [
 "Autopilot, Autothrottle, and MCP Mode Selection System.",
@@ -807,7 +807,7 @@
 },
 {
 "system": 4,
-"q": "What will cause the A/T to disengage?",
+"q": "What causes the autothrottle to disengage?",
 "a": 0,
 "options": [
 "Move A/T ARM switch to OFF, Push Either A/T Disengage switch and An A/T system fault is detected",
@@ -818,7 +818,7 @@
 },
 {
 "system": 4,
-"q": "What are the indications for A/T disconnected.",
+"q": "What are the indications that the autothrottle is disconnected?",
 "a": 0,
 "options": [
 "A/T P/RST disengage light flashes.",
@@ -829,7 +829,7 @@
 },
 {
 "system": 4,
-"q": "The A/T is controlled by FCC A only.",
+"q": "The autothrottle is controlled by FCC A only.",
 "a": 0,
 "options": [
 "True",
@@ -838,7 +838,7 @@
 },
 {
 "system": 4,
-"q": "During THR HLD (Throttle Hold), if you manually move the throttle levers, the A/T will try to return them to their original position.",
+"q": "During THR HLD, if you move the thrust levers by hand, the autothrottle tries to return them to their original position.",
 "a": 1,
 "options": [
 "True",
@@ -847,7 +847,7 @@
 },
 {
 "system": 4,
-"q": "The Autothrottle (A/T) system, provides automatic thrust control from the start of takeoff, through all stages of flight to up to and including landing.",
+"q": "The autothrottle provides automatic thrust control from the start of takeoff through all phases up to and including landing.",
 "a": 0,
 "options": [
 "True",
@@ -856,7 +856,7 @@
 },
 {
 "system": 4,
-"q": "With A/T engaged, what condition could cause the throttles to be separated (not aligned).",
+"q": "With the autothrottle engaged, what could cause the thrust levers to split (not aligned)?",
 "a": 3,
 "options": [
 "Throttle stagger cannot occur with A/T engaged as both throttle servo motors work identically to position the throttles symetrically.",
@@ -867,7 +867,7 @@
 },
 {
 "system": 5,
-"q": "What microphone options are available to the flight crew?",
+"q": "Which microphone options are available to the flight crew?",
 "a": 0,
 "options": [
 "Hand microphone, headset boom microphone, oxygen mask microphone.",
@@ -878,7 +878,7 @@
 },
 {
 "system": 5,
-"q": "When the ALT-NORM switch on the Audio Control Panel (ACP) is selected to ALT, what is the result?",
+"q": "What is the result of selecting the ALT-NORM switch on the Audio Control Panel (ACP) to ALT?",
 "a": 2,
 "options": [
 "ACP operates in a degraded mode, VHF-2 for Captain, HF-2 for Observer, and VHF-1 for First Officer.",
@@ -889,7 +889,7 @@
 },
 {
 "system": 5,
-"q": "Selecting the Cockpit Voice Recorder to ON has what effect?",
+"q": "What is the effect of selecting the cockpit voice recorder ON?",
 "a": 1,
 "options": [
 "Powers the cockpit voice recorder after the first engine is started until 5 minutes after last engine shutdown.",
@@ -900,7 +900,7 @@
 },
 {
 "system": 5,
-"q": "VHF antennae located on the upper fuselage are susceptible to multipath interference from other air traffic, antennae located on the lower fuselage are not as susceptible to this interference.",
+"q": "Upper-fuselage VHF antennas are prone to multipath interference from other traffic, while lower-fuselage antennas are less affected.",
 "a": 1,
 "options": [
 "True",
@@ -909,7 +909,7 @@
 },
 {
 "system": 5,
-"q": "Communication between the flight deck and flight attendants is still possible with the SERVICE INTERPHONE switch selected OFF.",
+"q": "Communication between the flight deck and cabin crew is still possible with the SERVICE INTERPHONE switch OFF.",
 "a": 0,
 "options": [
 "True",
@@ -918,7 +918,7 @@
 },
 {
 "system": 5,
-"q": "What is the effect of pushing the Pilot Call switch?",
+"q": "What is the effect of pressing the Pilot Call switch?",
 "a": 1,
 "options": [
 "Two-tone chime in flight deck.",
@@ -929,7 +929,7 @@
 },
 {
 "system": 5,
-"q": "The volume of received communications can be controlled by rotating the selected RECEIVER SWITCHES on the Radio Tuning Panel.",
+"q": "Received-communication volume is adjusted by rotating the selected RECEIVER switches on the radio tuning panel.",
 "a": 1,
 "options": [
 "True",
@@ -938,7 +938,7 @@
 },
 {
 "system": 5,
-"q": "The Flight Interphone and Service Interphone are on separate networks.",
+"q": "The flight interphone and service interphone are on separate networks.",
 "a": 0,
 "options": [
 "True",
@@ -947,7 +947,7 @@
 },
 {
 "system": 5,
-"q": "What are the 3 positions For the Audio Control Panel Filter switch?",
+"q": "What are the three positions of the Audio Control Panel filter switch?",
 "a": 0,
 "options": [
 "V, B, R,   Voice, Both, Range.",
@@ -958,7 +958,7 @@
 },
 {
 "system": 6,
-"q": "Which of the following is NOT powered by the standby Power system?",
+"q": "Which of the following is NOT powered by the standby power system?",
 "a": 0,
 "options": [
 "Transformer Rectifier 1.",
@@ -969,7 +969,7 @@
 },
 {
 "system": 6,
-"q": "What is the normal source of power for the Battery Bus?",
+"q": "What is the normal power source for the battery bus?",
 "a": 3,
 "options": [
 "The hot battery bus",
@@ -980,7 +980,7 @@
 },
 {
 "system": 6,
-"q": "The DC standby Bus is powered from the batteries through the static Inverter.  Select one:",
+"q": "The DC standby bus is powered from the batteries through the static inverter. Select one:",
 "a": 0,
 "options": [
 "False",
@@ -989,7 +989,7 @@
 },
 {
 "system": 6,
-"q": "What is the voltage of the DC Busses under normal circumstances?",
+"q": "What is the normal voltage of the DC buses?",
 "a": 3,
 "options": [
 "115v",
@@ -1000,7 +1000,7 @@
 },
 {
 "system": 6,
-"q": "If all AC generated power fails, how long can the batteries (if fully charged) supply standby power?",
+"q": "If all AC generation fails, how long can fully charged batteries supply standby power?",
 "a": 2,
 "options": [
 "Up to 60 minutes.",
@@ -1011,7 +1011,7 @@
 },
 {
 "system": 6,
-"q": "If an IDG fails and the APU is not available to power the related Transfer Bus, what occur first if an electrical overload is sensed?",
+"q": "If an IDG fails and the APU cannot power the related transfer bus, what is shed first when an electrical overload is sensed?",
 "a": 1,
 "options": [
 "Automatic load shedding of the galley and main busses on on both Transfer Busses.",
@@ -1022,7 +1022,7 @@
 },
 {
 "system": 6,
-"q": "With the BUS TRANSFER switch in the AUTO position; how do the BTBs operate?",
+"q": "With the BUS TRANSFER switch in AUTO, how do the BTBs operate?",
 "a": 1,
 "options": [
 "BTBs isolate Transfer Bus 1 from Transfer Bus 2, if only 1 IDG is supplying power, DC Cross Tie Relay closes to connect DC Bus 1 to DC Bus 2.",
@@ -1033,7 +1033,7 @@
 },
 {
 "system": 6,
-"q": "Which bus(ses) will be automatically shed if the APU is the only source of electrical power in flight?",
+"q": "Which bus(es) are shed automatically if the APU is the only electrical source in flight?",
 "a": 1,
 "options": [
 "The galley busses",
@@ -1044,7 +1044,7 @@
 },
 {
 "system": 6,
-"q": "The amber TR UNIT light illuminated while in-flight indicates if?",
+"q": "In flight, what does an illuminated amber TR UNIT light indicate?",
 "a": 0,
 "options": [
 "TR1 has failed, or TR2 and TR3 have failed.",
@@ -1055,7 +1055,7 @@
 },
 {
 "system": 6,
-"q": "The Static Inverter, converts the Battery's 22-30V DC voltage range to a constant 24V.",
+"q": "The static inverter converts the battery's 22 to 30 V DC into a constant 24 V.",
 "a": 1,
 "options": [
 "True",
@@ -1064,7 +1064,7 @@
 },
 {
 "system": 6,
-"q": "Under what conditions are DC bus 1 and DC bus 2 isolated.",
+"q": "Under what conditions are DC bus 1 and DC bus 2 isolated from each other?",
 "a": 2,
 "options": [
 "Switching the Bus Transfer switch to OFF.",
@@ -1075,7 +1075,7 @@
 },
 {
 "system": 6,
-"q": "When external ground power is connected to the aircraft through the External AC Receptacle, the GRD POWER AVAILABLE light does not illuminate unless the power supplied meets the quality requirements of 115v AC, 200 Hz, 3 phase.",
+"q": "When external ground power is connected via the external AC receptacle, the GRD POWER AVAILABLE light only illuminates if the supply meets the 115 V AC, 200 Hz, 3-phase quality requirements.",
 "a": 1,
 "options": [
 "True",
@@ -1084,7 +1084,7 @@
 },
 {
 "system": 6,
-"q": "An illuminated amber ELEC light on the AC and DC Metering Panel indicates?",
+"q": "What does an illuminated amber ELEC light on the AC/DC metering panel indicate?",
 "a": 1,
 "options": [
 "A fault exists in the AC power system and the DC power system",
@@ -1095,7 +1095,7 @@
 },
 {
 "system": 6,
-"q": "With the STANDBY POWER switch (located on the Generator Drive and Standby Power Panel)  in the AUTO position, will the loss of a single DC Bus result in automatic switching from normal to alternate power?",
+"q": "With the STANDBY POWER switch in AUTO, does the loss of a single DC bus trigger automatic switching from normal to alternate power?",
 "a": 0,
 "options": [
 "Only if power from DC Bus 1 is lost",
@@ -1106,7 +1106,7 @@
 },
 {
 "system": 6,
-"q": "Which electrical bus is always connected and powered whenever the aircraft battery is fitted?",
+"q": "Which bus is always connected and powered whenever the aircraft battery is installed?",
 "a": 1,
 "options": [
 "AC standby bus- powered through Transformer Rectifier to ensure no power interuption to GPS system.",
@@ -1117,7 +1117,7 @@
 },
 {
 "system": 6,
-"q": "Why are the covers on the Drive DISCONNECT switches red?",
+"q": "Why are the covers on the drive DISCONNECT switches red?",
 "a": 3,
 "options": [
 "For easy identification of an emergency operation in low light conditions.",
@@ -1128,7 +1128,7 @@
 },
 {
 "system": 6,
-"q": "If the APU is powering Transfer Bus 1 and GEN 2 is powering Transfer Bus 2, what will occur when the Ground Power (GRD PWR) Switch is turned to ON?",
+"q": "If the APU powers transfer bus 1 and GEN 2 powers transfer bus 2, what happens when the GRD PWR switch is turned ON?",
 "a": 1,
 "options": [
 "Ground Power will power Transfer Bus 1 and GEN 2 will power Transfer Bus 2.",
@@ -1139,7 +1139,7 @@
 },
 {
 "system": 6,
-"q": "What is the normal source of power for the DC Standby bus?",
+"q": "What normally powers the DC standby bus?",
 "a": 1,
 "options": [
 "The battery",
@@ -1150,7 +1150,7 @@
 },
 {
 "system": 6,
-"q": "What is the purpose of the Ground Service switch on the forward attendant's panel?",
+"q": "What is the purpose of the ground service switch on the forward attendant's panel?",
 "a": 3,
 "options": [
 "Provides power to external services used by ground servicing personnel.",
@@ -1161,7 +1161,7 @@
 },
 {
 "system": 6,
-"q": "What is the normal AC power source for TR3?",
+"q": "What is the normal AC source for TR3?",
 "a": 0,
 "options": [
 "Transfer Bus 2",
@@ -1172,7 +1172,7 @@
 },
 {
 "system": 6,
-"q": "What is the effect of selecting the Drive Disconnect switch to DISCONNECT?",
+"q": "What is the effect of selecting a drive disconnect switch to DISCONNECT?",
 "a": 3,
 "options": [
 "AC Standby Bus is immediately powered by Inverter from batteries.",
@@ -1183,7 +1183,7 @@
 },
 {
 "system": 6,
-"q": "What is the source of power for the AC Standby bus if all AC power is lost.",
+"q": "If all AC power is lost, what powers the AC standby bus?",
 "a": 1,
 "options": [
 "The TRs",
@@ -1194,7 +1194,7 @@
 },
 {
 "system": 6,
-"q": "The main battery charger is powered by?",
+"q": "What powers the main battery charger?",
 "a": 1,
 "options": [
 "AC Ground Service Bus 1",
@@ -1205,7 +1205,7 @@
 },
 {
 "system": 6,
-"q": "The 2 basic rules of the B737-800 electrical system are:  Only one AC power source can be connected at one time.  A second source connecting to a transfer bus will automatically disconnect the existing source.",
+"q": "The two basic rules of the 737-800 electrical system: only one AC source can be connected at a time, and a second source connecting to a transfer bus automatically disconnects the existing one.",
 "a": 0,
 "options": [
 "True",
@@ -1214,7 +1214,7 @@
 },
 {
 "system": 6,
-"q": "What indications will you see on the electrical panel when selecting GRD PWR ON?",
+"q": "What do you see on the electrical panel when you select GRD PWR ON?",
 "a": 2,
 "options": [
 "GRD POWER light extinguished, SOURCE OFF lights illuminated, GEN OFF BUS lights illuminated, TRANSFER BUS OFF lights extinguished, APU GEN OFF BUS light illuminated.",
@@ -1225,7 +1225,7 @@
 },
 {
 "system": 6,
-"q": "If operating on a single IDG and an overload is sensed, the electrical system will shed the galleys and main bus from Transfer Bus 1 and then Transfer Bus 2 before then shedding the IFE busses if an overload is still sensed.",
+"q": "On a single IDG with an overload sensed, the system sheds the galleys and main bus from transfer bus 1, then transfer bus 2, then the IFE buses if the overload persists.",
 "a": 1,
 "options": [
 "True",
@@ -1234,7 +1234,7 @@
 },
 {
 "system": 6,
-"q": "The TR UNIT light illuminated when on the ground indicates: ?",
+"q": "On the ground, what does an illuminated TR UNIT light indicate?",
 "a": 1,
 "options": [
 "any two TRs have failed",
@@ -1245,7 +1245,7 @@
 },
 {
 "system": 6,
-"q": "Under normal conditions, what powers DC Bus 1?",
+"q": "Under normal conditions, what powers DC bus 1?",
 "a": 2,
 "options": [
 "TR2",
@@ -1256,7 +1256,7 @@
 },
 {
 "system": 6,
-"q": "Which air conditioning system will not operate unless the CAB/UTIL switch is ON?",
+"q": "Which air-conditioning system will not run unless the CAB/UTIL switch is ON?",
 "a": 0,
 "options": [
 "Left & right Recirculation fans",
@@ -1267,7 +1267,7 @@
 },
 {
 "system": 6,
-"q": "How is the auxiliary battery charger powered?",
+"q": "What powers the auxiliary battery charger?",
 "a": 3,
 "options": [
 "Through Ground Service Bus 2",
@@ -1278,7 +1278,7 @@
 },
 {
 "system": 6,
-"q": "With the STANDBY POWER switch (located on the Generator Drive and Standby Power Panel)  in the AUTO position, will the loss of a single AC Transfer Bus result in automatic switching from normal to alternate power?",
+"q": "With the STANDBY POWER switch in AUTO, does the loss of a single AC transfer bus trigger automatic switching from normal to alternate power?",
 "a": 3,
 "options": [
 "No, for automatic switching to occur power must be lost from both AC Transfer Busses",
@@ -1289,7 +1289,7 @@
 },
 {
 "system": 6,
-"q": "In the event of the loss of  all engine and APU IDGs, the Standby Power system will provide what electrical power?",
+"q": "If all engine and APU IDGs are lost, what electrical power does the standby power system provide?",
 "a": 2,
 "options": [
 "22-30V DC",
@@ -1300,7 +1300,7 @@
 },
 {
 "system": 6,
-"q": "If Ground power is powering both Transfer Busses, the APU is available, and is selected to power Transfer Bus 1, which statement is correct?",
+"q": "Ground power is feeding both transfer buses, the APU is available and is selected to power transfer bus 1. Which statement is correct?",
 "a": 0,
 "options": [
 "Ground power will be automatically disconnected and the APU will power both Transfer Busses.",
@@ -1311,7 +1311,7 @@
 },
 {
 "system": 6,
-"q": "What is the normal source of power for the AC Standby Bus?",
+"q": "What normally powers the AC standby bus?",
 "a": 3,
 "options": [
 "Ground Service Bus 1",
@@ -1322,7 +1322,7 @@
 },
 {
 "system": 6,
-"q": "The SOURCE OFF light illuminates whenever an IDG has tripped offline due to overheating.",
+"q": "The SOURCE OFF light illuminates whenever an IDG trips offline due to overheating.",
 "a": 1,
 "options": [
 "True",
@@ -1331,7 +1331,7 @@
 },
 {
 "system": 6,
-"q": "Maintaining uninterrupted power on both AC Transfer Busses is primarily the function of:",
+"q": "Keeping both AC transfer buses continuously powered is primarily the function of what?",
 "a": 3,
 "options": [
 "The Ground Service Busses",
@@ -1342,7 +1342,7 @@
 },
 {
 "system": 7,
-"q": "The APU engine air inlet door is located at the rear of the fuselage just below and forward of the left horizontal stabiliser.",
+"q": "The APU engine air inlet door is at the rear fuselage, just below and forward of the left horizontal stabiliser.",
 "a": 1,
 "options": [
 "True",
@@ -1351,7 +1351,7 @@
 },
 {
 "system": 7,
-"q": "The APU can operate and supply bleed air only, up to the aircraft operating ceiling of 41, 000 feet.",
+"q": "The APU can run and supply bleed air only, up to the aircraft ceiling of 41,000 ft.",
 "a": 1,
 "options": [
 "True",
@@ -1360,7 +1360,7 @@
 },
 {
 "system": 7,
-"q": "APU cooling air enters along with APU engine air through the APU intake located on the right rear fuselage.",
+"q": "APU cooling air enters with the APU engine air through the APU intake on the right rear fuselage.",
 "a": 1,
 "options": [
 "True",
@@ -1369,7 +1369,7 @@
 },
 {
 "system": 7,
-"q": "In flight, with the APU as the only source of electrical power; if the electrical load exceeds the APU Generator design limit, the galley busses and the IFE busses are the first to be automatically shed.",
+"q": "In flight with the APU as the only electrical source, if the load exceeds the APU generator's design limit, the galley and IFE buses are shed first.",
 "a": 1,
 "options": [
 "True",
@@ -1378,7 +1378,7 @@
 },
 {
 "system": 7,
-"q": "The APU requires an AC power supply for starting.",
+"q": "The APU needs an AC power supply to start.",
 "a": 1,
 "options": [
 "True",
@@ -1387,7 +1387,7 @@
 },
 {
 "system": 7,
-"q": "With the APU running, how can it be stopped immediately?",
+"q": "With the APU running, how can it be shut down immediately?",
 "a": 2,
 "options": [
 "All of the above.",
@@ -1398,7 +1398,7 @@
 },
 {
 "system": 7,
-"q": "What condition would cause an automatic shutdown of the APU?",
+"q": "What condition causes an automatic APU shutdown?",
 "a": 1,
 "options": [
 "The APU has no automatic shutdown protection - shutting down the APU is always Flight Crew initiated.",
@@ -1409,7 +1409,7 @@
 },
 {
 "system": 7,
-"q": "With the fuel pumps off, where does the APU fuel supply come from?",
+"q": "With the fuel pumps off, where does the APU get its fuel?",
 "a": 2,
 "options": [
 "Left side of the Fuel Manifold.",
@@ -1420,7 +1420,7 @@
 },
 {
 "system": 7,
-"q": "Approach idle is selected in flight by the EECs under what normal conditions(s)?",
+"q": "Under what normal condition(s) do the EECs select approach idle in flight?",
 "a": 0,
 "options": [
 "Flaps are in landing configuration or engine anti-ice is ON",
@@ -1431,7 +1431,7 @@
 },
 {
 "system": 7,
-"q": "On a ground start, if a Wet start is detected, when will the EEC turn off ignition and shut off fuel to the engine.",
+"q": "On a ground start, when does the EEC cut ignition and fuel if a wet start is detected?",
 "a": 2,
 "options": [
 "15 seconds after throttle lever moved to Idle",
@@ -1442,7 +1442,7 @@
 },
 {
 "system": 7,
-"q": "What effect does moving the N1 SET Outer Knob to BOTH have on A/T operation?",
+"q": "What effect does moving the N1 SET outer knob to BOTH have on autothrottle operation?",
 "a": 3,
 "options": [
 "Causes the A/T system to disengage.",
@@ -1453,7 +1453,7 @@
 },
 {
 "system": 7,
-"q": "How is fuel heated prior to reaching the engine?",
+"q": "How is the fuel heated before reaching the engine?",
 "a": 0,
 "options": [
 "The main engine oil cooler and the IDG oil cooler",
@@ -1464,7 +1464,7 @@
 },
 {
 "system": 7,
-"q": "The Master Caution lights and ENG system annunciator lights will illuminate if the EEC automatically enters the soft alternate mode.",
+"q": "The MASTER CAUTION and ENG system annunciator lights illuminate if the EEC automatically enters soft alternate mode.",
 "a": 0,
 "options": [
 "True",
@@ -1473,7 +1473,7 @@
 },
 {
 "system": 7,
-"q": "Which indication is NOT supplied to the Secondary Engine Indications on the lower DI via the EEC?",
+"q": "Which indication is NOT sent to the secondary engine indications on the lower DU via the EEC?",
 "a": 0,
 "options": [
 "Oil quantity",
@@ -1484,7 +1484,7 @@
 },
 {
 "system": 7,
-"q": "In flight, if a fault prevents the EEC receiving flap or anti-ice signals; at what altitude would the Approach Idle schedule begin?",
+"q": "In flight, if a fault stops the EEC receiving flap or anti-ice signals, at what altitude does the approach-idle schedule begin?",
 "a": 1,
 "options": [
 "Below 20,000 feet.",
@@ -1495,7 +1495,7 @@
 },
 {
 "system": 7,
-"q": "The engine start valve closes and the START VALVE OPEN alert on the upper DU extinguishes at approximately ?",
+"q": "At approximately what point does the engine start valve close and the START VALVE OPEN alert on the upper DU extinguish?",
 "a": 2,
 "options": [
 "20% N1",
@@ -1506,7 +1506,7 @@
 },
 {
 "system": 7,
-"q": "Where in the engine oil system is the oil filter located?",
+"q": "Whereabouts in the engine oil system is the oil filter?",
 "a": 2,
 "options": [
 "In the engine bearings supply line",
@@ -1517,7 +1517,7 @@
 },
 {
 "system": 7,
-"q": "How is the engine fuel heated prior to entering the engine?",
+"q": "How is the engine fuel heated before entering the engine?",
 "a": 3,
 "options": [
 "Engine fuel is not heated until it is burnt in the engine combustion chamber.",
@@ -1528,7 +1528,7 @@
 },
 {
 "system": 7,
-"q": "Which bus powers the left igniter plug?",
+"q": "Which bus supplies the left igniter plug?",
 "a": 0,
 "options": [
 "AC Transfer Bus 1",
@@ -1539,7 +1539,7 @@
 },
 {
 "system": 7,
-"q": "Can reverse thrust be deployed if the aircraft has not touched down?",
+"q": "Can reverse thrust deploy if the aircraft has not touched down?",
 "a": 2,
 "options": [
 "No, the air/ground safety sensor must be in the ground mode and either radio altimeter senses zero ft RA",
@@ -1550,7 +1550,7 @@
 },
 {
 "system": 7,
-"q": "Which ENGINE START switch position will provide ignition to both igniters regardless of igniter selector switch position when the engine start lever is in IDLE?",
+"q": "With the start lever at IDLE, which ENGINE START switch position gives ignition to both igniters regardless of the igniter selector position?",
 "a": 3,
 "options": [
 "CONT and FLT",
@@ -1561,7 +1561,7 @@
 },
 {
 "system": 7,
-"q": "During an in-flight start the EGT Start Limit Redline is never displayed.",
+"q": "During an in-flight start, the EGT start-limit redline is never displayed.",
 "a": 1,
 "options": [
 "True",
@@ -1570,7 +1570,7 @@
 },
 {
 "system": 7,
-"q": "What condition causes the A/T LIM indication to illuminate WHITE on the upper centre display panel?",
+"q": "What causes the A/T LIM indication to show white on the upper centre display?",
 "a": 3,
 "options": [
 "The Forward Thrust Levers have been advanced to the fully forward position by the A/T system.",
@@ -1581,7 +1581,7 @@
 },
 {
 "system": 7,
-"q": "Which bus powers the right igniter plug?",
+"q": "Which bus supplies the right igniter plug?",
 "a": 3,
 "options": [
 "AC Transfer Bus 1",
@@ -1592,7 +1592,7 @@
 },
 {
 "system": 7,
-"q": "How is the EEC affected the failure of one DEU (Display Electronic Unit) ?",
+"q": "How is the EEC affected by the failure of one DEU (Display Electronic Unit)?",
 "a": 3,
 "options": [
 "Both EECs are rendered inoperative and the EEC ON indication extinguishes.",
@@ -1603,7 +1603,7 @@
 },
 {
 "system": 7,
-"q": "At what point during a normal start is the EEC supplied with electrical power?",
+"q": "At what point in a normal start does the EEC receive electrical power?",
 "a": 0,
 "options": [
 "When the engine start switch is positioned to GRD",
@@ -1614,7 +1614,7 @@
 },
 {
 "system": 7,
-"q": "If both the ON and ALTN lights in the EEC switch are illuminated, what does this indicate?",
+"q": "If both the ON and ALTN lights in the EEC switch are lit, what does that indicate?",
 "a": 3,
 "options": [
 "The soft alternate mode is armed.",
@@ -1625,7 +1625,7 @@
 },
 {
 "system": 7,
-"q": "After starting the engine and it achieving Stabilised Idle (59% N2), a low oil pressure condition would be identified by the amber LOW OIL PRESSURE annunciation on the upper DU, and the Lower DU displaying OIL PRESS Pointer in the Amber band.",
+"q": "After start and reaching stabilised idle (59% N2), a low-oil-pressure condition shows as an amber LOW OIL PRESSURE on the upper DU and the lower-DU oil-press pointer in the amber band.",
 "a": 1,
 "options": [
 "True",
@@ -1634,7 +1634,7 @@
 },
 {
 "system": 7,
-"q": "Raising an engine start lever to the IDLE position opens which fuel valve(s)?",
+"q": "Raising an engine start lever to IDLE opens which fuel valve(s)?",
 "a": 1,
 "options": [
 "The related engine-mounted fuel shutoff valve and engine bypass valve.",
@@ -1645,7 +1645,7 @@
 },
 {
 "system": 7,
-"q": "What is the indication of an impending oil filter bypass due to contamination?",
+"q": "What indicates an impending oil-filter bypass due to contamination?",
 "a": 2,
 "options": [
 "Illumination of the FILTER BYPASS warning light on the Fuel Panel.",
@@ -1656,7 +1656,7 @@
 },
 {
 "system": 7,
-"q": "The REVERSER light located on the aft overhead panel illuminated during a normal reverse sequence indicates ?",
+"q": "During a normal reverse sequence, what does an illuminated REVERSER light on the aft overhead panel indicate?",
 "a": 3,
 "options": [
 "The isolation valve has failed to open and the thrust reverser control valve has not moved to the deploy position.",
@@ -1667,7 +1667,7 @@
 },
 {
 "system": 7,
-"q": "The B737-800 has no In-Flight Abnormal Start Protection.",
+"q": "The 737-800 has no in-flight abnormal-start protection.",
 "a": 0,
 "options": [
 "True",
@@ -1676,7 +1676,7 @@
 },
 {
 "system": 7,
-"q": "When does the OIL FILTER BYPASS alert illuminate on the upper display unit?",
+"q": "When does the OIL FILTER BYPASS alert illuminate on the upper display?",
 "a": 0,
 "options": [
 "Illuminates prior to oil bypassing the scavenge filter.",
@@ -1687,7 +1687,7 @@
 },
 {
 "system": 7,
-"q": "As well as the indication on the Lower DU, engine oil quantity can be physically checked using the gauges located in the Main Undercarriage Wheel Well.",
+"q": "Besides the lower-DU indication, engine oil quantity can be checked physically on gauges in the main gear wheel well.",
 "a": 1,
 "options": [
 "True",
@@ -1696,7 +1696,7 @@
 },
 {
 "system": 7,
-"q": "During an In-flight start, if a wet start is detected, when will the EEC turn off ignition and fuel to the engine?",
+"q": "During an in-flight start, when does the EEC cut ignition and fuel if a wet start is detected?",
 "a": 0,
 "options": [
 "No in-flight abnormal start protection.",
@@ -1707,7 +1707,7 @@
 },
 {
 "system": 7,
-"q": "At what rotational speed is the Start Lever moved to the IDLE position?",
+"q": "At what rotational speed is the start lever moved to IDLE?",
 "a": 3,
 "options": [
 "Max motoring - 56% N1.",
@@ -1718,7 +1718,7 @@
 },
 {
 "system": 7,
-"q": "When is the EGT Start Limit Redline displayed?",
+"q": "When is the EGT start-limit redline displayed?",
 "a": 2,
 "options": [
 "Until the engine achieves self sustaining idle (approx 50%)",
@@ -1729,7 +1729,7 @@
 },
 {
 "system": 7,
-"q": "What is the indication that the thrust reverser sleeves have moved from the stowed position and have reached the deployed position?",
+"q": "What indicates that the thrust-reverser sleeves have moved from stowed to fully deployed?",
 "a": 1,
 "options": [
 "The reverse thrust lever may be moved beyond the interlock position.",
@@ -1740,7 +1740,7 @@
 },
 {
 "system": 7,
-"q": "What does a Red Box around an N1 RPM Digital Readout mean - when the aircraft is on the ground and the engine has been shut down?",
+"q": "On the ground with the engine shut down, what does a red box around the N1 RPM digital readout mean?",
 "a": 3,
 "options": [
 "The N1 Limit Bug has been set manually.",
@@ -1751,7 +1751,7 @@
 },
 {
 "system": 7,
-"q": "If the forward thrust lever is reduced to idle while the EEC is in the soft alternate mode, what is the result?",
+"q": "If the forward thrust lever is brought to idle while the EEC is in soft alternate mode, what is the result?",
 "a": 0,
 "options": [
 "The EEC enters the hard alternate mode, the ALTN switch remains illuminated and the ON indication remains visible.",
@@ -1762,7 +1762,7 @@
 },
 {
 "system": 7,
-"q": "When GRD is selected and the eng start switch is selected to either 1 or 2, how are the crew alerted to the start valve opening?",
+"q": "With GRD selected and the engine start switch at 1 or 2, how is the crew alerted that the start valve has opened?",
 "a": 1,
 "options": [
 "The blue START VALVE light illuminates bright blue then goes dim blue once the start valve is fully open.",
@@ -1773,7 +1773,7 @@
 },
 {
 "system": 8,
-"q": "As well as using the DISCH switch on the Fire Protection panel in the flight deck, an APU fire can be extinguished by discharging the APU fire extinguisher using the APU Ground Control Panel, which is located in a quick release access panel immediately forward and below the APU.",
+"q": "As well as the DISCH switch on the flight-deck fire panel, an APU fire can be put out using the APU ground control panel, in a quick-release access panel immediately forward and below the APU.",
 "a": 1,
 "options": [
 "True",
@@ -1782,7 +1782,7 @@
 },
 {
 "system": 8,
-"q": "How many fire extinguisher bottles are fitted for the Cargo compartments?",
+"q": "How many fire-extinguisher bottles are fitted for the cargo compartments?",
 "a": 2,
 "options": [
 "2 fire extinguisher bottles, one for forward cargo hold, and one for rear cargo hold.",
@@ -1793,7 +1793,7 @@
 },
 {
 "system": 8,
-"q": "What do the 3 green illuminated lights at the bottom right of the engine fire panel indicate?",
+"q": "What do the three green lights at the bottom right of the engine fire panel indicate?",
 "a": 3,
 "options": [
 "Fire warning system test 1 completed satisfactorily.",
@@ -1804,7 +1804,7 @@
 },
 {
 "system": 8,
-"q": "How can the Fire Warning Bell be silenced?",
+"q": "How can the fire warning bell be silenced?",
 "a": 1,
 "options": [
 "Only by pushing the Master FIRE WARN light",
@@ -1815,7 +1815,7 @@
 },
 {
 "system": 8,
-"q": "How might it be possible to determine if the toilet fire extinguisher has been discharged?",
+"q": "How can you tell whether the lavatory fire extinguisher has discharged?",
 "a": 0,
 "options": [
 "Discharge nozzles changed colour from black to grey and Temperature indicator placard in lavatory changes colour from white to black.",
@@ -1826,7 +1826,7 @@
 },
 {
 "system": 8,
-"q": "The engines and APU have fire extinguishing systems, but the cargo holds and wheel well have only suppression systems.",
+"q": "The engines and APU have fire-extinguishing systems, while the cargo holds and wheel well have only suppression.",
 "a": 1,
 "options": [
 "True",
@@ -1835,7 +1835,7 @@
 },
 {
 "system": 8,
-"q": "After pressing the DISCH switch, how long does it take for the cargo fire DISCH light to illuminate to indicate that the Cargo Fire Suppression system has been fully activated?",
+"q": "After pressing the DISCH switch, how long until the cargo fire DISCH light shows the cargo fire suppression is fully activated?",
 "a": 0,
 "options": [
 "Up to 30 seconds",
@@ -1846,7 +1846,7 @@
 },
 {
 "system": 8,
-"q": "Boeing provide the option for 2 Cargo Fire extinguisher bottles to be fitted, one is a rapid discharge bottle which is fully discharged immediately upon pressing the DISCH switch on the Cargo Fire Panel, the second bottle is a slow discharge bottle that is released 1 minute after the discharge of the first bottle, and discharges slowly over several minutes to provide a total of 195 minutes of fire suppression in the cargo holds.  This second slow discharge fire extinguisher bottle is NOT fitted in any Ryanair B737-800 aircraft.",
+"q": "Boeing offers two cargo fire bottles: a rapid-discharge bottle emptied immediately on pressing DISCH, and a slow-discharge bottle released one minute later that discharges over several minutes for a total of 195 minutes of suppression. This slow-discharge bottle is NOT fitted on any Ryanair 737-800.",
 "a": 0,
 "options": [
 "True",
@@ -1855,7 +1855,7 @@
 },
 {
 "system": 8,
-"q": "What is the effect of pulling up the No1 Fire DISCH switch?",
+"q": "What is the effect of pulling up the No 1 fire DISCH switch?",
 "a": 2,
 "options": [
 "Closes engine and spar fuel shutoff valves, closes inlet valve to both Air Conditioning Packs, trips IDG control relay, arms both Squibs on both on both engine fire bottles, and allows the DISCH switch to be rotated left or right.",
@@ -1866,7 +1866,7 @@
 },
 {
 "system": 8,
-"q": "The engines have both Overheat and Fire warnings, the APU, cargo holds and wheel well have ONLY Fire warnings.",
+"q": "The engines have both overheat and fire warnings, while the APU, cargo holds and wheel well have fire warnings only.",
 "a": 0,
 "options": [
 "True",
@@ -1875,7 +1875,7 @@
 },
 {
 "system": 8,
-"q": "The picture below shows that there is a fault in the left engine Overheat/Fire Detection Loops.  How would you determine which of the 2 loops had failed?",
+"q": "A fault is shown in the left engine overheat/fire detection loops. How would you determine which of the two loops has failed?",
 "a": 3,
 "options": [
 "Move to FAULT/INOP - OVHT/FIRE switch to the central TEST position, then test one loop at a time using the OVHT DET switch selected first to A and then B.",
@@ -1886,7 +1886,7 @@
 },
 {
 "system": 8,
-"q": "The Engine Fire DISCH switches are mechanically locked in the Down position and can only be pulled Up when an Overheat or Fire is detected and the switch has illuminated.",
+"q": "The engine fire DISCH switches are mechanically locked down and can only be pulled up when an overheat or fire is detected and the switch is illuminated.",
 "a": 1,
 "options": [
 "True",
@@ -1895,7 +1895,7 @@
 },
 {
 "system": 9,
-"q": "The flap slat electronic unit (FSEU) provides flap load relief for all aircraft from Flap 10 through to Flap 40.",
+"q": "The flap slat electronic unit (FSEU) provides flap load relief on all aircraft from Flap 10 through Flap 40.",
 "a": 1,
 "options": [
 "True",
@@ -1904,7 +1904,7 @@
 },
 {
 "system": 9,
-"q": "The yaw damper provides inputs to the rudder to provide which of the following, and what effect does it have on the rudder pedals?",
+"q": "The yaw damper feeds inputs to the rudder for which purposes, and what effect does it have on the rudder pedals?",
 "a": 0,
 "options": [
 "Provides Gust Dampening, Dutch roll prevention and Turn coordination. The rudder pedals are not displaced by yaw damper operation.",
@@ -1915,7 +1915,7 @@
 },
 {
 "system": 9,
-"q": "How does the Stall Identification system help the pilot identify and prevent further movement into a stalled condition?",
+"q": "How does the stall identification system help the pilot recognise and resist moving further into a stall?",
 "a": 2,
 "options": [
 "Elevator Feel Shift Module increase, hydraulic system A pressure to the Elevator Feel and Centering Unit, moving the elevator to provide at least 15 degrees of nose down pitch.",
@@ -1926,7 +1926,7 @@
 },
 {
 "system": 9,
-"q": "Selecting the Flap lever to the FLAP 1 Gate causes the LE Flaps to move to what position?",
+"q": "Moving the flap lever to the FLAP 1 gate drives the leading-edge flaps to what position?",
 "a": 3,
 "options": [
 "Takeoff setting",
@@ -1937,7 +1937,7 @@
 },
 {
 "system": 9,
-"q": "What should the maximum flap extension altitude be?",
+"q": "What is the maximum flap-extension altitude?",
 "a": 0,
 "options": [
 "20,000 feet",
@@ -1948,7 +1948,7 @@
 },
 {
 "system": 9,
-"q": "What does a FLT CONTROL \"LOW PRESSURE\" light illuminated amber indicate?",
+"q": "What does an amber FLT CONTROL 'LOW PRESSURE' light indicate?",
 "a": 2,
 "options": [
 "The STBY RUD system pressure is low.",
@@ -1959,7 +1959,7 @@
 },
 {
 "system": 9,
-"q": "On later aircraft YW098 to YW164 (short field performance aircraft) the leading edge slats do not move from the extended to the fully extended position until the Flap lever is moved beyond the Flap 25 position.",
+"q": "On later aircraft YW098 to YW164 (short-field performance), the leading-edge slats do not move from extended to fully extended until the flap lever passes the Flap 25 position.",
 "a": 0,
 "options": [
 "True",
@@ -1968,7 +1968,7 @@
 },
 {
 "system": 9,
-"q": "The flap slat electronic unit (FSEU) will close the trailing edge bypass valve if it detects trailing edge flap asymmetry, skew or uncommanded motion; thus stopping the movement of the flaps via the normal system.  However, the flaps can still be moved by means of electric motors.",
+"q": "The FSEU closes the trailing-edge bypass valve if it detects trailing-edge flap asymmetry, skew or uncommanded motion, stopping normal flap movement; the flaps can still be driven by electric motors.",
 "a": 0,
 "options": [
 "True",
@@ -1977,7 +1977,7 @@
 },
 {
 "system": 9,
-"q": "What happens to the speed brakes if the SPEED BRAKE lever is left in the DOWN position during landing.",
+"q": "What happens to the speedbrakes if the SPEED BRAKE lever is left DOWN during landing?",
 "a": 1,
 "options": [
 "The ground spoilers will deploy on landing if all other conditions are met, but flight spoilers will not deploy.",
@@ -1988,7 +1988,7 @@
 },
 {
 "system": 9,
-"q": "What does the SPEED BRAKE DO NOT ARM light (located on the left forward panel) indicate when illuminated amber?",
+"q": "What does an amber SPEED BRAKE DO NOT ARM light (left forward panel) indicate?",
 "a": 0,
 "options": [
 "Indicates an abnormal condition or test input in the speed brake system and indicates that the wheel speed has dropped below 60 kts on landing and the speedbrake lever has not been moved to the down position.",
@@ -1999,7 +1999,7 @@
 },
 {
 "system": 9,
-"q": "What is the purpose of the ALTERNATE FLAPS master switch, and why is the cover red?",
+"q": "What is the purpose of the ALTERNATE FLAPS master switch, and why is its cover red?",
 "a": 1,
 "options": [
 "Closes the trailing edge flap bypass valve, activates standby pump, and arms ALTERNATE FLAPS position switch.  Red because the action of extending the trailing edge devices cannot be reversed in flight.",
@@ -2010,7 +2010,7 @@
 },
 {
 "system": 9,
-"q": "What will cause the STBY RUDDER ON light to illuminate?",
+"q": "What causes the STBY RUDDER ON light to illuminate?",
 "a": 1,
 "options": [
 "Standby rudder system is commanded on, to pressurise the standby rudder PCU, by selecting YAW DAMPER switch to OFF.",
@@ -2021,7 +2021,7 @@
 },
 {
 "system": 9,
-"q": "On landing, when do the ground spoilers extend?",
+"q": "On landing, when do the ground spoilers deploy?",
 "a": 1,
 "options": [
 "Compression of any landing gear strut.",
@@ -2032,7 +2032,7 @@
 },
 {
 "system": 10,
-"q": "What condition causes an Amber IAS DISAGREE alert to appear at the bottom of the speed tape?",
+"q": "What causes an amber IAS DISAGREE alert at the bottom of the speed tape?",
 "a": 1,
 "options": [
 "V Ref has not been entered",
@@ -2043,7 +2043,7 @@
 },
 {
 "system": 10,
-"q": "What does the top of the amber bar indicate at the lower end of the speed tape?",
+"q": "At the lower end of the speed tape, what does the top of the amber bar indicate?",
 "a": 2,
 "options": [
 "Minimum manoeuvre speed (1.3g manoeuvre capability to stick shaker above approximately 20,000 feet) - (1.3g manoeuvre capability to low speed buffet below approximately 20,000 feet).",
@@ -2054,7 +2054,7 @@
 },
 {
 "system": 10,
-"q": "What does a white CDS MAINT message in the lower left corner of the PFD indicate?",
+"q": "What does a white CDS MAINT message in the lower-left of the PFD indicate?",
 "a": 0,
 "options": [
 "A dispatchable CDS fault has occurred prior to second engine start.",
@@ -2065,7 +2065,7 @@
 },
 {
 "system": 10,
-"q": "What does the Magenta figure displayed above the Speed Tape signify?",
+"q": "What does the magenta figure shown above the speed tape mean?",
 "a": 2,
 "options": [
 "Airspeed manually selected in the IAS/MACH window.",
@@ -2076,7 +2076,7 @@
 },
 {
 "system": 10,
-"q": "On the PFD, what does the amber annunciation \"DISPLAYS CONTROL PANEL\" indicate?",
+"q": "On the PFD, what does the amber 'DISPLAYS CONTROL PANEL' annunciation indicate?",
 "a": 2,
 "options": [
 "The Display Select Panel on the the side the annunciation is displayed has failed.",
@@ -2087,7 +2087,7 @@
 },
 {
 "system": 10,
-"q": "The amber annunciation \"INSTR SWITCH\" indicates what?",
+"q": "What does the amber 'INSTR SWITCH' annunciation indicate?",
 "a": 1,
 "options": [
 "Captain's and First Officer's displays are using separate sources of IRU data.",
@@ -2098,7 +2098,7 @@
 },
 {
 "system": 10,
-"q": "On the navigation display, how is the display presented in VOR, Approach and Plan modes?",
+"q": "On the navigation display, how is it presented in VOR, Approach and Plan modes?",
 "a": 1,
 "options": [
 "VOR = true north up, Approach = heading up, Plan = heading up.",
@@ -2109,7 +2109,7 @@
 },
 {
 "system": 10,
-"q": "The bug below that indicates V2 + 15 is displayed at what stage of flight, and when is it removed?",
+"q": "At what stage of flight is the V2+15 bug displayed, and when is it removed?",
 "a": 2,
 "options": [
 "Displayed at takeoff, removed when Pitch Flight director moves to 15 degrees nose up.",
@@ -2120,7 +2120,7 @@
 },
 {
 "system": 11,
-"q": "If IRS alignment is lost in flight, the navigation mode becomes inoperative for the remainder of the flight.",
+"q": "If IRS alignment is lost in flight, navigation mode is inoperative for the rest of the flight.",
 "a": 0,
 "options": [
 "True",
@@ -2129,7 +2129,7 @@
 },
 {
 "system": 11,
-"q": "On later aircraft YW059 through YW164, what is the default Vertical Required Navigational Performance (VRNP) used by the FMC for oceanic, en route, and terminal phases of flight?",
+"q": "On later aircraft YW059 through YW164, what default Vertical Required Navigation Performance (VRNP) does the FMC use for oceanic, en-route and terminal phases?",
 "a": 0,
 "options": [
 "400 feet.",
@@ -2140,7 +2140,7 @@
 },
 {
 "system": 11,
-"q": "How many ILS receivers are installed in Ryanair B737-800 aircraft?",
+"q": "How many ILS receivers are fitted on the Ryanair 737-800?",
 "a": 3,
 "options": [
 "4 receivers.",
@@ -2151,7 +2151,7 @@
 },
 {
 "system": 11,
-"q": "Where on the FMC CDU are the GPS latitude and longitude displayed?",
+"q": "Where on the FMC CDU are the GPS latitude and longitude shown?",
 "a": 3,
 "options": [
 "NAV DATA",
@@ -2162,7 +2162,7 @@
 },
 {
 "system": 11,
-"q": "What colour is the route on the Nav display when you activate a route by pressing the R6 switch?",
+"q": "What colour is the route on the nav display once you activate it with the R6 key?",
 "a": 0,
 "options": [
 "Dashed Cyan",
@@ -2173,7 +2173,7 @@
 },
 {
 "system": 11,
-"q": "The image below shows the IRS panel located on the AFT overhead panel, for later aircraft YW130 through YW164.  Other than OFF, what are the switch positions in the clockwise order?",
+"q": "On the aft-overhead IRS panel of later aircraft YW130 through YW164, what are the switch positions clockwise, other than OFF?",
 "a": 3,
 "options": [
 "NAV, ALIGN, ATT.",
@@ -2184,7 +2184,7 @@
 },
 {
 "system": 11,
-"q": "A total of 99 numbered waypoints cannot be exceeded for any single route.",
+"q": "A single route cannot exceed 99 numbered waypoints.",
 "a": 1,
 "options": [
 "True",
@@ -2193,7 +2193,7 @@
 },
 {
 "system": 11,
-"q": "What does the GPS light illuminating indicate when either annunciator panel is pushed to initiate a recall?",
+"q": "When an annunciator panel is pushed for a recall, what does an illuminated GPS light indicate?",
 "a": 0,
 "options": [
 "Single GPS sensor unit failure.",
@@ -2204,7 +2204,7 @@
 },
 {
 "system": 11,
-"q": "On later aircraft YW130 through YW164, the VHF NAV switch changes the source of the data that the DEUs use for the NDs.  What data is transferred by this switch?",
+"q": "On later aircraft YW130 through YW164, the VHF NAV switch changes the data source the DEUs use for the NDs. What data does it transfer?",
 "a": 0,
 "options": [
 "DME, ILS/GLS, VOR, MCP course",
@@ -2215,7 +2215,7 @@
 },
 {
 "system": 11,
-"q": "How long are the navigation databases valid for?",
+"q": "For how long are the navigation databases valid?",
 "a": 2,
 "options": [
 "21 Days",
@@ -2226,7 +2226,7 @@
 },
 {
 "system": 11,
-"q": "Which indications are correct for a single FMC failure (left FMC fails)?",
+"q": "Which indications are correct for a single FMC failure (left FMC failed)?",
 "a": 3,
 "options": [
 "FMC CDU FAIL light illuminates, left FMC CDU screen blanks, left ND screen blanks, LNAV diengages with VNAV remaining available.",
@@ -2237,7 +2237,7 @@
 },
 {
 "system": 11,
-"q": "When setting up the FMC, what Pre-flight information is required.",
+"q": "When setting up the FMC, what pre-flight information is required?",
 "a": 1,
 "options": [
 "Initial Position, SID, Route, Performance Data, Takeoff Data.",
@@ -2248,7 +2248,7 @@
 },
 {
 "system": 11,
-"q": "What are the 2 databases the FMC uses for operation?",
+"q": "What two databases does the FMC use to operate?",
 "a": 0,
 "options": [
 "Navigation and Performance",
@@ -2259,7 +2259,7 @@
 },
 {
 "system": 11,
-"q": "On the DEP/ARR page on the FMC, can more than one Arrival be entered?",
+"q": "On the FMC DEP/ARR page, can more than one arrival be entered?",
 "a": 0,
 "options": [
 "True",
@@ -2268,7 +2268,7 @@
 },
 {
 "system": 11,
-"q": "On which page of the FMC is the IRS position initially set?",
+"q": "On which FMC page is the IRS position initially set?",
 "a": 2,
 "options": [
 "INIT REF page.",
@@ -2279,7 +2279,7 @@
 },
 {
 "system": 11,
-"q": "On aircraft with a mode selector selection of TEST, WX, WX/TURB and MAP,  selecting WX/TURB displays what?",
+"q": "On aircraft whose mode selector offers TEST, WX, WX/TURB and MAP, what does selecting WX/TURB display?",
 "a": 1,
 "options": [
 "Weather radar returns, and windshear out to 40 miles.",
@@ -2290,7 +2290,7 @@
 },
 {
 "system": 11,
-"q": "Regardless of what range you select on the Navigation Display, the range at which turbulence is detected is automatically limited to 40 nautical miles.",
+"q": "Whatever range you select on the navigation display, turbulence detection is automatically limited to 40 nm.",
 "a": 0,
 "options": [
 "True",
@@ -2299,7 +2299,7 @@
 },
 {
 "system": 11,
-"q": "In turbulence mode, at what velocity of horizontal flow of precipitation towards or away from the weather radar will the target display turn magenta?",
+"q": "In turbulence mode, at what horizontal velocity of precipitation toward or away from the radar does the target turn magenta?",
 "a": 0,
 "options": [
 "5 meters per second or greater.",
@@ -2310,7 +2310,7 @@
 },
 {
 "system": 11,
-"q": "What forward arc does the weather radar antenna sweep?",
+"q": "What forward arc does the weather-radar antenna sweep?",
 "a": 3,
 "options": [
 "160",
@@ -2321,7 +2321,7 @@
 },
 {
 "system": 11,
-"q": "Some Ryanair B737-800 aircraft have a weather radar with the ability to be tilted a selected number of degrees above or below the horizon?",
+"q": "Some Ryanair 737-800s have a weather radar that can be tilted a selected number of degrees above or below the horizon.",
 "a": 0,
 "options": [
 "True",
@@ -2330,7 +2330,7 @@
 },
 {
 "system": 11,
-"q": "Below what altitude are windshear alerts available for aircraft fitted with IntuVue weather radar?",
+"q": "On aircraft with IntuVue weather radar, below what altitude are windshear alerts available?",
 "a": 2,
 "options": [
 "1800 feet RA and below",
@@ -2341,7 +2341,7 @@
 },
 {
 "system": 11,
-"q": "The IntuVue weather radar fitted in aircraft YF662-YF695 and YW001-YW164, gives clutter-free viewing of significant weather out to what range?",
+"q": "The IntuVue radar on aircraft YF662 to YF695 and YW001 to YW164 gives clutter-free viewing of significant weather out to what range?",
 "a": 2,
 "options": [
 "220 nautical miles",
@@ -2352,7 +2352,7 @@
 },
 {
 "system": 11,
-"q": "For the IntuVue  Radar, Predictive Windshear mode is automatically turned on in which of the following specific aircraft conditions?",
+"q": "For the IntuVue radar, in which aircraft conditions does predictive windshear mode turn on automatically?",
 "a": 3,
 "options": [
 "In flight above 1200 feet RA, on ground with throttle levers at takeoff position setting.",
@@ -2363,7 +2363,7 @@
 },
 {
 "system": 11,
-"q": "Some weather radar (WXR) panels have an manual altitude control switch (ALT) - when in MAN mode, this can be used to achieve which of the following:",
+"q": "Some weather radar (WXR) panels have a manual altitude control (ALT); in MAN mode it can be used to do which of the following?",
 "a": 0,
 "options": [
 "Controls weather analysis altitude from 0 - 60,000 MSL in 1000 feet increments",
@@ -2374,7 +2374,7 @@
 },
 {
 "system": 11,
-"q": "If the aircraft present position cannot be entered through the FMC CDU, it can be entered using the ISDU keyboard.",
+"q": "If the aircraft present position cannot be entered on the FMC CDU, it can be entered on the ISDU keyboard.",
 "a": 0,
 "options": [
 "True",
@@ -2383,7 +2383,7 @@
 },
 {
 "system": 11,
-"q": "Setting the ADF mode selector switch to ANT has what effect?",
+"q": "What is the effect of setting the ADF mode selector to ANT?",
 "a": 3,
 "options": [
 "ADF bearing data sent to Standby Radio Magnetic Indicator as well as the DUs",
@@ -2394,7 +2394,7 @@
 },
 {
 "system": 11,
-"q": "On the IRS panel, if the DC FAIL light illuminates in flight all alignment data is lost and the system cannot be re-set until the aircraft is parked on the ground.",
+"q": "On the IRS panel, if the DC FAIL light comes on in flight, all alignment data is lost and the system cannot be reset until the aircraft is parked on the ground.",
 "a": 1,
 "options": [
 "True",
@@ -2403,7 +2403,7 @@
 },
 {
 "system": 11,
-"q": "What colour is the Outer Marker Beacon (OM) displayed on the PFD?",
+"q": "What colour is the Outer Marker (OM) shown in on the PFD?",
 "a": 1,
 "options": [
 "OM appears in Magenta in top right corner of the Attitude Indicator.",
@@ -2414,7 +2414,7 @@
 },
 {
 "system": 11,
-"q": "If alignment is lost in flight, what action can be taken?",
+"q": "If IRS alignment is lost in flight, what can be done?",
 "a": 0,
 "options": [
 "The navigation mode remains unavailable for the rest of the flight, but ATT mode can be selected to provide attitude reference.",
@@ -2425,7 +2425,7 @@
 },
 {
 "system": 11,
-"q": "What components comprise the Flight Management System?",
+"q": "Which components make up the Flight Management System?",
 "a": 1,
 "options": [
 "FMCS, A/P, A/T, MCP, EFIS, IRS.",
@@ -2436,7 +2436,7 @@
 },
 {
 "system": 12,
-"q": "With the Centre (CTR) tank FUEL PUMP switches ON, if an amber LOW PRESSURE light illuminates, it also immediately illuminates MASTER CAUTION and a FUEL system annunciator lights.",
+"q": "With the centre (CTR) tank FUEL PUMP switches ON, an amber LOW PRESSURE light also immediately triggers MASTER CAUTION and a FUEL system annunciator.",
 "a": 1,
 "options": [
 "True",
@@ -2445,7 +2445,7 @@
 },
 {
 "system": 12,
-"q": "Which fuel valves are Flight Crew made aware of their position by means of flight deck indications?",
+"q": "For which fuel valves does the flight deck indicate the position to the crew?",
 "a": 3,
 "options": [
 "Centre, No1 and No2 Tanks Fuel Pump Valves, Engine Fuel Shutoff Valve, Cross Feed valve.",
@@ -2456,7 +2456,7 @@
 },
 {
 "system": 12,
-"q": "After the Centre Tank has emptied the auto shutoff logic stops the pumps, how do the pumps then function?",
+"q": "After the centre tank empties and the auto-shutoff logic stops the pumps, how do the pumps then behave?",
 "a": 3,
 "options": [
 "The pumps will not funtion again until the Centre tank has been refueled above 453 kg.",
@@ -2467,7 +2467,7 @@
 },
 {
 "system": 12,
-"q": "What is the correct sequence regarding the SPAR VALVE CLOSED light during a normal engine start procedure after the START LEVER is positioned to IDLE detent?",
+"q": "During a normal start, after the start lever is moved to the IDLE detent, what is the correct SPAR VALVE CLOSED light sequence?",
 "a": 1,
 "options": [
 "Transitions from extinguished, to bright and then dim.",
@@ -2478,7 +2478,7 @@
 },
 {
 "system": 12,
-"q": "In flight a fuel imbalance between No1 and No2 tanks can be corrected by:",
+"q": "In flight, a fuel imbalance between the No 1 and No 2 tanks can be corrected by what?",
 "a": 3,
 "options": [
 "Opening the crossfeed valve, turning OFF the fuel pumps for the tank with lower fuel and allowing the pumps from the tank with the higher amount of fuel to transfer fuel to the other tank until the IMBAL amber warning light extinguishes, then close the Crossfeed valve and turn back on the pumps.",
@@ -2489,7 +2489,7 @@
 },
 {
 "system": 12,
-"q": "The fuel imbalance alert is only displayed when the aircraft is in the air.",
+"q": "The fuel imbalance alert is shown only when the aircraft is airborne.",
 "a": 1,
 "options": [
 "True",
@@ -2498,7 +2498,7 @@
 },
 {
 "system": 12,
-"q": "Where is the fuel temperature sensor located?",
+"q": "Where is the fuel temperature sensor?",
 "a": 1,
 "options": [
 "1 in the inboard rear of each main tank",
@@ -2509,7 +2509,7 @@
 },
 {
 "system": 12,
-"q": "For landing, what is the maximum fuel imbalance between the No.1 and No.2 main tanks?",
+"q": "For landing, what is the maximum fuel imbalance between main tanks No 1 and No 2?",
 "a": 0,
 "options": [
 "453 Kgs.",
@@ -2520,7 +2520,7 @@
 },
 {
 "system": 12,
-"q": "How many fuel pumps does each tank have, and where are they located?",
+"q": "How many fuel pumps does each tank have, and where are they?",
 "a": 1,
 "options": [
 "The centre tank has 1 AC fuel pump located on the front wall of the centre tank and 1 located on the rear wall of the centre tank.  The No1 main tank has 1 pump located on the rear wall of the No1 tank and 1 pump located on the front wall of the No1 tank .  The No2 tank has 1 pump located on the rear wall of the No2 tank and 1 pump located on the front wall of the No2 tank..",
@@ -2531,7 +2531,7 @@
 },
 {
 "system": 12,
-"q": "What are the USABLE FUEL capacities of the aircraft fuel tanks?",
+"q": "What are the usable fuel capacities of the aircraft's fuel tanks?",
 "a": 0,
 "options": [
 "Centre 13,066kg, No1 = 3,915kg, No2 = 3,915kg.",
@@ -2542,7 +2542,7 @@
 },
 {
 "system": 12,
-"q": "What does a blue light mean on the Nitrogen Generation System (NGS).",
+"q": "What does a blue light on the Nitrogen Generation System (NGS) mean?",
 "a": 3,
 "options": [
 "Dim blue means NGS valve agrees with commanded position.",
@@ -2553,7 +2553,7 @@
 },
 {
 "system": 12,
-"q": "What operates the spar fuel shutoff valve?",
+"q": "What drives the spar fuel shutoff valve?",
 "a": 2,
 "options": [
 "AC motor from Standby Bus",
@@ -2564,7 +2564,7 @@
 },
 {
 "system": 12,
-"q": "With the engines running, the fuel CONFIG alert will be displayed by the No1 and No2 Fuel Quantity Indicators turning Amber, when the Centre tank quantity is greater than 726kg and the Centre tank pump switches are off",
+"q": "With the engines running, the fuel CONFIG alert shows as the No 1 and No 2 fuel quantity indicators turning amber when the centre-tank quantity is above 726 kg and the centre-tank pump switches are off.",
 "a": 1,
 "options": [
 "True",
@@ -2573,7 +2573,7 @@
 },
 {
 "system": 12,
-"q": "In the unlikely situation of total generator failure, at high altitude thrust deterioration may occur. Why?",
+"q": "In the unlikely event of total generator failure, thrust may deteriorate at high altitude. Why?",
 "a": 1,
 "options": [
 "When on STBY power the fuel pumps run a little slower",
@@ -2584,7 +2584,7 @@
 },
 {
 "system": 12,
-"q": "With the engines running, the fuel CONFIG alert will be displayed by the No1 and No2 Fuel Quantity Indicators turning Amber, when the Centre tank quantity is greater than 726kg and the Centre tank pump switches are off",
+"q": "The fuel CONFIG alert (engines running) shows as the No 1 and No 2 fuel quantity indicators turning amber when centre-tank quantity exceeds 726 kg with the centre-tank pump switches off.",
 "a": 1,
 "options": [
 "True",
@@ -2593,7 +2593,7 @@
 },
 {
 "system": 12,
-"q": "During cruise you note both center tank fuel pumps have failed as indicated by the illumination of both center tank fuel pump LOW PRESSURE lights. You still have 320 kg of fuel in the center tank and both main tanks are full. You will see:",
+"q": "In the cruise both centre-tank fuel pumps have failed (both centre LOW PRESSURE lights on). You still have 320 kg in the centre tank and both mains are full. You will see:",
 "a": 3,
 "options": [
 "a LOW indication on the CDS",
@@ -2604,7 +2604,7 @@
 },
 {
 "system": 12,
-"q": "During an engine start , when an engine start lever is positioned to IDLE detent, which of the following statements is correct?",
+"q": "During an engine start, when a start lever is moved to the IDLE detent, which statement is correct?",
 "a": 3,
 "options": [
 "The related SPAR VALVE CLOSED light is unaffected by the engine start lever position.",
@@ -2615,7 +2615,7 @@
 },
 {
 "system": 12,
-"q": "The amber fuel IMBAL alert will remain displayed until the imbalance is reduced to:-",
+"q": "The amber fuel IMBAL alert stays displayed until the imbalance is reduced to what?",
 "a": 1,
 "options": [
 "726 kgs",
@@ -2626,7 +2626,7 @@
 },
 {
 "system": 12,
-"q": "What is the indication of the Crossfeed VALVE OPEN Light when the CROSSFEED selector is positioned OPEN and the crossfeed valve is closed?",
+"q": "With the CROSSFEED selector OPEN but the crossfeed valve closed, what does the VALVE OPEN light show?",
 "a": 1,
 "options": [
 "illuminated dim blue",
@@ -2637,7 +2637,7 @@
 },
 {
 "system": 12,
-"q": "The center tank fuel scavenge jet pump operates when:",
+"q": "The centre-tank fuel scavenge jet pump operates when what?",
 "a": 0,
 "options": [
 "the No. 1 main fuel tank is about 1/2 full",
@@ -2648,7 +2648,7 @@
 },
 {
 "system": 12,
-"q": "How many fuel measuring sticks are installed?",
+"q": "How many fuel measuring sticks are fitted?",
 "a": 2,
 "options": [
 "6",
@@ -2659,7 +2659,7 @@
 },
 {
 "system": 12,
-"q": "During cruise both centre tank fuel pumps have failed. There is still 460 kg in the centre tank, and both main tanks are full. The upper Display Unit will show:",
+"q": "In the cruise both centre-tank fuel pumps have failed. There is still 460 kg in the centre tank and both mains are full. The upper display unit will show:",
 "a": 3,
 "options": [
 "A LOW Alert indication under centre tank.",
@@ -2670,7 +2670,7 @@
 },
 {
 "system": 12,
-"q": "When the engine start lever is placed to CUTOFF:-",
+"q": "When the engine start lever is placed to CUTOFF, what happens?",
 "a": 2,
 "options": [
 "The engine fuel shutoff valve only closes.",
@@ -2681,7 +2681,7 @@
 },
 {
 "system": 12,
-"q": "What is the source of electrical power for the engine fuel shutoff valves?",
+"q": "What is the electrical power source for the engine fuel shutoff valves?",
 "a": 2,
 "options": [
 "the Hot Battery Bus",
@@ -2692,7 +2692,7 @@
 },
 {
 "system": 12,
-"q": "In-flight, the two fuel pump LOW PRESSURE Lights for main tank No.1 illuminate. What happens to the No.1 engine?",
+"q": "In flight, both fuel-pump LOW PRESSURE lights for main tank No 1 come on. What happens to the No 1 engine?",
 "a": 3,
 "options": [
 "it continues to operate due to the metering of fuel by the Fuel Control Unit",
@@ -2703,7 +2703,7 @@
 },
 {
 "system": 13,
-"q": "The engine hydraulic pump (ENG 1 and ENG 2) switches are switch ON:",
+"q": "When are the engine hydraulic pump (ENG 1 and ENG 2) switches turned ON?",
 "a": 0,
 "options": [
 "They de-energize the blocking valve to allow pump pressure to enter the system. The switches should remain ON at shutdown to prolong solenoid life.",
@@ -2714,7 +2714,7 @@
 },
 {
 "system": 13,
-"q": "Hydraulic System A powers which hydraulic system components?",
+"q": "Which components does hydraulic system A power?",
 "a": 3,
 "options": [
 "Alternate nose wheel steering, Alternate brakes and ground spoilers",
@@ -2725,7 +2725,7 @@
 },
 {
 "system": 13,
-"q": "Which statement is true regarding thrust reverser operation with a failure of hydraulic System A?",
+"q": "Which statement about thrust-reverser operation is true with hydraulic system A failed?",
 "a": 2,
 "options": [
 "The No.1 thrust reverser will operate normally from System B via the PTU.",
@@ -2736,7 +2736,7 @@
 },
 {
 "system": 13,
-"q": "If a leak develops in the hydraulic System A reservoir, which associated pump(s) will have hydraulic fluid available from below the standpipe?",
+"q": "If the hydraulic system A reservoir leaks, which pump(s) still draw fluid from below the standpipe?",
 "a": 3,
 "options": [
 "Both the the engine driven pump (EDP) and the AC electric motor-driven pump",
@@ -2747,7 +2747,7 @@
 },
 {
 "system": 13,
-"q": "Alternate nose wheel steering (NWS) is powered by system A, and normal NWS is powered by system B.",
+"q": "Alternate nose-wheel steering is powered by system A, and normal nose-wheel steering by system B.",
 "a": 1,
 "options": [
 "True",
@@ -2756,7 +2756,7 @@
 },
 {
 "system": 13,
-"q": "Hydraulic System A powers which hydraulic system components?",
+"q": "Hydraulic system A powers which of the following components?",
 "a": 2,
 "options": [
 "Alternate nose wheel steering, Alternate brakes and ground spoilers",
@@ -2767,7 +2767,7 @@
 },
 {
 "system": 13,
-"q": "What is the maximum hydraulic system pressure.",
+"q": "What is the maximum hydraulic system pressure?",
 "a": 0,
 "options": [
 "3,500 psi",
@@ -2778,7 +2778,7 @@
 },
 {
 "system": 13,
-"q": "The purpose of the Power Transfer Unit (PTU) is to supply system A with the volume of hydraulic fluid from system B to raise the landing gear at the normal rate when system A Engine Driven Pump volume is lost.",
+"q": "The Power Transfer Unit (PTU) supplies system A with fluid volume from system B to raise the landing gear at the normal rate when the system A engine-driven pump volume is lost.",
 "a": 1,
 "options": [
 "True",
@@ -2787,7 +2787,7 @@
 },
 {
 "system": 13,
-"q": "Which systems are powered by the hydraulic system?",
+"q": "Which systems does the hydraulic system power?",
 "a": 3,
 "options": [
 "Flight controls, autothrottles, wheel brakes, leading and trailing edge flaps, leading edge slats, nose wheel steering, landing gear, thrust reversers.",
@@ -2798,7 +2798,7 @@
 },
 {
 "system": 13,
-"q": "If hydraulic system A develops a leak the engine driven pump (EDP) in system A is starved of oil before the electrical motor driven pump.  If system B develops a leak, the electrical motor driven pump in system B is the first to be starved of oil?",
+"q": "If hydraulic system A leaks, its engine-driven pump is starved before the electric motor-driven pump; if system B leaks, its electric motor-driven pump is the first to be starved.",
 "a": 1,
 "options": [
 "True",
@@ -2807,7 +2807,7 @@
 },
 {
 "system": 13,
-"q": "The electric motor driven hydraulic pumps are cooled and lubricated by hydraulic oil passing through them - this oil is then cooled by passing through a fuel cooled oil cooler located in each main tank.  What quantity of fuel must there be in each main tank to operate the electric driven pumps on the ground?",
+"q": "The electric motor-driven hydraulic pumps are cooled and lubricated by oil passing through them, then cooled by a fuel-cooled oil cooler in each main tank. What fuel quantity must be in each main tank to run the electric pumps on the ground?",
 "a": 2,
 "options": [
 "453 kg",
@@ -2818,7 +2818,7 @@
 },
 {
 "system": 13,
-"q": "How is hydraulic oil pressure stopped from entering the system when the Engine Driven Pumps (EDPs) are switched to OFF?",
+"q": "With the engine-driven pumps (EDPs) switched OFF, how is hydraulic pressure kept out of the system?",
 "a": 3,
 "options": [
 "The EDPs are mechanically disengaged from the engine external gearbox by means of a electronic clutch.",
@@ -2829,7 +2829,7 @@
 },
 {
 "system": 13,
-"q": "Moving the STBY RUD switch to ON activates the standby pump and opens the standby rudder shutoff valve to pressurise the standby power control unit.",
+"q": "Moving the STBY RUD switch ON runs the standby pump and opens the standby rudder shutoff valve to pressurise the standby power control unit.",
 "a": 1,
 "options": [
 "True",
@@ -2838,7 +2838,7 @@
 },
 {
 "system": 13,
-"q": "What is the effect on the Standby Hydraulic System, if there is a leak in system B?",
+"q": "What is the effect on the standby hydraulic system of a leak in system B?",
 "a": 1,
 "options": [
 "No effect as the standby system is supplied from system A.",
@@ -2849,7 +2849,7 @@
 },
 {
 "system": 13,
-"q": "While airborne and with flaps retracted, if hydraulic System A or System B loose pressure does the Standby hydraulic system automatically activate?",
+"q": "Airborne with flaps retracted, if hydraulic system A or B loses pressure, does the standby hydraulic system activate automatically?",
 "a": 1,
 "options": [
 "Yes, failure of either System A or System B will cause automatic activation of the Standby hydraulic system.",
@@ -2860,7 +2860,7 @@
 },
 {
 "system": 13,
-"q": "What effect will a leak in system B downstream of the EDP have on the Power Transfer Unit (PTU)?",
+"q": "What effect does a leak in system B downstream of the EDP have on the Power Transfer Unit (PTU)?",
 "a": 0,
 "options": [
 "It will continue to function if required due to oil in the system B reservoir below the standpipe level.",
@@ -2871,7 +2871,7 @@
 },
 {
 "system": 13,
-"q": "With a loss of system B pressure the standby system can be used to extend the leading and trailing edge devices, the leading edge devices cannot be retracted again once extended by the standby system, but the trailing edge flaps can be retracted by electric motors using the ALTERNATE FLAPS position switch, but no asymmetry or skew protection is then provided.",
+"q": "With a loss of system B pressure, the standby system can extend the leading and trailing-edge devices; the leading-edge devices cannot be retracted once extended by the standby system, but the trailing-edge flaps can be retracted by electric motors via the ALTERNATE FLAPS switch, with no asymmetry or skew protection.",
 "a": 1,
 "options": [
 "True",
@@ -2880,7 +2880,7 @@
 },
 {
 "system": 13,
-"q": "Which conditions must exist when airborne for the landing gear transfer unit to operate?",
+"q": "Which conditions must exist, airborne, for the landing-gear transfer unit to operate?",
 "a": 0,
 "options": [
 "No. 1 engine RPM drops below a limit value, landing gear lever is positioned up, either main landing gear is not up and locked",
@@ -2891,7 +2891,7 @@
 },
 {
 "system": 13,
-"q": "The Power Transfer Unit (PTU) supplies pressure to which flight controls if the System B Engine Driven Pump (EDP) pressure drops below limits?",
+"q": "If the system B engine-driven pump (EDP) pressure drops below limits, to which flight controls does the PTU supply pressure?",
 "a": 1,
 "options": [
 "Trailing Edge (TE) flaps and Leading Edge (LE) flaps",
@@ -2902,7 +2902,7 @@
 },
 {
 "system": 13,
-"q": "Which statement is true regarding Hydraulic System A failure? The Standby hydraulic system, powered by a single electric-motor driven pump, has been manually activated.",
+"q": "With hydraulic system A failed and the standby system (single electric motor-driven pump) manually activated, which statement is true?",
 "a": 0,
 "options": [
 "Ground spoiler are inoperative, increasing landing distance. Half of the flight spoilers on each wing are inoperative, reducing roll rate. Engine 1 thrust reverser will deploy and retract at a slower rate and some asymmetry can be anticipated during thrust reverser deployment.",
@@ -2913,7 +2913,7 @@
 },
 {
 "system": 13,
-"q": "The hydraulic system quantity is displayed on the lower DU by digital indication from 0 to 100%.",
+"q": "Hydraulic system quantity is shown on the lower DU as a digital 0 to 100% indication.",
 "a": 1,
 "options": [
 "True",
@@ -2922,7 +2922,7 @@
 },
 {
 "system": 14,
-"q": "With RTO selected, the system will automatically apply maximum brake pressure when the thrust levers have been retarded to idle with speed at or above 90 kts.",
+"q": "With RTO selected, the system applies maximum brake pressure automatically when the thrust levers are at idle and speed is at or above 90 kt.",
 "a": 0,
 "options": [
 "True",
@@ -2931,7 +2931,7 @@
 },
 {
 "system": 14,
-"q": "If both normal and alternative brake system pressure is lost it is still possible to use the brakes to bring the aircraft to a complete stop after landing?",
+"q": "If both normal and alternate brake pressure are lost, can the brakes still stop the aircraft after landing?",
 "a": 0,
 "options": [
 "True",
@@ -2940,7 +2940,7 @@
 },
 {
 "system": 14,
-"q": "Which hydraulic system operates the parking brake?",
+"q": "Which hydraulic system holds the parking brake?",
 "a": 0,
 "options": [
 "All of the above.",
@@ -2951,7 +2951,7 @@
 },
 {
 "system": 14,
-"q": "How far must you pull the emergency gear release handle before the related landing gear uplock is released?",
+"q": "How far must the emergency gear release handle be pulled before the related gear uplock releases?",
 "a": 1,
 "options": [
 "Approximately 16cm",
@@ -2962,7 +2962,7 @@
 },
 {
 "system": 14,
-"q": "You select the AUTO BRAKE to RTO on the ground, and the AUTO BRAKE DISARM light illuminates for 2 seconds then extinguishes.  What is the fault?",
+"q": "You select AUTO BRAKE to RTO on the ground and the AUTO BRAKE DISARM light comes on for 2 seconds then goes out. What is the fault?",
 "a": 1,
 "options": [
 "You do not have the parking brake set.",
@@ -2973,7 +2973,7 @@
 },
 {
 "system": 14,
-"q": "Which of the following statements are false for Antiskid Protection.",
+"q": "Which statement about antiskid protection is false?",
 "a": 2,
 "options": [
 "Antiskid protection is provided for both normal and alternate brake systems.",
@@ -2984,7 +2984,7 @@
 },
 {
 "system": 14,
-"q": "The landing gear lights on the main centre panel all indicate green, but the lights on the aft overhead panel show the LEFT GEAR is not locked and down.   You can ignore this situation as one green light, on either panel, for each landing gear, means the gear is down and locked.",
+"q": "The main-panel landing-gear lights are all green, but the aft-overhead panel shows the LEFT gear not down and locked. You can ignore this, since one green light on either panel for each gear means it is down and locked.",
 "a": 0,
 "options": [
 "True",
@@ -2993,7 +2993,7 @@
 },
 {
 "system": 14,
-"q": "Other than moving the Autobrake selector to OFF, how else can Autobraking be cancelled?",
+"q": "Besides moving the autobrake selector to OFF, how else can autobraking be cancelled?",
 "a": 0,
 "options": [
 "Applying manual brakes or Moving Speed Brake lever to DOWN detent.",
@@ -3004,7 +3004,7 @@
 },
 {
 "system": 14,
-"q": "Which of the following statements are true for the Nose Wheel Steering system",
+"q": "Which statement about the nose-wheel steering system is true?",
 "a": 2,
 "options": [
 "If alternate nose wheel steering is activated then the standby hydraulic system operates the nose wheel steering and as well as being in the down position, the nose landing gear must be compressed for nose wheel steering to be available.",
@@ -3015,7 +3015,7 @@
 },
 {
 "system": 14,
-"q": "Which of the following statements is true, when the landing gear Manual Extension Access Door is open?",
+"q": "Which statement is true when the landing-gear manual extension access door is open?",
 "a": 3,
 "options": [
 "Normal landing gear extension is possible if Hydraulic system A operational.",
@@ -3026,7 +3026,7 @@
 },
 {
 "system": 15,
-"q": "Altitude alerting occurs when approaching or departing from the MCP selected altitude.  When is the altitude alerting system inhibited?",
+"q": "Altitude alerting occurs when approaching or leaving the MCP-selected altitude. When is it inhibited?",
 "a": 0,
 "options": [
 "Glide slope is captured, or trailing edge flaps are extended to 25 or greater.",
@@ -3037,7 +3037,7 @@
 },
 {
 "system": 15,
-"q": "In Flight, the Intuvue radar will provide a windshear warning from 0.5nm to 3nm ahead of the aircraft.",
+"q": "In flight, the IntuVue radar gives a windshear warning from 0.5 nm to 3 nm ahead of the aircraft.",
 "a": 1,
 "options": [
 "True",
@@ -3046,7 +3046,7 @@
 },
 {
 "system": 15,
-"q": "When carrying out the Stall Warning Test, which of the following statements is correct?",
+"q": "When carrying out the stall warning test, which statement is correct?",
 "a": 3,
 "options": [
 "The test can be completed once AC power is available",
@@ -3057,7 +3057,7 @@
 },
 {
 "system": 15,
-"q": "How can the Fire Warning Bell be silenced on the flight deck?",
+"q": "How can the fire warning bell be silenced on the flight deck?",
 "a": 2,
 "options": [
 "Push the Master Fire Warn lights, press the Horn Cutout of the APU Ground Control Panel.",
@@ -3068,7 +3068,7 @@
 },
 {
 "system": 15,
-"q": "The predictive windshear symbol radials, which extend from the predictive winsdshear symbol to help identify the location of a windshear event, are displayed in what colours?",
+"q": "In what colours are the predictive-windshear symbol radials (that help locate a windshear event) displayed?",
 "a": 0,
 "options": [
 "Amber.",
@@ -3079,7 +3079,7 @@
 },
 {
 "system": 15,
-"q": "The PSEU light will illuminate along with a Master Caution and an OVERHEAD annunciator light, under which of the following situations?",
+"q": "Under which situation does the PSEU light illuminate together with a MASTER CAUTION and an OVERHEAD annunciator?",
 "a": 2,
 "options": [
 "Illuminates as soon as the ground/air system senses ground mode, if an emergency exit flight lock has failed locked or a fault is detected.",
@@ -3090,7 +3090,7 @@
 },
 {
 "system": 15,
-"q": "As well as providing outputs for all stall warnings, the SMYD computers also provide outputs for GPWS Windshear Detection and Alert.",
+"q": "As well as outputs for all stall warnings, the SMYD computers also provide outputs for GPWS windshear detection and alerting.",
 "a": 0,
 "options": [
 "True",
@@ -3099,7 +3099,7 @@
 },
 {
 "system": 15,
-"q": "When an Annunciator Panel is pressed, all lights on both panel initially illuminate.",
+"q": "When an annunciator panel is pressed, all lights on both panels initially illuminate.",
 "a": 0,
 "options": [
 "True",
@@ -3108,7 +3108,7 @@
 },
 {
 "system": 15,
-"q": "Which systems does the Proximity Switch Electronic Unit (PSEU) monitor",
+"q": "Which systems does the Proximity Switch Electronic Unit (PSEU) monitor?",
 "a": 0,
 "options": [
 "Takeoff/Landing Configuration Warnings, Landing Gear and Air/Ground sensing.",
@@ -3119,7 +3119,7 @@
 },
 {
 "system": 15,
-"q": "What does the TCAS Symbol that is a solid amber circle indicate?",
+"q": "What does a solid amber circle TCAS symbol indicate?",
 "a": 0,
 "options": [
 "Advises of traffic with potential impact in 40 seconds.",
@@ -3130,7 +3130,7 @@
 },
 {
 "system": 15,
-"q": "The Stall Warning requirement is determined by what system component?",
+"q": "Which system component determines the stall-warning requirement?",
 "a": 0,
 "options": [
 "Two independent SMYD Computers.",
@@ -3141,7 +3141,7 @@
 },
 {
 "system": 15,
-"q": "Which two displays cannot be selected and shown simultaneously on the Navigation DU?",
+"q": "Which two displays cannot be shown at the same time on the navigation DU?",
 "a": 2,
 "options": [
 "Terrain and TCAS.",
@@ -3152,7 +3152,7 @@
 },
 {
 "system": 15,
-"q": "The stall warning test can only be carried out on the ground, the No1 and No2 systems must be carried out separately to ensure the clacker sounds when each system is tested.",
+"q": "The stall warning test can only be done on the ground, and the No 1 and No 2 systems must be tested separately to confirm the clacker sounds for each.",
 "a": 1,
 "options": [
 "True",
@@ -3161,7 +3161,7 @@
 },
 {
 "system": 15,
-"q": "The GPWS will provide an aural alert of \"BANK ANGLE, BANK ANGLE\" under which of the following circumstances?",
+"q": "Under which circumstances does the GPWS give a 'BANK ANGLE, BANK ANGLE' aural alert?",
 "a": 1,
 "options": [
 "Whenever the bank angle exceeds the setting on the Bank Angle Selector.",
@@ -3172,7 +3172,7 @@
 },
 {
 "system": 15,
-"q": "What is significant about the layout of the Annunciator Panel lights.",
+"q": "What is significant about the layout of the annunciator panel lights?",
 "a": 1,
 "options": [
 "The lights are arranged in no significant order.",
@@ -3183,7 +3183,7 @@
 },
 {
 "system": 15,
-"q": "With both engines operating and one forward thrust lever set below approximately 20 degrees thrust lever angle, the landing gear warning horn can be silenced with the landing gear warning HORN CUTOUT switch:",
+"q": "With both engines running and one forward thrust lever below about 20° thrust-lever angle, when can the landing-gear warning horn be silenced with the HORN CUTOUT switch?",
 "a": 0,
 "options": [
 "with flaps UP through 10 if below 800 feet RA and above 200 feet RA",
@@ -3194,7 +3194,7 @@
 },
 {
 "system": 15,
-"q": "What is the first Radio Altitude Callout given during the approach?",
+"q": "What is the first radio-altitude callout during the approach?",
 "a": 3,
 "options": [
 "50 feet - \"Fifty\".",
@@ -3205,7 +3205,7 @@
 },
 {
 "system": 15,
-"q": "Altitude alerting, consisting of a tone and highlighted boxes, occurs at a set distance before reaching the selected attitude.  How many feet before the selected altitude do the altitude alert highlighted boxes no longer show?",
+"q": "Altitude alerting (a tone and highlighted boxes) occurs a set distance before the selected altitude. How many feet before the selected altitude do the highlighted boxes stop showing?",
 "a": 1,
 "options": [
 "3000 fpm with 3000 feet to go, 2000 fpm with 2000 feet to go, 1000 fpm with 1000 feet to go.",
@@ -3216,7 +3216,7 @@
 },
 {
 "system": 15,
-"q": "Once an alert has occurred for deviating from the selected altitude, how is it cancelled?",
+"q": "Once a deviation alert from the selected altitude has occurred, how is it cancelled?",
 "a": 0,
 "options": [
 "return to within 300 feet of selected altitude or deviate by more than 900 feet from selected altitude, or select a new altitude.",
@@ -3227,7 +3227,7 @@
 },
 {
 "system": 15,
-"q": "The EGPWS contains a terrain database, which it uses for look-ahead terrain alerting.  Which of the following statements is correct for this terrain database?",
+"q": "The EGPWS holds a terrain database used for look-ahead terrain alerting. Which statement about this terrain database is correct?",
 "a": 2,
 "options": [
 "All EGPWS terrain databases account for man-made obstructions over 100 feet high, in the more detailed areas of the database near major airports.",
@@ -3238,7 +3238,7 @@
 },
 {
 "system": 15,
-"q": "The predictive windshear aural alerts will be heard through flightdeck speakers and the headsets at a pre-set volume.  They cannot be controlled or turned off by the crew.",
+"q": "The predictive-windshear aural alerts play through the flight-deck speakers and headsets at a preset volume and cannot be controlled or turned off by the crew.",
 "a": 0,
 "options": [
 "True",
@@ -3247,7 +3247,7 @@
 },
 {
 "system": 15,
-"q": "The PSEU light, located on the forward overhead panel, will illuminate on the ground if a fault is detected in the PSEU or if an overwing exit flight lock fails to disengage when commanded.",
+"q": "The PSEU light on the forward overhead panel illuminates on the ground if a PSEU fault is detected, or if an overwing-exit flight lock fails to disengage when commanded.",
 "a": 1,
 "options": [
 "True",
@@ -3256,7 +3256,7 @@
 },
 {
 "system": 15,
-"q": "When will the landing gear config warning horn give an intermittent warning sound?",
+"q": "When does the landing-gear configuration warning horn sound intermittently?",
 "a": 1,
 "options": [
 "Flaps greater than 25, below 800 feet RA, regardless of forward thrust lever position.",
@@ -3267,7 +3267,7 @@
 },
 {
 "system": 15,
-"q": "At what altitude (in feet) do the RA callouts begin?",
+"q": "At what altitude (in feet) do the radio-altitude callouts begin?",
 "a": 0,
 "options": [
 "TWENTY FIVE HUNDRED.",
@@ -3278,7 +3278,7 @@
 },
 {
 "system": 15,
-"q": "The EGPWS displays terrain within 2,500 feet of the aircraft barometric altitude on the Navigation display.",
+"q": "The EGPWS shows terrain within 2,500 ft of the aircraft's barometric altitude on the navigation display.",
 "a": 1,
 "options": [
 "True",
@@ -3287,7 +3287,7 @@
 },
 {
 "system": 15,
-"q": "How are crew alerted to a deviation from the selected altitude?",
+"q": "How is the crew alerted to a deviation from the selected altitude?",
 "a": 1,
 "options": [
 "A warning tone sounds once deviation is 300 feet from selected altitude, the current altitude box turns red and begins to flash.",
@@ -3298,7 +3298,7 @@
 },
 {
 "system": 15,
-"q": "The TCAS system generates a Traffic Advisory, whenever another aircraft is what distance from point of closest approach?",
+"q": "TCAS generates a traffic advisory when another aircraft is what distance from the closest point of approach?",
 "a": 1,
 "options": [
 ">6 nm separation with >1200 feet vertical separation.",
@@ -3309,7 +3309,7 @@
 },
 {
 "system": 15,
-"q": "At what altitude are the TCAS INCREASE DESCENT RAs inhibited?",
+"q": "At what altitude are TCAS INCREASE DESCENT RAs inhibited?",
 "a": 2,
 "options": [
 "1500 feet AGL",
@@ -3320,7 +3320,7 @@
 },
 {
 "system": 15,
-"q": "When configured for landing, the GPWS will NOT alert if attempting an off-airport landing.",
+"q": "When configured for landing, the GPWS will NOT alert during an attempted off-airport landing.",
 "a": 0,
 "options": [
 "True",
@@ -3329,7 +3329,7 @@
 },
 {
 "system": 15,
-"q": "How far from projected impact will the \"TERRAIN, TERRAIN, PULL UP\" aural warning be given?",
+"q": "How far from projected impact is the 'TERRAIN, TERRAIN, PULL UP' aural warning given?",
 "a": 1,
 "options": [
 "1.2 nm to 1.5 nm",
@@ -3340,7 +3340,7 @@
 },
 {
 "system": 15,
-"q": "Crew are warned of exceeding the maximum allowed airspeed by which of the following?",
+"q": "How is the crew warned of exceeding the maximum allowed airspeed?",
 "a": 1,
 "options": [
 "Aural Clacker, speedtape red and black band, stick shaker.",
@@ -3351,7 +3351,7 @@
 },
 {
 "system": 15,
-"q": "The Stall Warning System Stick Shaker can be tested by pressing the STALL WARNING TEST buttons on the AFT overhead panel.  Pressing No1 switch will activate the Captain's Stick Shaker and the Captain's column will vibrate.  Pressing N02 switch will activate the FO's Stick Shaker and the FO's column will vibrate.",
+"q": "The stall-warning stick shaker is tested with the STALL WARNING TEST buttons on the aft overhead panel: No 1 activates the Captain's stick shaker and column, No 2 activates the FO's stick shaker and column.",
 "a": 1,
 "options": [
 "True",
@@ -3360,7 +3360,7 @@
 },
 {
 "system": 15,
-"q": "What is the direct result of low oil pressure in the No2 IDG?",
+"q": "What is the direct result of low oil pressure in the No 2 IDG?",
 "a": 0,
 "options": [
 "The No2 Drive light illuminates amber.",
@@ -3371,7 +3371,7 @@
 },
 {
 "system": 15,
-"q": "Which of the following statements is true for the CABIN ALTITUDE Warning?",
+"q": "Which statement about the CABIN ALTITUDE warning is true?",
 "a": 3,
 "options": [
 "An intermittent warning horn sounds and the amber CABIN ALTITUDE warning lights illuminate when the cabin altitude exceeds 10000 feet",
@@ -3382,7 +3382,7 @@
 },
 {
 "system": 15,
-"q": "Pushing the ground proximity BELOW G/S P-INHIBIT light cancels or inhibits the alert when below 1,000 feet RA.",
+"q": "Pressing the ground-proximity BELOW G/S P-INHIBIT light cancels or inhibits the alert when below 1,000 ft RA.",
 "a": 0,
 "options": [
 "True",
@@ -3391,7 +3391,7 @@
 },
 {
 "system": 15,
-"q": "When testing the Mach/Airspeed warning system in flight, the No1 and No2 systems must be tested separately to identify that the clacker sounds for both systems independently.",
+"q": "When testing the Mach/airspeed warning system in flight, the No 1 and No 2 systems must be tested separately to confirm the clacker sounds for each independently.",
 "a": 1,
 "options": [
 "True",
