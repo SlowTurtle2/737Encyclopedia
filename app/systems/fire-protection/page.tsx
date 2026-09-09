@@ -47,7 +47,7 @@ export default function FireProtection() {
         <h3>Engine fire extinguisher</h3>
         <p>The hot battery bus powers the extinguishing system, so it remains available independently of the normal electrical configuration. Either bottle can be discharged into either engine.</p>
         <p>Pulling the illuminated engine fire switch isolates the affected engine by closing the engine and spar fuel shutoff valves, engine bleed valve and hydraulic fluid shutoff valve. It trips the generator, disables the related thrust reverser and arms one squib on each bottle. Rotating the switch discharges one bottle; rotating it the opposite way discharges the remaining bottle.</p>
-        <ul className="study-points"><li><strong>Fire switch locked:</strong> protected against inadvertent operation.</li><li><strong>Fire switch illuminated or ENG OVERHEAT:</strong> the switch unlocks automatically; manual override remains available.</li></ul>
+        <Warning title="FIRE SWITCH OVERRIDE">When the fire switch is not illuminated, its mechanical protection keeps it locked against inadvertent operation. If the switch must be pulled in this condition, press the override button immediately below the switch to release the lock.</Warning>
         <div className="emergency-light-card"><img src="/images/engine-bottle-discharged-light.png" alt="Amber L BOTTLE DISCHARGED light" /><div><strong>L / R BOTTLE DISCHARGED</strong><p>Illuminates amber a few seconds after the related extinguisher bottle is discharged. It also illuminates if pressure in that bottle is low.</p></div></div>
         <Need title="Two bottles · either engine"><p>Both bottles are common to both engines. The direction in which the fire switch is rotated selects the bottle, while the pulled switch selects the engine.</p></Need>
         <h3>Fire test</h3>
@@ -80,7 +80,7 @@ export default function FireProtection() {
         <span className="section-num">04 / WHEEL-WELL FIRE DETECTION</span>
         <h2>The main wheel well is monitored for fire, but the aircraft carries no extinguishing system for this zone.</h2>
         <p>The detector is powered by AC transfer bus 2 and the battery bus. A detected fire sounds the fire bell, illuminates both master FIRE WARN lights and illuminates the red <strong>WHEEL WELL</strong> light. The warning remains until detector temperature falls below its onset threshold.</p>
-        <p><strong>WHEEL WELL:</strong> the red light illuminates when the main-wheel-well detector senses a fire. The fire warning bell sounds and both master FIRE WARN lights illuminate. The light remains illuminated until detector temperature falls below the onset threshold.</p>
+        <div className="emergency-light-card"><img src="/images/wheel-well-fire-light.png" alt="Red WHEEL WELL fire warning light" /><div><strong>WHEEL WELL</strong><p>Illuminates red when the main-wheel-well detector senses a fire. The fire warning bell sounds and both master FIRE WARN lights illuminate. The light remains illuminated until detector temperature falls below the onset threshold.</p></div></div>
         <Max>The 737 NG uses a single detector loop in the main wheel well. The 737 MAX uses a dual detector loop. Neither version has a main-wheel-well extinguisher, and neither has fire detection in the nose wheel well.</Max>
         <Warning title="NO EXTINGUISHER">There is no flight deck discharge action for a wheel-well fire. The applicable non-normal response uses aircraft configuration and airflow to manage the condition.</Warning>
       </section>
