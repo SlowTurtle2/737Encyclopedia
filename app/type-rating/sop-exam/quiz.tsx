@@ -1,6 +1,11 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { sopQuestions, type SopQ } from './questions';
+import { supabase } from '@/lib/supabase';
+
+// Questions are fetched from Supabase (table sop_questions), which is
+// protected by RLS: only a user with paid access receives rows. They are
+// never shipped in the client bundle.
+type Q = { q: string; a: number; o: string[] };
 
 function shuffle<T>(arr: T[]): T[] {
   const a = arr.slice();
@@ -14,23 +19,54 @@ function shuffle<T>(arr: T[]): T[] {
 const PRESETS = [10, 20, 50, 100];
 
 export default function Quiz() {
-  const [mounted, setMounted] = useState(false);
+  const [all, setAll] = useState<Q[] | null>(null);
   const [phase, setPhase] = useState<'menu' | 'running' | 'done'>('menu');
   const [count, setCount] = useState(20);
-  const [deck, setDeck] = useState<SopQ[]>([]);
+  const [deck, setDeck] = useState<Q[]>([]);
   const [pos, setPos] = useState(0);
   const [choice, setChoice] = useState<number | null>(null);
   const [score, setScore] = useState(0);
-  const [wrong, setWrong] = useState<SopQ[]>([]); // wrongs in the current run
-  const [missedPool, setMissedPool] = useState<SopQ[]>([]); // carried between runs
+  const [wrong, setWrong] = useState<Q[]>([]);
+  const [missedPool, setMissedPool] = useState<Q[]>([]);
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    let active = true;
+    (async () => {
+      const { data, error } = await supabase
+        .from('sop_questions')
+        .select('q,a,options')
+        .order('id');
+      if (!active) return;
+      if (error) {
+        setAll([]);
+        return;
+      }
+      setAll(
+        (data ?? []).map((r) => ({
+          q: r.q as string,
+          a: r.a as number,
+          o: (r.options as string[]) ?? [],
+        })),
+      );
+    })();
+    return () => {
+      active = false;
+    };
+  }, []);
 
-  const total = sopQuestions.length;
+  if (all === null) return <p className="eyebrow">Loading questions…</p>;
+  if (all.length === 0)
+    return (
+      <p className="q-intro">
+        No questions are available on your account. If you have just purchased
+        access, refresh the page in a moment.
+      </p>
+    );
 
-  function begin(pool: SopQ[], n: number) {
-    const picked = shuffle(pool).slice(0, Math.min(n, pool.length));
-    setDeck(picked);
+  const total = all.length;
+
+  function begin(pool: Q[], n: number) {
+    setDeck(shuffle(pool).slice(0, Math.min(n, pool.length)));
     setPos(0);
     setChoice(null);
     setScore(0);
@@ -52,8 +88,6 @@ export default function Quiz() {
       setChoice(null);
     }
   }
-
-  if (!mounted) return <p className="eyebrow">Loading questions…</p>;
 
   if (phase === 'menu') {
     return (
@@ -93,7 +127,7 @@ export default function Quiz() {
           </label>
         </div>
         <div className="quiz-actions">
-          <button className="button" onClick={() => begin(sopQuestions, count)}>
+          <button className="button" onClick={() => begin(all, count)}>
             Start quiz →
           </button>
           <button

@@ -247,6 +247,59 @@ export function ResetPasswordForm() {
 }
 
 // ---------------------------------------------------------------------------
+// Gate for paid pages (Type Rating / Line Training)
+// ---------------------------------------------------------------------------
+export function RequireAccess({ children }: { children: React.ReactNode }) {
+  const { user, loading, hasAccess } = useUser();
+
+  if (loading) {
+    return (
+      <main id="main" className="wrap auth-wrap">
+        <p className="eyebrow">Checking access…</p>
+      </main>
+    );
+  }
+  if (!user) {
+    return (
+      <main id="main" className="wrap auth-wrap">
+        <div className="auth-card">
+          <span className="pill">MEMBERS ONLY</span>
+          <h1>Log in to continue</h1>
+          <p className="auth-sub">
+            This is part of the Type Rating and Line Training content, which
+            requires an account and access.
+          </p>
+          <SiteLink className="button" href="/login">
+            Log in
+          </SiteLink>
+          <div className="auth-links">
+            <SiteLink href="/register">Create an account</SiteLink>
+          </div>
+        </div>
+      </main>
+    );
+  }
+  if (!hasAccess) {
+    return (
+      <main id="main" className="wrap auth-wrap">
+        <div className="auth-card">
+          <span className="pill">MEMBERS ONLY</span>
+          <h1>Unlock full access</h1>
+          <p className="auth-sub">
+            Type Rating and Line Training unlock with a one-time payment of
+            €29.99.
+          </p>
+          <SiteLink className="button" href="/account">
+            Get access
+          </SiteLink>
+        </div>
+      </main>
+    );
+  }
+  return <>{children}</>;
+}
+
+// ---------------------------------------------------------------------------
 // Account panel
 // ---------------------------------------------------------------------------
 export function AccountPanel() {
@@ -290,7 +343,17 @@ export function AccountPanel() {
     });
     setBusy(false);
     if (error || !data?.url) {
-      setErr(error?.message ?? 'Could not start checkout. Please try again.');
+      let detail = error?.message ?? 'Could not start checkout. Please try again.';
+      const ctx = (error as { context?: Response })?.context;
+      if (ctx && typeof ctx.json === 'function') {
+        try {
+          const body = await ctx.json();
+          if (body?.error) detail = String(body.error);
+        } catch {
+          /* ignore */
+        }
+      }
+      setErr(detail);
       return;
     }
     window.location.assign(data.url as string);

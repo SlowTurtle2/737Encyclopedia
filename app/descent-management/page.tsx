@@ -1,4 +1,5 @@
 import Link from '@/components/site-link';
+import { RequireAccess } from '@/components/auth';
 
 export const metadata = {
   title: 'Descent Management | 737Encyclopedia',
@@ -7,6 +8,7 @@ export const metadata = {
 
 export default function DescentManagement() {
   return (
+    <RequireAccess>
     <main id="main" className="wrap empty-page">
       <p className="eyebrow">FLIGHT OPERATIONS</p>
       <span className="pill">COMING SOON</span>
@@ -19,5 +21,6 @@ export default function DescentManagement() {
         Return home →
       </Link>
     </main>
+    </RequireAccess>
   );
 }
