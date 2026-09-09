@@ -2433,6 +2433,25 @@ summary:focus-visible {
 .course-table-wrap .course-table th,
 .course-table-wrap .course-table td { text-align: center; }
 
+.system-light-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 22px 0;
+}
+.system-light-card {
+  padding: 19px 20px;
+  border: 1px solid #ead6a9;
+  border-radius: 12px;
+  background: #fffaf0;
+}
+.system-light-card strong {
+  color: #9a6200;
+  font-size: 12px;
+  letter-spacing: .08em;
+}
+.system-light-card p { margin: 7px 0 0 !important; }
+
 .assessment-path {
   margin-top: 26px;
   padding: 30px 32px;
@@ -2549,6 +2568,7 @@ summary:focus-visible {
   .assessment-path-head h2 { font-size: 26px; }
   .assessment-steps { grid-template-columns: 1fr; }
   .assessment-flow-arrow { transform: rotate(90deg); }
+  .system-light-grid { grid-template-columns: 1fr; }
 }
 
 /* SOP quiz answer feedback */
