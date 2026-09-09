@@ -2550,3 +2550,10 @@ summary:focus-visible {
   .assessment-steps { grid-template-columns: 1fr; }
   .assessment-flow-arrow { transform: rotate(90deg); }
 }
+
+/* SOP quiz answer feedback */
+.quiz-options button.correct { border-color: #2e9e6f; background: #e6f7ef; }
+.quiz-options button.wrong { border-color: #d3574f; background: #fdecea; }
+.quiz-options button:disabled { cursor: default; }
+.quiz-feedback.ok { background: #e6f7ef; }
+.quiz-feedback.no { background: #fdecea; }
