@@ -164,7 +164,7 @@ export default function Quiz() {
             const yours = answers[idx];
             const ok = yours === q.a;
             return (
-              <li key={idx}>
+              <li key={idx} className={ok ? '' : 'wrong'}>
                 <p className="q-review-q">{q.q}</p>
                 <p className="q-review-a">✓ {q.o[q.a]}</p>
                 {!ok && (

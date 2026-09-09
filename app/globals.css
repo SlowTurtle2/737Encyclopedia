@@ -2589,3 +2589,5 @@ summary:focus-visible {
 .q-review-q { margin: 0 0 4px; font-weight: 600; color: #29475f; }
 .q-review-a { margin: 0; color: #1c6d58; font-weight: 600; }
 .q-review-you { margin: 3px 0 0; color: #b3401f; font-size: 14px; }
+.q-review-list > li.wrong { border-left: 3px solid #d3574f; padding-left: 12px; background: #fdf4f3; border-radius: 0 6px 6px 0; }
+.q-review-list > li.wrong .q-review-q { color: #b3401f; }
