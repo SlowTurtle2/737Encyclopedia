@@ -36,7 +36,13 @@ Deno.serve(async (req) => {
       apiVersion: '2024-06-20',
       httpClient: Stripe.createFetchHttpClient(),
     });
-    const siteUrl = Deno.env.get('SITE_URL') ?? 'http://localhost:3000';
+    // Return the user to whichever site they started from (dev or prod),
+    // restricted to an allowlist so the redirect cannot be spoofed.
+    const allowed = ['http://localhost:3000', 'https://737encyclopedia.com'];
+    const origin = req.headers.get('origin') ?? '';
+    const base = allowed.includes(origin)
+      ? origin
+      : (Deno.env.get('SITE_URL') ?? 'https://737encyclopedia.com');
 
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
@@ -44,8 +50,8 @@ Deno.serve(async (req) => {
       client_reference_id: user.id,
       customer_email: user.email ?? undefined,
       metadata: { user_id: user.id },
-      success_url: `${siteUrl}/account?checkout=success`,
-      cancel_url: `${siteUrl}/account?checkout=cancel`,
+      success_url: `${base}/account?checkout=success`,
+      cancel_url: `${base}/account?checkout=cancel`,
     });
 
     return json({ url: session.url });
