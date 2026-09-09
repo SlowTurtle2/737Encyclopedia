@@ -2557,3 +2557,11 @@ summary:focus-visible {
 .quiz-options button:disabled { cursor: default; }
 .quiz-feedback.ok { background: #e6f7ef; }
 .quiz-feedback.no { background: #fdecea; }
+
+/* SOP quiz start menu */
+.quiz-presets { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 16px 0 4px; }
+.quiz-presets .preset { border: 1px solid #d2dce8; background: #fff; border-radius: 6px; padding: 9px 16px; font-size: 15px; font-weight: 600; color: #29475f; }
+.quiz-presets .preset.on { border-color: #2266b6; background: #edf5ff; color: #1b4f8a; }
+.quiz-custom { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #5b6b7a; }
+.quiz-custom input { width: 74px; padding: 8px 10px; border: 1px solid #d2dce8; border-radius: 6px; font-size: 15px; }
+.quiz-score { font-size: 40px; font-weight: 700; color: #226b60; margin: 4px 0 6px; letter-spacing: -1px; }

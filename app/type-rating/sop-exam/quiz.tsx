@@ -11,70 +11,144 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
+const PRESETS = [10, 20, 50, 100];
+
 export default function Quiz() {
   const [mounted, setMounted] = useState(false);
-  const [deck, setDeck] = useState<SopQ[]>(sopQuestions);
+  const [phase, setPhase] = useState<'menu' | 'running' | 'done'>('menu');
+  const [count, setCount] = useState(20);
+  const [deck, setDeck] = useState<SopQ[]>([]);
   const [pos, setPos] = useState(0);
   const [choice, setChoice] = useState<number | null>(null);
   const [score, setScore] = useState(0);
-  const [done, setDone] = useState(false);
+  const [wrong, setWrong] = useState<SopQ[]>([]); // wrongs in the current run
+  const [missedPool, setMissedPool] = useState<SopQ[]>([]); // carried between runs
 
-  // Render only on the client (after shuffling) so the random order never
-  // causes a server/client hydration mismatch.
-  useEffect(() => {
-    setDeck(shuffle(sopQuestions));
-    setMounted(true);
-  }, []);
+  useEffect(() => setMounted(true), []);
 
-  if (!mounted) {
-    return <p className="eyebrow">Loading questions…</p>;
-  }
+  const total = sopQuestions.length;
 
-  const total = deck.length;
-  const question = deck[pos];
-
-  function restart() {
-    setDeck(shuffle(sopQuestions));
+  function begin(pool: SopQ[], n: number) {
+    const picked = shuffle(pool).slice(0, Math.min(n, pool.length));
+    setDeck(picked);
     setPos(0);
     setChoice(null);
     setScore(0);
-    setDone(false);
+    setWrong([]);
+    setPhase('running');
   }
   function pick(i: number) {
     if (choice !== null) return;
     setChoice(i);
-    if (i === question.a) setScore((s) => s + 1);
+    if (i === deck[pos].a) setScore((s) => s + 1);
+    else setWrong((w) => [...w, deck[pos]]);
   }
   function next() {
-    if (pos === total - 1) {
-      setDone(true);
+    if (pos === deck.length - 1) {
+      setMissedPool(wrong);
+      setPhase('done');
     } else {
       setPos((p) => p + 1);
       setChoice(null);
     }
   }
 
-  if (done) {
-    const pct = Math.round((score / total) * 100);
+  if (!mounted) return <p className="eyebrow">Loading questions…</p>;
+
+  if (phase === 'menu') {
+    return (
+      <div className="quiz-menu">
+        <p className="eyebrow">BUILD YOUR QUIZ · {total} QUESTIONS AVAILABLE</p>
+        <h3>How many questions?</h3>
+        <div className="quiz-presets">
+          {PRESETS.map((n) => (
+            <button
+              key={n}
+              type="button"
+              className={count === n ? 'preset on' : 'preset'}
+              onClick={() => setCount(n)}
+            >
+              {n}
+            </button>
+          ))}
+          <button
+            type="button"
+            className={count === total ? 'preset on' : 'preset'}
+            onClick={() => setCount(total)}
+          >
+            All ({total})
+          </button>
+          <label className="quiz-custom">
+            Custom
+            <input
+              type="number"
+              min={1}
+              max={total}
+              value={count}
+              onChange={(e) => {
+                const v = Math.max(1, Math.min(total, Number(e.target.value) || 1));
+                setCount(v);
+              }}
+            />
+          </label>
+        </div>
+        <div className="quiz-actions">
+          <button className="button" onClick={() => begin(sopQuestions, count)}>
+            Start quiz →
+          </button>
+          <button
+            className="button"
+            disabled={missedPool.length === 0}
+            onClick={() => begin(missedPool, missedPool.length)}
+          >
+            Review missed questions{missedPool.length ? ` (${missedPool.length})` : ''}
+          </button>
+        </div>
+        {missedPool.length === 0 && (
+          <p className="q-intro">
+            Finish a quiz first to unlock a review of the questions you missed.
+          </p>
+        )}
+      </div>
+    );
+  }
+
+  if (phase === 'done') {
+    const pct = Math.round((score / deck.length) * 100);
     return (
       <div className="note">
         <h3>Quiz complete</h3>
+        <p className="quiz-score">{pct}%</p>
         <p>
-          You scored <strong>{score} / {total}</strong> ({pct}%).
+          You scored <strong>{score} / {deck.length}</strong> correct.
+          {missedPool.length > 0 && (
+            <> You missed <strong>{missedPool.length}</strong>.</>
+          )}
         </p>
         <div className="quiz-actions">
-          <button className="button" onClick={restart}>
-            Start again
+          {missedPool.length > 0 && (
+            <button
+              className="button"
+              onClick={() => begin(missedPool, missedPool.length)}
+            >
+              Review missed ({missedPool.length}) →
+            </button>
+          )}
+          <button className="button" onClick={() => setPhase('menu')}>
+            New quiz
           </button>
         </div>
       </div>
     );
   }
 
+  const question = deck[pos];
+  const runPct = pos > 0 ? Math.round((score / pos) * 100) : 0;
   return (
     <div>
       <p className="eyebrow">
-        QUESTION {pos + 1} OF {total} · SCORE {score}
+        QUESTION {pos + 1} OF {deck.length} · SCORE {score}
+        {pos > 0 && ` · ${runPct}%`}
       </p>
       <h3>{question.q}</h3>
       <div className="quiz-options" role="group" aria-label="Choose an answer">
@@ -104,18 +178,25 @@ export default function Quiz() {
         >
           <b>{choice === question.a ? 'Correct.' : 'Not quite.'}</b>{' '}
           {choice !== question.a && (
-            <>Correct answer: {String.fromCharCode(65 + question.a)}. {question.o[question.a]}</>
+            <>
+              Correct answer: {String.fromCharCode(65 + question.a)}.{' '}
+              {question.o[question.a]}
+            </>
           )}
         </div>
       )}
       <div className="quiz-actions">
         {choice !== null && (
           <button className="button" onClick={next}>
-            {pos === total - 1 ? 'See results' : 'Next question'} →
+            {pos === deck.length - 1 ? 'See results' : 'Next question'} →
           </button>
         )}
-        <button className="system-glossary-link" onClick={restart} type="button">
-          Restart
+        <button
+          className="system-glossary-link"
+          onClick={() => setPhase('menu')}
+          type="button"
+        >
+          End &amp; back to menu
         </button>
       </div>
     </div>
