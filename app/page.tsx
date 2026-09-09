@@ -239,9 +239,6 @@ export default function Home() {
             reliable exam and interview recall.
           </p>
         </div>
-        <Link className="button" href="/academy">
-          Study access <ArrowUpRight size={18} />
-        </Link>
       </section>
     </main>
   );
