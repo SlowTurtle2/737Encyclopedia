@@ -4,6 +4,10 @@ import SiteLink from '@/components/site-link';
 import { supabase } from '@/lib/supabase';
 import { useUser } from '@/components/use-user';
 
+// Master switch for selling access. Set to true to reopen Stripe checkout
+// once the paid content is ready.
+const PURCHASES_OPEN = false;
+
 function origin() {
   return typeof window !== 'undefined' ? window.location.origin : '';
 }
@@ -284,14 +288,17 @@ export function RequireAccess({ children }: { children: React.ReactNode }) {
       <main id="main" className="wrap auth-wrap">
         <div className="auth-card">
           <span className="pill">MEMBERS ONLY</span>
-          <h1>Unlock full access</h1>
+          <h1>{PURCHASES_OPEN ? 'Unlock full access' : 'Coming soon'}</h1>
           <p className="auth-sub">
-            Type Rating and Line Training unlock with a one-time payment of
-            €29.99.
+            {PURCHASES_OPEN
+              ? 'Type Rating and Line Training unlock with a one-time payment of €29.99.'
+              : 'Type Rating and Line Training are being finalised and are not open for purchase yet. Please check back soon.'}
           </p>
-          <SiteLink className="button" href="/account">
-            Get access
-          </SiteLink>
+          {PURCHASES_OPEN && (
+            <SiteLink className="button" href="/account">
+              Get access
+            </SiteLink>
+          )}
         </div>
       </main>
     );
@@ -367,7 +374,7 @@ export function AccountPanel() {
       <div className={hasAccess ? 'access-badge on' : 'access-badge'}>
         {hasAccess ? 'Full access active' : 'No paid access yet'}
       </div>
-      {!hasAccess && (
+      {!hasAccess && PURCHASES_OPEN && (
         <>
           <p className="auth-sub">
             Unlock all Type Rating and Line Training content with a one-time
@@ -376,6 +383,18 @@ export function AccountPanel() {
           {err && <p className="auth-error">{err}</p>}
           <button className="button" disabled={busy} type="button" onClick={buy}>
             {busy ? 'Starting…' : 'Get full access — €29.99'}
+          </button>
+        </>
+      )}
+      {!hasAccess && !PURCHASES_OPEN && (
+        <>
+          <p className="auth-sub">
+            Paid access is not open yet: the Type Rating and Line Training
+            content is still being finalised. It will be available to purchase
+            soon.
+          </p>
+          <button className="button" type="button" disabled>
+            Purchases open soon
           </button>
         </>
       )}
