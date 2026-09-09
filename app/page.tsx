@@ -84,6 +84,38 @@ export default function Home() {
           <GitCompareArrows size={19} /> NG & MAX comparisons
         </span>
       </div>
+      <section className="wrap assessment-path" aria-labelledby="assessment-path-title">
+        <div className="assessment-path-head">
+          <div>
+            <p className="eyebrow">PREPARE YOUR AIRLINE ASSESSMENT</p>
+            <h2 id="assessment-path-title">Prepare each stage before assessment day.</h2>
+            <p>Move from technical preparation to the HR interview and simulator session with direct access to each study area.</p>
+          </div>
+          <span className="free-access-tag">100% FREE</span>
+        </div>
+        <div className="assessment-steps">
+          <article className="assessment-step assessment-step-double">
+            <span className="assessment-step-number">01</span>
+            <h3>Technical preparation</h3>
+            <div className="assessment-step-links">
+              <Link href="/airline-assessment/technical-interview">Technical interview <ArrowUpRight size={17} /></Link>
+              <Link href="/max-differences">MAX differences <ArrowUpRight size={17} /></Link>
+            </div>
+          </article>
+          <ArrowRight className="assessment-flow-arrow" aria-hidden="true" />
+          <article className="assessment-step">
+            <span className="assessment-step-number">02</span>
+            <h3>HR interview</h3>
+            <Link href="/airline-assessment/hr-interview">Open section <ArrowUpRight size={17} /></Link>
+          </article>
+          <ArrowRight className="assessment-flow-arrow" aria-hidden="true" />
+          <article className="assessment-step">
+            <span className="assessment-step-number">03</span>
+            <h3>Simulator session</h3>
+            <Link href="/airline-assessment/simulator-session">Open section <ArrowUpRight size={17} /></Link>
+          </article>
+        </div>
+      </section>
       <section className="wrap section" id="systems">
         <div className="section-heading">
           <div>

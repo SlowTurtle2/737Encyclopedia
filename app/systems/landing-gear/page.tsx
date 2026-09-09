@@ -19,7 +19,7 @@ export default function LandingGear() {
         <span className="section-num">01 / LANDING GEAR</span>
         <h2>Two main landing gears and one steerable nose gear are normally extended and retracted by hydraulic system A.</h2>
         <p>Each gear has two wheels. The main gears retract inboard into open wheel wells and are held retracted by mechanical uplocks. The nose gear retracts forward, is held by an overcenter lock and is enclosed by mechanically linked doors.</p>
-        <Placeholder>Landing gear arrangement and hydraulic actuation.</Placeholder>
+        <figure className="figure course-photo main-landing-gear-photo"><img src="/images/b737-main-landing-gear-labeled.png" alt="737 main landing gear with its principal structural components identified" /><figcaption>Main landing gear: shock strut, doors, side and downlock struts, charging valves and uplock roller.</figcaption></figure>
         <h3>Normal command</h3>
         <p>The <strong>LANDING GEAR</strong> lever controls normal extension and retraction. On the ground, an air/ground-controlled lever lock prevents selection to UP. The <strong>LOCK OVRD</strong> control releases this lock if required.</p>
         <ul className="study-points"><li><strong>UP:</strong> hydraulic system A retracts the gear. The main-wheel brakes stop wheel rotation during retraction, while snubbers stop the nose wheels.</li><li><strong>DN:</strong> hydraulic system A releases the uplocks. Hydraulic pressure, gravity and aerodynamic loads extend the gear, and overcenter mechanical and hydraulic locks hold it down.</li></ul>
@@ -67,7 +67,7 @@ export default function LandingGear() {
         <h3>Anti-skid</h3>
         <p>Anti-skid monitors wheel speed and reduces brake pressure when a skid is detected. Protection is available with both normal and alternate braking, and remains available even if both hydraulic systems are lost while accumulator pressure remains.</p>
         <ul className="study-points"><li><strong>Skid protection:</strong> reduces pressure at a skidding wheel or wheel pair.</li><li><strong>Locked-wheel protection:</strong> prevents sustained wheel lock during braking.</li><li><strong>Touchdown protection:</strong> inhibits brake pressure until wheel spin-up confirms ground contact.</li><li><strong>Hydroplane protection:</strong> releases pressure when wheel-speed behavior indicates hydroplaning.</li></ul>
-        <div className="emergency-light-card"><img src="/images/antiskid-inop-light.png" alt="Amber ANTISKID INOP light" /><div><strong>ANTISKID INOP</strong><p>Illuminates amber when the antiskid monitoring system detects a fault. Antiskid protection may be partially or completely unavailable depending on the failure.</p></div></div>
+        <p><strong>ANTISKID INOP:</strong> illuminates amber when the antiskid monitoring system detects a fault. Antiskid protection may be partially or completely unavailable depending on the failure.</p>
         <Placeholder>Normal, alternate and accumulator brake architecture.</Placeholder>
       </section>
 
