@@ -2565,3 +2565,19 @@ summary:focus-visible {
 .quiz-custom { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #5b6b7a; }
 .quiz-custom input { width: 74px; padding: 8px 10px; border: 1px solid #d2dce8; border-radius: 6px; font-size: 15px; }
 .quiz-score { font-size: 40px; font-weight: 700; color: #226b60; margin: 4px 0 6px; letter-spacing: -1px; }
+
+/* Auth pages */
+.auth-wrap { max-width: 460px; padding-top: 40px; padding-bottom: 80px; }
+.auth-card { border: 1px solid var(--border); border-radius: 14px; padding: 30px 28px; background: #fff; display: grid; gap: 6px; }
+.auth-card h1 { font-size: 27px; margin: 0 0 2px; }
+.auth-sub { color: #5b6b7a; margin: 0 0 14px; }
+.auth-card label { display: grid; gap: 6px; font-size: 13px; font-weight: 600; color: #33475b; margin-bottom: 12px; }
+.auth-card input { padding: 11px 13px; border: 1px solid #d2dce8; border-radius: 8px; font-size: 15px; font-weight: 400; }
+.auth-card input:focus { outline: none; border-color: #2266b6; box-shadow: 0 0 0 3px #e5eefb; }
+.auth-card .button { width: 100%; justify-content: center; margin-top: 4px; }
+.auth-error { color: #b3261e; background: #fdecea; border: 1px solid #f2c9c4; border-radius: 8px; padding: 9px 12px; font-size: 14px; margin: 0 0 6px; }
+.auth-links { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 16px; font-size: 14px; }
+.auth-links a, .linklike { color: #2266b6; background: none; border: none; padding: 0; font: inherit; cursor: pointer; text-decoration: underline; }
+.access-badge { display: inline-block; align-self: start; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700; background: #f0f0f3; color: #55606f; margin: 6px 0 4px; }
+.access-badge.on { background: #e6f7ef; color: #1c6d58; }
+.header-auth { font-size: 14px; font-weight: 600; color: #33475b; margin-right: 4px; }
