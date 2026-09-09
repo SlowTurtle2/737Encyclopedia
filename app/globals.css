@@ -2571,6 +2571,37 @@ summary:focus-visible {
   .system-light-grid { grid-template-columns: 1fr; }
 }
 
+.pricing-page {
+  max-width: 1060px;
+  padding-top: 62px;
+  padding-bottom: 80px;
+}
+.pricing-head { max-width: 760px; margin-bottom: 38px; }
+.pricing-head h1 { margin: 0 0 18px; font-size: clamp(42px, 5vw, 64px); line-height: 1.02; letter-spacing: -.045em; }
+.pricing-head h1 span { color: #92959d; }
+.pricing-head .lead { max-width: 720px; font-size: 17px; }
+.pricing-comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.pricing-plan { display: flex; min-height: 580px; flex-direction: column; padding: 32px; border: 1px solid #dfe3e7; border-radius: 17px; background: #fff; }
+.pricing-plan-full { border-color: #b9cadd; background: #f3f7fb; box-shadow: 0 16px 42px rgba(31, 63, 91, .09); }
+.pricing-plan h2 { margin: 20px 0 4px; font-size: 28px; }
+.pricing-plan-top > p:last-child { color: #747f89; }
+.pricing-amount { margin: 3px 0 16px; color: #183f60; font-size: 35px; font-weight: 750; letter-spacing: -.04em; }
+.pricing-amount small { display: inline-block; margin-left: 5px; color: #7c8790; font-size: 12px; font-weight: 600; letter-spacing: 0; }
+.pricing-plan > h3 { margin: 24px 0 8px; font-size: 14px; }
+.pricing-plan ul { display: grid; gap: 11px; margin: 0 0 28px; padding: 0; list-style: none; }
+.pricing-plan li { display: flex; align-items: flex-start; gap: 10px; color: #526675; font-size: 14px; }
+.pricing-plan li svg { flex: none; color: #25836c; }
+.pricing-plan > .button { justify-content: center; margin-top: auto; }
+.pricing-note { display: grid; grid-template-columns: auto 1fr; gap: 22px; margin-top: 24px; padding: 20px 24px; border: 1px solid #e2e5e8; border-radius: 12px; background: #fafbfc; }
+.pricing-note p { margin: 0; color: #73808b; }
+
+@media (max-width: 700px) {
+  .pricing-page { padding-top: 38px; }
+  .pricing-comparison { grid-template-columns: 1fr; }
+  .pricing-plan { min-height: 0; padding: 25px 22px; }
+  .pricing-note { grid-template-columns: 1fr; gap: 7px; }
+}
+
 /* SOP quiz answer feedback */
 .quiz-options button.correct { border-color: #2e9e6f; background: #e6f7ef; }
 .quiz-options button.wrong { border-color: #d3574f; background: #fdecea; }
