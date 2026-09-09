@@ -2591,3 +2591,10 @@ summary:focus-visible {
 .q-review-you { margin: 3px 0 0; color: #b3401f; font-size: 14px; }
 .q-review-list > li.wrong { border-left: 3px solid #d3574f; padding-left: 12px; background: #fdf4f3; border-radius: 0 6px 6px 0; }
 .q-review-list > li.wrong .q-review-q { color: #b3401f; }
+
+/* Technical exam system picker */
+.sys-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin: 16px 0; }
+.sys-btn { text-align: left; background: #fff; border: 1px solid #d2dce8; border-radius: 8px; padding: 12px 14px; font-size: 15px; color: #29475f; }
+.sys-btn span { color: #7a8a99; font-weight: 700; margin-right: 6px; }
+.sys-btn:hover { border-color: #2266b6; background: #f4f8fb; }
+.sys-btn.all { grid-column: 1 / -1; font-weight: 700; background: #edf5ff; border-color: #b8d2f0; color: #1b4f8a; }
