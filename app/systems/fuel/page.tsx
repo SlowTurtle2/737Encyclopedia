@@ -1,9 +1,7 @@
-import Link from '@/components/site-link';
 import SystemPager from '@/components/system-pager';
 import FuelDiagram from './diagram';
 import PumpControlPanel from './pump-control-panel';
 import TankLocation from './tank-location';
-import Quiz from './quiz';
 import Contents from './contents';
 import {
   Table,
@@ -65,7 +63,6 @@ const sections = [
   ['indications', 'Indications & alerts'],
   ['temperature', 'Fuel Temperature and Limits'],
   ['ground', 'Refuelling and NGS'],
-  ['quiz', 'Check your knowledge'],
 ];
 export default function Fuel() {
   return (
@@ -648,16 +645,6 @@ export default function Fuel() {
             </Deep>
 
           </section>
-          <section className="course-section" id="quiz">
-            <span className="section-num">07 / CHECK YOUR KNOWLEDGE</span>
-            <h2>
-              Use these questions to check whether the key system relationships
-              are clear.
-            </h2>
-            <p>Three free questions with explanations. No account required.</p>
-            <Quiz />
-
-          </section>
           <SystemPager current="Fuel" />
         </article>
         <aside className="course-aside">
@@ -669,7 +656,6 @@ export default function Fuel() {
             <p className="muted">
               Blue-violet notes identify 737-8200 differences.
             </p>
-            <Link href="/academy">Quiz & revision sheets →</Link>
           </div>
         </aside>
       </div>
