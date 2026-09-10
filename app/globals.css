@@ -2800,3 +2800,19 @@ summary:focus-visible {
 .assessment-scope-note p { margin: 0; font-size: 15px; line-height: 1.5; color: #234b40; }
 .assessment-scope-note strong { color: #12563f; }
 @media (max-width: 640px) { .assessment-scope-note { flex-direction: column; align-items: flex-start; gap: 10px; } }
+
+/* FMC tutorial step list */
+.fmc-tut-steps { list-style: none !important; counter-reset: fmcstep; padding: 0 !important; margin: 22px 0 !important; display: grid; gap: 14px; }
+.fmc-tut-steps > li { counter-increment: fmcstep; position: relative; padding: 16px 18px 16px 60px !important; margin: 0 !important; border: 1px solid #e2e9f1; border-radius: 12px; background: #fbfdff; }
+.fmc-tut-steps > li::before { content: counter(fmcstep); position: absolute; left: 15px; top: 15px; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: #148094; color: #fff; font-weight: 700; font-size: 15px; }
+.fmc-tut-steps > li > p { margin: 0 0 4px !important; }
+.fmc-tut-steps ul { margin: 8px 0 0 !important; padding-left: 20px !important; }
+.fmc-tut-steps ul li { margin: 2px 0 !important; }
+.fmc-substeps { list-style: none !important; counter-reset: fmcsub; padding-left: 0 !important; margin: 10px 0 0 !important; display: grid; gap: 8px; }
+.fmc-substeps > li { counter-increment: fmcsub; position: relative; padding-left: 26px !important; margin: 0 !important; }
+.fmc-substeps > li::before { content: counter(fmcsub, lower-alpha) "."; position: absolute; left: 4px; top: 0; font-weight: 700; color: #148094; }
+.fmc-page-tag { display: inline-block; font: 700 12px/1 ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: 0.5px; background: #eaf3fa; color: #1b4f8a; border: 1px solid #cfe0f5; border-radius: 6px; padding: 6px 10px; margin-bottom: 10px; }
+.lsk { font: 700 12.5px/1 ui-monospace, "SF Mono", Menlo, monospace; background: #eef1f5; border: 1px solid #dde4ec; border-radius: 4px; padding: 2px 6px; color: #33475b; white-space: nowrap; }
+.fmc-soon { display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; color: #7a8a99; background: #f0f3f7; border: 1px solid #e1e7ee; border-radius: 999px; padding: 6px 14px; margin: 6px 0 0 !important; }
+.fmc-trainer-wrap { background: #e9edf1; padding: 44px 38px 64px; margin-top: 26px; overflow: hidden; }
+@media (max-width: 600px) { .fmc-trainer-wrap { padding: 28px 10px 48px; } }
