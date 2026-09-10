@@ -5,11 +5,11 @@ import { useCallback, useEffect, useState } from 'react';
 type PageName = 'INDEX' | 'IDENT' | 'POS INIT' | 'RTE' | 'LEGS' | 'PERF INIT' | 'N1 LIMIT' | 'PROGRESS' | 'DEP ARR' | 'TAKEOFF REF' | 'FIX INFO';
 type RouteData = { origin: string; destination: string; flightNo: string; runway: string };
 type PerfData = { zfw: string; reserves: string; costIndex: string; cruiseAlt: string };
-type ExtraData = { refAirport: string; gate: string; irsPos: string; flaps: string; cg: string; v1: string; vr: string; v2: string; fix: string; selTemp: string };
+type ExtraData = { refAirport: string; gate: string; irsPos: string; flaps: string; cg: string; v1: string; vr: string; v2: string; fix: string; selTemp: string; oat: string };
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const initialRoute: RouteData = { origin: '', destination: '', flightNo: '', runway: '' };
 const initialPerf: PerfData = { zfw: '', reserves: '', costIndex: '', cruiseAlt: '' };
-const initialExtra: ExtraData = { refAirport: '', gate: '', irsPos: '', flaps: '', cg: '', v1: '', vr: '', v2: '', fix: '', selTemp: '' };
+const initialExtra: ExtraData = { refAirport: '', gate: '', irsPos: '', flaps: '', cg: '', v1: '', vr: '', v2: '', fix: '', selTemp: '', oat: '' };
 const pageCounts: Partial<Record<PageName, number>> = { 'IDENT': 2, 'POS INIT': 2, 'RTE': 2, 'PERF INIT': 2, 'TAKEOFF REF': 2, 'FIX INFO': 2 };
 
 function Pair({ leftLabel, left, rightLabel, right }: { leftLabel?: string; left?: string; rightLabel?: string; right?: string }) {
@@ -32,6 +32,8 @@ export function FmcTrainer() {
   const [activeRoute, setActiveRoute] = useState<RouteData>(initialRoute);
   const [perf, setPerf] = useState<PerfData>(initialPerf);
   const [extra, setExtra] = useState<ExtraData>(initialExtra);
+  const [routePoints, setRoutePoints] = useState(['', '', '', '']);
+  const [airways, setAirways] = useState(['', '', '', '']);
   const [pageNumber, setPageNumber] = useState(1);
   const [modified, setModified] = useState(false);
   const routeReady = Boolean(route.origin && route.destination);
@@ -70,6 +72,20 @@ export function FmcTrainer() {
     setExtra((old) => ({ ...old, [field]: scratch === 'DELETE' ? '' : scratch.toUpperCase() }));
     setScratch(''); setModified(true);
   }
+  function transferRouteRow(row: number, side: 'point' | 'airway') {
+    const values = side === 'point' ? routePoints : airways;
+    if (!scratch) return setScratch(values[row]);
+    const value = scratch === 'DELETE' ? '' : scratch.replaceAll(' ', '').toUpperCase();
+    const update = (old: string[]) => old.map((item, index) => index === row ? value : item);
+    if (side === 'point') setRoutePoints(update); else setAirways(update);
+    setScratch(''); setModified(true);
+  }
+  function transferSelOat() {
+    if (!scratch) return setScratch(extra.oat ? `/${extra.oat}` : extra.selTemp);
+    if (scratch.startsWith('/')) setExtra((old) => ({ ...old, oat: scratch.slice(1).toUpperCase() }));
+    else setExtra((old) => ({ ...old, selTemp: scratch.replace('/','').toUpperCase() }));
+    setScratch(''); setModified(true);
+  }
   function go(next: PageName) { setPage(next); setPageNumber(1); setMessage(''); }
   function goRouteFromPos() {
     setPage('RTE'); setPageNumber(1); setMessage('');
@@ -86,7 +102,7 @@ export function FmcTrainer() {
     setActiveRoute(route); setModified(false); setMessage('ROUTE ACTIVATED');
   }
   function reset() {
-    setRoute(initialRoute); setActiveRoute(initialRoute); setPerf(initialPerf); setExtra(initialExtra);
+    setRoute(initialRoute); setActiveRoute(initialRoute); setPerf(initialPerf); setExtra(initialExtra); setRoutePoints(['', '', '', '']); setAirways(['', '', '', '']);
     setScratch(''); setMessage(''); setModified(false); setPage('IDENT'); setPageNumber(1);
   }
 
@@ -96,9 +112,9 @@ export function FmcTrainer() {
   if (page === 'INDEX') { leftActions[0] = () => go('IDENT'); leftActions[1] = () => go('POS INIT'); leftActions[2] = () => go('PERF INIT'); leftActions[3] = () => go('TAKEOFF REF'); rightActions[0] = () => go('RTE'); }
   if (page === 'POS INIT' && pageNumber === 1) { leftActions[1] = () => transferExtra('refAirport'); leftActions[2] = () => transferExtra('gate'); rightActions[3] = () => transferExtra('irsPos'); leftActions[5] = () => go('INDEX'); rightActions[5] = goRouteFromPos; }
   if (page === 'RTE' && pageNumber === 1) { leftActions[0] = () => transferRoute('origin'); leftActions[2] = () => transferRoute('runway'); rightActions[0] = () => transferRoute('destination'); rightActions[1] = () => transferRoute('flightNo'); leftActions[5] = () => setPageNumber(2); }
-  if (page === 'RTE' && pageNumber === 2) { leftActions[5] = () => setPageNumber(1); rightActions[5] = () => go('PERF INIT'); }
+  if (page === 'RTE' && pageNumber === 2) { for (let row = 0; row < 4; row++) { leftActions[row] = () => transferRouteRow(row, 'point'); rightActions[row] = () => transferRouteRow(row, 'airway'); } leftActions[5] = () => setPageNumber(1); rightActions[5] = () => go('PERF INIT'); }
   if (page === 'PERF INIT' && pageNumber === 1) { leftActions[1] = () => transferPerf('zfw'); leftActions[2] = () => transferPerf('reserves'); leftActions[3] = () => transferPerf('costIndex'); rightActions[0] = () => transferPerf('cruiseAlt'); leftActions[5] = () => go('INDEX'); rightActions[5] = () => go('N1 LIMIT'); }
-  if (page === 'N1 LIMIT') { leftActions[0] = () => transferExtra('selTemp'); leftActions[5] = () => go('PERF INIT'); rightActions[5] = () => go('TAKEOFF REF'); }
+  if (page === 'N1 LIMIT') { leftActions[0] = transferSelOat; leftActions[5] = () => go('PERF INIT'); rightActions[5] = () => go('TAKEOFF REF'); }
   if (page === 'LEGS') { leftActions[5] = () => setMessage('ERASE NOT AVAILABLE'); rightActions[5] = () => setMessage('RTE DATA'); }
   if (page === 'DEP ARR') { leftActions[0] = () => setMessage('SELECT RTE 1 DEPARTURE'); rightActions[0] = () => setMessage('SELECT RTE 1 ARRIVAL'); rightActions[1] = () => setMessage('SELECT RTE 1 ARRIVAL'); leftActions[2] = () => setMessage('SELECT RTE 2 DEPARTURE'); rightActions[2] = () => setMessage('SELECT RTE 2 ARRIVAL'); rightActions[3] = () => setMessage('SELECT RTE 2 ARRIVAL'); leftActions[5] = () => setMessage('SELECT OTHER DEPARTURE'); rightActions[5] = () => setMessage('SELECT OTHER ARRIVAL'); }
   if (page === 'TAKEOFF REF' && pageNumber === 1) { leftActions[0] = () => transferExtra('flaps'); leftActions[2] = () => transferExtra('cg'); leftActions[4] = () => transferRoute('runway'); rightActions[0] = () => transferExtra('v1'); rightActions[1] = () => transferExtra('vr'); rightActions[2] = () => transferExtra('v2'); leftActions[5] = () => go('PERF INIT'); }
@@ -111,10 +127,10 @@ export function FmcTrainer() {
     if (page === 'POS INIT' && pageNumber === 1) { right[0] = 'N47°32.4 W122°18.6'; left[1] = extra.refAirport; left[2] = extra.gate; left[3] = '000'; right[3] = extra.irsPos; left[4] = '1432.2Z'; right[4] = 'MAR21/15'; }
     if (page === 'POS INIT' && pageNumber === 2) { left.splice(0, 6, 'N47°32.4 W122°18.6', 'N47°32.4 W122°18.7', 'N47°32.4 W122°18.6', 'N47°32.4 W122°18.6', 'N47°32.3 W122°18.5', 'N47°32.4 W122°18.7'); right.splice(0, 3, '1KT', '2KT', '3KT'); }
     if (page === 'RTE' && pageNumber === 1) { left[0] = route.origin; right[0] = route.destination; left[1] = '----------'; right[1] = route.flightNo; left[2] = route.runway; }
-    if (page === 'RTE' && pageNumber === 2) { left[1] = 'DIRECT'; right[1] = activeRoute.origin; left[2] = 'DIRECT'; left[3] = 'DIRECT'; right[3] = activeRoute.destination; }
-    if (page === 'PERF INIT' && pageNumber === 1) { left[0] = '68.4/8.0'; right[0] = `FL190/${perf.cruiseAlt || 'FL060'}`; left[1] = '34.0'; left[2] = perf.zfw; left[3] = perf.reserves; left[4] = perf.costIndex; right[4] = '18000'; }
+    if (page === 'RTE' && pageNumber === 2) { for (let row = 0; row < 4; row++) { left[row] = routePoints[row]; right[row] = airways[row] || (routePoints[row] ? 'DIRECT' : ''); } }
+    if (page === 'PERF INIT' && pageNumber === 1) { left[0] = '68.4/8.0'; right[0] = `FL190/${perf.cruiseAlt || 'FL060'}`; left[1] = '6.3'; left[2] = perf.zfw; left[3] = perf.reserves; left[4] = perf.costIndex; right[4] = '18000'; }
     if (page === 'PERF INIT' && pageNumber === 2) { left[0] = '19.1%'; right[0] = 'ICAO'; left[1] = '-37C'; right[1] = 'FL410'; left[2] = 'ECON'; }
-    if (page === 'N1 LIMIT') { left[0] = extra.selTemp; right[0] = '94.6/94.6'; left[2] = 'TO-1'; right[2] = 'CLB-1'; left[3] = 'TO-2'; right[3] = 'CLB-2'; }
+    if (page === 'N1 LIMIT') { left[0] = `${extra.selTemp}/${extra.oat}`; right[0] = '94.6/94.6'; left[2] = 'TO-1'; right[2] = 'CLB-1'; left[3] = 'TO-2'; right[3] = 'CLB-2'; }
     if (page === 'TAKEOFF REF' && pageNumber === 1) { left[0] = extra.flaps; right[0] = extra.v1; left[1] = '94.6/94.6'; right[1] = extra.vr; left[2] = extra.cg || '22.5'; right[2] = extra.v2; left[4] = route.runway; right[4] = 'QRH OFF'; }
     if (page === 'TAKEOFF REF' && pageNumber === 2) { left[0] = '1500'; right[0] = '3000'; left[1] = '800'; left[2] = '0.0/DRY'; }
     if (page === 'FIX INFO') { left[0] = extra.fix; left[4] = '236/41'; right[4] = '2000.9 27 FL350'; }
@@ -140,10 +156,10 @@ export function FmcTrainer() {
     if (page === 'POS INIT' && pageNumber === 1) return <><Pair rightLabel="LAST POS" right="N47°32.4 W122°18.6"/><Pair leftLabel="REF AIRPORT" left={extra.refAirport || '□□□□'}/><Pair leftLabel="GATE" left={extra.gate || '-----'}/><Pair leftLabel="SET HDG" left="□□□°" rightLabel="SET IRS POS" right={extra.irsPos || '□□°□□.□'}/><Pair leftLabel="UTC (XXX)" left="1432.2Z" rightLabel="MMMD D/YY" right="MAR21/15"/><NavLine left="<INDEX" right="ROUTE>"/></>;
     if (page === 'POS INIT' && pageNumber === 2) return <><Pair leftLabel="FMC POS" left="N47°32.4 W122°18.6" rightLabel="GS" right="1KT"/><Pair leftLabel="IRS L" left="N47°32.4 W122°18.7" rightLabel="" right="2KT"/><Pair leftLabel="IRS R" left="N47°32.4 W122°18.6" rightLabel="" right="3KT"/><Pair leftLabel="GPS L" left="N47°32.4 W122°18.6"/><Pair leftLabel="GPS R" left="N47°32.3 W122°18.5"/><Pair leftLabel="RADIO" left="N47°32.4 W122°18.7"/></>;
     if (page === 'RTE' && pageNumber === 1) return <><Pair leftLabel="ORIGIN" left={route.origin || '□□□□'} rightLabel="DEST" right={route.destination || '□□□□'}/><Pair leftLabel="CO ROUTE" left="----------" rightLabel="FLT NO" right={route.flightNo || '--------'}/><Pair leftLabel="RUNWAY" left={route.runway || '-----'}/><Pair/><Pair/><NavLine left="<RTE 2"/></>;
-    if (page === 'RTE') return <><Pair leftLabel="VIA" left="----------" rightLabel="TO" right="----------"/><Pair left="DIRECT" right={activeRoute.origin || '□□□□□'}/><Pair left="DIRECT" right="□□□□□"/><Pair left="DIRECT" right={activeRoute.destination || '□□□□□'}/><Pair/><NavLine left="<RTE 1" right="PERF INIT>"/></>;
-    if (page === 'PERF INIT' && pageNumber === 1) return <><Pair leftLabel="GW/CRZ CG" left="□□□.□/ 8.0%" rightLabel="TRIP/CRZ ALT" right={`FL190/${perf.cruiseAlt || 'FL060'}`}/><Pair leftLabel="PLAN/FUEL" left="---/34.0" rightLabel="CRZ WIND" right="---°/---"/><Pair leftLabel="ZFW" left={perf.zfw || '□□□.□'} rightLabel="ISA DEV" right="---°F ---°C"/><Pair leftLabel="RESERVES" left={perf.reserves || '□□.□'} rightLabel="T/C OAT" right="---°F ---°C"/><Pair leftLabel="COST INDEX" left={perf.costIndex || '□□□'} rightLabel="TRANS ALT" right="18000"/><NavLine left="<INDEX" right="N1 LIMIT>"/></>;
+    if (page === 'RTE') return <><Pair leftLabel="TO" left={routePoints[0] || '----------'} rightLabel="VIA" right={airways[0] || (routePoints[0] ? 'DIRECT' : '----------')}/><Pair left={routePoints[1] || '----------'} right={airways[1] || (routePoints[1] ? 'DIRECT' : '----------')}/><Pair left={routePoints[2] || '----------'} right={airways[2] || (routePoints[2] ? 'DIRECT' : '----------')}/><Pair left={routePoints[3] || '----------'} right={airways[3] || (routePoints[3] ? 'DIRECT' : '----------')}/><Pair/><NavLine left="<RTE 1" right="PERF INIT>"/></>;
+    if (page === 'PERF INIT' && pageNumber === 1) return <><Pair leftLabel="GW/CRZ CG" left="□□□.□/ 8.0%" rightLabel="TRIP/CRZ ALT" right={`FL190/${perf.cruiseAlt || 'FL060'}`}/><Pair leftLabel="PLAN/FUEL" left="---/6.3" rightLabel="CRZ WIND" right="---°/---"/><Pair leftLabel="ZFW" left={perf.zfw || '□□□.□'} rightLabel="ISA DEV" right="---°F ---°C"/><Pair leftLabel="RESERVES" left={perf.reserves || '□□.□'} rightLabel="T/C OAT" right="---°F ---°C"/><Pair leftLabel="COST INDEX" left={perf.costIndex || '□□□'} rightLabel="TRANS ALT" right="18000"/><NavLine left="<INDEX" right="N1 LIMIT>"/></>;
     if (page === 'PERF INIT') return <><Pair leftLabel="CRZ CG" left="19.1%" rightLabel="STEP SIZE" right="ICAO"/><Pair leftLabel="MIN FUEL TEMP" left="-37°C" rightLabel="MAX ALT" right="FL410"/><Pair leftLabel="CRZ MODE" left="ECON"/><Pair/><Pair/><NavLine left="<INDEX" right="N1 LIMIT>"/></>;
-    if (page === 'N1 LIMIT') return <><Pair leftLabel="SEL/OAT" left={`${extra.selTemp || '---'}/---°C`} rightLabel="TO-1 N1" right="94.6/94.6"/><Pair left="<TO" right="CLB>"/><Pair leftLabel="XX% DERATE" left="<TO-1 <ACT>" right="<SEL> CLB-1>"/><Pair leftLabel="XX% DERATE" left="<TO-2" right="CLB-2>"/><Pair/><NavLine left="<PERF INIT" right="TAKEOFF>"/></>;
+    if (page === 'N1 LIMIT') return <><Pair leftLabel="SEL/OAT" left={`${extra.selTemp || '---'}/${extra.oat || '---'}°C`} rightLabel="TO-1 N1" right="94.6/94.6"/><Pair left="<TO" right="CLB>"/><Pair leftLabel="XX% DERATE" left="<TO-1 <ACT>" right="<SEL> CLB-1>"/><Pair leftLabel="XX% DERATE" left="<TO-2" right="CLB-2>"/><Pair/><NavLine left="<PERF INIT" right="TAKEOFF>"/></>;
     if (page === 'LEGS') return <><div className="leg-head"><span>COURSE</span><span>DIST</span><span>SPD/ALT</span></div><div className="leg-row"><b>{activeRoute.origin || 'ORIGIN'}</b><span>358°</span><em>250/10000</em></div><div className="leg-row"><b>SUSIX</b><span>22NM</span><em>280/FL180</em></div><div className="leg-row"><b>AVANT</b><span>18NM</span><em>.780/FL355</em></div><div className="leg-row"><b>{activeRoute.destination || 'DEST'}</b><span>30NM</span><em>210/3000</em></div><Pair left="<ERASE" right="RTE DATA>"/></>;
     if (page === 'DEP ARR') return <><Pair leftLabel={`RTE 1 ${activeRoute.origin ? '(ACT)' : ''}`} left={`<DEP     ${activeRoute.origin || route.origin || '----'}`} right={`${activeRoute.destination || route.destination || '----'}     ARR>`}/><Pair right={`${activeRoute.origin || route.origin || '----'}     ARR>`}/><Pair leftLabel="------------- RTE 2 -------------" left={`<DEP     ${route.destination || '----'}`} right={`${route.origin || '----'}     ARR>`}/><Pair right={`${route.destination || '----'}     ARR>`}/><Pair/><NavLine left="DEP <-----" right="-----> ARR"/></>;
     if (page === 'TAKEOFF REF' && pageNumber === 1) return <><Pair leftLabel="FLAPS" left={extra.flaps || '□□'} rightLabel="V1" right={extra.v1 || '---'}/><Pair leftLabel="TO-X N1" left="94.6/94.6%" rightLabel="VR" right={extra.vr || '---'}/><Pair leftLabel="CG   TRIM" left={`${extra.cg || '22.5%'} / 5.25`} rightLabel="V2" right={extra.v2 || '---'}/><Pair/><Pair leftLabel="RUNWAY" left={route.runway || '----------'} rightLabel="SELECT" right="QRH OFF>"/><NavLine left="<PERF INIT"/></>;
