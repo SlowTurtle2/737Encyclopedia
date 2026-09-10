@@ -2545,6 +2545,10 @@ summary:focus-visible {
   letter-spacing: .08em;
 }
 .system-light-card p { margin: 7px 0 0 !important; }
+.air-system-figure { overflow: hidden; margin: 24px 0; }
+.air-system-figure img { display: block; width: 100%; height: auto; }
+.air-system-figure.compact { width: min(100%, 560px); margin-inline: auto; }
+.air-system-light { display: block; width: auto; max-width: min(100%, 250px); max-height: 104px; margin: 0 auto 16px; object-fit: contain; }
 
 .assessment-path {
   margin-top: 26px;
