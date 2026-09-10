@@ -552,11 +552,23 @@ footer {
   padding: 35px 38px;
   border-top: 1px solid var(--border);
   display: flex;
+  flex-wrap: wrap;
   gap: 45px;
   justify-content: space-between;
   align-items: center;
   color: #718095;
 }
+.footer-copyright {
+  flex-basis: 100%;
+  order: 9;
+  margin: 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  max-width: none;
+  color: #8592a1;
+}
+.footer-copyright strong { color: #536b80; }
 footer .brand {
   font-size: 18px;
   color: #233d58;
@@ -2552,7 +2564,9 @@ summary:focus-visible {
 .air-system-figure img { display: block; width: 100%; height: auto; }
 .air-system-figure.compact { width: min(100%, 560px); margin-inline: auto; }
 .air-system-figure.small { width: min(100%, 370px); margin-inline: auto; }
-.air-system-light { display: block; width: auto; max-width: min(100%, 250px); max-height: 104px; margin: 0 auto 16px; object-fit: contain; }
+.air-system-light-list { margin: 22px 0; }
+.air-system-alert { grid-template-columns: 170px 1fr; margin: 12px 0; }
+.air-system-alert img { width: 150px; max-width: 100%; max-height: 92px; margin-inline: auto; }
 
 .assessment-path {
   margin-top: 26px;
