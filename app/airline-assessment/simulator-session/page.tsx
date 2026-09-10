@@ -186,6 +186,17 @@ export default function SimulatorSession() {
               prep session.
             </p>
 
+            <Warning>
+              Do not trim during the steep turn. Correct the pitch attitude as
+              you enter the turn and anticipate the required pitch correction
+              as you roll out to avoid an altitude deviation.
+            </Warning>
+            <Tip>
+              Keep the VSI in your scan throughout the steep turn. It shows an
+              altitude trend early and helps you correct the pitch before the
+              deviation develops.
+            </Tip>
+
             <Need>
               <p>
                 Trim, and trim often. Keep the aircraft in trim so you are never
