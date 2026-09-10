@@ -187,12 +187,21 @@ export default function QuizEngine({
   }
 
   if (phase === 'menu') {
+    const runCount = Math.min(count, total);
     return (
       <div className="quiz-menu">
-        <p className="eyebrow">BUILD YOUR QUIZ · {total} QUESTIONS AVAILABLE</p>
+        <p className="eyebrow">BUILD YOUR QUIZ</p>
         <h3>How many questions?</h3>
-        <div className="quiz-presets">
-          {PRESETS.map((n) => (
+        <p className="quiz-menu-sub">
+          {total} questions available. Pick a length, then start.
+        </p>
+
+        <div
+          className="quiz-presets"
+          role="group"
+          aria-label="Number of questions"
+        >
+          {PRESETS.filter((n) => n < total).map((n) => (
             <button
               key={n}
               type="button"
@@ -209,41 +218,68 @@ export default function QuizEngine({
           >
             All ({total})
           </button>
-          <label className="quiz-custom">
-            Custom
-            <input
-              type="number"
-              min={1}
-              max={total}
-              value={count}
-              onChange={(e) => {
-                const v = Math.max(1, Math.min(total, Number(e.target.value) || 1));
-                setCount(v);
-              }}
-            />
-          </label>
         </div>
-        <div className="quiz-actions">
-          <button className="button" onClick={() => begin(all, count)}>
-            Start quiz →
-          </button>
-          <button
-            className="button"
-            disabled={missedPool.length === 0}
-            onClick={() => begin(missedPool, missedPool.length)}
-          >
-            Review missed{missedPool.length ? ` (${missedPool.length})` : ''}
-          </button>
+
+        <label className="quiz-custom">
+          <span>Or a custom number</span>
+          <input
+            type="number"
+            min={1}
+            max={total}
+            value={count}
+            onChange={(e) => {
+              const v = Math.max(1, Math.min(total, Number(e.target.value) || 1));
+              setCount(v);
+            }}
+          />
+        </label>
+
+        <button
+          className="button quiz-start"
+          onClick={() => begin(all, count)}
+        >
+          Start quiz · {runCount} question{runCount > 1 ? 's' : ''} →
+        </button>
+
+        <div className="quiz-more">
+          <p className="quiz-more-title">Other ways to practise</p>
+          <div className="quiz-more-grid">
+            <button
+              type="button"
+              className="quiz-mode"
+              onClick={practiceWeak}
+            >
+              <strong>Practise weak questions</strong>
+              <span>Focus on the ones you miss most often.</span>
+            </button>
+            <button
+              type="button"
+              className="quiz-mode"
+              disabled={missedPool.length === 0}
+              onClick={() => begin(missedPool, missedPool.length)}
+            >
+              <strong>
+                Review missed
+                {missedPool.length ? ` (${missedPool.length})` : ''}
+              </strong>
+              <span>
+                {missedPool.length
+                  ? 'Retake the questions you just got wrong.'
+                  : 'Available after you finish a quiz.'}
+              </span>
+            </button>
+            <button
+              type="button"
+              className="quiz-mode"
+              onClick={() => setPhase('browse')}
+            >
+              <strong>Browse all questions</strong>
+              <span>Read every question with its answer.</span>
+            </button>
+          </div>
         </div>
-        <div className="quiz-actions">
-          <button className="button" onClick={practiceWeak}>
-            Practice my weak questions
-          </button>
-          <button className="button" onClick={() => setPhase('browse')}>
-            Browse all questions
-          </button>
-        </div>
-        {notice && <p className="q-intro">{notice}</p>}
+
+        {notice && <p className="q-intro quiz-menu-notice">{notice}</p>}
       </div>
     );
   }
