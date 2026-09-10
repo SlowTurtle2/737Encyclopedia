@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 
-type PageName = 'INDEX' | 'IDENT' | 'POS INIT' | 'RTE' | 'LEGS' | 'PERF INIT' | 'N1 LIMIT' | 'PROGRESS' | 'DEP ARR' | 'TAKEOFF REF' | 'FIX INFO';
+type PageName = 'INDEX' | 'IDENT' | 'POS INIT' | 'RTE' | 'LEGS' | 'PERF INIT' | 'N1 LIMIT' | 'PROGRESS' | 'DEP ARR' | 'DEPARTURES' | 'ARRIVALS' | 'TAKEOFF REF' | 'FIX INFO';
 type RouteData = { origin: string; destination: string; flightNo: string; runway: string };
 type PerfData = { zfw: string; reserves: string; costIndex: string; cruiseAlt: string };
 type ExtraData = { refAirport: string; gate: string; irsPos: string; flaps: string; cg: string; v1: string; vr: string; v2: string; fix: string; selTemp: string; oat: string };
@@ -38,6 +38,10 @@ export function FmcTrainer() {
   const [climbMode, setClimbMode] = useState<'CLB' | 'CLB-1' | 'CLB-2'>('CLB-1');
   const [pageNumber, setPageNumber] = useState(1);
   const [modified, setModified] = useState(false);
+  const [sid, setSid] = useState('');
+  const [sidTrans, setSidTrans] = useState('');
+  const [arrStar, setArrStar] = useState('');
+  const [arrAppr, setArrAppr] = useState('');
   const routeReady = Boolean(route.origin && route.destination);
 
   const press = useCallback((key: string) => {
@@ -105,6 +109,7 @@ export function FmcTrainer() {
   }
   function reset() {
     setRoute(initialRoute); setActiveRoute(initialRoute); setPerf(initialPerf); setExtra(initialExtra); setRoutePoints(['', '', '', '']); setAirways(['', '', '', '']); setTakeoffMode('TO-1'); setClimbMode('CLB-1');
+    setSid(''); setSidTrans(''); setArrStar(''); setArrAppr('');
     setScratch(''); setMessage(''); setModified(false); setPage('IDENT'); setPageNumber(1);
   }
 
@@ -119,7 +124,9 @@ export function FmcTrainer() {
   if (page === 'PERF INIT' && pageNumber === 1) { leftActions[2] = () => transferPerf('zfw'); leftActions[3] = () => transferPerf('reserves'); leftActions[4] = () => transferPerf('costIndex'); rightActions[0] = () => transferPerf('cruiseAlt'); leftActions[5] = () => go('INDEX'); rightActions[5] = () => go('N1 LIMIT'); }
   if (page === 'N1 LIMIT') { leftActions[0] = transferSelOat; leftActions[1] = () => setTakeoffMode('TO'); leftActions[2] = () => setTakeoffMode('TO-1'); leftActions[3] = () => setTakeoffMode('TO-2'); rightActions[1] = () => setClimbMode('CLB'); rightActions[2] = () => setClimbMode('CLB-1'); rightActions[3] = () => setClimbMode('CLB-2'); leftActions[5] = () => go('PERF INIT'); rightActions[5] = () => go('TAKEOFF REF'); }
   if (page === 'LEGS') { leftActions[5] = () => setMessage('ERASE NOT AVAILABLE'); rightActions[5] = () => setMessage('RTE DATA'); }
-  if (page === 'DEP ARR') { leftActions[0] = () => setMessage('SELECT RTE 1 DEPARTURE'); rightActions[0] = () => setMessage('SELECT RTE 1 ARRIVAL'); rightActions[1] = () => setMessage('SELECT RTE 1 ARRIVAL'); leftActions[2] = () => setMessage('SELECT RTE 2 DEPARTURE'); rightActions[2] = () => setMessage('SELECT RTE 2 ARRIVAL'); rightActions[3] = () => setMessage('SELECT RTE 2 ARRIVAL'); leftActions[5] = () => setMessage('SELECT OTHER DEPARTURE'); rightActions[5] = () => setMessage('SELECT OTHER ARRIVAL'); }
+  if (page === 'DEP ARR') { leftActions[0] = () => go('DEPARTURES'); rightActions[0] = () => go('ARRIVALS'); rightActions[1] = () => go('ARRIVALS'); leftActions[2] = () => setMessage('RTE 2 NOT AVAILABLE'); rightActions[2] = () => setMessage('RTE 2 NOT AVAILABLE'); rightActions[3] = () => setMessage('RTE 2 NOT AVAILABLE'); }
+  if (page === 'DEPARTURES') { leftActions[0] = () => { setSid((s) => (s === 'LACRE3' ? '' : 'LACRE3')); setModified(true); }; leftActions[1] = () => { setSidTrans((t) => (t === 'HUMPP' ? '' : 'HUMPP')); setModified(true); }; leftActions[2] = () => { setSidTrans((t) => (t === 'ORTIN' ? '' : 'ORTIN')); setModified(true); }; leftActions[3] = () => { setSidTrans((t) => (t === 'VAMPS' ? '' : 'VAMPS')); setModified(true); }; rightActions[0] = () => { setRoute((r) => ({ ...r, runway: '13R' })); setModified(true); }; rightActions[1] = () => { setRoute((r) => ({ ...r, runway: '31L' })); setModified(true); }; leftActions[5] = () => { setSid(''); setSidTrans(''); }; rightActions[5] = () => go('RTE'); }
+  if (page === 'ARRIVALS') { leftActions[0] = () => { setArrStar((s) => (s === 'GLASR1' ? '' : 'GLASR1')); setModified(true); }; leftActions[1] = () => { setArrStar((s) => (s === 'HAWKZ4' ? '' : 'HAWKZ4')); setModified(true); }; rightActions[0] = () => { setArrAppr((a) => (a === 'ILS 13R' ? '' : 'ILS 13R')); setModified(true); }; rightActions[1] = () => { setArrAppr((a) => (a === 'RNAV 31L' ? '' : 'RNAV 31L')); setModified(true); }; leftActions[5] = () => { setArrStar(''); setArrAppr(''); }; rightActions[5] = () => go('RTE'); }
   if (page === 'TAKEOFF REF' && pageNumber === 1) { leftActions[0] = () => transferExtra('flaps'); leftActions[2] = () => transferExtra('cg'); leftActions[4] = () => transferRoute('runway'); rightActions[0] = () => transferExtra('v1'); rightActions[1] = () => transferExtra('vr'); rightActions[2] = () => transferExtra('v2'); leftActions[5] = () => go('PERF INIT'); }
   if (page === 'FIX INFO') leftActions[0] = () => transferExtra('fix');
 
@@ -151,6 +158,8 @@ export function FmcTrainer() {
   if (page === 'POS INIT' && pageNumber === 2) title = 'POS REF';
   if (page === 'POS INIT' && pageNumber === 3) title = 'POS SHIFT';
   if (page === 'DEP ARR') title = 'DEP/ARR INDEX';
+  if (page === 'DEPARTURES') title = `${activeRoute.origin || route.origin || 'ORIG'} DEPARTURES`;
+  if (page === 'ARRIVALS') title = `${activeRoute.destination || route.destination || 'DEST'} ARRIVALS`;
   if (page === 'RTE') title = `${modified ? 'MOD' : activeRoute.origin ? 'ACT' : ''} RTE`;
   if (page === 'LEGS') title = `${activeRoute.origin ? 'ACT RTE' : 'RTE'}  LEGS`;
 
@@ -166,7 +175,9 @@ export function FmcTrainer() {
     if (page === 'PERF INIT') return <><Pair leftLabel="CRZ CG" left="19.1%" rightLabel="STEP SIZE" right="ICAO"/><Pair leftLabel="MIN FUEL TEMP" left="-37°C" rightLabel="MAX ALT" right="FL410"/><Pair leftLabel="CRZ MODE" left="ECON"/><Pair/><Pair/><NavLine left="<INDEX" right="N1 LIMIT>"/></>;
     if (page === 'N1 LIMIT') return <><Pair leftLabel="SEL/OAT" left={`${extra.selTemp || '---'}/${extra.oat || '---'}°C`} rightLabel={`${takeoffMode} N1`} right="94.6/94.6"/><Pair left={`<TO${takeoffMode === 'TO' ? '  <ACT>' : ''}`} right={`${climbMode === 'CLB' ? '<ACT>  ' : ''}CLB>`}/><Pair leftLabel="XX% DERATE" left={`<TO-1${takeoffMode === 'TO-1' ? '  <ACT>' : ''}`} right={`${climbMode === 'CLB-1' ? '<ACT>  ' : ''}CLB-1>`}/><Pair leftLabel="XX% DERATE" left={`<TO-2${takeoffMode === 'TO-2' ? '  <ACT>' : ''}`} right={`${climbMode === 'CLB-2' ? '<ACT>  ' : ''}CLB-2>`}/><Pair/><NavLine left="<PERF INIT" right="TAKEOFF>"/></>;
     if (page === 'LEGS') return <><div className="leg-head"><span>COURSE</span><span>DIST</span><span>SPD/ALT</span></div><div className="leg-row"><b>{activeRoute.origin || 'ORIGIN'}</b><span>358°</span><em>250/10000</em></div><div className="leg-row"><b>SUSIX</b><span>22NM</span><em>280/FL180</em></div><div className="leg-row"><b>AVANT</b><span>18NM</span><em>.780/FL355</em></div><div className="leg-row"><b>{activeRoute.destination || 'DEST'}</b><span>30NM</span><em>210/3000</em></div><Pair left="<ERASE" right="RTE DATA>"/></>;
-    if (page === 'DEP ARR') return <><Pair leftLabel={`RTE 1 ${activeRoute.origin ? '(ACT)' : ''}`} left={`<DEP     ${activeRoute.origin || route.origin || '----'}`} right={`${activeRoute.destination || route.destination || '----'}     ARR>`}/><Pair right={`${activeRoute.origin || route.origin || '----'}     ARR>`}/><Pair leftLabel="------------- RTE 2 -------------" left={`<DEP     ${route.destination || '----'}`} right={`${route.origin || '----'}     ARR>`}/><Pair right={`${route.destination || '----'}     ARR>`}/><Pair/><NavLine left="DEP <-----" right="-----> ARR"/></>;
+    if (page === 'DEP ARR') return <><Pair leftLabel="RTE 1 (ACT)" left={`<DEP     ${activeRoute.origin || route.origin || '----'}`} right={`${activeRoute.origin || route.origin || '----'}     ARR>`}/><Pair right={`${activeRoute.destination || route.destination || '----'}     ARR>`}/><Pair leftLabel="------------ RTE 2 ------------" left={`<DEP     ${activeRoute.destination || route.destination || '----'}`} right={`${activeRoute.destination || route.destination || '----'}     ARR>`}/><Pair right={`${activeRoute.origin || route.origin || '----'}     ARR>`}/><Pair/><NavLine left="DEP <----" right="----> ARR"/></>;
+    if (page === 'DEPARTURES') return <><Pair leftLabel="SIDS" left={`LACRE3${sid === 'LACRE3' ? ' <SEL>' : ''}`} rightLabel="RUNWAYS" right={`${route.runway === '13R' ? '<SEL> ' : ''}13R`}/><Pair leftLabel="TRANS" left={`HUMPP${sidTrans === 'HUMPP' ? ' <SEL>' : ''}`} right={`${route.runway === '31L' ? '<SEL> ' : ''}31L`}/><Pair left={`ORTIN${sidTrans === 'ORTIN' ? ' <SEL>' : ''}`}/><Pair left={`VAMPS${sidTrans === 'VAMPS' ? ' <SEL>' : ''}`}/><Pair/><NavLine left="<ERASE" right="ROUTE>"/></>;
+    if (page === 'ARRIVALS') return <><Pair leftLabel="STARS" left={`GLASR1${arrStar === 'GLASR1' ? ' <SEL>' : ''}`} rightLabel="APPROACHES" right={`${arrAppr === 'ILS 13R' ? '<SEL> ' : ''}ILS 13R`}/><Pair left={`HAWKZ4${arrStar === 'HAWKZ4' ? ' <SEL>' : ''}`} right={`${arrAppr === 'RNAV 31L' ? '<SEL> ' : ''}RNAV 31L`}/><Pair/><Pair/><Pair/><NavLine left="<ERASE" right="ROUTE>"/></>;
     if (page === 'TAKEOFF REF' && pageNumber === 1) return <><Pair leftLabel="FLAPS" left={extra.flaps || '□□'} rightLabel="V1" right={extra.v1 || '---'}/><Pair leftLabel="TO-X N1" left="94.6/94.6%" rightLabel="VR" right={extra.vr || '---'}/><Pair leftLabel="CG   TRIM" left={`${extra.cg || '22.5%'} / 5.25`} rightLabel="V2" right={extra.v2 || '---'}/><Pair/><Pair leftLabel="RUNWAY" left={route.runway || '----------'} rightLabel="SELECT" right="QRH OFF>"/><NavLine left="<PERF INIT"/></>;
     if (page === 'TAKEOFF REF') return <><Pair leftLabel="THR REDUCTION" left="1500 FT" rightLabel="ACCEL HT" right="3000 FT"/><Pair leftLabel="EO ACCEL HT" left="800 FT" rightLabel="WIND" right="---/---"/><Pair leftLabel="SLOPE/COND" left="0.0/DRY"/><Pair/><Pair/><NavLine left="<PERF INIT"/></>;
     if (page === 'FIX INFO') return <><Pair leftLabel="FIX" left={extra.fix || '□□□□□'} rightLabel="RAD/DIS FR" right=""/><Pair leftLabel="RAD/DIS" left="---" rightLabel="ETA / DTG / ALT" right=""/><Pair left="---"/><Pair left="---"/><Pair leftLabel="ABEAM" left="236/41" right="2000.9  27 FL350"/><Pair/></>;
