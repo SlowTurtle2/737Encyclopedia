@@ -230,16 +230,6 @@ export default function Home() {
           })}
         </div>
       </section>
-      <section className="wrap study-banner">
-        <div>
-          <p className="eyebrow">YOUR NEXT STEP</p>
-          <h2>Test what you know.</h2>
-          <p>
-            Use the available free questions to turn systems knowledge into
-            reliable exam and interview recall.
-          </p>
-        </div>
-      </section>
     </main>
   );
 }
