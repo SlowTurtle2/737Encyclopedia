@@ -2567,6 +2567,9 @@ summary:focus-visible {
 .air-system-light-list { margin: 22px 0; }
 .air-system-alert { grid-template-columns: 170px 1fr; margin: 12px 0; }
 .air-system-alert img { width: 150px; max-width: 100%; max-height: 92px; margin-inline: auto; }
+.air-system-valve-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; gap: 16px; margin: 24px 0; }
+.air-system-valve-grid .air-system-figure { width: 100%; margin: 0; }
+.air-system-valve-grid .air-system-figure img { max-height: 360px; object-fit: contain; }
 
 .assessment-path {
   margin-top: 26px;
@@ -2719,6 +2722,9 @@ summary:focus-visible {
 .legal-page section p { margin: 0; color: #5f6d78; line-height: 1.75; }
 
 @media (max-width: 700px) {
+  .air-system-valve-grid { grid-template-columns: 1fr; }
+  .air-system-alert { grid-template-columns: 110px 1fr; gap: 14px; }
+  .air-system-alert img { width: 100px; }
   .pricing-page { padding-top: 38px; }
   .pricing-comparison { grid-template-columns: 1fr; }
   .pricing-plan { min-height: 0; padding: 25px 22px; }
