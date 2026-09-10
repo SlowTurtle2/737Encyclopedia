@@ -52,6 +52,15 @@ export default function SimulatorSession() {
           <span className="pill">FROM RECENT FEEDBACK</span>
         </div>
       </div>
+      <div className="wrap assessment-scope-note">
+        <span className="scope-badge">FOCUS</span>
+        <p>
+          This preparation is tailored to the{' '}
+          <strong>Irish low-cost carrier</strong> selection process. The
+          profile, flows and expectations follow that operator&rsquo;s
+          simulator assessment, not a generic sim check.
+        </p>
+      </div>
       <div className="wrap course-layout">
         <article>
           <section className="course-section" id="overview">

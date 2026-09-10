@@ -49,6 +49,15 @@ export default function HRInterview() {
           </span>
         </div>
       </div>
+      <div className="wrap assessment-scope-note">
+        <span className="scope-badge">FOCUS</span>
+        <p>
+          This preparation is tailored to the{' '}
+          <strong>Irish low-cost carrier</strong> selection process. The
+          questions, flows and expectations follow that operator&rsquo;s
+          assessment, not a generic airline assessment.
+        </p>
+      </div>
       <div className="wrap course-layout">
         <article>
           <section className="course-section" id="overview">
