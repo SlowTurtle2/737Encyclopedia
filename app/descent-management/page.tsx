@@ -11,17 +11,15 @@ const chapters = [
   ['overview', 'Overview', ''],
   ['evaluate', 'Evaluate your energy', 'I'],
   ['three-degree', 'The 3-degree rule', '1.1'],
-  ['corrections', 'Weight and wind', '1.2'],
-  ['track-miles', 'Track-miles picture', '1.3'],
-  ['rod-check', 'Rate of descent check', '1.4'],
+  ['weight', 'Weight correction', '1.2'],
+  ['wind', 'Wind correction', '1.3'],
+  ['energy-examples', 'Energy examples', '1.4'],
   ['correct', 'Correct your energy', 'II'],
-  ['execution', 'Flying a correction', '2.1'],
   ['high-profile', 'When you are high', '2.2'],
   ['approach', 'Approach energy', '2.3'],
   ['awareness', 'Situation awareness', 'III'],
   ['terrain', 'Terrain and ATC', '3.1'],
   ['setup', 'FMC setup', '3.2'],
-  ['special', 'Non-normal descents', '3.3'],
 ];
 
 function Need({ children }: { children: React.ReactNode }) {
@@ -46,6 +44,14 @@ function Warning({ children }: { children: React.ReactNode }) {
       <strong>WATCH OUT</strong>
       <p>{children}</p>
     </aside>
+  );
+}
+function Deep({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <details className="deep">
+      <summary>{title}</summary>
+      <div>{children}</div>
+    </details>
   );
 }
 function Part({ n, id, title, lead }: { n: string; id: string; title: string; lead: string }) {
@@ -146,92 +152,30 @@ export default function DescentManagement() {
               </p>
             </section>
 
-            <section className="course-section" id="corrections">
+            <section className="course-section" id="weight">
               <span className="section-num">1.2</span>
-              <h2>Weight and wind, the two that matter.</h2>
+              <h2>Weight correction.</h2>
               <p>
-                A heavier aircraft has a more efficient wing at descent speed, so
-                counter-intuitively it needs to start down earlier and sit lower
-                on profile. Wind simply moves the air mass you are gliding
-                through.
+                A heavier aircraft carries more energy and needs more distance
+                to descend. Use 58 tonnes as the reference weight, then correct
+                the basic 3-degree distance before assessing the profile.
               </p>
               <Need>
-                <ul className="rot-list">
-                  <li>
-                    <b>Weight: 1 tonne = 1 NM.</b> Heavier than 58 t means start
-                    earlier and be lower; lighter means the opposite.
-                  </li>
-                  <li>
-                    <b>Wind: 10 kt component = 1 NM.</b> Tailwind adds track
-                    miles to the descent, headwind removes them.
-                  </li>
-                </ul>
+                <p><b>Weight correction: 1 tonne = 1 NM.</b> Above 58 t, add distance and start down earlier. Below 58 t, subtract distance.</p>
               </Need>
-              <p className="ex-lead">Worked examples</p>
-              <ul className="study-points">
-                <li>
-                  <strong>FL330, 64 t, 20 kt tailwind:</strong> base 99 NM, plus
-                  6 NM for weight (64 minus 58), minus 2 NM for wind, so top of
-                  descent near 103 NM.
-                </li>
-                <li>
-                  <strong>25 NM to go, 64 t:</strong> 25 × 3 = 7,500 ft, minus
-                  6 NM (1,800 ft) for the extra weight, so about 5,700 ft on
-                  profile.
-                </li>
-              </ul>
-              <p>
-                Four smaller corrections exist. Fold them in only when they are
-                large, otherwise they just add mental load:
-              </p>
-              <ul className="study-points">
-                <li>
-                  <strong>Speed:</strong> 10 kt above the normal schedule = 1 NM
-                  (same as wind). Faster means you should be lower.
-                </li>
-                <li>
-                  <strong>Airport elevation:</strong> add the destination
-                  elevation to your target altitude. A field at 2,000 ft raises
-                  the whole profile by 2,000 ft.
-                </li>
-                <li>
-                  <strong>QNH:</strong> 1 hPa = 30 ft. A very high QNH puts you
-                  high on profile, a very low QNH puts you low; it matters most
-                  down low.
-                </li>
-                <li>
-                  <strong>ISA deviation:</strong> about 1% per 2.5 °C. Usually
-                  ignored, worth a thought in extreme heat or cold.
-                </li>
-              </ul>
-              <Tip>
-                Add all your corrections once into a single number of feet, the
-                unique descent correction, and carry it through the whole
-                descent. Only the wind needs following up as it changes. Then it
-                is just track miles times 3, plus that one constant.
-              </Tip>
             </section>
 
-            <section className="course-section" id="track-miles">
+            <section className="course-section" id="wind">
               <span className="section-num">1.3</span>
-              <h2>See your own track miles, not the magenta line.</h2>
+              <h2>Wind correction.</h2>
               <p>
-                The FMC distance to go follows the programmed route. The descent
-                you will actually fly is often shorter, because a shortcut or a
-                visual approach is coming. Build the real distance in your head
-                by counting backwards from the runway, and read it off the ND
-                range rings rather than the flight plan.
+                Wind changes the distance travelled over the ground during the
+                descent. Use the forecast average wind component, then review the
+                correction as the actual wind changes.
               </p>
-              <p className="ex-lead">Worked example</p>
-              <p>
-                You are at FL320 and expect a direct track to a 10 NM final for
-                an ILS. Count back: runway to 10 NM final is 10 NM, your position
-                to that final fix is 100 NM, so 110 NM to run. FL320 needs about
-                96 NM to descend (32 × 3). Your real top of descent is 110 minus
-                96, so about 14 NM ahead, roughly two minutes of cruise. The FMC
-                may still be showing a top of descent 70 NM away. Trust your own
-                number.
-              </p>
+              <Need>
+                <p><b>Wind correction: 10 kt component = 1 NM.</b> Add distance for a tailwind and subtract distance for a headwind.</p>
+              </Need>
               <Warning>
                 The 737 is very sensitive to tailwind, at any weight, especially
                 on approach. Even a light tailwind makes deceleration difficult,
@@ -239,34 +183,34 @@ export default function DescentManagement() {
               </Warning>
             </section>
 
-            <section className="course-section" id="rod-check">
+            <section className="course-section" id="energy-examples">
               <span className="section-num">1.4</span>
-              <h2>Cross-check your rate of descent.</h2>
+              <h2>Worked energy examples.</h2>
+              <ul className="study-points">
+                <li><strong>FL330 · 64 t · 20 kt tailwind:</strong> 99 NM basic distance + 6 NM for weight + 2 NM for wind = <strong>107 NM</strong> to descend.</li>
+                <li><strong>FL300 · 54 t · 30 kt headwind:</strong> 90 NM basic distance − 4 NM for weight − 3 NM for wind = <strong>83 NM</strong> to descend.</li>
+                <li><strong>At 40 NM · 62 t · 20 kt tailwind:</strong> the uncorrected target is 12,000 ft. The combined 6 NM correction means the aircraft should be approximately 1,800 ft lower, near <strong>10,200 ft</strong>.</li>
+              </ul>
               <p>
-                Altitude tells you if you are high or low; the rate of descent
-                tells you whether you are catching up or falling behind. Your
-                wing feels the air, not the ground, so in a free descent you set
-                the rate from true airspeed. On a fixed approach path such as an
-                ILS glideslope the angle is relative to the ground, so you use
-                ground speed.
+                Smaller corrections for speed, airport elevation, QNH and ISA
+                deviation can be added when they are significant. Combine the
+                useful corrections into one mental figure and continue to update
+                the wind component during the descent.
               </p>
-              <Need>
+
+              <Deep title="Go deeper · Build the real track-miles picture">
+                <p>The FMC distance follows the programmed route, but the path you actually fly may be shorter after a shortcut or visual approach. Count backwards from the runway and use the ND range rings to estimate the real distance.</p>
+                <p>For example, from FL320 with 110 NM of real track remaining, the basic descent requires about 96 NM. The top of descent is therefore approximately 14 NM ahead, even if the FMC still shows a later point on the programmed route.</p>
+              </Deep>
+
+              <Deep title="Go deeper · Cross-check the rate of descent">
+                <p>Altitude shows whether you are high or low; rate of descent shows whether the correction is working. In a free descent, use true airspeed. On a fixed ground-referenced path such as an ILS glideslope, use ground speed.</p>
                 <ul className="rot-list">
-                  <li>
-                    <b>In the descent: ROD = TAS ÷ 2.</b> TAS 360 kt gives about
-                    1,800 ft per minute.
-                  </li>
-                  <li>
-                    <b>On a 3-degree approach: ROD = GS ÷ 2, rounded up.</b> GS
-                    150 kt gives about 750, so aim 800 ft per minute to stay on
-                    the glideslope.
-                  </li>
-                  <li>
-                    For a steeper or shallower path, scale it: a 4-degree path is
-                    the 3-degree rate plus one third.
-                  </li>
+                  <li><b>In the descent: ROD = TAS ÷ 2.</b> TAS 360 kt gives approximately 1,800 ft/min.</li>
+                  <li><b>On a 3-degree approach: ROD = GS ÷ 2, rounded up.</b> GS 150 kt gives approximately 800 ft/min.</li>
+                  <li>For a 4-degree path, add one third to the 3-degree rate.</li>
                 </ul>
-              </Need>
+              </Deep>
             </section>
 
             {/* ================= PART II ================= */}
@@ -276,25 +220,6 @@ export default function DescentManagement() {
               title="Correct your energy"
               lead="Once the picture says you are off profile, you act, big enough to fix it in one go. This is where the descent is won or lost, and where the high-energy recovery drill lives."
             />
-
-            <section className="course-section" id="execution">
-              <span className="section-num">2.1</span>
-              <h2>Flying a correction.</h2>
-              <p>
-                To start or steepen a descent you can select LVL CHG, which drops
-                the thrust to idle and lets the aircraft find the path at the
-                selected speed, or select V/S and set the rate from TAS ÷ 2. V/S
-                gives a steady pitch and a smoother ride, but you must reduce the
-                rate as you descend because TAS keeps falling. When ATC asks for
-                a fixed rate, V/S is the clean way to give it.
-              </p>
-              <Warning>
-                Change the speed window from Mach to IAS in time, around FL300. If
-                you hold a Mach number as you descend, the indicated speed climbs
-                toward VMO. Any rate above about 3,000 ft per minute is a signal
-                to pay attention: the speed is usually running toward VMO.
-              </Warning>
-            </section>
 
             <section className="course-section" id="high-profile">
               <span className="section-num">2.2</span>
@@ -307,79 +232,22 @@ export default function DescentManagement() {
               </p>
 
               <div className="hi-recover">
-                <p className="hi-recover-title">Step 1 · Pick the tool by altitude</p>
-                <div className="hi-split">
-                  <div className="hi-branch above">
-                    <span className="hi-fl">ABOVE FL150</span>
-                    <strong>Add speed</strong>
-                    <p>
-                      Speed the aircraft up: raise the descent speed through the
-                      FMC descent page, or on the MCP speed window. You still
-                      have the altitude to convert that extra drag into a lower
-                      profile.
-                    </p>
-                  </div>
-                  <div className="hi-branch below">
-                    <span className="hi-fl">BELOW FL150</span>
-                    <strong>Speed brakes</strong>
-                    <p>
-                      Too low to make speed pay, and the 250 kt limit is near.
-                      Extend the speed brakes instead; they bite harder the
-                      faster you are.
-                    </p>
-                  </div>
-                </div>
+                <p className="hi-recover-title">Above FL150 · two-step recovery</p>
+                <ol className="hi-ladder">
+                  <li><span className="hi-num">1</span><div><strong>Accelerate</strong><div className="cfg-row"><span className="cfg-chip">ADD SPEED</span></div><p>Increase the descent speed within the applicable limits to increase drag and recover the profile.</p></div></li>
+                  <li><span className="hi-num">2</span><div><strong>Add speed brakes</strong><div className="cfg-row"><span className="cfg-chip">ADD SPEED</span><span className="cfg-plus">+</span><span className="cfg-chip">SPEED BRAKE</span></div><p>If acceleration alone is insufficient, extend the speed brakes while continuing to monitor speed and the recovered flight path.</p></div></li>
+                </ol>
               </div>
+              <Warning>
+                Do not use flaps above FL200.
+              </Warning>
 
               <div className="hi-recover">
-                <p className="hi-recover-title">
-                  Step 2 · If the speed brakes are not enough, escalate
-                </p>
+                <p className="hi-recover-title">Below FL150 · progressive configuration</p>
                 <ol className="hi-ladder">
-                  <li>
-                    <span className="hi-num">1</span>
-                    <div>
-                      <strong>Speed brakes alone</strong>
-                      <div className="cfg-row">
-                        <span className="cfg-chip">SPEED BRAKE</span>
-                      </div>
-                      <p>Your first move once below FL150.</p>
-                    </div>
-                  </li>
-                  <li>
-                    <span className="hi-num">2</span>
-                    <div>
-                      <strong>Add flap 5</strong>
-                      <div className="cfg-row">
-                        <span className="cfg-chip">SPEED BRAKE</span>
-                        <span className="cfg-plus">+</span>
-                        <span className="cfg-chip">FLAP 5</span>
-                        <span className="cfg-plus">+</span>
-                        <span className="cfg-chip">220 kt</span>
-                      </div>
-                      <p>
-                        The strongest rate of the three, around 2,300 ft per
-                        minute.
-                      </p>
-                    </div>
-                  </li>
-                  <li className="last-resort">
-                    <span className="hi-num">3</span>
-                    <div>
-                      <strong>Last resort: flap 10</strong>
-                      <div className="cfg-row">
-                        <span className="cfg-chip">SPEED BRAKE</span>
-                        <span className="cfg-plus">+</span>
-                        <span className="cfg-chip">FLAP 10</span>
-                        <span className="cfg-plus">+</span>
-                        <span className="cfg-chip">180 kt</span>
-                      </div>
-                      <p>
-                        Maximum drag at a low speed. Use it only when the two
-                        steps above have not recovered the profile.
-                      </p>
-                    </div>
-                  </li>
+                  <li><span className="hi-num">1</span><div><strong>Speed brakes</strong><div className="cfg-row"><span className="cfg-chip">SPEED BRAKE</span></div><p>Extend the speed brakes first and assess whether the profile is recovering.</p></div></li>
+                  <li><span className="hi-num">2</span><div><strong>Flap 5 at 220 kt</strong><div className="cfg-row"><span className="cfg-chip">SPEED BRAKE</span><span className="cfg-plus">+</span><span className="cfg-chip">FLAP 5</span><span className="cfg-plus">+</span><span className="cfg-chip">220 kt</span></div><p>If speed brakes alone are insufficient, target flap 5 and 220 kt with the speed brakes extended.</p></div></li>
+                  <li className="last-resort"><span className="hi-num">3</span><div><strong>Last resort: flap 10 at 180 kt</strong><div className="cfg-row"><span className="cfg-chip">SPEED BRAKE</span><span className="cfg-plus">+</span><span className="cfg-chip">FLAP 10</span><span className="cfg-plus">+</span><span className="cfg-chip">180 kt</span></div><p>Use this final configuration only if the preceding steps have not recovered the profile.</p></div></li>
                 </ol>
               </div>
 
@@ -413,31 +281,14 @@ export default function DescentManagement() {
               <Need>
                 <ul className="rot-list">
                   <li>
-                    <b>Flaps to slow down, speed brakes to go down.</b> Flaps let
-                    the aircraft fly slower; speed brakes add drag and rate.
-                  </li>
-                  <li>
-                    <b>The 3-2-1 gate:</b> aim to be near 3,000 ft, 200 kt, flap
+                    <b>The 3-2-1 gate comes first:</b> aim to be near 3,000 ft, 200 kt, flap
                     1 at about 10 NM, then flap 5 on the glideslope to intercept.
                   </li>
+                  <li><b>Maximum sensible speeds:</b> about 220 kt at the initial fix, 180 kt at base or on final, and 160 kt by 4 NM.</li>
+                  <li><b>Rough distance gates:</b> about 190 kt at 9 NM, 180 kt at 8 NM, and 170 kt at 7 NM.</li>
+                  <li><b>Heavy aircraft:</b> start configuring earlier. At 63 t, roughly 5 NM sooner, with flap selection near 15 to 16 NM instead of 10.</li>
                 </ul>
               </Need>
-              <p className="ex-lead">Reference speeds and gates</p>
-              <ul className="study-points">
-                <li>
-                  <strong>Maximum sensible speeds:</strong> about 220 kt at the
-                  initial fix, 180 kt at base or on final, 160 kt by 4 NM.
-                </li>
-                <li>
-                  <strong>Rough distance gates:</strong> about 190 kt at 9 NM,
-                  180 kt at 8 NM, 170 kt at 7 NM.
-                </li>
-                <li>
-                  <strong>Heavy aircraft:</strong> start configuring earlier. At
-                  63 t, roughly 5 NM sooner, so flap selection near 15 to 16 NM
-                  instead of 10.
-                </li>
-              </ul>
               <Warning>
                 With a tailwind, read those numbers as ground speeds, not
                 indicated. A high-energy approach is far easier to prevent, at
@@ -450,7 +301,7 @@ export default function DescentManagement() {
               n="III"
               id="awareness"
               title="Situational awareness"
-              lead="Staying ahead of the aircraft is a discipline, not luck. Brief the terrain, set the FMC up before top of descent, and keep a picture ready for the non-normal cases."
+              lead="Staying ahead of the aircraft is a discipline, not luck. Brief the terrain, set the FMC up before top of descent, and keep updating the picture as the descent develops."
             />
 
             <section className="course-section" id="terrain">
@@ -522,32 +373,6 @@ export default function DescentManagement() {
               </Tip>
             </section>
 
-            <section className="course-section" id="special">
-              <span className="section-num">3.3</span>
-              <h2>Non-normal descents.</h2>
-              <p>Two cases are worth carrying as ready-made pictures.</p>
-              <ul className="study-points">
-                <li>
-                  <strong>Both engines out:</strong> target a 4-degree glide.
-                  Altitude above ground = distance × 4. At 25 NM you want at least
-                  10,000 ft. Fly the minimum-drag speed, avoid the gear until the
-                  landing is assured, and recalculate constantly.
-                </li>
-                <li>
-                  <strong>Emergency or immediate landing, no structural doubt:</strong>{' '}
-                  the gear can come down at cruise altitude, since cruise speed is
-                  below the gear limit. Gear plus speed brakes gives very high
-                  rates and gets you down quickly.
-                </li>
-              </ul>
-              <Warning>
-                If structural integrity is in doubt, do the opposite: limit speed
-                as much as possible and avoid high manoeuvring loads. Descend
-                slowly with speed brakes rather than racing toward VMO. Always
-                follow the QRH non-normal checklist.
-              </Warning>
-            </section>
-
             <section className="course-section" id="cheatsheet">
               <span className="section-num">SUMMARY</span>
               <h2>Rules of thumb, one card.</h2>
@@ -559,8 +384,7 @@ export default function DescentManagement() {
                   <li><b>Wind and speed: 10 kt = 1 NM.</b></li>
                   <li><b>Elevation:</b> add it to the profile. <b>QNH:</b> 1 hPa = 30 ft.</li>
                   <li><b>Descent ROD = TAS ÷ 2. Approach ROD = GS ÷ 2, rounded up.</b></li>
-                  <li><b>High above FL150:</b> add speed. <b>Below FL150:</b> speed brakes, then F5/220, then F10/180.</li>
-                  <li><b>Both engines out:</b> altitude AGL = distance × 4.</li>
+                  <li><b>Above FL150:</b> accelerate, then use speed brakes if required. <b>Below FL150:</b> speed brakes, then F5/220, then F10/180.</li>
                 </ul>
               </Need>
             </section>
