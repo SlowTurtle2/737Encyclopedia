@@ -111,6 +111,31 @@ export default function DescentManagement() {
               lead="Before you can fix anything, you need a fast, reliable picture of where you are against where you should be. These four tools give you that picture without touching the FMC."
             />
 
+            <figure className="energy-equation" aria-label="Energy calculation: altitude profile plus weight correction plus wind correction equals corrected descent distance">
+              <div className="energy-term">
+                <span>01</span>
+                <strong>Altitude profile</strong>
+                <small>3-degree rule</small>
+              </div>
+              <b className="energy-operator">+</b>
+              <div className="energy-term">
+                <span>02</span>
+                <strong>Weight correction</strong>
+                <small>Reference: 58 t</small>
+              </div>
+              <b className="energy-operator">+</b>
+              <div className="energy-term">
+                <span>03</span>
+                <strong>Wind correction</strong>
+                <small>Headwind or tailwind</small>
+              </div>
+              <b className="energy-operator energy-equals">=</b>
+              <div className="energy-result">
+                <span>YOUR ENERGY</span>
+                <strong>Corrected descent distance</strong>
+              </div>
+            </figure>
+
             <section className="course-section" id="three-degree">
               <span className="section-num">1.1</span>
               <h2>The 3-degree rule.</h2>
