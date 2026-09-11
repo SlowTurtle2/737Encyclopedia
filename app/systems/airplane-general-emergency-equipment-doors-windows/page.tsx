@@ -1,4 +1,3 @@
-import Link from '@/components/site-link';
 import SystemPager from '@/components/system-pager';
 import Contents from '../fuel/contents';
 
@@ -35,7 +34,7 @@ export default function AirplaneGeneral() {
         <h2>Exterior lights make the aircraft visible, illuminate its path and help the crew inspect critical external areas.</h2>
         <h3>Exterior lights</h3>
         <ul className="study-points"><li><strong>Landing:</strong> forward illumination for takeoff, approach and landing.</li><li><strong>Taxi and runway turnoff:</strong> illuminate the taxi path and areas ahead of the main gear.</li><li><strong>Position:</strong> red left, green right and white aft navigation references.</li><li><strong>Strobe:</strong> high-intensity white anti-collision awareness.</li><li><strong>Anti-collision:</strong> red lights above and below the fuselage.</li><li><strong>Logo, wing and wheel-well:</strong> illuminate the tail, wing leading edges and gear bays.</li></ul>
-        <Deep title="Go deeper · Taxi-light variants"><p>Until 2015, the 250 W taxi light was installed on the nose landing gear. On LED-equipped aircraft, the taxi lights are installed in the wing roots and provide much more effective illumination. On later models, they switch off automatically when the landing gear retracts.</p></Deep>
+        <Deep title="Go deeper · Taxi-light variants"><p>Depending on aircraft effectivity, the taxi light is installed in the nose-wheel well or LED taxi lights are installed in the wing-root strakelets. Their illumination is commanded by the TAXI light switch.</p></Deep>
         <Max>Exterior light installation varies by effectivity. The supplied NG includes configurations with separate retractable/fixed lights or combined LED landing, taxi and turnoff lights. The MAX uses its applicable LED installation.</Max>
         <h3>Emergency lights</h3>
         <p>With the flight deck switch guarded in <strong>ARMED</strong>, the emergency lights illuminate automatically if DC bus No. 1 fails or AC power is switched off. Selecting ON illuminates all emergency lights; OFF prevents automatic operation.</p>
@@ -67,15 +66,15 @@ export default function AirplaneGeneral() {
         <h3>Flight crew oxygen</h3>
         <p>A single high-pressure cylinder supplies quick-donning masks at each crew station through a pressure-reducing regulator. Cylinder pressure is shown on the aft overhead panel and may be as high as <strong>1,850 psi</strong>.</p>
         <ul className="study-points"><li><strong>NORMAL:</strong> supplies a mixture of cabin air and oxygen according to demand.</li><li><strong>100%:</strong> supplies pure oxygen on demand.</li><li><strong>EMERGENCY:</strong> supplies 100% oxygen under positive pressure.</li></ul>
-        <Deep title="Go deeper · Mask and microphone"><p>Removing the quick-donning mask from its stowage box and opening the doors initiates oxygen flow and activates the mask microphone. The flow indicator confirms oxygen flow.</p></Deep>
+        <Deep title="Go deeper · Mask and microphone"><p>Removing the quick-donning mask and opening its stowage box initiates oxygen flow. Microphone selection or activation depends on aircraft effectivity: TEST/RESET is required on many configurations, while on MAX aircraft 1F041–1F045 the microphone activates when the left stowage-box door opens. The flow indicator confirms oxygen flow.</p></Deep>
         <h3>Passenger oxygen</h3>
         <p>Independent chemical oxygen sources are installed at passenger service units, attendant stations and lavatories. The masks drop automatically at approximately <strong>14,000 ft cabin altitude</strong>, or manually when PASS OXYGEN is selected ON.</p>
         <p>Pulling one mask activates the source and releases all masks in that unit. One chemical generator can supply up to <strong>four masks</strong>. Oxygen then flows continuously for approximately <strong>12 minutes</strong> and cannot be shut off.</p>
         <Warning title="OXYGEN AND CABIN FIRE">Once a mask is pulled, the chemical generator supplies oxygen continuously and cannot be shut off. Releasing oxygen near a cabin fire can feed combustion and intensify the fire. Passenger masks also mix oxygen with cabin air and do not protect against smoke. Do not activate passenger oxygen below 14,000 ft cabin altitude when smoke or an abnormal heat source is present unless directed by the applicable procedure.</Warning>
         <Need title="14,000 ft · approximately 12 minutes"><p>Mask deployment does not start oxygen flow; pulling a mask starts the chemical source.</p></Need>
         <h3>Portable oxygen</h3>
-        <p>Portable first-aid and supplemental oxygen cylinders are installed at suitable locations in the passenger cabin for passengers or crew members who develop a physiological need for oxygen. The standard cylinder contains <strong>120 litres</strong> of free oxygen when charged to approximately <strong>1,800 psi</strong> at 21°C.</p>
-        <ul className="study-points"><li><strong>2 L/min outlet:</strong> walk-around flow, providing approximately 60 minutes from a full 120-litre cylinder.</li><li><strong>4 L/min outlet:</strong> first-aid flow, providing approximately 30 minutes.</li><li><strong>Equipment:</strong> pressure gauge, pressure regulator and ON/OFF valve.</li></ul>
+        <p>Portable first-aid and supplemental oxygen cylinders are installed at suitable locations in the passenger cabin for passengers or crew members who develop a physiological need for oxygen. Depending on the installed equipment, the FCOM describes cylinders containing <strong>120 litres (4.25 ft³)</strong> or <strong>311 litres (11 ft³)</strong> of free oxygen when charged to approximately <strong>1,800 psi</strong> at 21°C. Verify the installed capacity on the cylinder placard.</p>
+        <ul className="study-points"><li><strong>2 L/min outlet:</strong> a full 120-litre cylinder provides approximately 60 minutes.</li><li><strong>4 L/min outlet:</strong> a full 120-litre cylinder provides approximately 30 minutes.</li><li><strong>Equipment:</strong> pressure gauge, pressure regulator and ON/OFF valve.</li></ul>
       </section>
 
       <section className="course-section" id="doors">
