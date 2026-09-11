@@ -4,20 +4,24 @@ import Contents from '../systems/fuel/contents';
 export const metadata = {
   title: 'Descent Management | 737Encyclopedia',
   description:
-    'Practical Boeing 737 descent planning and energy management: the 3-degree rule, weight and wind corrections, track-miles visualisation, high-energy recovery and approach energy control.',
+    'Practical Boeing 737 descent and energy management in three parts: evaluate your energy, correct your energy, and keep situational awareness. The 3-degree rule, weight and wind, high-energy recovery and terrain cross-checks.',
 };
 
 const chapters = [
   ['overview', 'Overview', ''],
-  ['three-degree', 'The 3-degree rule', '01'],
-  ['corrections', 'Weight and wind', '02'],
-  ['track-miles', 'Track-miles picture', '03'],
-  ['execution', 'Flying the descent', '04'],
-  ['high-profile', 'When you are high', '05'],
-  ['approach', 'Approach energy', '06'],
-  ['terrain', 'Terrain and ATC', '07'],
-  ['setup', 'FMC setup', '08'],
-  ['special', 'Non-normal descents', '09'],
+  ['evaluate', 'Evaluate your energy', 'I'],
+  ['three-degree', 'The 3-degree rule', '1.1'],
+  ['corrections', 'Weight and wind', '1.2'],
+  ['track-miles', 'Track-miles picture', '1.3'],
+  ['rod-check', 'Rate of descent check', '1.4'],
+  ['correct', 'Correct your energy', 'II'],
+  ['execution', 'Flying a correction', '2.1'],
+  ['high-profile', 'When you are high', '2.2'],
+  ['approach', 'Approach energy', '2.3'],
+  ['awareness', 'Situation awareness', 'III'],
+  ['terrain', 'Terrain and ATC', '3.1'],
+  ['setup', 'FMC setup', '3.2'],
+  ['special', 'Non-normal descents', '3.3'],
 ];
 
 function Need({ children }: { children: React.ReactNode }) {
@@ -44,6 +48,15 @@ function Warning({ children }: { children: React.ReactNode }) {
     </aside>
   );
 }
+function Part({ n, id, title, lead }: { n: string; id: string; title: string; lead: string }) {
+  return (
+    <div className="course-part" id={id}>
+      <span className="course-part-num">PART {n}</span>
+      <h2 className="course-part-title">{title}</h2>
+      <p className="course-part-lead">{lead}</p>
+    </div>
+  );
+}
 
 export default function DescentManagement() {
   return (
@@ -67,15 +80,15 @@ export default function DescentManagement() {
                 other time is where accidents and go-arounds start: an ATC
                 shortcut it does not know about, a runway change, a wind that is
                 not the one you loaded, or a late clearance. A handful of simple
-                rules of thumb let you predict where the aircraft will be, stay
-                ahead of it, and decide before the situation forces your hand.
+                rules of thumb let you stay ahead of the aircraft and decide
+                before the situation forces your hand.
               </p>
               <p>
-                Everything here is approximate by design. The goal is not
-                precision, it is a fast mental picture you can hold while the
-                workload is high. Two numbers drive almost everything:{' '}
-                <strong>wind</strong> and <strong>weight</strong>. Keep both in
-                the back of your mind for the whole descent.
+                This course is built in three parts, in the order you use them
+                in the air: first <strong>evaluate</strong> your energy, then{' '}
+                <strong>correct</strong> it, and throughout keep your{' '}
+                <strong>situational awareness</strong>. Two numbers drive almost
+                everything: <strong>wind</strong> and <strong>weight</strong>.
               </p>
               <Tip>
                 Fly the aircraft first. Correct the flight path with pitch and
@@ -84,8 +97,16 @@ export default function DescentManagement() {
               </Tip>
             </section>
 
+            {/* ================= PART I ================= */}
+            <Part
+              n="I"
+              id="evaluate"
+              title="Evaluate your energy"
+              lead="Before you can fix anything, you need a fast, reliable picture of where you are against where you should be. These four tools give you that picture without touching the FMC."
+            />
+
             <section className="course-section" id="three-degree">
-              <span className="section-num">01</span>
+              <span className="section-num">1.1</span>
               <h2>The 3-degree rule.</h2>
               <p>
                 A clean jet glides at roughly 3 degrees at idle thrust, which is
@@ -126,7 +147,7 @@ export default function DescentManagement() {
             </section>
 
             <section className="course-section" id="corrections">
-              <span className="section-num">02</span>
+              <span className="section-num">1.2</span>
               <h2>Weight and wind, the two that matter.</h2>
               <p>
                 A heavier aircraft has a more efficient wing at descent speed, so
@@ -192,7 +213,7 @@ export default function DescentManagement() {
             </section>
 
             <section className="course-section" id="track-miles">
-              <span className="section-num">03</span>
+              <span className="section-num">1.3</span>
               <h2>See your own track miles, not the magenta line.</h2>
               <p>
                 The FMC distance to go follows the programmed route. The descent
@@ -218,14 +239,16 @@ export default function DescentManagement() {
               </Warning>
             </section>
 
-            <section className="course-section" id="execution">
-              <span className="section-num">04</span>
-              <h2>Flying the descent and the approach path.</h2>
+            <section className="course-section" id="rod-check">
+              <span className="section-num">1.4</span>
+              <h2>Cross-check your rate of descent.</h2>
               <p>
-                Your wing feels the air, not the ground, so in a free descent you
-                set rate of descent from true airspeed. On a fixed approach path
-                such as an ILS glideslope the angle is relative to the ground, so
-                you use ground speed.
+                Altitude tells you if you are high or low; the rate of descent
+                tells you whether you are catching up or falling behind. Your
+                wing feels the air, not the ground, so in a free descent you set
+                the rate from true airspeed. On a fixed approach path such as an
+                ILS glideslope the angle is relative to the ground, so you use
+                ground speed.
               </p>
               <Need>
                 <ul className="rot-list">
@@ -244,12 +267,26 @@ export default function DescentManagement() {
                   </li>
                 </ul>
               </Need>
+            </section>
+
+            {/* ================= PART II ================= */}
+            <Part
+              n="II"
+              id="correct"
+              title="Correct your energy"
+              lead="Once the picture says you are off profile, you act, big enough to fix it in one go. This is where the descent is won or lost, and where the high-energy recovery drill lives."
+            />
+
+            <section className="course-section" id="execution">
+              <span className="section-num">2.1</span>
+              <h2>Flying a correction.</h2>
               <p>
-                To start a clean 3-degree descent you can select LVL CHG, which
-                drops the thrust to idle and lets the aircraft find the path at
-                the selected speed, or select V/S and set the rate from TAS ÷ 2.
-                V/S gives a steady pitch and a smoother ride, but you must reduce
-                the rate as you descend because TAS keeps falling.
+                To start or steepen a descent you can select LVL CHG, which drops
+                the thrust to idle and lets the aircraft find the path at the
+                selected speed, or select V/S and set the rate from TAS ÷ 2. V/S
+                gives a steady pitch and a smoother ride, but you must reduce the
+                rate as you descend because TAS keeps falling. When ATC asks for
+                a fixed rate, V/S is the clean way to give it.
               </p>
               <Warning>
                 Change the speed window from Mach to IAS in time, around FL300. If
@@ -260,37 +297,101 @@ export default function DescentManagement() {
             </section>
 
             <section className="course-section" id="high-profile">
-              <span className="section-num">05</span>
+              <span className="section-num">2.2</span>
               <h2>When you find yourself high.</h2>
               <p>
-                You have three tools to add drag, in increasing strength. Pick
-                the one that matches how high you are and how close you are.
+                This is the most important habit on the whole descent. The tool
+                you reach for depends on one number, <strong>FL150</strong>, and
+                if the first tool is not enough you escalate the configuration in
+                a fixed order. Learn this cold.
               </p>
-              <ul className="study-points">
-                <li>
-                  <strong>Fly faster (above FL100):</strong> roughly 20% more
-                  drag. Best at high altitude, pointless low down where the 250
-                  kt limit is about to force you to slow anyway.
-                </li>
-                <li>
-                  <strong>Speed brakes:</strong> roughly 30% more drag, and more
-                  effective the faster you are. Speed matters here, weight does
-                  not.
-                </li>
-                <li>
-                  <strong>Landing gear:</strong> roughly 40 to 50% more drag. A
-                  drastic tool for when you are high and close, but it produces
-                  high rates toward the ground, so watch the terrain.
-                </li>
-              </ul>
+
+              <div className="hi-recover">
+                <p className="hi-recover-title">Step 1 · Pick the tool by altitude</p>
+                <div className="hi-split">
+                  <div className="hi-branch above">
+                    <span className="hi-fl">ABOVE FL150</span>
+                    <strong>Add speed</strong>
+                    <p>
+                      Speed the aircraft up: raise the descent speed through the
+                      FMC descent page, or on the MCP speed window. You still
+                      have the altitude to convert that extra drag into a lower
+                      profile.
+                    </p>
+                  </div>
+                  <div className="hi-branch below">
+                    <span className="hi-fl">BELOW FL150</span>
+                    <strong>Speed brakes</strong>
+                    <p>
+                      Too low to make speed pay, and the 250 kt limit is near.
+                      Extend the speed brakes instead; they bite harder the
+                      faster you are.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="hi-recover">
+                <p className="hi-recover-title">
+                  Step 2 · If the speed brakes are not enough, escalate
+                </p>
+                <ol className="hi-ladder">
+                  <li>
+                    <span className="hi-num">1</span>
+                    <div>
+                      <strong>Speed brakes alone</strong>
+                      <div className="cfg-row">
+                        <span className="cfg-chip">SPEED BRAKE</span>
+                      </div>
+                      <p>Your first move once below FL150.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span className="hi-num">2</span>
+                    <div>
+                      <strong>Add flap 5</strong>
+                      <div className="cfg-row">
+                        <span className="cfg-chip">SPEED BRAKE</span>
+                        <span className="cfg-plus">+</span>
+                        <span className="cfg-chip">FLAP 5</span>
+                        <span className="cfg-plus">+</span>
+                        <span className="cfg-chip">220 kt</span>
+                      </div>
+                      <p>
+                        The strongest rate of the three, around 2,300 ft per
+                        minute.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="last-resort">
+                    <span className="hi-num">3</span>
+                    <div>
+                      <strong>Last resort: flap 10</strong>
+                      <div className="cfg-row">
+                        <span className="cfg-chip">SPEED BRAKE</span>
+                        <span className="cfg-plus">+</span>
+                        <span className="cfg-chip">FLAP 10</span>
+                        <span className="cfg-plus">+</span>
+                        <span className="cfg-chip">180 kt</span>
+                      </div>
+                      <p>
+                        Maximum drag at a low speed. Use it only when the two
+                        steps above have not recovered the profile.
+                      </p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+
               <p>
-                The point is not just to add drag, it is to <em>predict</em>{' '}
-                whether the fix is working. Compare your actual rate to the ideal
-                rate to find the excess, divide the height you need to lose by
-                that excess to get a time, then multiply by your miles per minute
-                to see where you will rejoin the profile. If the answer is not
-                acceptable, act again straight away: more speed, more brake, or
-                ask ATC for track miles. Do not hope.
+                Whichever tool you use, the point is not just to add drag, it is
+                to <em>predict</em> whether the fix is working. Compare your
+                actual rate to the ideal rate to find the excess, divide the
+                height you need to lose by that excess to get a time, then
+                multiply by your miles per minute to see where you will rejoin
+                the profile. If the answer is not acceptable, act again straight
+                away: more speed, more configuration, or ask ATC for track miles.
+                Do not hope.
               </p>
               <Tip>
                 Make corrections big enough to fix the problem in one go. Aim to
@@ -301,7 +402,7 @@ export default function DescentManagement() {
             </section>
 
             <section className="course-section" id="approach">
-              <span className="section-num">06</span>
+              <span className="section-num">2.3</span>
               <h2>Approach energy and configuration.</h2>
               <p>
                 Modern approaches are low-drag and low-noise: gear and flap 15
@@ -344,8 +445,16 @@ export default function DescentManagement() {
               </Warning>
             </section>
 
+            {/* ================= PART III ================= */}
+            <Part
+              n="III"
+              id="awareness"
+              title="Situational awareness"
+              lead="Staying ahead of the aircraft is a discipline, not luck. Brief the terrain, set the FMC up before top of descent, and keep a picture ready for the non-normal cases."
+            />
+
             <section className="course-section" id="terrain">
-              <span className="section-num">07</span>
+              <span className="section-num">3.1</span>
               <h2>Terrain and ATC clearances.</h2>
               <p>
                 Automation makes it easy to accept a descent clearance without
@@ -378,7 +487,7 @@ export default function DescentManagement() {
             </section>
 
             <section className="course-section" id="setup">
-              <span className="section-num">08</span>
+              <span className="section-num">3.2</span>
               <h2>Setting the descent up in the FMC.</h2>
               <p>
                 Good preparation before top of descent removes most of the
@@ -414,11 +523,9 @@ export default function DescentManagement() {
             </section>
 
             <section className="course-section" id="special">
-              <span className="section-num">09</span>
+              <span className="section-num">3.3</span>
               <h2>Non-normal descents.</h2>
-              <p>
-                Two cases are worth carrying as ready-made pictures.
-              </p>
+              <p>Two cases are worth carrying as ready-made pictures.</p>
               <ul className="study-points">
                 <li>
                   <strong>Both engines out:</strong> target a 4-degree glide.
@@ -452,6 +559,7 @@ export default function DescentManagement() {
                   <li><b>Wind and speed: 10 kt = 1 NM.</b></li>
                   <li><b>Elevation:</b> add it to the profile. <b>QNH:</b> 1 hPa = 30 ft.</li>
                   <li><b>Descent ROD = TAS ÷ 2. Approach ROD = GS ÷ 2, rounded up.</b></li>
+                  <li><b>High above FL150:</b> add speed. <b>Below FL150:</b> speed brakes, then F5/220, then F10/180.</li>
                   <li><b>Both engines out:</b> altitude AGL = distance × 4.</li>
                 </ul>
               </Need>
