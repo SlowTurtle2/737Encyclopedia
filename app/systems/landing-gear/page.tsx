@@ -7,7 +7,6 @@ function Need({ title, children }: { title: string; children: React.ReactNode })
 function Warning({ title, children }: { title: string; children: React.ReactNode }) { return <aside className="suction-warning"><strong>WARNING · {title}</strong><p>{children}</p></aside>; }
 function Deep({ title, children }: { title: string; children: React.ReactNode }) { return <details className="deep"><summary>{title}</summary><div>{children}</div></details>; }
 function Max({ children }: { children: React.ReactNode }) { return <aside className="max-note"><b>737 MAX / 8200 DIFFERENCE</b><p>{children}</p></aside>; }
-function Placeholder({ children }: { children: React.ReactNode }) { return <figure className="schematic-placeholder" aria-label="Illustration placeholder"><span>ILLUSTRATION TO BE ADDED</span><figcaption>{children}</figcaption></figure>; }
 
 const sections = [['landing-gear', 'Landing gear'], ['steering', 'Nose wheel steering'], ['brakes', 'Brake system'], ['tires', 'Tires']];
 
@@ -68,7 +67,6 @@ export default function LandingGear() {
         <p>Anti-skid monitors wheel speed and reduces brake pressure when a skid is detected. Protection is available with both normal and alternate braking, and remains available even if both hydraulic systems are lost while accumulator pressure remains.</p>
         <ul className="study-points"><li><strong>Skid protection:</strong> reduces pressure at a skidding wheel or wheel pair.</li><li><strong>Locked-wheel protection:</strong> prevents sustained wheel lock during braking.</li><li><strong>Touchdown protection:</strong> inhibits brake pressure until wheel spin-up confirms ground contact.</li><li><strong>Hydroplane protection:</strong> releases pressure when wheel-speed behavior indicates hydroplaning.</li></ul>
         <p><strong>ANTISKID INOP:</strong> illuminates amber when the antiskid monitoring system detects a fault. Antiskid protection may be partially or completely unavailable depending on the failure.</p>
-        <Placeholder>Normal, alternate and accumulator brake architecture.</Placeholder>
       </section>
 
       <section className="course-section" id="tires">
