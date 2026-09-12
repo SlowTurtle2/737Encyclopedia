@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import SystemPager from '@/components/system-pager';
 import Contents from '../fuel/contents';
 
@@ -21,6 +22,12 @@ function Max({ children }: { children: React.ReactNode }) {
 function Placeholder({ caption }: { caption: string }) {
   return <figure className="schematic-placeholder" aria-label={`${caption} illustration placeholder`}><span>ILLUSTRATION TO BE ADDED</span><figcaption>{caption}</figcaption></figure>;
 }
+function Figure({ src, alt, caption }: { src: string; alt: string; caption: string }) {
+  return <figure className="figure course-photo"><Image src={src} alt={alt} width={1200} height={900} /><figcaption>{caption}</figcaption></figure>;
+}
+function Light({ title, src, alt, children }: { title: string; src: string; alt: string; children: React.ReactNode }) {
+  return <div className="emergency-light-card air-system-alert"><Image src={src} alt={alt} width={600} height={300} /><div><strong>{title}</strong><p>{children}</p></div></div>;
+}
 
 const sections = [
   ['big-picture', 'The big picture'],
@@ -39,7 +46,10 @@ export default function EnginesApu() {
         <p>The NG uses two CFM56-7B engines and the MAX uses two LEAP-1B engines. Both are dual-rotor axial-flow turbofans. The <strong>N1 rotor</strong> comprises the fan, low-pressure compressor and low-pressure turbine. The mechanically independent <strong>N2 rotor</strong> comprises the high-pressure compressor and high-pressure turbine, drives the accessory gearboxes and is connected to the pneumatic starter.</p>
         <div className="course-table-wrap"><table className="course-table"><caption>Powerplant roles</caption><thead><tr><th>System</th><th>Primary function</th><th>Aircraft services</th></tr></thead><tbody><tr><td>Engine N1 rotor</td><td>Produces most of the propulsive thrust</td><td>Fan air and low-pressure compression</td></tr><tr><td>Engine N2 rotor</td><td>High-pressure compression and combustion core</td><td>Starter connection and accessory-gearbox drive</td></tr><tr><td>Accessory gearbox</td><td>Transfers N2 mechanical power</td><td>IDG, fuel pumps, oil pump and hydraulic pump</td></tr><tr><td>APU</td><td>Independent gas-turbine power source</td><td>AC electrical power and bleed air</td></tr></tbody></table></div>
         <Need title="N1 commands thrust · N2 drives the core"><p>The EEC controls fuel to achieve commanded N1. N2 is the high-pressure rotor used to monitor starting and it mechanically drives the engine accessories.</p></Need>
-        <Placeholder caption="NG and MAX powerplant architecture." />
+        <div className="engine-comparison-grid">
+          <Figure src="/images/engine-leap-1b.png" alt="LEAP-1B engine fitted to a Boeing 737 MAX" caption="737 MAX · LEAP-1B engine." />
+          <Figure src="/images/engine-cfm56-7b.png" alt="CFM56-7B engine fitted to a Boeing 737 NG" caption="737 NG · CFM56-7B engine." />
+        </div>
       </section>
 
       <section className="course-section" id="control-indication">
@@ -68,18 +78,21 @@ export default function EnginesApu() {
         <p>During a ground start, the EEC monitors for an impending hot start, compressor stall, EGT start-limit exceedance and wet start. For an impending hot start or stall, the white EGT box flashes and applicable EEC software removes ignition and fuel. An EGT start-limit exceedance turns the indication red and causes automatic fuel and ignition cutoff. If EGT does not rise within 15 seconds after selecting IDLE, wet-start logic shuts off fuel and ignition.</p>
         <Max>After GRD is selected, <strong>Bowed Rotor Motoring</strong> can hold the MAX between approximately 18% and 24% N2 for 6 to 90 seconds to straighten thermally bowed shafts. Selecting IDLE at 25% N2 or maximum motoring starts a TCMA/EOS test: fuel flow remains zero and the engine fuel valve cycles before the normal start sequence continues.</Max>
         <Warning title="INFLIGHT START">Ground-start protections do not function during an inflight start. Windmill and crossbleed starts are available; X-BLD is displayed when crossbleed air is recommended.</Warning>
-        <Placeholder caption="Engine start switches, ignition selector and start levers." />
+        <div className="engine-start-image-grid">
+          <Figure src="/images/engine-start-panel.png" alt="Boeing 737 engine start switches and ignition selector" caption="Engine start switches and ignition selector." />
+          <Figure src="/images/engine-control-stand.png" alt="Boeing 737 control stand mechanism and engine start levers" caption="Control stand mechanism and engine start levers." />
+        </div>
 
         <h3>Indications and warnings</h3>
         <p><strong>N1</strong> and <strong>EGT</strong> are the primary engine indications. Secondary indications are <strong>N2, fuel flow, oil pressure, oil temperature, oil quantity and vibration</strong>. Secondary data appears automatically at initial display power-up, in flight when a start lever is moved to CUTOFF, when N2 falls below idle, or when a secondary parameter exceeds its normal range.</p>
-        <ul className="study-points">
-          <li><strong>ENG FAIL:</strong> the engine is below sustainable idle with the start lever at IDLE. It remains until the engine recovers, the start lever is moved to CUTOFF, or the fire switch is pulled.</li>
-          <li><strong>START VALVE OPEN:</strong> steady indicates that the start valve is open and starter air is supplied; blinking indicates an uncommanded valve opening.</li>
-          <li><strong>LOW OIL PRESSURE:</strong> oil pressure is at or below the red line. A new condition blinks for 10 seconds before remaining steady.</li>
-          <li><strong>OIL FILTER BYPASS:</strong> impending oil-filter bypass. On the NG it monitors the scavenge filter; on the MAX it monitors the oil supply filter.</li>
-          <li><strong>ENGINE CONTROL:</strong> an engine-control fault makes the system not dispatchable. The light is displayed with the engine running on the ground below 80 kt before takeoff, or approximately 30 seconds after touchdown.</li>
-          <li><strong>EEC ALTN:</strong> the EEC has transferred automatically to alternate control or ALTN has been selected manually.</li>
-        </ul>
+        <Need title="ENG FAIL"><p>The engine is below sustainable idle with the start lever at IDLE. The alert remains until the engine recovers, the start lever is moved to CUTOFF, or the fire switch is pulled.</p></Need>
+        <div className="air-system-light-list">
+          <Light title="START VALVE OPEN" src="/images/engine-start-valve-open-light.png" alt="Amber START VALVE OPEN light">Steady indicates that the start valve is open and starter air is supplied. Blinking indicates an uncommanded valve opening.</Light>
+          <Light title="LOW OIL PRESSURE" src="/images/engine-low-oil-pressure-light.png" alt="Amber LOW OIL PRESSURE light">Oil pressure is at or below the red line. A new condition blinks for 10 seconds before remaining steady.</Light>
+          <Light title="OIL FILTER BYPASS" src="/images/engine-oil-filter-bypass-light.png" alt="Amber OIL FILTER BYPASS light">An oil-filter bypass is impending. On the NG it monitors the scavenge filter; on the MAX it monitors the oil supply filter.</Light>
+          <Light title="EEC ALTN" src="/images/engine-eec-altn-light.png" alt="Amber EEC ALTN light">The EEC has transferred automatically to alternate control or ALTN has been selected manually. ON and ALTN can both be visible in soft alternate mode.</Light>
+          <Light title="ENGINE CONTROL" src="/images/engine-control-light.png" alt="Amber ENGINE CONTROL light">An engine-control fault makes the system not dispatchable. The light is displayed with the engine running on the ground below 80 kt before takeoff, or approximately 30 seconds after touchdown.</Light>
+        </div>
         <Max>MAX crew alerts also include <strong>THRUST</strong> when actual thrust is above or below commanded thrust, and <strong>FUEL FLOW</strong> when measured fuel flow is abnormally high compared with the FMC prediction. New alerts and their engine block blink for 10 seconds before remaining steady, except during inhibited takeoff and landing phases.</Max>
         <Placeholder caption="Primary and secondary engine indications, limits and crew alerts." />
       </section>
@@ -107,8 +120,6 @@ export default function EnginesApu() {
           <li><strong>Filter protection:</strong> the oil automatically bypasses a saturated filter; OIL FILTER BYPASS appears before bypass occurs.</li>
         </ul>
         <Max>NG oil passes from the pressure pump to the engine and returns through a monitored scavenge filter and fuel-cooled main oil cooler. MAX supply oil passes through a monitored supply filter, servo fuel heater, air-cooled oil cooler and main fuel/oil heat exchanger; scavenge oil returns through an air/oil/debris separator. This is why the OIL FILTER BYPASS alert refers to different filter locations.</Max>
-        <Placeholder caption="NG and MAX engine oil flow and filter locations." />
-
         <h3>Engine fuel system</h3>
         <p>Tank pumps deliver fuel through the spar shutoff valve to the engine-driven fuel pumps, heat exchangers and filter. The EEC meters fuel in the HMU on the NG and the FMU on the MAX. Both the spar and engine fuel valves must be open for engine operation; either the start lever at CUTOFF or a pulled fire switch closes both valves.</p>
         <Deep title="Go deeper · Fuel is also the oil heat sink"><p>The fuel/oil heat exchanger transfers engine-oil heat into the fuel. This cools the oil and warms the fuel before it reaches the metering unit and combustor.</p></Deep>
