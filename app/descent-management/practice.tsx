@@ -6,10 +6,10 @@ const questions = [
   {
     briefing: 'Cruising at 38,000 ft, groundspeed 310 kt. ATC: “Cross TIMBA at 9,000 ft, 250 kt.”',
     prompt: 'How many miles before TIMBA do you start down?',
-    answer: 97,
+    answer: 87,
     tolerance: 1,
     unit: 'NM',
-    explanation: '38,000 − 9,000 = 29,000 ft. At 300 ft per NM, 29,000 ÷ 300 ≈ 97 NM.',
+    explanation: '38,000 − 9,000 = 29,000 ft, or 29 thousand feet. Distance = altitude to lose × 3: 29 × 3 = 87 NM.',
   },
   {
     briefing: 'Cruising at FL330. Landing weight 64 t. Average wind component: 20 kt tailwind.',
@@ -30,10 +30,10 @@ const questions = [
   {
     briefing: 'You are 25 NM from the runway on an uncorrected 3-degree profile.',
     prompt: 'What altitude should you be passing?',
-    answer: 7500,
-    tolerance: 0,
+    answer: 8300,
+    tolerance: 100,
     unit: 'FT',
-    explanation: '25 NM × 300 ft per NM = 7,500 ft.',
+    explanation: 'Altitude in thousands of feet = distance ÷ 3: 25 ÷ 3 ≈ 8.3, or approximately 8,300 ft.',
   },
   {
     briefing: 'During the descent, your true airspeed is 360 kt.',

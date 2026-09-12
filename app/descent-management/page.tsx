@@ -110,14 +110,14 @@ export default function DescentManagement() {
               n="I"
               id="evaluate"
               title="Evaluate your energy"
-              lead="Before you can fix anything, you need a fast, reliable picture of where you are against where you should be. These four tools give you that picture without touching the FMC."
+              lead="Before you can fix anything, you need a fast, reliable picture of where you are against where you should be. These three terms give you that picture without touching the FMC."
             />
 
             <figure className="energy-equation" aria-label="Energy calculation: altitude profile plus weight correction plus wind correction equals corrected descent distance">
               <div className="energy-term">
                 <span>01</span>
                 <strong>Altitude profile</strong>
-                <small>3-degree rule</small>
+                <small>Altitude (000 ft) × 3</small>
               </div>
               <b className="energy-operator">+</b>
               <div className="energy-term">
@@ -143,17 +143,17 @@ export default function DescentManagement() {
               <h2>The 3-degree rule.</h2>
               <p>
                 A clean jet glides at roughly 3 degrees at idle thrust, which is
-                about 300 ft lost per nautical mile. That single fact gives you
+                approximately 3 NM travelled for every 1,000 ft lost. That single fact gives you
                 both the top of descent and the target altitude at any point.
               </p>
               <Need>
                 <ul className="rot-list">
                   <li>
-                    <b>Altitude (ft) = 3 × distance (NM)</b>, or 300 ft per NM.
+                    <b>Distance (NM) = altitude to lose (thousands of feet) × 3.</b>
                   </li>
                   <li>
-                    <b>Top of descent (NM) = (FL ÷ 10) × 3</b>. Take the first
-                    two digits of the level and multiply by 3.
+                    <b>Altitude (thousands of feet) = distance (NM) ÷ 3.</b>
+                    Multiply the result by 1,000 to obtain the altitude in feet.
                   </li>
                 </ul>
               </Need>
@@ -164,12 +164,12 @@ export default function DescentManagement() {
                   run.
                 </li>
                 <li>
-                  <strong>Target altitude at 25 NM to go:</strong> 25 × 3 =
-                  7,500 ft.
+                  <strong>Target altitude at 25 NM to go:</strong> 25 ÷ 3 = 8.3,
+                  or approximately 8,300 ft.
                 </li>
                 <li>
-                  <strong>Where should I be at 40 NM?</strong> 40 × 3 = 12,000
-                  ft, before any correction.
+                  <strong>Where should I be at 40 NM?</strong> 40 ÷ 3 = 13.3,
+                  or approximately 13,300 ft before any correction.
                 </li>
               </ul>
               <p>
@@ -228,7 +228,7 @@ export default function DescentManagement() {
               <ul className="study-points">
                 <li><strong>FL330 · 64 t · 20 kt tailwind:</strong> 99 NM basic distance + 6 NM for weight + 2 NM for wind = <strong>107 NM</strong> to descend.</li>
                 <li><strong>FL300 · 54 t · 30 kt headwind:</strong> 90 NM basic distance − 4 NM for weight − 3 NM for wind = <strong>83 NM</strong> to descend.</li>
-                <li><strong>At 40 NM · 62 t · 20 kt tailwind:</strong> the uncorrected target is 12,000 ft. The combined 6 NM correction means the aircraft should be approximately 1,800 ft lower, near <strong>10,200 ft</strong>.</li>
+                <li><strong>At 40 NM · 62 t · 20 kt tailwind:</strong> subtract the combined 6 NM correction from the available distance: (40 − 6) ÷ 3 = 11.3. The corrected target is therefore approximately <strong>11,300 ft</strong>.</li>
               </ul>
               <p>
                 Smaller corrections for speed, airport elevation, QNH and ISA
@@ -383,8 +383,8 @@ export default function DescentManagement() {
               <h2>Rules of thumb, one card.</h2>
               <Need>
                 <ul className="rot-list">
-                  <li><b>Altitude (ft) = 3 × distance (NM)</b>, 300 ft per NM.</li>
-                  <li><b>Top of descent (NM) = (FL ÷ 10) × 3.</b></li>
+                  <li><b>Distance (NM) = altitude to lose (thousands of feet) × 3.</b></li>
+                  <li><b>Altitude (thousands of feet) = distance (NM) ÷ 3.</b></li>
                   <li><b>Reference weight 58 t.</b> Weight: 1 t = 1 NM.</li>
                   <li><b>Wind and speed: 10 kt = 1 NM.</b></li>
                   <li><b>Elevation:</b> add it to the profile. <b>QNH:</b> 1 hPa = 30 ft.</li>
