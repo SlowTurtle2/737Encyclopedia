@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { supabase } from '@/lib/supabase';
 
 export type EngineQ = { id: number; q: string; a: number; o: string[] };
@@ -22,10 +22,12 @@ export default function QuizEngine({
   bank,
   weakRpc,
   load,
+  selectionLabel,
 }: {
   bank: 'sop' | 'tech';
   weakRpc: string;
   load: Loader;
+  selectionLabel?: string;
 }) {
   const [all, setAll] = useState<EngineQ[] | null>(null);
   const [uid, setUid] = useState<string | null>(null);
@@ -39,12 +41,13 @@ export default function QuizEngine({
   const [choice, setChoice] = useState<number | null>(null);
   const [score, setScore] = useState(0);
   const [missedPool, setMissedPool] = useState<EngineQ[]>([]);
+  const loadRef = useRef(load);
 
   useEffect(() => {
     let active = true;
-    (async () => {
+    void (async () => {
       const [{ data: qs, error }, { data: userData }] = await Promise.all([
-        load(),
+        loadRef.current(),
         supabase.auth.getUser(),
       ]);
       if (!active) return;
@@ -58,7 +61,6 @@ export default function QuizEngine({
     return () => {
       active = false;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (all === null) return <p className="eyebrow">Loading questions…</p>;
@@ -188,19 +190,24 @@ export default function QuizEngine({
 
   if (phase === 'menu') {
     const runCount = Math.min(count, total);
+    const estimatedMinutes = Math.max(2, Math.ceil(runCount * 0.75));
     return (
       <div className="quiz-menu">
-        <p className="eyebrow">BUILD YOUR QUIZ</p>
-        <h3>How many questions?</h3>
+        <div className="quiz-setup-heading">
+          <span className="quiz-step">{selectionLabel ? 'STEP 2 OF 2' : 'QUIZ SETUP'}</span>
+          <div>
+            <p className="eyebrow">BUILD YOUR QUIZ</p>
+            <h3>Choose the quiz length</h3>
+          </div>
+        </div>
         <p className="quiz-menu-sub">
-          {total} questions available. Pick a length, then start.
+          Select a suggested length or enter your own. Questions are drawn randomly from {total} available.
         </p>
 
-        <div
+        <fieldset
           className="quiz-presets"
-          role="group"
-          aria-label="Number of questions"
         >
+          <legend>Number of questions</legend>
           {PRESETS.filter((n) => n < total).map((n) => (
             <button
               key={n}
@@ -208,38 +215,45 @@ export default function QuizEngine({
               className={count === n ? 'preset on' : 'preset'}
               onClick={() => setCount(n)}
             >
-              {n}
+              <strong>{n}</strong>
+              <span>questions</span>
             </button>
           ))}
           <button
             type="button"
-            className={count === total ? 'preset on' : 'preset'}
+            className={count >= total ? 'preset on' : 'preset'}
             onClick={() => setCount(total)}
           >
-            All ({total})
+            <strong>{total}</strong>
+            <span>all questions</span>
           </button>
-        </div>
+        </fieldset>
 
         <label className="quiz-custom">
-          <span>Or a custom number</span>
+          <span>Custom length</span>
           <input
             type="number"
             min={1}
             max={total}
-            value={count}
+            value={runCount}
             onChange={(e) => {
               const v = Math.max(1, Math.min(total, Number(e.target.value) || 1));
               setCount(v);
             }}
           />
+          <span>questions</span>
         </label>
 
-        <button
-          className="button quiz-start"
-          onClick={() => begin(all, count)}
-        >
-          Start quiz · {runCount} question{runCount > 1 ? 's' : ''} →
-        </button>
+        <div className="quiz-ready">
+          <div className="quiz-ready-copy">
+            <span>READY TO START</span>
+            <strong>{selectionLabel ?? (bank === 'sop' ? 'SOP exam' : 'Technical exam')}</strong>
+            <p>{runCount} question{runCount > 1 ? 's' : ''} · About {estimatedMinutes} min</p>
+          </div>
+          <button className="button quiz-start" onClick={() => begin(all, count)}>
+            Start quiz →
+          </button>
+        </div>
 
         <div className="quiz-more">
           <p className="quiz-more-title">Other ways to practise</p>
@@ -330,7 +344,8 @@ export default function QuizEngine({
         {pos > 0 && ` · ${runPct}%`}
       </p>
       <h3>{question.q}</h3>
-      <div className="quiz-options" role="group" aria-label="Choose an answer">
+      <fieldset className="quiz-options">
+        <legend>Choose an answer</legend>
         {question.o.map((o, i) => {
           let cls = '';
           if (choice !== null) {
@@ -349,11 +364,10 @@ export default function QuizEngine({
             </button>
           );
         })}
-      </div>
+      </fieldset>
       {choice !== null && (
-        <div
+        <output
           className={'quiz-feedback ' + (choice === question.a ? 'ok' : 'no')}
-          role="status"
         >
           <b>{choice === question.a ? 'Correct.' : 'Not quite.'}</b>{' '}
           {choice !== question.a && (
@@ -362,7 +376,7 @@ export default function QuizEngine({
               {question.o[question.a]}
             </>
           )}
-        </div>
+        </output>
       )}
       <div className="quiz-actions">
         {choice !== null && (

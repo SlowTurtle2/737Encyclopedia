@@ -27,16 +27,24 @@ export default function TechQuiz() {
 
   if (choice === null) {
     return (
-      <div className="quiz-menu">
-        <p className="eyebrow">CHOOSE A SYSTEM</p>
-        <h3>Revise one system, or mix them all.</h3>
+      <div className="quiz-menu system-picker">
+        <div className="quiz-setup-heading">
+          <span className="quiz-step">STEP 1 OF 2</span>
+          <div>
+            <p className="eyebrow">QUIZ TOPIC</p>
+            <h3>What do you want to revise?</h3>
+          </div>
+        </div>
+        <p className="quiz-menu-sub">Choose one aircraft system for focused practice, or combine the full question bank.</p>
         <div className="sys-grid">
           <button
             type="button"
             className="sys-btn all"
             onClick={() => setChoice(0)}
           >
-            All systems (mixed)
+            <span className="sys-number">ALL</span>
+            <span><strong>All systems</strong><small>Mixed questions from the complete technical bank</small></span>
+            <span className="sys-arrow">→</span>
           </button>
           {SYSTEMS.map((name, i) => (
             <button
@@ -45,7 +53,9 @@ export default function TechQuiz() {
               key={name}
               onClick={() => setChoice(i + 1)}
             >
-              <span>{String(i + 1).padStart(2, '0')}</span> {name}
+              <span className="sys-number">{String(i + 1).padStart(2, '0')}</span>
+              <strong>{name}</strong>
+              <span className="sys-arrow">→</span>
             </button>
           ))}
         </div>
@@ -70,6 +80,7 @@ export default function TechQuiz() {
       <QuizEngine
         key={choice}
         bank="tech"
+        selectionLabel={label}
         weakRpc="weak_tech_questions"
         load={() => {
           const base = supabase
