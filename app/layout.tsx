@@ -7,7 +7,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: '737Encyclopedia | Understand the aircraft',
-  description: 'Detailed Boeing 737 NG systems courses, annotated schematics and 737-8200 MAX differences for pilots and simulator enthusiasts.',
+  description: 'Boeing 737 NG/MAX systems courses and free preparation for Irish low-cost airline assessments: technical, HR and simulator sessions.',
 };
 
 function Navigation() {
