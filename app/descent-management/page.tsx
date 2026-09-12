@@ -274,7 +274,7 @@ export default function DescentManagement() {
                 <div className="hi-recover hi-recover-above">
                   <p className="hi-recover-title">Above FL150 · two-step recovery</p>
                   <ol className="hi-ladder">
-                    <li><span className="hi-num">1</span><div><strong>Accelerate</strong><div className="cfg-row"><span className="cfg-chip">ADD SPEED</span></div><p>Increase the descent speed within the applicable limits to increase drag and recover the profile.</p></div></li>
+                    <li><span className="hi-num">1</span><div><strong>Accelerate</strong><div className="cfg-row"><span className="cfg-chip">DES PAGE</span><span className="cfg-plus">+</span><span className="cfg-chip">VNAV</span></div><p>The simplest way to increase the descent speed is from the FMC DES page. Keep VNAV engaged so the FMC continues to manage the altitude constraints at the STAR waypoints while you recover the profile.</p></div></li>
                     <li><span className="hi-num">2</span><div><strong>Add speed brakes</strong><div className="cfg-row"><span className="cfg-chip">ADD SPEED</span><span className="cfg-plus">+</span><span className="cfg-chip">SPEED BRAKE</span></div><p>If acceleration alone is insufficient, extend the speed brakes while continuing to monitor speed and the recovered flight path.</p></div></li>
                   </ol>
                 </div>
