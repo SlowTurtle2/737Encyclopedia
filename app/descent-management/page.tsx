@@ -1,10 +1,11 @@
 import { RequireAccess } from '@/components/auth';
 import Contents from '../systems/fuel/contents';
+import DescentPractice from './practice';
 
 export const metadata = {
   title: 'Descent Management | 737Encyclopedia',
   description:
-    'Practical Boeing 737 descent and energy management in three parts: evaluate your energy, correct your energy, and keep situational awareness. The 3-degree rule, weight and wind, high-energy recovery and terrain cross-checks.',
+    'Practical Boeing 737 descent and energy management in four parts: evaluate your energy, correct your energy, maintain situational awareness, and practise the calculations.',
 };
 
 const chapters = [
@@ -18,8 +19,8 @@ const chapters = [
   ['high-profile', 'When you are high', '2.2'],
   ['approach', 'Approach energy', '2.3'],
   ['awareness', 'Situation awareness', 'III'],
-  ['terrain', 'Terrain and ATC', '3.1'],
-  ['setup', 'FMC setup', '3.2'],
+  ['rings-traffic', 'Rings and traffic', '3.1'],
+  ['practice', 'Practice your descent', 'IV'],
 ];
 
 function Need({ children }: { children: React.ReactNode }) {
@@ -90,10 +91,11 @@ export default function DescentManagement() {
                 before the situation forces your hand.
               </p>
               <p>
-                This course is built in three parts, in the order you use them
+                This course is built in four parts, in the order you use them
                 in the air: first <strong>evaluate</strong> your energy, then{' '}
                 <strong>correct</strong> it, and throughout keep your{' '}
-                <strong>situational awareness</strong>. Two numbers drive almost
+                <strong>situational awareness</strong>, then practise the calculations.
+                Two numbers drive almost
                 everything: <strong>wind</strong> and <strong>weight</strong>.
               </p>
               <Tip>
@@ -340,75 +342,39 @@ export default function DescentManagement() {
               n="III"
               id="awareness"
               title="Situational awareness"
-              lead="Staying ahead of the aircraft is a discipline, not luck. Brief the terrain, set the FMC up before top of descent, and keep updating the picture as the descent develops."
+              lead="Keep a simple picture of the descent on the Navigation Display, then compare it with the traffic already flying the same arrival."
             />
 
-            <section className="course-section" id="terrain">
+            <section className="course-section" id="rings-traffic">
               <span className="section-num">3.1</span>
-              <h2>Terrain and ATC clearances.</h2>
+              <h2>Rings and traffic cross-check.</h2>
               <p>
-                Automation makes it easy to accept a descent clearance without
-                thinking. Terrain does not move. Every clearance is a threat to
-                cross-check.
-              </p>
-              <Need>
-                <p>
-                  Never descend to any altitude without reference to a charted
-                  altitude. Go low, look below.
-                </p>
-              </Need>
-              <ul className="study-points">
-                <li>
-                  <strong>Brief the terrain:</strong> the en-route MORA to the
-                  airport, the STAR minimum altitudes, the approach platform and
-                  final fix altitudes, and the go-around altitude.
-                </li>
-                <li>
-                  <strong>Between top of descent and the 25 NM ring</strong>{' '}
-                  around the field you are effectively blind if you leave the
-                  STAR for a shortcut or weather, so know the surrounding minimum
-                  altitudes.
-                </li>
-                <li>
-                  <strong>Set nothing on the MCP altitude window</strong> without
-                  checking it against the applicable chart, day or night.
-                </li>
-              </ul>
-            </section>
-
-            <section className="course-section" id="setup">
-              <span className="section-num">3.2</span>
-              <h2>Setting the descent up in the FMC.</h2>
-              <p>
-                Good preparation before top of descent removes most of the
-                surprises. Work the boxes, then build the mental picture.
+                Use the FMC FIX page to place useful distance rings around the
+                runway or an arrival waypoint. Enter the fix, then type the
+                distance as <strong>/distance</strong>, for example <strong>/10</strong>,
+                on the applicable FIX-page line. The ring displayed on the Navigation Display gives
+                you a visual gate for the descent and approach.
               </p>
               <ul className="study-points">
                 <li>
-                  <strong>Route and constraints:</strong> select the expected
-                  runway, approach and STAR, clear any route discontinuities, and
-                  challenge hard altitude constraints against the chart.
+                  <strong>Top-of-descent ring:</strong> enter the distance obtained
+                  from the 3-degree calculation and its corrections.
                 </li>
                 <li>
-                  <strong>Fix-page rings for awareness:</strong> a top-of-descent
-                  ring at FL × 3, a 10 NM ring as the latest flap point, and a 4
-                  or 5 NM ring for the gear and flap 15 point.
+                  <strong>Approach rings:</strong> use a 10 NM ring for the 3-2-1
+                  gate and a 4 or 5 NM ring for gear and flap 15.
                 </li>
                 <li>
-                  <strong>Descent forecast:</strong> enter the descent winds, QNH
-                  and ISA deviation, then read the winds and picture them in 3D
-                  at FL300, FL200 and FL100.
-                </li>
-                <li>
-                  <strong>Landing weight:</strong> compare it to 58 t so your
-                  corrections are ready before you start down.
+                  <strong>Traffic cross-check:</strong> look at the TCAS altitude
+                  indications for aircraft ahead of and behind you on the same
+                  arrival. Their levels provide a quick coherence check for your
+                  own vertical profile.
                 </li>
               </ul>
               <Tip>
-                Recalculate your own profile every 10 NM or so, using a round
-                number: at 87 NM to go, work out the target for 80 NM, and check
-                your height as you pass it. The lower you get, the more often you
-                check, because there is less time left to fix it.
+                Traffic is only a cross-check. Aircraft ahead or behind may have
+                different clearances, speeds, weights or destinations, so keep
+                your own calculated profile as the primary reference.
               </Tip>
             </section>
 
@@ -427,6 +393,15 @@ export default function DescentManagement() {
                 </ul>
               </Need>
             </section>
+
+            {/* ================= PART IV ================= */}
+            <Part
+              n="IV"
+              id="practice"
+              title="Practice your descent management"
+              lead="Work each scenario without multiple-choice answers. Enter your calculation, check the reasoning, then move to the next briefing."
+            />
+            <DescentPractice />
           </article>
 
           <aside className="course-aside">
