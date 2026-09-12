@@ -13,7 +13,7 @@ const chapters = [
   ['three-degree', 'The 3-degree rule', '1.1'],
   ['weight', 'Weight correction', '1.2'],
   ['wind', 'Wind correction', '1.3'],
-  ['energy-examples', 'Energy examples', '1.4'],
+  ['energy-examples', 'Practical Example', '1.4'],
   ['correct', 'Correct your energy', 'II'],
   ['high-profile', 'When you are high', '2.2'],
   ['approach', 'Approach energy', '2.3'],
@@ -188,6 +188,12 @@ export default function DescentManagement() {
               <Need>
                 <p><b>Weight correction: 1 tonne = 1 NM.</b> Above 58 t, add distance and start down earlier. Below 58 t, subtract distance.</p>
               </Need>
+              <p className="ex-lead">Weight correction examples</p>
+              <ul className="study-points">
+                <li><strong>64 t:</strong> 6 t above the reference weight = <strong>add 6 NM</strong>.</li>
+                <li><strong>54 t:</strong> 4 t below the reference weight = <strong>subtract 4 NM</strong>.</li>
+                <li><strong>58 t:</strong> at the reference weight = <strong>no correction</strong>.</li>
+              </ul>
             </section>
 
             <section className="course-section" id="wind">
@@ -201,6 +207,12 @@ export default function DescentManagement() {
               <Need>
                 <p><b>Wind correction: 10 kt component = 1 NM.</b> Add distance for a tailwind and subtract distance for a headwind.</p>
               </Need>
+              <p className="ex-lead">Wind correction examples</p>
+              <ul className="study-points">
+                <li><strong>20 kt tailwind:</strong> <strong>add 2 NM</strong> to the descent distance.</li>
+                <li><strong>30 kt headwind:</strong> <strong>subtract 3 NM</strong> from the descent distance.</li>
+                <li><strong>Calm wind:</strong> <strong>no correction</strong>.</li>
+              </ul>
               <Warning>
                 The 737 is very sensitive to tailwind, at any weight, especially
                 on approach. Even a light tailwind makes deceleration difficult,
@@ -210,7 +222,7 @@ export default function DescentManagement() {
 
             <section className="course-section" id="energy-examples">
               <span className="section-num">1.4</span>
-              <h2>Worked energy examples.</h2>
+              <h2>Practical Example.</h2>
               <ul className="study-points">
                 <li><strong>FL330 · 64 t · 20 kt tailwind:</strong> 99 NM basic distance + 6 NM for weight + 2 NM for wind = <strong>107 NM</strong> to descend.</li>
                 <li><strong>FL300 · 54 t · 30 kt headwind:</strong> 90 NM basic distance − 4 NM for weight − 3 NM for wind = <strong>83 NM</strong> to descend.</li>
@@ -256,25 +268,27 @@ export default function DescentManagement() {
                 a fixed order. Learn this cold.
               </p>
 
-              <div className="hi-recover">
-                <p className="hi-recover-title">Above FL150 · two-step recovery</p>
-                <ol className="hi-ladder">
-                  <li><span className="hi-num">1</span><div><strong>Accelerate</strong><div className="cfg-row"><span className="cfg-chip">ADD SPEED</span></div><p>Increase the descent speed within the applicable limits to increase drag and recover the profile.</p></div></li>
-                  <li><span className="hi-num">2</span><div><strong>Add speed brakes</strong><div className="cfg-row"><span className="cfg-chip">ADD SPEED</span><span className="cfg-plus">+</span><span className="cfg-chip">SPEED BRAKE</span></div><p>If acceleration alone is insufficient, extend the speed brakes while continuing to monitor speed and the recovered flight path.</p></div></li>
-                </ol>
+              <div className="hi-recovery-grid">
+                <div className="hi-recover hi-recover-above">
+                  <p className="hi-recover-title">Above FL150 · two-step recovery</p>
+                  <ol className="hi-ladder">
+                    <li><span className="hi-num">1</span><div><strong>Accelerate</strong><div className="cfg-row"><span className="cfg-chip">ADD SPEED</span></div><p>Increase the descent speed within the applicable limits to increase drag and recover the profile.</p></div></li>
+                    <li><span className="hi-num">2</span><div><strong>Add speed brakes</strong><div className="cfg-row"><span className="cfg-chip">ADD SPEED</span><span className="cfg-plus">+</span><span className="cfg-chip">SPEED BRAKE</span></div><p>If acceleration alone is insufficient, extend the speed brakes while continuing to monitor speed and the recovered flight path.</p></div></li>
+                  </ol>
+                </div>
+
+                <div className="hi-recover hi-recover-below">
+                  <p className="hi-recover-title">Below FL150 · progressive configuration</p>
+                  <ol className="hi-ladder">
+                    <li><span className="hi-num">1</span><div><strong>Speed brakes</strong><div className="cfg-row"><span className="cfg-chip">SPEED BRAKE</span></div><p>Extend the speed brakes first and assess whether the profile is recovering.</p></div></li>
+                    <li><span className="hi-num">2</span><div><strong>Flap 5 at 220 kt</strong><div className="cfg-row"><span className="cfg-chip">SPEED BRAKE</span><span className="cfg-plus">+</span><span className="cfg-chip">FLAP 5</span><span className="cfg-plus">+</span><span className="cfg-chip">220 kt</span></div><p>If speed brakes alone are insufficient, target flap 5 and 220 kt with the speed brakes extended.</p></div></li>
+                    <li className="last-resort"><span className="hi-num">3</span><div><strong>Last resort: flap 10 at 180 kt</strong><div className="cfg-row"><span className="cfg-chip">SPEED BRAKE</span><span className="cfg-plus">+</span><span className="cfg-chip">FLAP 10</span><span className="cfg-plus">+</span><span className="cfg-chip">180 kt</span></div><p>Use this final configuration only if the preceding steps have not recovered the profile.</p></div></li>
+                  </ol>
+                </div>
               </div>
               <Warning>
                 Do not use flaps above FL200.
               </Warning>
-
-              <div className="hi-recover">
-                <p className="hi-recover-title">Below FL150 · progressive configuration</p>
-                <ol className="hi-ladder">
-                  <li><span className="hi-num">1</span><div><strong>Speed brakes</strong><div className="cfg-row"><span className="cfg-chip">SPEED BRAKE</span></div><p>Extend the speed brakes first and assess whether the profile is recovering.</p></div></li>
-                  <li><span className="hi-num">2</span><div><strong>Flap 5 at 220 kt</strong><div className="cfg-row"><span className="cfg-chip">SPEED BRAKE</span><span className="cfg-plus">+</span><span className="cfg-chip">FLAP 5</span><span className="cfg-plus">+</span><span className="cfg-chip">220 kt</span></div><p>If speed brakes alone are insufficient, target flap 5 and 220 kt with the speed brakes extended.</p></div></li>
-                  <li className="last-resort"><span className="hi-num">3</span><div><strong>Last resort: flap 10 at 180 kt</strong><div className="cfg-row"><span className="cfg-chip">SPEED BRAKE</span><span className="cfg-plus">+</span><span className="cfg-chip">FLAP 10</span><span className="cfg-plus">+</span><span className="cfg-chip">180 kt</span></div><p>Use this final configuration only if the preceding steps have not recovered the profile.</p></div></li>
-                </ol>
-              </div>
 
               <p>
                 Whichever tool you use, the point is not just to add drag, it is
