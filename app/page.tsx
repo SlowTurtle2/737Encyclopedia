@@ -191,13 +191,13 @@ export default function Home() {
             </p>
           </div>
           <span className="library-count">
-            15 systems <span> / 6 available</span>
+            15 systems <span> / 7 available</span>
           </span>
         </div>
         <div className="system-shortcuts">
           {chapters.map((name, index) => {
             const Icon = icons[index];
-            const available = name === 'Fuel' || name === 'Air Systems' || name === 'Anti-Ice, Rain' || name === 'Airplane General, Emergency Equipment, Doors, Windows' || name === 'Fire Protection' || name === 'Landing Gear';
+            const available = name === 'Fuel' || name === 'Air Systems' || name === 'Anti-Ice, Rain' || name === 'Airplane General, Emergency Equipment, Doors, Windows' || name === 'Fire Protection' || name === 'Landing Gear' || name === 'Engines, APU';
             return (
               <Link
                 key={name}
