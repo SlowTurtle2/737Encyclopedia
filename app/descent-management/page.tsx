@@ -113,31 +113,6 @@ export default function DescentManagement() {
               lead="Before you can fix anything, you need a fast, reliable picture of where you are against where you should be. These three terms give you that picture without touching the FMC."
             />
 
-            <figure className="energy-equation" aria-label="Energy calculation: altitude profile plus weight correction plus wind correction equals corrected descent distance">
-              <div className="energy-term">
-                <span>01</span>
-                <strong>Altitude profile</strong>
-                <small>Altitude (000 ft) × 3</small>
-              </div>
-              <b className="energy-operator">+</b>
-              <div className="energy-term">
-                <span>02</span>
-                <strong>Weight correction</strong>
-                <small>Reference: 58 t</small>
-              </div>
-              <b className="energy-operator">+</b>
-              <div className="energy-term">
-                <span>03</span>
-                <strong>Wind correction</strong>
-                <small>Headwind or tailwind</small>
-              </div>
-              <b className="energy-operator energy-equals">=</b>
-              <div className="energy-result">
-                <span>YOUR ENERGY</span>
-                <strong>Corrected descent distance</strong>
-              </div>
-            </figure>
-
             <section className="course-section" id="three-degree">
               <span className="section-num">1.1</span>
               <h2>The 3-degree rule.</h2>
@@ -225,14 +200,38 @@ export default function DescentManagement() {
             <section className="course-section" id="energy-examples">
               <span className="section-num">1.4</span>
               <h2>Practical Example.</h2>
+              <figure className="energy-equation" aria-label="Energy calculation: altitude profile plus weight correction plus wind correction equals corrected descent distance">
+                <div className="energy-term">
+                  <span>01</span>
+                  <strong>Altitude profile</strong>
+                  <small>Altitude (000 ft) × 3</small>
+                </div>
+                <b className="energy-operator">+</b>
+                <div className="energy-term">
+                  <span>02</span>
+                  <strong>Weight correction</strong>
+                  <small>Reference: 58 t</small>
+                </div>
+                <b className="energy-operator">+</b>
+                <div className="energy-term">
+                  <span>03</span>
+                  <strong>Wind correction</strong>
+                  <small>Headwind or tailwind</small>
+                </div>
+                <b className="energy-operator energy-equals">=</b>
+                <div className="energy-result">
+                  <span>YOUR ENERGY</span>
+                  <strong>Corrected descent distance</strong>
+                </div>
+              </figure>
               <ul className="study-points">
                 <li><strong>FL330 · 64 t · 20 kt tailwind:</strong> 99 NM basic distance + 6 NM for weight + 2 NM for wind = <strong>107 NM</strong> to descend.</li>
                 <li><strong>FL300 · 54 t · 30 kt headwind:</strong> 90 NM basic distance − 4 NM for weight − 3 NM for wind = <strong>83 NM</strong> to descend.</li>
                 <li><strong>At 40 NM · 62 t · 20 kt tailwind:</strong> subtract the combined 6 NM correction from the available distance: (40 − 6) ÷ 3 = 11.3. The corrected target is therefore approximately <strong>11,300 ft</strong>.</li>
               </ul>
               <p>
-                Smaller corrections for speed, airport elevation, QNH and ISA
-                deviation can be added when they are significant. Combine the
+                Smaller corrections for speed and airport elevation can be added
+                when they are significant. Combine the
                 useful corrections into one mental figure and continue to update
                 the wind component during the descent.
               </p>
@@ -275,7 +274,7 @@ export default function DescentManagement() {
                   <p className="hi-recover-title">Above FL150 · two-step recovery</p>
                   <ol className="hi-ladder">
                     <li><span className="hi-num">1</span><div><strong>Accelerate</strong><div className="cfg-row"><span className="cfg-chip">DES PAGE</span><span className="cfg-plus">+</span><span className="cfg-chip">VNAV</span></div><p>The simplest way to increase the descent speed is from the FMC DES page. Keep VNAV engaged so the FMC continues to manage the altitude constraints at the STAR waypoints while you recover the profile.</p></div></li>
-                    <li><span className="hi-num">2</span><div><strong>Add speed brakes</strong><div className="cfg-row"><span className="cfg-chip">ADD SPEED</span><span className="cfg-plus">+</span><span className="cfg-chip">SPEED BRAKE</span></div><p>If acceleration alone is insufficient, extend the speed brakes while continuing to monitor speed and the recovered flight path.</p></div></li>
+                    <li><span className="hi-num">2</span><div><strong>Combine acceleration and speed brakes</strong><div className="cfg-row"><span className="cfg-chip">ADD SPEED</span><span className="cfg-plus">+</span><span className="cfg-chip">SPEED BRAKE</span></div><p>Acceleration will generally recover the descent profile. If more correction is required, combine the higher speed with speed brakes while monitoring speed and the recovered flight path.</p></div></li>
                   </ol>
                 </div>
 
@@ -291,6 +290,9 @@ export default function DescentManagement() {
               <Warning>
                 Do not use flaps above FL200.
               </Warning>
+              <Need>
+                <p><b>Speed brakes are most effective at high speed, particularly above 250 kt.</b> Their effectiveness decreases considerably at low speed.</p>
+              </Need>
 
               <p>
                 Whichever tool you use, the point is not just to add drag, it is
@@ -387,7 +389,7 @@ export default function DescentManagement() {
                   <li><b>Altitude (thousands of feet) = distance (NM) ÷ 3.</b></li>
                   <li><b>Reference weight 58 t.</b> Weight: 1 t = 1 NM.</li>
                   <li><b>Wind and speed: 10 kt = 1 NM.</b></li>
-                  <li><b>Elevation:</b> add it to the profile. <b>QNH:</b> 1 hPa = 30 ft.</li>
+                  <li><b>Elevation:</b> add the airport elevation to the profile.</li>
                   <li><b>Descent ROD = TAS ÷ 2. Approach ROD = GS ÷ 2, rounded up.</b></li>
                   <li><b>Above FL150:</b> accelerate, then use speed brakes if required. <b>Below FL150:</b> speed brakes, then F5/220, then F10/180.</li>
                 </ul>

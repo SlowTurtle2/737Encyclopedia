@@ -4,12 +4,12 @@ import { FormEvent, useState } from 'react';
 
 const questions = [
   {
-    briefing: 'Cruising at 38,000 ft, groundspeed 310 kt. ATC: “Cross TIMBA at 9,000 ft, 250 kt.”',
+    briefing: 'Cruising at 38,000 ft, groundspeed 310 kt, landing weight 64 t. ATC: “Cross TIMBA at 9,000 ft, 250 kt.”',
     prompt: 'How many miles before TIMBA do you start down?',
-    answer: 87,
+    answer: 93,
     tolerance: 1,
     unit: 'NM',
-    explanation: '38,000 − 9,000 = 29,000 ft, or 29 thousand feet. Distance = altitude to lose × 3: 29 × 3 = 87 NM.',
+    explanation: '38,000 − 9,000 = 29,000 ft. The basic distance is 29 × 3 = 87 NM. At 64 t, add 6 NM for weight: 87 + 6 = 93 NM.',
   },
   {
     briefing: 'Cruising at FL330. Landing weight 64 t. Average wind component: 20 kt tailwind.',
@@ -47,9 +47,9 @@ const questions = [
     briefing: 'Established on a 3-degree approach with a groundspeed of 150 kt.',
     prompt: 'What rounded rate of descent should you target?',
     answer: 800,
-    tolerance: 0,
+    tolerance: 50,
     unit: 'FT/MIN',
-    explanation: 'Approach ROD = GS ÷ 2, rounded up: 150 ÷ 2 = 750, so target approximately 800 ft/min.',
+    explanation: 'Approach ROD = GS ÷ 2: 150 ÷ 2 = 750 ft/min. This may be rounded to approximately 800 ft/min, so both answers are accepted.',
   },
 ];
 
