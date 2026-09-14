@@ -17,7 +17,7 @@ function Annunc({ label, children }: { label: string; children: React.ReactNode 
 function HydDisplay() {
   return (
     <figure className="hyd-display">
-      <svg viewBox="0 0 860 360" role="img" aria-label="Hydraulic system display: system A quantity 98 percent and pressure 3000 psi, system B quantity 66 percent with RF and pressure 3000 psi" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 860 360" aria-label="Hydraulic system display: system A quantity 98 percent and pressure 3000 psi, system B quantity 66 percent with RF and pressure 3000 psi" xmlns="http://www.w3.org/2000/svg">
         <rect x="0" y="0" width="860" height="360" rx="10" fill="#04070b" />
         <rect x="16" y="46" width="828" height="298" rx="28" fill="none" stroke="#33d6de" strokeWidth="4" />
         <rect x="332" y="30" width="196" height="34" fill="#04070b" />
@@ -134,6 +134,7 @@ export default function Hydraulics() {
 
         <h3>Equipment powered</h3>
         <ul className="study-points"><li><strong>Rudder:</strong> standby rudder power control unit.</li><li><strong>Leading-edge flaps and slats:</strong> extension only through the alternate-flap system.</li><li><strong>Thrust reversers:</strong> backup pressure for both reversers, with slower operation.</li><li><strong>Yaw damper:</strong> standby yaw-damper function.</li></ul>
+        <Warning title="EXTENSION ONLY">Leading-edge flaps and slats extended with standby hydraulic pressure cannot be retracted by the standby system.</Warning>
         <h4>Manual activation</h4>
         <p>Selecting either FLT CONTROL switch to <strong>STBY RUD</strong> starts the standby pump, isolates the associated normal-system pressure from the ailerons, elevators and rudder, and opens the standby rudder shutoff valve. Selecting <strong>ALTERNATE FLAPS ARM</strong> also starts the pump, closes the trailing-edge-flap bypass valve and arms the alternate-flap position switch.</p>
         <h4>Automatic activation</h4>

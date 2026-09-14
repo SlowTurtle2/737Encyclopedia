@@ -2522,16 +2522,18 @@ summary:focus-visible {
   .mobile-nav { display: block; position: relative; margin-left: auto; }
   .mobile-nav > summary { display: flex; align-items: center; gap: 7px; padding: 8px 12px; border: 1px solid #d7e1e9; border-radius: 9px; list-style: none; cursor: pointer; font-size: 14px; font-weight: 700; }
   .mobile-nav > summary::-webkit-details-marker { display: none; }
-  .mobile-nav > nav { position: absolute; z-index: 80; top: calc(100% + 10px); right: 0; display: grid; width: min(330px, calc(100vw - 32px)); max-height: calc(100vh - 110px); overflow-y: auto; gap: 2px; padding: 10px; border: 1px solid #dce4eb; border-radius: 12px; background: white; box-shadow: 0 18px 50px rgba(20, 43, 69, .16); }
+  .mobile-nav > nav { position: absolute; z-index: 80; top: calc(100% + 10px); right: 0; display: grid; box-sizing: border-box; width: min(330px, calc(100vw - 32px)); max-width: calc(100vw - 32px); max-height: calc(100dvh - 100px); overflow-x: hidden; overflow-y: auto; white-space: normal; gap: 2px; padding: 10px; border: 1px solid #dce4eb; border-radius: 12px; background: white; box-shadow: 0 18px 50px rgba(20, 43, 69, .16); }
   .mobile-nav > nav > a, .mobile-nav > nav > .systems-menu > summary { display: block; padding: 10px 11px; border-radius: 7px; font-size: 14px; }
   .mobile-nav > nav > a:hover { background: #f1f6f8; }
-  .mobile-nav .systems-menu > div { position: static; width: 100%; max-height: 260px; margin: 3px 0 7px; padding: 5px 5px 5px 12px; border: 0; border-left: 2px solid #d8e5ee; border-radius: 0; box-shadow: none; transform: none; }
+  .mobile-nav .systems-menu > div { position: static; box-sizing: border-box; width: 100%; max-width: 100%; max-height: 260px; overflow-x: hidden; margin: 3px 0 7px; padding: 5px 5px 5px 12px; border: 0; border-left: 2px solid #d8e5ee; border-radius: 0; box-shadow: none; transform: none; }
+  .mobile-nav .systems-menu > div a { white-space: normal; overflow-wrap: anywhere; }
 }
 
 @media (max-width: 700px) {
   .site-header { padding: 12px 16px; gap: 10px; }
   .site-header .header-cta { display: none; }
   .mobile-nav > summary { padding: 8px 10px; }
+  .mobile-nav > nav { right: -4px; width: calc(100vw - 24px); max-width: calc(100vw - 24px); }
   .glossary-grid { grid-template-columns: 1fr; }
   .dimension-compare,
   .general-figure-grid { grid-template-columns: 1fr; }
