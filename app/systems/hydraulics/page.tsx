@@ -13,6 +13,35 @@ function Deep({ title, children }: { title: string; children: React.ReactNode })
 function Max({ children }: { children: React.ReactNode }) { return <aside className="max-note"><b>737 MAX / 8200 DIFFERENCE</b><p>{children}</p></aside>; }
 function Placeholder({ caption }: { caption: string }) { return <figure className="schematic-placeholder" aria-label={`${caption} illustration placeholder`}><span>ILLUSTRATION TO BE ADDED</span><figcaption>{caption}</figcaption></figure>; }
 function Figure({ src, alt, caption, compact = false, portrait = false, width = 1455, height = 1091 }: { src: string; alt: string; caption: string; compact?: boolean; portrait?: boolean; width?: number; height?: number }) { return <figure className={`figure course-photo hydraulic-figure${compact ? ' compact' : ''}${portrait ? ' portrait' : ''}`}><Image src={src} alt={alt} width={width} height={height} /><figcaption>{caption}</figcaption></figure>; }
+function Annunc({ label, children }: { label: string; children: React.ReactNode }) { return <aside className="annunc-callout"><span className="annunc-light">{label}</span><p>{children}</p></aside>; }
+function HydDisplay() {
+  return (
+    <figure className="hyd-display">
+      <svg viewBox="0 0 860 360" role="img" aria-label="Hydraulic system display: system A quantity 98 percent and pressure 3000 psi, system B quantity 66 percent with RF and pressure 3000 psi" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="860" height="360" rx="10" fill="#04070b" />
+        <rect x="16" y="46" width="828" height="298" rx="28" fill="none" stroke="#33d6de" strokeWidth="4" />
+        <rect x="332" y="30" width="196" height="34" fill="#04070b" />
+        <line x1="292" y1="47" x2="340" y2="47" stroke="#33d6de" strokeWidth="4" />
+        <line x1="520" y1="47" x2="568" y2="47" stroke="#33d6de" strokeWidth="4" />
+        <g fontFamily="'Arial Narrow', 'Roboto Condensed', Arial, sans-serif" textAnchor="middle">
+          <text x="430" y="56" fill="#33d6de" fontSize="26" fontWeight="700" letterSpacing="4">HYDRAULIC</text>
+          <text x="376" y="150" fill="#33d6de" fontSize="30" fontWeight="700">A</text>
+          <text x="644" y="150" fill="#33d6de" fontSize="30" fontWeight="700">B</text>
+          <text x="376" y="216" fill="#eef8f9" fontSize="58" fontWeight="700">98</text>
+          <text x="632" y="216" fill="#eef8f9" fontSize="58" fontWeight="700">66</text>
+          <text x="700" y="212" fill="#d9ebed" fontSize="24" fontWeight="700">RF</text>
+          <text x="376" y="300" fill="#eef8f9" fontSize="58" fontWeight="700">3000</text>
+          <text x="644" y="300" fill="#eef8f9" fontSize="58" fontWeight="700">3000</text>
+        </g>
+        <g fontFamily="'Arial Narrow', 'Roboto Condensed', Arial, sans-serif" textAnchor="start" fill="#33d6de" fontSize="26" fontWeight="700">
+          <text x="66" y="208">QTY %</text>
+          <text x="66" y="292">PRESS</text>
+        </g>
+      </svg>
+      <figcaption>Hydraulic indication on the SYS display: reservoir quantity (QTY %) and combined pressure (PRESS) for systems A and B. RF marks a valid refill reading below 76%.</figcaption>
+    </figure>
+  );
+}
 
 const sections = [
   ['overview', 'Overview'],
@@ -46,7 +75,11 @@ export default function Hydraulics() {
 
         <h3>Control and indication</h3>
         <p>The hydraulic panel controls the four normal pumps. The SYS display shows combined system pressure and reservoir quantity for systems A and B.</p>
-        <ul className="study-points"><li><strong>Pump LOW PRESSURE:</strong> the output pressure of the related engine or electric pump is low. Pulling an engine fire switch deactivates its engine-pump LOW PRESSURE light.</li><li><strong>Electric pump OVERHEAT:</strong> the electric pump or the hydraulic fluid used to cool and lubricate it has overheated.</li><li><strong>PRESS:</strong> indicates combined output pressure from both pumps in the selected system. With both pumps OFF, it may show reservoir pressure, normally below 100 psi.</li><li><strong>QTY %:</strong> displays reservoir quantity from 0 to 106%.</li><li><strong>RF:</strong> appears below 76%. It is valid on the ground with both engines shut down, or after landing with flaps up during taxi-in.</li></ul>
+        <HydDisplay />
+        <ul className="study-points"><li><strong>PRESS:</strong> indicates combined output pressure from both pumps in the selected system. With both pumps OFF, it may show reservoir pressure, normally below 100 psi.</li><li><strong>QTY %:</strong> displays reservoir quantity from 0 to 106%.</li><li><strong>RF:</strong> appears below 76%. It is valid on the ground with both engines shut down, or after landing with flaps up during taxi-in.</li></ul>
+        <h4>Pump caution lights</h4>
+        <Annunc label="LOW PRESSURE">The output pressure of the related engine or electric pump is low. Pulling an engine fire switch deactivates that engine pump&rsquo;s LOW PRESSURE light.</Annunc>
+        <Annunc label="OVERHEAT">The electric pump, or the hydraulic fluid used to cool and lubricate it, has overheated.</Annunc>
         <Max>On the MAX, hydraulic information appears on the selected inboard display through the MDS SYS page. The ground-only <strong>MAINT</strong> tab is a menu indication and does not indicate a malfunction.</Max>
         <Figure compact src="/images/hydraulic-pump-panel.png" alt="Boeing 737 hydraulic pump panel with engine and electric pump switches and caution lights" caption="Hydraulic pump panel: system A controls on the left and system B controls on the right." />
       </section>
