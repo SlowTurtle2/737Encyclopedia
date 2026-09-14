@@ -53,9 +53,7 @@ export default function AirplaneGeneral() {
         <h3>Fasten seat belts</h3>
         <ul className="study-points"><li><strong>OFF:</strong> the FASTEN SEAT BELTS and RETURN TO SEAT signs are not illuminated.</li><li><strong>AUTO:</strong> the signs illuminate or extinguish automatically according to aircraft configuration. They illuminate when the landing gear or flaps are extended and extinguish when both are retracted.</li><li><strong>ON:</strong> the signs are illuminated continuously.</li></ul>
         <h3>No smoking</h3>
-        <ul className="study-points"><li><strong>OFF:</strong> the NO SMOKING signs are not illuminated.</li><li><strong>AUTO:</strong> the signs illuminate or extinguish automatically according to aircraft configuration.</li><li><strong>ON:</strong> the signs are illuminated continuously.</li></ul>
-        <p>On the supplied fleet configuration, the NO SMOKING signs are permanently illuminated and the switch is placarded <strong>INOP</strong>. The three switch positions apply only to aircraft equipped with the controllable installation.</p>
-        <p>A low tone sounds over the passenger-address system whenever the passenger signs illuminate or extinguish.</p>
+        <p>The <strong>NO SMOKING</strong> signs are permanently illuminated. The switch is used by the pilots as a reminder that the cabin has been secured.</p>
         <Need title="AUTO follows gear and flaps"><p>Either gear or flap extension illuminates the seat-belt and return-to-seat signs.</p></Need>
       </section>
 
