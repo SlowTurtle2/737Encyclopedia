@@ -140,7 +140,10 @@ export default function EnginesApu() {
           <li><strong>START:</strong> momentary selection. Releasing the switch to ON initiates the fully automatic start sequence.</li>
         </ul>
         <p>APU operation requires the flight-deck APU fire switch and external ground-control fire handle to be in, with the BATTERY switch ON. Start power normally comes from transfer bus 1; the main battery supplies the starter-generator when AC power is unavailable. Selecting the battery OFF removes ECU power and shuts down the APU.</p>
-        <Placeholder caption="NG and MAX APU control and indication panels." />
+        <div className="apu-panel-grid">
+          <Figure src="/images/apu-panel-egt.png" alt="737 NG APU panel with EGT gauge and MAINT, LOW OIL PRESSURE, FAULT and OVERSPEED lights" caption="737 NG · APU EGT indication and annunciator panel." />
+          <Figure src="/images/apu-panel-annunciators.png" alt="737 MAX APU panel with DOOR, LOW OIL PRESSURE, FAULT and OVERSPEED lights" caption="737 MAX · APU annunciator panel." />
+        </div>
 
         <h3>APU system</h3>
         <p>The APU can start and operate up to the aircraft maximum certified altitude. It can power both transfer buses on the ground or in flight. Pneumatically, it supplies both packs on the ground or one pack in flight and provides air for engine starting.</p>

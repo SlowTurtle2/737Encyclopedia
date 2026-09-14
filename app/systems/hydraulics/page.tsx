@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import SystemPager from '@/components/system-pager';
 import Contents from '../fuel/contents';
 
@@ -11,6 +12,7 @@ function Warning({ title, children }: { title: string; children: React.ReactNode
 function Deep({ title, children }: { title: string; children: React.ReactNode }) { return <details className="deep"><summary>{title}</summary><div>{children}</div></details>; }
 function Max({ children }: { children: React.ReactNode }) { return <aside className="max-note"><b>737 MAX / 8200 DIFFERENCE</b><p>{children}</p></aside>; }
 function Placeholder({ caption }: { caption: string }) { return <figure className="schematic-placeholder" aria-label={`${caption} illustration placeholder`}><span>ILLUSTRATION TO BE ADDED</span><figcaption>{caption}</figcaption></figure>; }
+function Figure({ src, alt, caption, compact = false }: { src: string; alt: string; caption: string; compact?: boolean }) { return <figure className={`figure course-photo hydraulic-figure${compact ? ' compact' : ''}`}><Image src={src} alt={alt} width={1455} height={1091} /><figcaption>{caption}</figcaption></figure>; }
 
 const sections = [
   ['overview', 'Overview'],
@@ -31,7 +33,7 @@ export default function Hydraulics() {
         <h3>Systems A, B and standby</h3>
         <p>Systems A and B are the normal hydraulic sources. Each can power all primary flight controls without reducing aircraft controllability. The standby system provides a separate backup source for selected equipment after a loss of system A or B pressure.</p>
         <ul className="study-points"><li><strong>System A:</strong> normally powered by the engine 1 driven pump and electric pump 2.</li><li><strong>System B:</strong> normally powered by the engine 2 driven pump and electric pump 1.</li><li><strong>Standby:</strong> powered by one electric motor driven pump and activated manually or automatically.</li><li><strong>Reservoir location:</strong> all three reservoirs are in the main wheel well.</li><li><strong>Reservoir pressurization:</strong> bleed air pressurizes reservoirs A and B. The standby reservoir receives pressurization and servicing through reservoir B.</li></ul>
-        <Placeholder caption="Hydraulic power distribution: systems A, B and standby." />
+        <Figure src="/images/hydraulic-power-overview.png" alt="Boeing 737 hydraulic power distribution between systems A, B and standby" caption="Hydraulic power overview: reservoirs, pumps, PTU and equipment supplied by systems A, B and standby." />
         <Need title="A or B can power every primary flight control"><p>The ailerons, elevators and rudder each receive pressure from both normal systems. The aircraft services connected to A and B are different, so the operational consequences of losing one system are not identical.</p></Need>
 
         <h3>Pumps and pressure</h3>
@@ -45,7 +47,7 @@ export default function Hydraulics() {
         <p>The hydraulic panel controls the four normal pumps. The SYS display shows combined system pressure and reservoir quantity for systems A and B.</p>
         <ul className="study-points"><li><strong>Pump LOW PRESSURE:</strong> the output pressure of the related engine or electric pump is low. Pulling an engine fire switch deactivates its engine-pump LOW PRESSURE light.</li><li><strong>Electric pump OVERHEAT:</strong> the electric pump or the hydraulic fluid used to cool and lubricate it has overheated.</li><li><strong>PRESS:</strong> indicates combined output pressure from both pumps in the selected system. With both pumps OFF, it may show reservoir pressure, normally below 100 psi.</li><li><strong>QTY %:</strong> displays reservoir quantity from 0 to 106%.</li><li><strong>RF:</strong> appears below 76%. It is valid on the ground with both engines shut down, or after landing with flaps up during taxi-in.</li></ul>
         <Max>On the MAX, hydraulic information appears on the selected inboard display through the MDS SYS page. The ground-only <strong>MAINT</strong> tab is a menu indication and does not indicate a malfunction.</Max>
-        <Placeholder caption="Hydraulic pump panel and system pressure and quantity indications." />
+        <Figure compact src="/images/hydraulic-pump-panel.png" alt="Boeing 737 hydraulic pump panel with engine and electric pump switches and caution lights" caption="Hydraulic pump panel: system A controls on the left and system B controls on the right." />
       </section>
 
       <section className="course-section" id="system-a">
@@ -59,7 +61,7 @@ export default function Hydraulics() {
         <Need title="20% isolates the location of an A-system leak"><p>If quantity stops near 20%, the standpipe has retained fluid for electric pump 2. A continued decrease toward zero identifies a leak in the electric-pump path or a component common to both pumps.</p></Need>
 
         <h3>Equipment powered</h3>
-        <div className="course-table-wrap"><table className="course-table"><caption>System A users</caption><tbody><tr><td>Primary flight controls</td><td>Ailerons, rudder, elevators and elevator feel</td></tr><tr><td>Spoilers</td><td>Flight spoilers 2, 4, 9 and 11; ground spoilers 1, 6, 7 and 12</td></tr><tr><td>Landing gear</td><td>Normal extension and retraction; normal nose-wheel steering</td></tr><tr><td>Brakes</td><td>Alternate brakes</td></tr><tr><td>Other users</td><td>No. 1 thrust reverser, autopilot A, PTU drive and landing-gear transfer function</td></tr></tbody></table></div>
+        <ul className="study-points"><li><strong>Primary flight controls:</strong> ailerons, rudder, elevators and elevator feel.</li><li><strong>Spoilers:</strong> flight spoilers 2, 4, 9 and 11; ground spoilers 1, 6, 7 and 12.</li><li><strong>Landing gear:</strong> normal extension and retraction, plus normal nose-wheel steering.</li><li><strong>Brakes:</strong> alternate brakes.</li><li><strong>Other users:</strong> No. 1 thrust reverser, autopilot A, PTU drive and landing-gear transfer function.</li></ul>
         <Max>On the NG, the hydraulic distribution schematic lists the individual spoiler panels and thrust reverser under their normal systems. On the MAX FCOM schematic, these functions are grouped differently, but the operating principles of the two normal hydraulic sources remain unchanged.</Max>
 
         <h3>Landing Gear Transfer Unit</h3>
@@ -80,7 +82,7 @@ export default function Hydraulics() {
         <Placeholder caption="System B reservoir, standby connection and PTU standpipe." />
 
         <h3>Equipment powered</h3>
-        <div className="course-table-wrap"><table className="course-table"><caption>System B users</caption><tbody><tr><td>Primary flight controls</td><td>Ailerons, rudder, elevators and elevator feel</td></tr><tr><td>Spoilers</td><td>Flight spoilers 3, 5, 8 and 10</td></tr><tr><td>High-lift devices</td><td>Leading-edge flaps and slats, trailing-edge flaps and autoslats</td></tr><tr><td>Brakes and steering</td><td>Normal brakes and alternate nose-wheel steering</td></tr><tr><td>Other users</td><td>No. 2 thrust reverser, autopilot B, yaw damper and landing-gear transfer function</td></tr></tbody></table></div>
+        <ul className="study-points"><li><strong>Primary flight controls:</strong> ailerons, rudder, elevators and elevator feel.</li><li><strong>Spoilers:</strong> flight spoilers 3, 5, 8 and 10.</li><li><strong>High-lift devices:</strong> leading-edge flaps and slats, trailing-edge flaps and autoslats.</li><li><strong>Brakes and steering:</strong> normal brakes and alternate nose-wheel steering.</li><li><strong>Other users:</strong> No. 2 thrust reverser, autopilot B, yaw damper and landing-gear transfer function.</li></ul>
 
         <h3>Power Transfer Unit (PTU)</h3>
         <p>The PTU restores the hydraulic volume required to operate the autoslats and leading-edge flaps and slats at the normal rate when the system B engine-driven pump is inoperative. System A pressure drives a hydraulic motor mechanically connected to a pump which pressurizes system B fluid.</p>
@@ -114,7 +116,6 @@ export default function Hydraulics() {
         <p>The control wheels and columns remain mechanically connected to the flight controls. With no hydraulic assistance, pilot inputs operate the ailerons and elevator through manual reversion. Control forces are substantially higher and response is reduced.</p>
         <ul className="study-points"><li><strong>Ailerons:</strong> the control wheels mechanically position the ailerons. Control forces are higher because of friction and aerodynamic loads.</li><li><strong>Elevators:</strong> the control columns mechanically position the interconnected elevators. Control forces are higher because of friction and aerodynamic loads.</li><li><strong>Rudder:</strong> there is no manual reversion. Rudder control requires system A, system B or standby hydraulic pressure.</li><li><strong>Spoilers:</strong> unavailable without normal hydraulic pressure, further reducing roll response.</li><li><strong>Standby yaw damper:</strong> with both FLT CONTROL switches at STBY RUD, it can use control-wheel input to command the standby rudder PCU and assist the turn.</li></ul>
         <Warning title="DEGRADED CONTROL">Manual reversion is a backup control condition. Higher forces, limited control authority and the loss of hydraulic spoiler assistance require smooth inputs and strict use of the applicable non-normal procedure.</Warning>
-        <Placeholder caption="Mechanical aileron and elevator manual-reversion paths." />
         <Deep title="Go deeper · Reservoir foaming"><p>If a reservoir is not correctly pressurized, fluid can foam at high altitude. Pressure may fluctuate, related LOW PRESSURE lights may blink, and MASTER CAUTION with the HYD annunciator may illuminate momentarily.</p></Deep>
       </section>
 
