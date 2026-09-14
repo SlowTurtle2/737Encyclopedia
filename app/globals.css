@@ -2062,6 +2062,8 @@ summary:focus-visible {
 .systems-menu summary::after { content: '⌄'; margin-left: 6px; }
 .systems-menu > div { position: absolute; z-index: 50; top: calc(100% + 12px); left: 50%; width: min(390px, 80vw); max-height: 70vh; overflow: auto; padding: 10px; border: 1px solid #dfe3e7; border-radius: 12px; background: white; box-shadow: 0 18px 45px rgba(25,35,45,.14); transform: translateX(-50%); }
 .systems-menu > div a { display: block; padding: 9px 11px; border-radius: 7px; }
+.systems-menu > div a.paid-nav-link { display: flex; align-items: center; gap: 8px; }
+.paid-nav-link svg { flex: none; color: #9a741f; }
 .systems-menu > div a:hover { background: #f1f6f8; }
 .systems-menu.compact-menu > div { width: min(260px, 80vw); }
 .fuel-alert-card {
@@ -2831,6 +2833,8 @@ summary:focus-visible {
 }
 .assessment-step-links a { margin-top: 0; }
 .assessment-step a:hover { border-color: #8caabd; background: #f3f8fa; }
+.paid-link-label { display: inline-flex; align-items: center; gap: 7px; }
+.paid-link-label svg { flex: none; color: #9a741f; }
 .assessment-flow-arrow {
   align-self: center;
   color: #9ba2aa;

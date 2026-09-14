@@ -28,6 +28,7 @@ import {
   BookOpen,
   Layers,
   GitCompareArrows,
+  LockKeyhole,
 } from 'lucide-react';
 const icons = [
   Plane,
@@ -131,22 +132,22 @@ export default function Home() {
             <h3>Technical foundations</h3>
             <div className="assessment-step-links">
               <Link href="/#systems">Aircraft systems <ArrowUpRight size={17} /></Link>
-              <Link href="/type-rating/technical-exam">Technical exam <ArrowUpRight size={17} /></Link>
+              <Link href="/type-rating/technical-exam"><span className="paid-link-label"><LockKeyhole size={13} />Technical exam</span><ArrowUpRight size={17} /></Link>
             </div>
           </article>
           <ArrowRight className="assessment-flow-arrow" aria-hidden="true" />
           <article className="assessment-step">
             <span className="assessment-step-number">02</span>
             <h3>Performance exam</h3>
-            <Link href="/type-rating/performance-exam">Open section <ArrowUpRight size={17} /></Link>
+            <Link href="/type-rating/performance-exam"><span className="paid-link-label"><LockKeyhole size={13} />Open section</span><ArrowUpRight size={17} /></Link>
           </article>
           <ArrowRight className="assessment-flow-arrow" aria-hidden="true" />
           <article className="assessment-step assessment-step-double">
             <span className="assessment-step-number">03</span>
             <h3>Procedures and FMC</h3>
             <div className="assessment-step-links">
-              <Link href="/type-rating/sop-exam">SOP exam <ArrowUpRight size={17} /></Link>
-              <Link href="/fmc">FMC tutorial <ArrowUpRight size={17} /></Link>
+              <Link href="/type-rating/sop-exam"><span className="paid-link-label"><LockKeyhole size={13} />SOP exam</span><ArrowUpRight size={17} /></Link>
+              <Link href="/fmc"><span className="paid-link-label"><LockKeyhole size={13} />FMC tutorial</span><ArrowUpRight size={17} /></Link>
             </div>
           </article>
         </div>
@@ -164,19 +165,19 @@ export default function Home() {
           <article className="assessment-step">
             <span className="assessment-step-number">01</span>
             <h3>Descent management</h3>
-            <Link href="/descent-management">Open section <ArrowUpRight size={17} /></Link>
+            <Link href="/descent-management"><span className="paid-link-label"><LockKeyhole size={13} />Open section</span><ArrowUpRight size={17} /></Link>
           </article>
           <ArrowRight className="assessment-flow-arrow" aria-hidden="true" />
           <article className="assessment-step">
             <span className="assessment-step-number">02</span>
             <h3>Refuelling procedure</h3>
-            <Link href="/line-training/refuelling-procedure">Open section <ArrowUpRight size={17} /></Link>
+            <Link href="/line-training/refuelling-procedure"><span className="paid-link-label"><LockKeyhole size={13} />Open section</span><ArrowUpRight size={17} /></Link>
           </article>
           <ArrowRight className="assessment-flow-arrow" aria-hidden="true" />
           <article className="assessment-step">
             <span className="assessment-step-number">03</span>
             <h3>CPDLC</h3>
-            <Link href="/line-training/cpdlc">Open section <ArrowUpRight size={17} /></Link>
+            <Link href="/line-training/cpdlc"><span className="paid-link-label"><LockKeyhole size={13} />Open section</span><ArrowUpRight size={17} /></Link>
           </article>
         </div>
       </section>
