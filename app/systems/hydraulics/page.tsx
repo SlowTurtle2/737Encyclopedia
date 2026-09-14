@@ -12,7 +12,7 @@ function Warning({ title, children }: { title: string; children: React.ReactNode
 function Deep({ title, children }: { title: string; children: React.ReactNode }) { return <details className="deep"><summary>{title}</summary><div>{children}</div></details>; }
 function Max({ children }: { children: React.ReactNode }) { return <aside className="max-note"><b>737 MAX / 8200 DIFFERENCE</b><p>{children}</p></aside>; }
 function Placeholder({ caption }: { caption: string }) { return <figure className="schematic-placeholder" aria-label={`${caption} illustration placeholder`}><span>ILLUSTRATION TO BE ADDED</span><figcaption>{caption}</figcaption></figure>; }
-function Figure({ src, alt, caption, compact = false }: { src: string; alt: string; caption: string; compact?: boolean }) { return <figure className={`figure course-photo hydraulic-figure${compact ? ' compact' : ''}`}><Image src={src} alt={alt} width={1455} height={1091} /><figcaption>{caption}</figcaption></figure>; }
+function Figure({ src, alt, caption, compact = false, portrait = false, width = 1455, height = 1091 }: { src: string; alt: string; caption: string; compact?: boolean; portrait?: boolean; width?: number; height?: number }) { return <figure className={`figure course-photo hydraulic-figure${compact ? ' compact' : ''}${portrait ? ' portrait' : ''}`}><Image src={src} alt={alt} width={width} height={height} /><figcaption>{caption}</figcaption></figure>; }
 
 const sections = [
   ['overview', 'Overview'],
@@ -39,7 +39,8 @@ export default function Hydraulics() {
         <h3>Pumps and pressure</h3>
         <p>Systems A and B each have one engine driven pump and one AC electric motor driven pump. An engine driven pump supplies approximately six times the fluid volume of its related electric pump: approximately 37 US gal/min compared with 6 US gal/min. The standby electric pump supplies approximately 3 US gal/min.</p>
         <div className="course-table-wrap"><table className="course-table"><caption>Normal hydraulic sources</caption><thead><tr><th>System</th><th>Engine driven pump</th><th>Electric pump</th></tr></thead><tbody><tr><td>A</td><td>ENG 1</td><td>ELEC 2</td></tr><tr><td>B</td><td>ENG 2</td><td>ELEC 1</td></tr><tr><td>Standby</td><td>None</td><td>Dedicated standby pump</td></tr></tbody></table></div>
-        <ul className="study-points"><li><strong>Normal pressure:</strong> 3,000 psi.</li><li><strong>Maximum indicated pressure:</strong> 3,500 psi.</li><li><strong>Engine pump switch ON:</strong> de-energizes the blocking valve and allows pump output into the system.</li><li><strong>Engine pump switch OFF:</strong> energizes the blocking valve and blocks pump output. The pump continues to rotate whenever its engine operates.</li><li><strong>Electric pump switch ON:</strong> supplies electrical power to the related pump.</li></ul>
+        <div className="course-table-wrap"><table className="course-table"><caption>Hydraulic system pressure</caption><thead><tr><th>Minimum</th><th>Normal</th><th>Maximum</th></tr></thead><tbody><tr><td>2,800 psi</td><td>3,000 psi</td><td>3,500 psi</td></tr></tbody></table></div>
+        <ul className="study-points"><li><strong>Engine pump switch ON:</strong> de-energizes the blocking valve and allows pump output into the system.</li><li><strong>Engine pump switch OFF:</strong> energizes the blocking valve and blocks pump output. The pump continues to rotate whenever its engine operates.</li><li><strong>Electric pump switch ON:</strong> supplies electrical power to the related pump.</li></ul>
         <Warning title="ELECTRIC PUMP COOLING">Pump case drain fluid is cooled through a heat exchanger in the related main fuel tank. At least 760 kg of fuel must be in that tank for ground operation of an electric motor driven pump.</Warning>
         <Deep title="Go deeper · Why engine pump switches remain ON at shutdown"><p>The ON position de-energizes the engine-pump blocking-valve solenoid. Leaving the switches ON at shutdown therefore prolongs solenoid life.</p></Deep>
 
@@ -57,7 +58,7 @@ export default function Hydraulics() {
         <h3>Characteristics, quantity and reservoir design</h3>
         <p>The system A reservoir is bleed-air pressurized to maintain positive flow to both pumps. Its full level is approximately <strong>21.6 L</strong>; the refill indication corresponds to approximately <strong>76% / 17.7 L</strong>.</p>
         <ul className="study-points"><li><strong>Engine-pump or engine-pump-line leak:</strong> a standpipe preserves fluid for electric pump 2. Quantity stabilizes at approximately 20%, corresponding to about 8.5 L, and electric pump pressure remains available.</li><li><strong>Electric-pump line or common-system leak:</strong> the reservoir drains toward zero and all system A pressure is lost.</li><li><strong>Normal quantity variation:</strong> quantity changes when the system is pressurized, when landing gear or leading-edge devices move, and after cold soaking.</li></ul>
-        <Placeholder caption="System A reservoir, standpipe and pump supply paths." />
+        <Figure portrait width={366} height={623} src="/images/hydraulic-system-a-reservoir.png" alt="Boeing 737 hydraulic system A reservoir in the main wheel well" caption="Hydraulic system A reservoir in the main wheel well." />
         <Need title="20% isolates the location of an A-system leak"><p>If quantity stops near 20%, the standpipe has retained fluid for electric pump 2. A continued decrease toward zero identifies a leak in the electric-pump path or a component common to both pumps.</p></Need>
 
         <h3>Equipment powered</h3>
@@ -67,7 +68,6 @@ export default function Hydraulics() {
         <h3>Landing Gear Transfer Unit</h3>
         <p>The transfer unit allows the landing gear to retract at the normal rate when system A loses engine-driven-pump volume. System B engine-driven-pump pressure supplies the required hydraulic volume automatically when all of the following conditions are met:</p>
         <ul className="study-points"><li>the aircraft is airborne;</li><li>engine 1 RPM is below the specified limit;</li><li>the landing-gear lever is UP; and</li><li>either main landing gear is not up and locked.</li></ul>
-        <Placeholder caption="Landing Gear Transfer Unit operating path and automatic conditions." />
         <Max>The NG FCOM names this component the <strong>Landing Gear Transfer Valve</strong>; the MAX FCOM names it the <strong>Landing Gear Transfer Unit</strong>. The documented purpose and automatic operating conditions are the same.</Max>
         <Need title="Transfer of volume, not interconnection"><p>The unit uses system B pressure to restore normal-rate gear retraction. Systems A and B remain hydraulically separate; their fluids are not mixed.</p></Need>
       </section>
@@ -88,7 +88,6 @@ export default function Hydraulics() {
         <p>The PTU restores the hydraulic volume required to operate the autoslats and leading-edge flaps and slats at the normal rate when the system B engine-driven pump is inoperative. System A pressure drives a hydraulic motor mechanically connected to a pump which pressurizes system B fluid.</p>
         <p>The PTU operates automatically when system B engine-driven-pump pressure is below limits and the aircraft is airborne. The additional flap condition is:</p>
         <ul className="study-points"><li><strong>NG YA573-YW097:</strong> flaps less than 15 but not up.</li><li><strong>NG YW098-YW164 and MAX:</strong> flaps not up.</li></ul>
-        <Placeholder caption="PTU: system A motor driving a system B hydraulic pump." />
         <Need title="Pressure crosses mechanically · fluid does not"><p>The PTU transfers power between the systems through a motor-and-pump shaft. It does not transfer hydraulic fluid, and it cannot help if system B fluid has been lost.</p></Need>
       </section>
 
