@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /login
+Disallow: /register
+Disallow: /account
+Disallow: /reset-password
+Disallow: /academy
+
+Sitemap: https://737encyclopedia.com/sitemap.xml
